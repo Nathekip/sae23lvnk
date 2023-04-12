@@ -1,12 +1,13 @@
-<?php
-echo "saluut !";
-$rep = array();
-/* foreach($rep as $r){
-  if (isset($r)){
-    print_r($r);
-  }
-  else {
-    echo "pas de fichiers déso";
-  }
-} */
-?>
+# Ce fichier comporte la page d'accueil pour le moment
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <?php
+    include('fonctions.php');
+    pagenavbar("Page d'accueil");
+    echo "<br> Test echo simple <br>";
+    echo pagenavbar("Page d'accueil");
+    ?>
+  </body>
+</html>
