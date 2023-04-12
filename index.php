@@ -6,6 +6,8 @@
     <?php
     include('fonctions.php');
     pagenavbar("Page d'accueil");
+    echo "<br> Test echo simple <br>";
+    echo pagenavbar("Page d'accueil");
     ?>
   </body>
 </html>
