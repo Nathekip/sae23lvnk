@@ -4,7 +4,7 @@
     <?php
     include('fonctions.php');
     setup();
-    echo pagenavbar("Page d'accueil");
+    echo pagenavbar("Frite Corleone");
     echo "saluuuut !"
     ?>
   </body>
