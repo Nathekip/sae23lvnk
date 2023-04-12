@@ -1,0 +1,12 @@
+[
+    {
+        "user": "admin",
+        "mdp": "$2y$10$X33\/IU\/aEzXcwMsLlNHiQOxAIDP8Mmf9XA\/10CgG5HXxOX4mzljOG",
+        "role": "admin"
+    },
+    {
+        "user": "hjeunecrack",
+        "mdp": "$2y$10$Nsj0TstoBwxLyZJ9HacZ1ey8YYPQcAJL2ZRJ30c6JxwZMqdEtTA5K",
+        "role": "user"
+    }
+]

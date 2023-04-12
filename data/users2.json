@@ -1,0 +1,32 @@
+{
+    "admin": {
+        "user": "admin",
+        "mdp": "$2y$10$X33\/IU\/aEzXcwMsLlNHiQOxAIDP8Mmf9XA\/10CgG5HXxOX4mzljOG",
+        "role": "admin"
+    },
+    "Georges": {
+        "user": "Georges",
+        "mdp": "$2y$10$ZNV.ZOONEsKxPkEuKrES8easrmY58MENrmonatzNz1bBV5xt3hqre",
+        "role": "user"
+    },
+    "Kono": {
+        "user": "Kono",
+        "mdp": "$2y$10$oc4vDjdAeT85naUzkLp3UuYMBGmUyt0OULRKTS3dG58LmmGo1vj2q",
+        "role": "user"
+    },
+    "hjeunecrack": {
+        "user": "hjeunecrack",
+        "mdp": "$2y$10$Nsj0TstoBwxLyZJ9HacZ1ey8YYPQcAJL2ZRJ30c6JxwZMqdEtTA5K",
+        "role": "user"
+    },
+    "foret": {
+        "user": "foret",
+        "mdp": "$2y$10$jKGiz5j4pdE7gePtInIcveALvSoPZAnzMjn8frD8tmShT21XVatm2",
+        "role": "visitor"
+    },
+    "Emilie": {
+        "user": "Emilie",
+        "mdp": "$2y$10$CBQO3iVMn2LbbW3PhBc3b.CP7oM3Qics9uqG.J9cBiOlpzMeSfoR2",
+        "role": "admin"
+    }
+}
