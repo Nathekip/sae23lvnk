@@ -6,7 +6,7 @@ function setup() {
 
 function pagenavbar($page){
   $rep = <<<EOD
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             
 
             <ul class="navbar-nav mr-auto">
