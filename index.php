@@ -5,13 +5,9 @@
     include('fonctions.php');
     setup();
     echo pagenavbar("Frite Corleone");
-    echo "saluuuut !";
-    $rep = <<<EOD
+    echo <<<EOD
 
       <div class="container mt-3">
-        <h3>Modal Example</h3>
-        <p>Click on the button to open the modal.</p>
-
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
           Open modal
         </button>
@@ -42,7 +38,6 @@
         </div>
       </div>
       EOD;
-    echo $rep; 
     ?>
   </body>
 </html>
