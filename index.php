@@ -26,7 +26,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              Modal body..
+              Répète sans chouiner ?
             </div>
 
             <!-- Modal footer -->
