@@ -4,7 +4,7 @@
     <?php
     include('fonctions.php');
     setup();
-    # echo pagenavbar("01");
+    echo pagenavbar("01");
     /* echo <<<EOD
 
       <div class="container mt-3">
