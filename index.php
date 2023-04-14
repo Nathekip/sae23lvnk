@@ -4,8 +4,8 @@
     <?php
     include('fonctions.php');
     setup();
-    echo pagenavbar("Frite Corleone");
-    echo <<<EOD
+    # echo pagenavbar("01");
+    /* echo <<<EOD
 
       <div class="container mt-3">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      EOD;
+      EOD; */
     ?>
   </body>
 </html>
