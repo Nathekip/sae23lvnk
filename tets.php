@@ -4,7 +4,7 @@
     <?php
     include('fonctions.php');
     setup();
-    echo pagenavbar();
+    echo pagenavbar("");
     ?>
   </body>
 </html>
