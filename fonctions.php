@@ -12,7 +12,7 @@ function setup() {
     $rep = $titre[$key];
     echo "<title>$rep</title>";
     
-    $a = substr($nomFichier, -1)
+    $a = substr($nomFichier, -1);
     echo "<pre>";
     echo "Nom du fichier : $nomFichier";
     echo "<br>Titres : ";
