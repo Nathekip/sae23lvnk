@@ -8,11 +8,11 @@ function setup() {
     $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
     $rep = "NomDuSite";
     $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
-    $key = intval(substr($string, -1))-1;
+    $key = intval(substr($nomFichier, -1))-1;
     $rep = $titre[$key];
     echo "<title>$rep</title>";
     
-    $a = substr($string, -1)
+    $a = substr($nomFichier, -1)
     echo "<pre>";
     echo "Nom du fichier : $nomFichier";
     echo "<br>Titres : ";
