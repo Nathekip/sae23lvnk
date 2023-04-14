@@ -10,17 +10,7 @@ function setup() {
     $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
     $key = intval(substr($nomFichier, -1))-1;
     $rep = $titre[$key];
-    echo "<title>$rep</title>";
-    
-    $a = substr($nomFichier, -1);
-    echo "<pre>";
-    echo "Nom du fichier : $nomFichier";
-    echo "<br>Titres : ";
-    print_r($titre);
-    echo "<br>Dernier Char : $a";
-    echo "<br>Clé : $key";
-    echo "<br>Rep  : $rep";
-    
+    echo "<title>$rep</title>";    
     }
 
 function pr() {
