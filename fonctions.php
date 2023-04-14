@@ -12,7 +12,7 @@ function pagenavbar($page){
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link p01" href="index.php">Page d'accueil</a>
+                    <a class="nav-link p01" href="page01.php">Page d'accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link p02" href="page02.php">Formulaire</a>
