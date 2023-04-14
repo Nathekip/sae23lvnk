@@ -18,10 +18,10 @@ function pagenavbar($page){
                     <a class="nav-link p02" href="page02.php">Formulaire</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p03" href="page04.php">Informations</a>
+                    <a class="nav-link p03" href="page03.php">Informations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p04" href="page05.php">Panier</a>
+                    <a class="nav-link p04" href="page04.php">Panier</a>
                 </li>
             </ul>
             </nav>
