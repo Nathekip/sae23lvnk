@@ -6,12 +6,12 @@ function setup() {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>';
     
     $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
-    $rep = "NomDuSite";
     $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
     $key = intval(substr($nomFichier, -1))-1;
     $rep = $titre[$key];
+    if ($rep == NULL){
+    $rep = "NomDuSite";}
     echo "<title>$rep</title>";
-    var_dump($rep);
     }
 
 function pr() {
