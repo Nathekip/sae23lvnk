@@ -22,6 +22,16 @@ function pr() {
 }
 
 function pagenavbar($page){
+    $a = substr($string, -1)
+    echo "<pre>";
+    echo "Nom du fichier : $nomFichier";
+    echo "<br>Titres : ";
+    print_r($titre);
+    echo "<br>Dernier Char : $a";
+    echo "<br>Clé : $key";
+    echo "<br>Rep  : $rep";
+    
+    
   $rep = <<<EOD
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             
