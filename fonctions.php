@@ -10,7 +10,17 @@ function setup() {
     $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
     $key = intval(substr($string, -1))-1;
     $rep = $titre[$key];
-    echo "<title>$rep</title>";       
+    echo "<title>$rep</title>";
+    
+    $a = substr($string, -1)
+    echo "<pre>";
+    echo "Nom du fichier : $nomFichier";
+    echo "<br>Titres : ";
+    print_r($titre);
+    echo "<br>Dernier Char : $a";
+    echo "<br>Clé : $key";
+    echo "<br>Rep  : $rep";
+    
     }
 
 function pr() {
@@ -22,17 +32,7 @@ function pr() {
 }
 
 function pagenavbar($page){
-    $a = substr($string, -1)
-    echo "<pre>";
-    echo "Nom du fichier : $nomFichier";
-    echo "<br>Titres : ";
-    print_r($titre);
-    echo "<br>Dernier Char : $a";
-    echo "<br>Clé : $key";
-    echo "<br>Rep  : $rep";
-    
-    
-  $rep = <<<EOD
+    $rep = <<<EOD
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             
 
