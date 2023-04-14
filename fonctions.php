@@ -10,7 +10,7 @@ function setup() {
     $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
     $key = intval(substr($string, -1))-1;
     $rep = $titre[$key];
-    echo '<title>$rep</title>';       
+    echo "<title>$rep</title>";       
     }
 
 function pr() {
