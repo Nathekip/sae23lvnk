@@ -19,13 +19,13 @@
             echo $btndeco;
         }
         else { 
-            $boutons = 'Vous n\'êtes pas connectés
+            $boutons_old = 'Vous n\'êtes pas connectés
               <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
                 Connexion
               </button>
             </div>
             <!-- The Modal -->
-            <div class="modal" id="myModal">
+            <div class="modal fade" id="myModal">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <!-- Modal Header -->
@@ -61,6 +61,34 @@
                   </div>
                 </div>
                </div>';
+          
+          $boutons = 'Vous n\'êtes pas connectés
+              <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+                Connexion
+              </button>
+            </div>
+            <div class="modal fade" id="StudentModal" tabindex="-1" role="dialog" aria-labelledby="StudentModalLabel" aria-hidden="true" data-backdrop="static">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <form action="~/GetStudent" class="form-horizontal" role="form" method="post" id="frmStudent">
+                        <div class="modal-footer">
+                           <div class="pull-right">
+                              <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Save</button>
+                              <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Close</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>            
+          
+          
+          
+          
+          
+          
+          
+          
+          
 
             $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
             echo $boutons;
