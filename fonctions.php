@@ -56,7 +56,7 @@ function pageheader(){
     </div>';
     if(isset($_SESSION['utilisateur'])){
         echo "<pre>";
-        print_r($_SESSION['utilisateur']);
+        echo $_SESSION['utilisateur'];
         echo "</pre>";
         /* echo "$_SESSION['utilisateur']"; */
         echo "<a href='deconnexion.php' class='btn btn-warning btn-sm'>Se déconnecter</a>";
