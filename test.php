@@ -4,23 +4,88 @@
     <?php
     include('fonctions.php');
     setup();
-    echo pagenavbar("");
+
+
+    echo '<header>
+        <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center mx-auto">
+        <a href="page01.php"><img class="rounded mr-3" src="images/logo.png" alt="logo"></a>
+        <lass="mb-0 flex-fill text-center">Biblionet</h1>
+        </div>';
+        if(isset($_SESSION['utilisateur'])){
+            echo $_SESSION['utilisateur'];
+            $btndeco = '<form action="deconnexion.php" method="post">
+            <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-warning btn-sm">Se déconnecter</button>
+            </form>';
+            $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
+            echo $btndeco;
+        }
+        else { 
+            $boutons = 'Vous n\'êtes pas connectés
+              <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+                Connexion
+              </button>
+            </div>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Connexion (jaimerais que ce texte soit centré svp)</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body text-center">
+                             <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center mx-auto">
+                                <div class="login-form">
+                                  <form action="NUMERODEPAGE.php" method="post">
+                                    <div class="form-group">
+                                      <label>Utilisateur</label>
+                                      <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Mot de passe</label>
+                                      <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                                    </div>
+                                    <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success">Se connecter</button>
+                                  </form>
+                                  <div><a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a></div>
+                                  <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
+                                </div>
+                              </div>
+
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+               </div>';
+
+            $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
+            echo $boutons;
+
+        }
+        echo '</div>
+        </header>';
+        $json = file_get_contents('data/users.json');
+        $user = json_decode($json, true);
+        $_SESSION['msg'] = False;
+        $page = "Location: ".$_POST['page'].".php";
+        echo $page;
+
+        foreach($user as $u){
+        if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
+        {
+            $_SESSION['utilisateur']=$_POST['utilisateur'];
+            $_SESSION['role']=$u['role'];
+            $_SESSION['msg'] = True;
+        }
+        }
+        header($page);
     
-    $myfile = fopen("data/users.json", "w") or die("Unable to open file!");
-    $txt = '{
-              "admin": {
-                  "user": "admin",
-                  "mdp": "$2y$10$X33\/IU\/aEzXcwMsLlNHiQOxAIDP8Mmf9XA\/10CgG5HXxOX4mzljOG",
-                  "role": "admin"
-              },
-              "Georges": {
-                  "user": "Georges",
-                  "mdp": "$2y$10$ZNV.ZOONEsKxPkEuKrES8easrmY58MENrmonatzNz1bBV5xt3hqre",
-                  "role": "user"
-                }
-              }';
-    fwrite($myfile, $txt);
-    fclose($myfile);
     
     ?>
   </body>
