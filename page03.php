@@ -5,7 +5,7 @@
     include('fonctions.php');
     setup();
     pageheader();
-    echo pagenavbar("p03");
+    pagenavbar("p03");
     pr();
     ?>
   </body>
