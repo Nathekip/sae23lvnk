@@ -44,7 +44,7 @@ function pagenavbar($page){
             </nav>
     EOD; 
   $rep = str_replace($page, 'active', $rep);
-  return $rep;
+  echo $rep;
   if ($_SESSION['msg']){
       echo "<div class='container'>
                   <div class='alert alert-danger'>
