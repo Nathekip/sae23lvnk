@@ -45,6 +45,16 @@ function pagenavbar($page){
     EOD; 
   $rep = str_replace($page, 'active', $rep);
   return $rep;
+  if ($_SESSION['msg']){
+      echo "<div class='container'>
+                  <div class='alert alert-danger'>
+                      <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                  </div>
+              <div>
+        ";
+      sleep(2);
+      $_SESSION['msg'] = False;
+     
 }
 
 function pageheader(){
@@ -122,12 +132,6 @@ function pageheader(){
     }
     echo '</div>
     </header>';
-    echo "<div class='container'>
-                  <div class='alert alert-danger'>
-                      <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-                  </div>
-              <div>
-        ";
   }
     
 
