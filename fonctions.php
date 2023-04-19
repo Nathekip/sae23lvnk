@@ -47,7 +47,17 @@ function pagenavbar($page){
   return $rep;
 }
 
-
+function pageheader(){
+    echo '<header>
+    <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center mx-auto">
+    <a href="page01.php"><img class="rounded mr-3" src="images/logo.png" alt="logo"></a>
+    <lass="mb-0 flex-fill text-center">Biblionet</h1>
+    </div>';
+    
+    echo '</div>
+    </header>';
+  }
     
 
 ?>
