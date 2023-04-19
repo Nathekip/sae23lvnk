@@ -4,6 +4,7 @@
     <?php
     include('fonctions.php');
     setup();
+    pr();
     if(isset($_SESSION['utilisateur'])){
       $btndeco = '<form action="deconnexion.php" method="post">
       <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-warning btn-sm">Se déconnecter</button>
@@ -74,6 +75,7 @@
               $_SESSION['utilisateur']=$_POST['utilisateur'];
               $_SESSION['role']=$u['role'];
               $_SESSION['msg'] = True;
+              header($page);
          }
         }
     
