@@ -55,8 +55,9 @@ function pageheader(){
     <lass="mb-0 flex-fill text-center">Biblionet</h1>
     </div>';
     if(isset($_SESSION['utilisateur'])){
+        echo "<div>";
         echo $_SESSION['utilisateur'];
-        echo "      <a href='deconnexion.php' class='btn btn-warning btn-sm'>Se déconnecter</a>";
+        echo "</div><a href='deconnexion.php' class='btn btn-warning btn-sm'>Se déconnecter</a>";
     }
     else { 
         echo 'Vous n\'êtes pas connectés
