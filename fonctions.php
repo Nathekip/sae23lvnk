@@ -62,10 +62,6 @@ function pageheader(){
     else { 
         echo 'Vous n\'êtes pas connectés
         <a href="connexion.php" class="btn btn-warning btn-sm">Connexion</a>
-        <div class="container mt-3">
-          <h3>Modal Example</h3>
-          <p>Click on the button to open the modal.</p>
-
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
             Open modal
           </button>
@@ -93,8 +89,7 @@ function pageheader(){
               </div>
 
             </div>
-          </div>
-        </div>';
+           </div>';
     }
     echo '</div>
     </header>';
