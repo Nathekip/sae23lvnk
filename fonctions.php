@@ -54,6 +54,7 @@ function pagenavbar($page){
         ";
       sleep(2);
       $_SESSION['msg'] = False;
+      header("Refresh:0");
       }
      
 }
