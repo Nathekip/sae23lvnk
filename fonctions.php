@@ -48,7 +48,7 @@ function pagenavbar($page){
   if ($_SESSION['msg']){
       echo "<div class='container'>
                   <div class='alert alert-danger'>
-                      <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                      <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
                   </div>
               <div>
         ";
