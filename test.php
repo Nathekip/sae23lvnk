@@ -40,7 +40,7 @@
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                                 </div>
-                                <button type="button" name="page" value=NUMERODEPAGE class="btn btn-success">Se connecter</button>
+                                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success">Se connecter</button>
                               </form>
                               <div><a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a></div>
                               <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
@@ -50,7 +50,7 @@
               </div>
               <!-- Modal footer -->
               <div class="modal-footer bg-light">
-                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
             </div>
            </div>';  
