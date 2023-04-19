@@ -62,22 +62,19 @@
         echo '</div>
         </header>';
     
-        if (isset($_POST))
-        {
-          echo "aaaaaaaaaaaaaaa";
-          $json = file_get_contents('data/users.json');
-          $user = json_decode($json, true);
-          $_SESSION['msg'] = False;
-          $page = "Location: ".$_POST['page'].".php";
+        
+        $json = file_get_contents('data/users.json');
+        $user = json_decode($json, true);
+        $_SESSION['msg'] = False;
+        $page = "Location: ".$_POST['page'].".php";
 
-          foreach($user as $u){
-            if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
-            {
-                $_SESSION['utilisateur']=$_POST['utilisateur'];
-                $_SESSION['role']=$u['role'];
-                $_SESSION['msg'] = True;
-            }
-           }
+        foreach($user as $u){
+          if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
+          {
+              $_SESSION['utilisateur']=$_POST['utilisateur'];
+              $_SESSION['role']=$u['role'];
+              $_SESSION['msg'] = True;
+         }
         }
     
     
