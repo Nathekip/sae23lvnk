@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php
-        include('functions.php');
+        include('fonctions.php');
         setup();
     ?>
   <meta charset="UTF-8">
@@ -20,12 +20,9 @@ if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur
     $_SESSION['utilisateur']=$_POST['utilisateur'];
     $_SESSION['role']=$u['role'];
     header('Location: page01.php');
-    $connec = false;
 }
 }
-if ($connec){
-    
-    echo "<a href='connexion.php'><img class='rounded mx-auto d-block' centered' src='images/error.png' alt='erreur'></a>";
+echo "a";
 }
 ?>
 </body>
