@@ -45,7 +45,7 @@ function pagenavbar($page){
     EOD; 
   $rep = str_replace($page, 'active', $rep);
   echo $rep;
-  if ($_SESSION['msg']){
+  /* if ($_SESSION['msg']){
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
@@ -55,7 +55,7 @@ function pagenavbar($page){
       sleep(20);
       $_SESSION['msg'] = False;
       header("Refresh:0");
-      }
+      } */
      
 }
 
