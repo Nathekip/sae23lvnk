@@ -22,8 +22,8 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title bg-secondary">Connexion (texte centré)</h4>
+              <div class="modal-header bg-secondary">
+                <h4 class="modal-title">Connexion (texte centré)</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <!-- Modal body -->
@@ -49,7 +49,7 @@
                           
               </div>
               <!-- Modal footer -->
-              <div class="modal-footer bg-seconary">
+              <div class="modal-footer bg-secondary">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
             </div>
