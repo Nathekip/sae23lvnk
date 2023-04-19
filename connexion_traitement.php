@@ -13,7 +13,7 @@
 
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
-    $connec = true;
+    $_SESSION['msg'] = False;
     $page = "Location: ".$_POST['page'].".php";
     echo $page;
 
@@ -22,10 +22,9 @@
     {
         $_SESSION['utilisateur']=$_POST['utilisateur'];
         $_SESSION['role']=$u['role'];
-        header($page);
+        $_SESSION['msg'] = True;
     }
     }
-    $_SESSION['msg']=True;
     header($page);
 ?>
 </body>
