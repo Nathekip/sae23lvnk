@@ -118,6 +118,12 @@ function pageheader(){
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
+        echo "<div class='container'>
+                  <div class='alert alert-danger'>
+                      <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                  </div>
+              <div>
+        ";
         
         
     }
