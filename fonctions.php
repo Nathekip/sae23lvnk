@@ -61,43 +61,43 @@ function pageheader(){
         echo "</div><a href='deconnexion.php' class='btn btn-warning btn-sm'>Se déconnecter</a>";
     }
     else { 
-        echo 'Vous n\'êtes pas connectés
-          <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+        echo "Vous n'êtes pas connectés
+          <button type=‘button’ class=‘btn btn-warning btn-sm’ data-bs-toggle=‘modal’ data-bs-target=‘#myModal’>
             Connexion
           </button>
         </div>
 
         <!-- The Modal -->
-        <div class="modal" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
+        <div class=‘modal’ id=‘myModal’>
+          <div class=‘modal-dialog’>
+            <div class=‘modal-content’>
 
               <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Connexion (jaimerais que ce texte soit centré svp)</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              <div class=‘modal-header’>
+                <h4 class=‘modal-title’>Connexion (jaimerais que ce texte soit centré svp)</h4>
+                <button type=‘button’ class=‘btn-close’ data-bs-dismiss=‘modal’></button>
               </div>
 
               <!-- Modal body -->
-              <div class="modal-body text-center">
+              <div class=‘modal-body text-center’>
 
 
-                         <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center mx-auto">
-                            <div class="login-form">
-                              <form action="connexion_traitement.php" method="post">
-                                <div class="form-group">
+                         <div class=‘container-fluid text-center py-3 d-flex justify-content-between align-items-center’>
+                            <div class=‘d-flex align-items-center mx-auto’>
+                            <div class=‘login-form’>
+                              <form action=‘connexion_traitement.php’ method=‘post’>
+                                <div class=‘form-group’>
                                   <label>Utilisateur</label>
-                                  <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
+                                  <input type=‘text’ class=‘form-control’ name=‘utilisateur’ placeholder=‘Utilisateur’>
                                 </div>
-                                <div class="form-group">
+                                <div class=‘form-group’>
                                   <label>Mot de passe</label>
-                                  <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                                  <input type=‘password’ class=‘form-control’ name=‘motdepasse’ placeholder=‘Mot de passe’>
                                 </div>
-                                <button type="submit" name="page" value=$rep class="btn btn-success">Se connecter</button>
+                                <button type=‘submit’ name=‘page’ value=$rep class=‘btn btn-success’>Se connecter</button>
                               </form>
-                              <div><a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a></div>
-                              <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
+                              <div><a href=‘creerprofil.php’>Pas de profil ? (décaler à gauche)</a></div>
+                              <div><a href=‘creerprofil.php’>Mot de passe oublié ? (décaler à droite)</a></div>
                             </div>
                           </div>
                           
@@ -106,12 +106,12 @@ function pageheader(){
               </div>
 
               <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+              <div class=‘modal-footer’>
+                <button type=‘button’ class=‘btn btn-danger’ data-bs-dismiss=‘modal’>Fermer</button>
               </div>
 
             </div>
-           </div>';
+           </div>";
     }
     echo '</div>
     </header>';
