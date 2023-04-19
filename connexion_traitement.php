@@ -23,7 +23,6 @@ if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur
 }
 }
 echo "a";
-}
 ?>
 </body>
 </html>
