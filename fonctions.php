@@ -62,7 +62,6 @@ function pageheader(){
         </form>';
         $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
         echo $btndeco;
-        echo "<a href='deconnexion.php' class='btn btn-warning btn-sm'>Se déconnecter</a>";
     }
     else { 
         $boutons = 'Vous n\'êtes pas connectés
