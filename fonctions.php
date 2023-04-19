@@ -129,9 +129,12 @@ function pageheader(){
     $add['role']=$role;
     $user[$add['user']]=$add;
 
-    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    echo $jsonString;
     $fp = fopen("data/users.json", 'w');
+    fwrite($fp, "");
+    fclose($fp);
+
+    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+    $fp = fopen("data/users.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
 }
