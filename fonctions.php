@@ -62,8 +62,8 @@ function pageheader(){
     else { 
         echo 'Vous n\'êtes pas connectés
         <a href="connexion.php" class="btn btn-warning btn-sm">Connexion</a>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-            Open modal
+          <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+            Connexion
           </button>
         </div>
 
@@ -74,18 +74,18 @@ function pageheader(){
 
               <!-- Modal Header -->
               <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
+                <h4 class="modal-title">Connexion</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
               <!-- Modal body -->
               <div class="modal-body">
-                Modal body..
+                connecform
               </div>
 
               <!-- Modal footer -->
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
 
             </div>
