@@ -52,7 +52,7 @@ function pagenavbar($page){
                   </div>
               <div>
         ";
-      sleep(2);
+      sleep(20);
       $_SESSION['msg'] = False;
       header("Refresh:0");
       }
