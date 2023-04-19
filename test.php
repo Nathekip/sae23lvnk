@@ -16,7 +16,7 @@
                 Connexion
               </button>
             </div>
-            <div class="modal fade" id="StudentModal" tabindex="-1" role="dialog" aria-labelledby="StudentModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="StudentModalLabel" aria-hidden="true" data-backdrop="static">
                <div class="modal-dialog">
                   <div class="modal-content">
                      <form action="~/GetStudent" class="form-horizontal" role="form" method="post" id="frmStudent">
