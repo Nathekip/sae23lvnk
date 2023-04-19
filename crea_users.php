@@ -10,12 +10,12 @@ function newUsers(){
     fclose($fp);
 
     addUser('admin', 'bonjour', 'admin');
-    /*addUser('Georges', 'bonjour');
+    addUser('Georges', 'bonjour');
     addUser('Kono', 'bonjour');
     addUser('hjeunecrack', 'bonjour');
     addUser('foret', 'bonjour', 'visitor');
     addUser('Emilie', 'bonjour', 'admin');
-*/
+
 }
 newUsers();
 
