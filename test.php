@@ -20,14 +20,14 @@
         <!-- The Modal -->
         <div class="modal fade" id="myModal">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-secondary">
               <!-- Modal Header -->
-              <div class="modal-header bg-secondary">
+              <div class="modal-header">
                 <h4 class="modal-title">Connexion (texte centré)</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <!-- Modal body -->
-              <div class="modal-body text-center">
+              <div class="modal-body text-center bg-white">
                          <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center mx-auto">
                             <div class="login-form">
@@ -49,7 +49,7 @@
                           
               </div>
               <!-- Modal footer -->
-              <div class="modal-footer bg-secondary">
+              <div class="modal-footer bg-light">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
             </div>
