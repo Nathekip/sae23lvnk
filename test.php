@@ -84,7 +84,8 @@
             $_SESSION['msg'] = True;
         }
         }
-        header($page);}
+        # header($page);
+        }
     
     
     ?>
