@@ -78,8 +78,6 @@
                 $_SESSION['msg'] = True;
             }
            }
-          pr();
-          # header($page);
         }
     
     
