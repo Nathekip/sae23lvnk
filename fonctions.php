@@ -84,10 +84,10 @@ function pageheader(){
         <!-- The Modal -->
         <div class="modal fade" id="myModal">
           <div class="modal-dialog">
-            <div class="modal-content bg-secondary">
+            <div class="modal-content bg-light">
 
               <!-- Modal Header -->
-              <div class="modal-header">
+              <div class="modal-header bg-secondary">
                 <h4 class="modal-title">Connexion (texte centré)</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
