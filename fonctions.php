@@ -118,6 +118,7 @@ function pageheader(){
     
 
   function addUser($usr, $mdp, $role="user"){
+    echo "<br>working on it...<br>";
     $user = array();
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
@@ -129,6 +130,7 @@ function pageheader(){
     $user[$add['user']]=$add;
 
     $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+    echo $jsonString;
     $fp = fopen("data/users.json", 'w');
     fwrite($fp, $jsonString);
     fclose($fp);
