@@ -2,7 +2,8 @@
 include('fonctions.php');
 setup();
 session_unset();
-header('Location: page01.php');
+$page = "Location: ".$_POST['page'].".php";
+header($page);
 ?>
 
 
