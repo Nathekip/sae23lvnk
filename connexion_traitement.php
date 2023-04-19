@@ -22,11 +22,11 @@
     {
         $_SESSION['utilisateur']=$_POST['utilisateur'];
         $_SESSION['role']=$u['role'];
-        /* header($page); */
+        header($page);
     }
     }
+    $_SESSION['msg']=True;
     header($page);
-    echo "a";
 ?>
 </body>
 </html>
