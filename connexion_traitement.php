@@ -10,7 +10,7 @@
 <body>
 <?php
 
-$json = file_get_contents('data/users2.json');
+$json = file_get_contents('data/users.json');
 $user = json_decode($json, true);
 $connec = true;
 
