@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php
-        include('functions.php');
+        include('fonctions.php');
         setup();
     ?>
   <meta charset="UTF-8">
