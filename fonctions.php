@@ -60,7 +60,6 @@ function pagenavbar($page){
 }
 
 function pageheader(){
-    $rep = "PageSEPT";
     echo '<header>
     <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
@@ -83,13 +82,13 @@ function pageheader(){
         </div>
 
         <!-- The Modal -->
-        <div class="modal" id="myModal">
+        <div class="modal fade" id="myModal">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-secondary">
 
               <!-- Modal Header -->
               <div class="modal-header">
-                <h4 class="modal-title">Connexion (jaimerais que ce texte soit centré svp)</h4>
+                <h4 class="modal-title">Connexion (texte centré)</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
@@ -97,7 +96,7 @@ function pageheader(){
               <div class="modal-body text-center">
 
 
-                         <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
+                         <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
                             <div class="d-flex align-items-center mx-auto">
                             <div class="login-form">
                               <form action="NUMERODEPAGE.php" method="post">
@@ -121,7 +120,7 @@ function pageheader(){
               </div>
 
               <!-- Modal footer -->
-              <div class="modal-footer">
+              <div class="modal-footer bg-light">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
 
@@ -134,21 +133,23 @@ function pageheader(){
     }
     echo '</div>
     </header>';
+    
+    
+    
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
     $_SESSION['msg'] = False;
     $page = "Location: ".$_POST['page'].".php";
-    echo $page;
 
     foreach($user as $u){
-    if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
-    {
-        $_SESSION['utilisateur']=$_POST['utilisateur'];
-        $_SESSION['role']=$u['role'];
-        $_SESSION['msg'] = True;
+      if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
+      {
+          $_SESSION['utilisateur']=$_POST['utilisateur'];
+          $_SESSION['role']=$u['role'];
+          $_SESSION['msg'] = True;
+          header($page);
+     }
     }
-    }
-    header($page);
   }
     
 
