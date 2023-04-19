@@ -48,6 +48,7 @@ function pagenavbar($page){
 }
 
 function pageheader(){
+    $rep = "PageSEPT";
     echo '<header>
     <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
@@ -93,7 +94,7 @@ function pageheader(){
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                                 </div>
-                                <button type="submit" name="Kiwi" value="Zetla" class="btn btn-success">Se connecter</button>
+                                <button type="submit" name="page" value=$rep class="btn btn-success">Se connecter</button>
                               </form>
                               <div><a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a></div>
                               <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
