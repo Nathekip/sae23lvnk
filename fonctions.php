@@ -73,7 +73,7 @@ function pageheader(){
 
               <!-- Modal Header -->
               <div class="modal-header">
-                <h4 class="modal-title text-center">Connexion</h4>
+                <h4 class="modal-title">Connexion (jaimerais que ce texte soit centré svp)</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
