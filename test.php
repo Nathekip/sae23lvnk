@@ -23,7 +23,7 @@
             <div class="modal-content">
               <!-- Modal Header -->
               <div class="modal-header">
-                <h4 class="modal-title">Connexion (jaimerais que ce texte soit centré svp)</h4>
+                <h4 class="modal-title bg-secondary">Connexion (texte centré)</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <!-- Modal body -->
@@ -49,7 +49,7 @@
                           
               </div>
               <!-- Modal footer -->
-              <div class="modal-footer">
+              <div class="modal-footer bg-seconary">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
             </div>
