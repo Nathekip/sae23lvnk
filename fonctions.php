@@ -96,8 +96,8 @@ function pageheader(){
                                 <button type="submit" class="btn">Se connecter</button>
                               </form>
                             </div>
+                              <a href="creerprofil.php">Pas de profil ? (mdr lame)</a>
                           </div>
-                          <a href="creerprofil.php">Pas de profil ? (mdr lame)</a>
                           
 
 
