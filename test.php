@@ -50,7 +50,7 @@
               </div>
               <!-- Modal footer -->
               <div class="modal-footer bg-light">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
               </div>
             </div>
            </div>';  
