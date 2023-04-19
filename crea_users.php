@@ -5,11 +5,11 @@ function newUsers(){
     
     echo "salut !";
 
-    /* $fp = fopen("data/users.json", 'w');
+    $fp = fopen("data/users.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
-    addUser('admin', 'bonjour', 'admin');
+    /*addUser('admin', 'bonjour', 'admin');
     addUser('Georges', 'bonjour');
     addUser('Kono', 'bonjour');
     addUser('hjeunecrack', 'bonjour');
