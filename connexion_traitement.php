@@ -25,8 +25,8 @@
         /* header($page); */
     }
     }
+    header($page);
     echo "a";
-    header('Location: page01.php');
 ?>
 </body>
 </html>
