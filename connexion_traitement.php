@@ -22,7 +22,7 @@
     {
         $_SESSION['utilisateur']=$_POST['utilisateur'];
         $_SESSION['role']=$u['role'];
-        header($page);
+        /* header($page); */
     }
     }
     echo "a";
