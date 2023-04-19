@@ -24,7 +24,7 @@ function pr() {
 
 function pagenavbar($page){
     $rep = <<<EOD
-        <nav class="navbar text-white navbar-expand-lg navbar-light bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             
 
             <ul class="navbar-nav mr-auto">
