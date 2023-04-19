@@ -97,6 +97,8 @@ function pageheader(){
                               </form>
                             </div>
                           </div>
+                          <a href="creerprofil.php">Pas de profil ? (mdr lame)</a>
+                          
 
 
               </div>
