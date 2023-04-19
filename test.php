@@ -68,6 +68,8 @@
         }
         echo '</div>
         </header>';
+    
+        if (isset($_POST)){
         $json = file_get_contents('data/users.json');
         $user = json_decode($json, true);
         $_SESSION['msg'] = False;
@@ -82,7 +84,7 @@
             $_SESSION['msg'] = True;
         }
         }
-        header($page);
+        header($page);}
     
     
     ?>
