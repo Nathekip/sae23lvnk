@@ -5,7 +5,6 @@
     include('fonctions.php');
     setup();
     if(isset($_SESSION['utilisateur'])){
-      echo $_SESSION['utilisateur'];
       $btndeco = '<form action="deconnexion.php" method="post">
       <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-warning btn-sm">Se déconnecter</button>
       </form>';
@@ -13,8 +12,7 @@
       echo $btndeco;
         }
      else { 
-       echo 'Vous n\'êtes pas connectés
-              <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+       echo '<button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
                 Connexion
               </button>
             </div>
@@ -31,39 +29,30 @@
                      </form>
                   </div>
                </div>';   
-          
-          
-          
-          
-          
-          
-          
-          
-          
-
-            $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
-            echo $boutons;
+       
+        $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
+        echo $boutons;
 
         }
         echo '</div>
         </header>';
     
-        if (isset($_POST)){
-        $json = file_get_contents('data/users.json');
-        $user = json_decode($json, true);
-        $_SESSION['msg'] = False;
-        $page = "Location: ".$_POST['page'].".php";
-        echo $page;
-
-        foreach($user as $u){
-        if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
+        if (isset($_POST))
         {
-            $_SESSION['utilisateur']=$_POST['utilisateur'];
-            $_SESSION['role']=$u['role'];
-            $_SESSION['msg'] = True;
-        }
-        }
-        # header($page);
+          $json = file_get_contents('data/users.json');
+          $user = json_decode($json, true);
+          $_SESSION['msg'] = False;
+          $page = "Location: ".$_POST['page'].".php";
+
+          foreach($user as $u){
+            if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
+            {
+                $_SESSION['utilisateur']=$_POST['utilisateur'];
+                $_SESSION['role']=$u['role'];
+                $_SESSION['msg'] = True;
+            }
+           }
+          # header($page);
         }
     
     
