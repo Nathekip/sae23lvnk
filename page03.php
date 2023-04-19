@@ -6,6 +6,7 @@
     setup();
     pageheader();
     echo pagenavbar("p03");
+    pr();
     ?>
   </body>
 </html>
