@@ -81,7 +81,7 @@ function pageheader(){
               <div class="modal-body text-center">
 
 
-                         <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
+                         <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center mx-auto">
                             <div class="login-form">
                               <form action="connexion_traitement.php" method="post">
