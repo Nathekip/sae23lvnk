@@ -1,6 +1,6 @@
 <?php
 
-include('functions.php');
+include('fonctions.php');
 function newUsers(){
     
     echo "salut !";
@@ -9,8 +9,8 @@ function newUsers(){
     fwrite($fp, "");
     fclose($fp);
 
-    /*addUser('admin', 'bonjour', 'admin');
-    addUser('Georges', 'bonjour');
+    addUser('admin', 'bonjour', 'admin');
+    /*addUser('Georges', 'bonjour');
     addUser('Kono', 'bonjour');
     addUser('hjeunecrack', 'bonjour');
     addUser('foret', 'bonjour', 'visitor');
