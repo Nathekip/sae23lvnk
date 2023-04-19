@@ -64,6 +64,7 @@
     
         if (isset($_POST))
         {
+          echo "aaaaaaaaaaaaaaa";
           $json = file_get_contents('data/users.json');
           $user = json_decode($json, true);
           $_SESSION['msg'] = False;
@@ -77,6 +78,7 @@
                 $_SESSION['msg'] = True;
             }
            }
+          pr();
           # header($page);
         }
     
