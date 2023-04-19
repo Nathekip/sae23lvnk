@@ -3,7 +3,7 @@
 include('functions.php');
 function newUsers(){
 
-    $fp = fopen("data/users2.json", 'w');
+    $fp = fopen("data/users.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
