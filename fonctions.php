@@ -24,7 +24,7 @@ function pr() {
 
 function pagenavbar($page){
     $rep = <<<EOD
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar text-white navbar-expand-lg navbar-light bg-dark">
             
 
             <ul class="navbar-nav mr-auto">
@@ -49,7 +49,7 @@ function pagenavbar($page){
 
 function pageheader(){
     echo '<header>
-    <div class="container-fluid bg-dark text-center py-3 d-flex justify-content-between align-items-center">
+    <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
     <a href="page01.php"><img class="rounded mr-3" src="images/logo.png" alt="logo"></a>
     <lass="mb-0 flex-fill text-center">Biblionet</h1>
