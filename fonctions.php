@@ -94,7 +94,7 @@ function pageheader(){
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                                 </div>
-                                <button type="submit" name="page" value=numerodepage class="btn btn-success">Se connecter</button>
+                                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success">Se connecter</button>
                               </form>
                               <div><a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a></div>
                               <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
@@ -113,7 +113,7 @@ function pageheader(){
             </div>
            </div>';
         
-        $boutons = str_replace('numerodepage', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
+        $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
         
         
