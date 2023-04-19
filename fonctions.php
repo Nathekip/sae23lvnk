@@ -112,7 +112,7 @@ function pageheader(){
 
             </div>
            </div>';
-        $page = basename($_SERVER["SCRIPT_NAME"], ".php");
+        $page = $_SERVER["SCRIPT_NAME"];
         $boutons = str_replace('numerodepage', $page, $boutons);
         echo $boutons;
         
