@@ -72,8 +72,8 @@ function pageheader(){
             <div class="modal-content">
 
               <!-- Modal Header -->
-              <div class="modal-header text-center">
-                <h4 class="modal-title">Connexion</h4>
+              <div class="modal-header">
+                <h4 class="modal-title text-center">Connexion</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
