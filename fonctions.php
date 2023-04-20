@@ -25,8 +25,6 @@ function pr() {
 function pagenavbar($page){
     $rep = <<<EOD
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            
-
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link p01" href="page01.php">Page d'accueil</a>
@@ -42,11 +40,9 @@ function pagenavbar($page){
                 </li>
             </ul>
             </nav>
-    EOD; 
+            EOD; 
   $rep = str_replace($page, 'active', $rep);
   echo $rep;
-      }
-     
 }
 
 function pageheader(){
@@ -128,6 +124,8 @@ function pageheader(){
                   </div>
               <div>
         ";
+    }
+    
     echo '</div>
     </header>';
     # echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
