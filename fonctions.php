@@ -20,6 +20,8 @@ function pr() {
     echo '<br> Post :<br>';
     print_r($_POST);
     echo '</pre>';
+    echo '$_POST :';
+    echo "isset($POST)";
 }
 
 function pagenavbar($page){
