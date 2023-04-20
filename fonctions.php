@@ -24,7 +24,7 @@ function pr() {
 
 function pagenavbar($page=""){
     $rep = <<<EOD
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link p01" href="page01.php">Page d'accueil</a>
@@ -45,7 +45,7 @@ function pagenavbar($page=""){
   echo $rep;
 }
 
-/* function pageheader(){
+function pageheader(){
     echo '<header>
     <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
@@ -143,7 +143,7 @@ function pagenavbar($page=""){
           header($page);
      }
     }
-  } */
+  }
     
 
   function addUser($usr, $mdp, $role="user"){
