@@ -52,6 +52,10 @@ function pageheader(){
     <a href="page01.php"><img class="rounded mr-3" src="images/logo.png" alt="logo"></a>
     <lass="mb-0 flex-fill text-center">Biblionet</h1>
     </div>';
+    
+    
+    #si l'utilisateur existe, ça veut dire qu'il est identifié
+    
     if(isset($_SESSION['utilisateur'])){
         echo $_SESSION['utilisateur'];
         $btndeco = '<form action="deconnexion.php" method="post">
@@ -60,6 +64,9 @@ function pageheader(){
         $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
         echo $btndeco;
     }
+    
+    #si l'utilisateur n'existe pas, ça veut dire qu'il n'est pas identifié
+    
     else { 
         $boutons = 'Vous n\'êtes pas connectés
           <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -85,7 +92,7 @@ function pageheader(){
                          <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
                             <div class="d-flex align-items-center mx-auto">
                             <div class="login-form">
-                              <form action="NUMERODEPAGE.php" id="#Formulaire" method="post">
+                              <form action="NUMERODEPAGE.php" id="login-form" method="post">
                                 <div class="form-group">
                                   <label>Utilisateur</label>
                                   <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
@@ -128,8 +135,7 @@ function pageheader(){
     
     echo '</div>
     </header>';
-    #echo '<script> $("#Formulaire").submit(function(e) {}; </script>';
-    #echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
+    echo '<script> $("#login-form").submit(function(e) { e.preventDefault(); }); </scipt>';
     
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
