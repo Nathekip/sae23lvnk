@@ -128,7 +128,9 @@ function pageheader(){
            </div>
             <script>
             $("#Formulaire").submit(function(e) {
-            e.preventDefault();';
+            e.preventDefault();
+            });
+            </scipt>';
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
