@@ -45,16 +45,6 @@ function pagenavbar($page){
     EOD; 
   $rep = str_replace($page, 'active', $rep);
   echo $rep;
-  if (isset($_POST['page'])){
-      echo "<div class='container'>
-                  <div class='alert alert-danger'>
-                      <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
-                  </div>
-              <div>
-        ";
-   /* sleep(20);
-      $_SESSION['msg'] = False;
-      header("Refresh:0"); */
       }
      
 }
@@ -131,6 +121,13 @@ function pageheader(){
         echo $boutons;
                 
     }
+    if (isset($_POST['page'])){
+      echo "<div class='container'>
+                  <div class='alert alert-danger'>
+                      <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
+                  </div>
+              <div>
+        ";
     echo '</div>
     </header>';
     # echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
