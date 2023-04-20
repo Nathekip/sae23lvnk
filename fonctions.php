@@ -125,12 +125,7 @@ function pageheader(){
               </div>
 
             </div>
-           </div>
-            <script>
-            $("#Formulaire").submit(function(e) {
-            e.preventDefault();
-            });
-            </scipt>';
+           </div>';
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
@@ -138,6 +133,11 @@ function pageheader(){
     }
     echo '</div>
     </header>';
+    echo '<script>
+            $("#Formulaire").submit(function(e) {
+            e.preventDefault();
+            });
+            </scipt>';
     
     
     
