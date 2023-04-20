@@ -20,9 +20,6 @@ function pr() {
     echo '<br> Post :<br>';
     print_r($_POST);
     echo '</pre>';
-    echo '$_POST :';
-    $a = isset($_POST['page']);
-    echo $a;
 }
 
 function pagenavbar($page){
@@ -48,17 +45,17 @@ function pagenavbar($page){
     EOD; 
   $rep = str_replace($page, 'active', $rep);
   echo $rep;
-  /* if ($_SESSION['msg']){
+  if (isset($_POST['page'])){
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
                   </div>
               <div>
         ";
-      sleep(20);
+   /* sleep(20);
       $_SESSION['msg'] = False;
-      header("Refresh:0");
-      } */
+      header("Refresh:0"); */
+      }
      
 }
 
