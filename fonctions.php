@@ -21,7 +21,7 @@ function pr() {
     print_r($_POST);
     echo '</pre>';
     echo '$_POST :';
-    echo "isset($POST)";
+    echo "isset($_POST)";
 }
 
 function pagenavbar($page){
