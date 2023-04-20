@@ -8,7 +8,7 @@ function setup() {
             $(document).ready(function(){
                 $("#myModal").modal('show');
             });
-        </script>'
+        </script>';
     
     $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
     $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
