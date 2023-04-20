@@ -99,7 +99,7 @@ function pageheader(){
                          <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
                             <div class="d-flex align-items-center mx-auto">
                             <div class="login-form">
-                              <form action="NUMERODEPAGE.php" method="post">
+                              <form action="NUMERODEPAGE.php" id="#Formulaire" method="post">
                                 <div class="form-group">
                                   <label>Utilisateur</label>
                                   <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
@@ -125,7 +125,10 @@ function pageheader(){
               </div>
 
             </div>
-           </div>';
+           </div>
+            <script>
+            $("#Formulaire").submit(function(e) {
+            e.preventDefault();';
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
