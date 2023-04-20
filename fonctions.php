@@ -22,7 +22,7 @@ function pr() {
     echo '</pre>';
 }
 
-function pagenavbar($page){
+function pagenavbar($page=""){
     $rep = <<<EOD
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
@@ -45,7 +45,7 @@ function pagenavbar($page){
   echo $rep;
 }
 
-function pageheader(){
+/* function pageheader(){
     echo '<header>
     <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
@@ -117,16 +117,16 @@ function pageheader(){
         echo $boutons;
                 
     }
-    /* if (isset($_POST['page'])){
+    if (isset($_POST['page'])){
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
                   </div>
               <div>
         ";
-    } */
+    } 
     
-    /* echo '</div>
+    echo '</div>
     </header>';
     # echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
     
@@ -142,8 +142,8 @@ function pageheader(){
           $_SESSION['msg'] = "vrai";
           header($page);
      }
-    }*/
-  }
+    }
+  } */
     
 
   function addUser($usr, $mdp, $role="user"){
