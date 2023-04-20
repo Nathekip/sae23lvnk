@@ -127,11 +127,11 @@ function pageheader(){
                 
     }
     if (isset($_POST['page'])){
-        echo "<script>
+        /*echo "<script>
                 $(document).ready(function() {
                     $('#myModal').modal('show');
                     });
-                    </script>";
+                    </script>";*/
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
@@ -142,8 +142,7 @@ function pageheader(){
     
     echo '</div>
     </header>';
-    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas \/
-    echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';
+    # echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas
     
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
