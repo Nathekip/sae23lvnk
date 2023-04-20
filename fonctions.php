@@ -117,14 +117,14 @@ function pageheader(){
         echo $boutons;
                 
     }
-    if (isset($_POST['page'])){
+    /* if (isset($_POST['page'])){
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
                   </div>
               <div>
         ";
-    }
+    } */
     
     echo '</div>
     </header>';
