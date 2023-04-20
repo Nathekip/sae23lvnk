@@ -21,7 +21,7 @@ function pr() {
     print_r($_POST);
     echo '</pre>';
     echo '$_POST :';
-    $a = isset($_POST);
+    $a = isset($_POST)['page';
     echo $a;
 }
 
