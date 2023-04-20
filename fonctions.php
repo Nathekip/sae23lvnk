@@ -126,7 +126,7 @@ function pageheader(){
         ";
     } */
     
-    echo '</div>
+    /* echo '</div>
     </header>';
     # echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
     
@@ -142,7 +142,7 @@ function pageheader(){
           $_SESSION['msg'] = "vrai";
           header($page);
      }
-    }
+    }*/
   }
     
 
