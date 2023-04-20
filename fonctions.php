@@ -128,7 +128,8 @@ function pageheader(){
     
     echo '</div>
     </header>';
-    echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
+    echo '<script></script>';
+    #echo '<script> $("#Formulaire").submit(function(e) { e.preventDefault(); }); </scipt>';
     
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
