@@ -114,7 +114,7 @@
                       <div class="form-check d-flex justify-content-center mb-5">
                         <input class="form-check-input me-2" name="condu" type="checkbox" value="" id="condu" />
                         <label class="form-check-label" for="condu">
-                          J'accepte les <a href="#!">Conditions d'utilisation</a>
+                          J'accepte les <a data-bs-toggle="modal" data-bs-target="#myModal">Conditions d'utilisation</a>
                         </label>
                       </div>
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
@@ -128,6 +128,41 @@
           </div>
         </div>
       </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+            Connexion
+          </button>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content bg-light">
+              <!-- Modal Header -->
+              <div class="modal-header bg-secondary">
+                <h4 class="modal-title">Connexion (texte centré)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body text-center">
+                         <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
+                            <div class="d-flex align-items-center mx-auto">
+                                texte de conditions générales d'utilisation zzzzzzzzzzzzz
+                            </div>
+                          
+                         </div>
+              <!-- Modal footer -->
+              <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+           </div>';
     <br><br><br>
 
     <?php
