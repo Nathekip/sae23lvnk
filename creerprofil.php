@@ -28,8 +28,14 @@
                             }
                             # alerte Condition d'utilisation
                             else if ((isset($_POST['condu']))==False){
-                                echo "<div class='alert alert-danger'>
+                                echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
+                                      </div>";
+                            }
+                            # alerte mdp trop court
+                            else if (True){
+                                echo "<div class='alert alert-warning'>
+                                        <strong>Erreur</strong> Mot de passe non conforme <br>(Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                                       </div>";
                             }
                             # alerte Mot de Passe de confirmation
