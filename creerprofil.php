@@ -60,16 +60,16 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> L'adresse mail est déjà utilisée.
                                       </div>";
-                            }*/
+                            }
                             # alerte mdp trop court
                             else if ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ){
                             # la fonction strlen(string) renvoie le nombre de charactères d'un string
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                                       </div>";
-                            }
+                            }*/
                             # alerte Mot de Passe de confirmation
-                            else if ($_POST['mdp']!=$_POST['cmdp']){
+                            if ($_POST['mdp']!=$_POST['cmdp']){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
