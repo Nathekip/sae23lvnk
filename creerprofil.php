@@ -33,6 +33,47 @@
                             echo "Faux";
                         }
                         
+                        
+                        
+                        // Tableau de données
+                        $tableaux = [
+                          [
+                            'nom' => 'John Doe',
+                            'mail' => 'john.doe@example.com',
+                            'ville' => 'Paris'
+                          ],
+                          [
+                            'nom' => 'Jane Smith',
+                            'mail' => 'jane.smith@example.com',
+                            'ville' => 'Londres'
+                          ],
+                          [
+                            'nom' => 'Bob Martin',
+                            'mail' => 'bob.martin@example.com',
+                            'ville' => 'New York'
+                          ]
+                        ];
+
+                        // String à rechercher
+                        $recherche = 'jane.smith@example.com';
+
+                        // Recherche avec array_filter() et une fonction de rappel
+                        $resultats = array_filter($tableaux, function($tableau) use ($recherche) {
+                          return $tableau['mail'] === $recherche;
+                        });
+
+                        // Affichage des résultats
+                        if (!empty($resultats)) {
+                          echo "Le string '$recherche' a été trouvé dans les tableaux suivants :<br>";
+                          foreach ($resultats as $resultat) {
+                            print_r($resultat);
+                          }
+                        } else {
+                          echo "Le string '$recherche' n'a pas été trouvé dans les tableaux.";
+                        }
+
+
+                        
                            
                         
                             echo "<div class='container'>";
