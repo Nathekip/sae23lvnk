@@ -105,7 +105,7 @@ function pageheader(){
                                 </div>
                                 <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
                               </form>
-                              <div><a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a></div>
+                              <div><a href="creerprofil5.php">Pas de profil ? (décaler à gauche)</a></div>
                               <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
                             </div>
                           </div>
