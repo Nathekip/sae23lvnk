@@ -18,12 +18,6 @@
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                         Créer un compte
                         <?php
-                        
-                            if (str_contains("abc","a") ){
-                                echo "aaaaa";
-                            }
-                        
-                        
                             echo "<div class='container'>";
                             # alerte Champ vide
                             if ( in_array("", array_slice($_POST, 0, 4)) ){ 
