@@ -25,11 +25,12 @@
                             print_r($user);
                             echo '</pre>'; */
 
-                        $resultats = array_filter($user, function($u) use ($recherche) {
+                        /*$resultats = array_filter($user, function($u) use ($recherche) {
                           return $u['mail'] === $_POST['mail'];
                         });
                         
-                        if ( !empty($resultats) ) {
+                        if ( !empty($resultats) ) { */
+                        if ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   ) ) {
                             echo "Vrai";
                         }
                         else {
