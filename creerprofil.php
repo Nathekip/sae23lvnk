@@ -42,7 +42,7 @@
                                       </div>";
                             } 
                             # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (&& isset($_POST['utilisateur']))
-                            else if ( (!isset($_POST['condu'])) && (&& isset($_POST['utilisateur'])) ){
+                            else if ( (!isset($_POST['condu'])) && (isset($_POST['utilisateur'])) ){
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
