@@ -17,10 +17,14 @@
               <div class="card-body p-md-5">
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                         Créer un compte
-                        <div class='container'>
-                          <div class='alert alert-danger'>
-                              <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
-                          </div>
+                        <?php
+                        if (not isset($_POST['condu']){
+                            echo "<div class='container'>
+                                      <div class='alert alert-danger'>
+                                          <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
+                                      </div>";
+                        }
+                        ?>
                     </p>
               <div>
                 <div class="row justify-content-center">
@@ -77,7 +81,7 @@
     <br><br><br>
 
     <?php
-        
+        pr();
         pagefooter();
     ?>
 
