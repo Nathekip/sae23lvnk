@@ -18,10 +18,18 @@
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                         Créer un compte
                         <?php
+                            # alerte Condition d'utilisation
                             if ((isset($_POST['condu']))==False){
                                 echo "<div class='container'>
                                           <div class='alert alert-danger'>
                                               <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
+                                          </div>";
+                            }
+                            # alerte Mot de Passe de confirmation
+                            if ($_POST['mdp']!=$_POST['mdp']){
+                                echo "<div class='container'>
+                                          <div class='alert alert-danger'>
+                                              <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                           </div>";
                             }
                         ?>
