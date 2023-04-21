@@ -44,7 +44,7 @@
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example1c">Nom :</label>
-                            <input type="text" id="form3Example1c" class="form-control" />
+                            <input type="text" id="form3Example1c" name="utilisateur" class="form-control" />
                           </div>
                         </div>
                         <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
