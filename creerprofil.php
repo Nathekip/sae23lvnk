@@ -33,7 +33,7 @@
                         }
 
                         
-                            /* echo "<div class='container'>";
+                            echo "<div class='container'>";
                             # alerte Champ vide
                             if ( in_array("", array_slice($_POST, 0, 4)) ){ 
                             # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
@@ -47,7 +47,7 @@
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
                             }
-                            # alerte pseudo déjà pris
+                            /* # alerte pseudo déjà pris
                             else if (( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   ) ){
                             # la fonction array.filter filtre un array selon une fonction
                                 echo "<div class='alert alert-danger'>
