@@ -148,7 +148,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <!-- Modal body -->
-              <div class="modal-body text-center">
+              <div class="modal-body modal-dialog text-center">
                  <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
                     <div class="d-flex align-items-center mx-auto">
                         <p>
