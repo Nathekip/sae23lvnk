@@ -16,7 +16,7 @@ function myFunction() {
   // If x is Not a Number or less than one or greater than 10
   let text;
   if (x == "" || y == "") {
-    text = "Input not valid";
+    text = "<div class='alert alert-danger'><strong>Erreur</strong>Veuillez remplir les champs</div>";
   } else {
     text = "Input OK";
   }
@@ -48,7 +48,7 @@ function myFunction() {
                               </div>
                             </div>
                           </div>
-                          <p id="demo"></p>
+                          <div id="demo"></div>
   
 
 </body>
