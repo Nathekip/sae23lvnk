@@ -29,7 +29,7 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.";
                             }
-                            echo "</div";
+                            echo "</div>";
                         ?>
                     </p>
               <div>
@@ -92,4 +92,4 @@
     ?>
 
 </body>
-</html>
+    </html>
