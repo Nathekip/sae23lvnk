@@ -10,8 +10,7 @@
 <body>
      
     <br><br><br>
-    <section class="vh-100 bg-light">
-      <div class="container h-100">
+      <div class="container bg-light h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-lg-12 col-xl-11">
             <div class="card text-black">
@@ -68,7 +67,7 @@
           </div>
         </div>
       </div>
-    </section>
+    <br><br><br>
 
     <?php
         pr();
