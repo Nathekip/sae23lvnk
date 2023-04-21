@@ -161,7 +161,6 @@ function pageheader(){
     
 
   function addUser($usr, $mdp, $mail, $role="user"){
-    echo "<br>working on it...<br>";
     $user = array();
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
