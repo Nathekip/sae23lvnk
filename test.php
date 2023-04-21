@@ -4,7 +4,6 @@
     <?php
     include('fonctions.php');
     setup();
-    pr();
     
     $boutons = 'Vous n\'êtes pas connectés
           <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -66,6 +65,9 @@
               <div>
         ";    
     
+      
+      
+    pr();
     ?>
   </body>
 </html>
