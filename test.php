@@ -66,8 +66,24 @@
         ";    
     }
     
-    ?></div></div></div></div>
-    <?php
+    echo '</div>
+    </header>';
+    # echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas
+    
+    $json = file_get_contents('data/users.json');
+    $user = json_decode($json, true);
+    $page = "Location: ".$_POST['page'].".php";
+
+    foreach($user as $u){       
+      if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
+      {
+          $_SESSION['utilisateur']=$_POST['utilisateur'];
+          $_SESSION['role']=$u['role'];
+          $_SESSION['msg'] = "vrai";
+          header($page);
+     }
+    }
+   
       
     pr();
     ?>
