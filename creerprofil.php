@@ -40,14 +40,14 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                       </div>";
-                            }
+                            } /*
                             # alerte Condition d'utilisation
                             else if ( (!isset($_POST['condu'])) && (&& isset($_POST['utilisateur'])) ){
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
                             }
-                            /* # alerte pseudo déjà pris
+                            # alerte pseudo déjà pris
                             else if (( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   ) ){
                             # la fonction array.filter filtre un array selon une fonction
                                 echo "<div class='alert alert-danger'>
