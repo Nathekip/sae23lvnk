@@ -24,7 +24,7 @@ function pr() {
     echo '</pre>';
 }
 
-/*function pagenavbar($page=""){
+function pagenavbar($page=""){
     $rep = <<<EOD
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
@@ -47,7 +47,7 @@ function pr() {
   echo $rep;
 }
 
-function pageheader(){
+/*function pageheader(){
     echo '<header>
     <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
