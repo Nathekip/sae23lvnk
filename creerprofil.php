@@ -21,7 +21,7 @@
                       <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                   </div>
                   <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                    <form class="mx-1 mx-md-4" action="creerprofil.php" method="post">
+                    <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
