@@ -152,43 +152,43 @@
                  <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center mx-auto">
                         <p>
-                            <strong>1. Objet du service</strong><br>
+                            <strong>1. Objet du service</strong><br><br>
                             Le service de location de voitures en ligne est proposé par [nom de l'entreprise] (ci-après dénommée "loueur"), qui permet aux utilisateurs de réserver des véhicules en ligne pour une location temporaire.
                             <br>
                                 <strong>2. Acceptation des conditions générales</strong>
                             L'utilisation du service de location de voitures en ligne implique l'acceptation pleine et entière des présentes conditions générales d'utilisation.
                             <br>
-                                <strong>3. Inscription</strong><br>
+                                <strong>3. Inscription</strong><br><br>
                             Pour utiliser le service de location de voitures en ligne, l'utilisateur doit s'inscrire sur le site internet de [nom de l'entreprise] et fournir toutes les informations requises.
                             <br>
-                                <strong>4. Réservation</strong><br>
+                                <strong>4. Réservation</strong><br><br>
                             La réservation d'un véhicule peut être effectuée en ligne via le site internet de [nom de l'entreprise]. La disponibilité des véhicules est indiquée en temps réel sur le site.
                             <br>
-                                <strong>5. Tarifs</strong><br>
+                                <strong>5. Tarifs</strong><br><br>
                             Les tarifs de location des véhicules sont indiqués sur le site internet de [nom de l'entreprise]. Ils incluent les taxes et assurances obligatoires, mais ne comprennent pas les options supplémentaires éventuelles.
                             <br>
-                                <strong>6. Paiement</strong><br>
+                                <strong>6. Paiement</strong><br><br>
                             Le paiement de la location peut être effectué en ligne via le site internet de [nom de l'entreprise]. Les modalités de paiement sont indiquées sur le site.
                             <br>
-                                <strong>7. Modification ou annulation de la réservation</strong><br>
+                                <strong>7. Modification ou annulation de la réservation</strong><br><br>
                             La modification ou l'annulation d'une réservation peut être effectuée en ligne via le site internet de [nom de l'entreprise]. Les conditions de modification ou d'annulation sont indiquées sur le site.
                             <br>
-                                <strong>8. Prise en charge et restitution du véhicule</strong><br>
+                                <strong>8. Prise en charge et restitution du véhicule</strong><br><br>
                             Le véhicule peut être pris en charge à l'adresse indiquée lors de la réservation. La restitution doit être effectuée à l'adresse et à la date indiquées lors de la réservation. Tout retard ou toute restitution anticipée doit être signalé au loueur.
                             <br>
-                                <strong>9. Utilisation du véhicule</strong><br>
+                                <strong>9. Utilisation du véhicule</strong><br><br>
                             Le véhicule doit être utilisé conformément à la réglementation en vigueur et aux conditions générales d'utilisation du loueur. L'utilisateur doit veiller à la bonne utilisation du véhicule et à son entretien durant la période de location.
                             <br>
-                                <strong>10. Responsabilité de l'utilisateur</strong><br>
+                                <strong>10. Responsabilité de l'utilisateur</strong><br><br>
                             L'utilisateur est responsable du véhicule et de ses occupants durant la période de location. Il doit veiller à la sécurité et à la préservation du véhicule durant toute la période de location.
                             <br>
-                                <strong>11. Assurance</strong><br>
+                                <strong>11. Assurance</strong><br><br>
                             Le véhicule est assuré par le loueur conformément à la réglementation en vigueur. Toutefois, l'utilisateur reste responsable de tout dommage causé au véhicule en cas de non-respect des conditions générales d'utilisation ou de la réglementation en vigueur.
                             <br>
-                                <strong>12. Réclamation</strong><br>
+                                <strong>12. Réclamation</strong><br><br>
                             Toute réclamation doit être formulée auprès du loueur dans les meilleurs délais. Le loueur s'engage à étudier toute réclamation dans les meilleurs délais.
                             <br>
-                                <strong>13. Protection des données personnelles</strong><br>
+                                <strong>13. Protection des données personnelles</strong><br><br>
                             Le loueur s'engage à protéger les données personnelles de l'utilisateur conformément à la réglementation en vigueur. Les données personnelles de l'utilisateur sont utilisées
                         </p>
                     </div>
