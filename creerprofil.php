@@ -26,7 +26,7 @@
                             echo '</pre>'; */
 
                         $resultats = array_filter($user, function($u) use ($recherche) {
-                          return $u['mail'] === 'admin@gmail.com';
+                          return $u['mail'] === $_POST['mail'];
                         });
                         
                         if ( !empty($resultats) ) {
