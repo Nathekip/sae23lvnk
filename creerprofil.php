@@ -20,7 +20,7 @@
                         <?php
                             echo "<div class='container'>";
                             # alerte Champ vide
-                            if (in_array("",$_POST) && True){
+                            if ( in_array("",$_POST) && ( !isset($_POST['condu']) ) ){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                       </div>";
