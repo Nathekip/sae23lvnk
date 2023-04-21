@@ -19,8 +19,8 @@
                         Créer un compte
                         <?php
                             echo "<div class='container'>";
-                            # alerte Condition d'utilisation
-                            if (in_array("",$_POST){
+                            # alerte Champ vide
+                            if (in_array("",$_POST)){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                       </div>";
