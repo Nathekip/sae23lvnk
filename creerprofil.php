@@ -26,7 +26,7 @@
                                       </div>";
                             }
                             # alerte Condition d'utilisation
-                            else if ((isset($_POST['condu']))==False){
+                            /* else if ((isset($_POST['condu']))==False){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
@@ -36,7 +36,7 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
-                            }
+                            }*/
                         ?>
                     </p>
               <div>
