@@ -24,7 +24,10 @@
                             /* echo '<br><pre> data/users.json :<br>';
                             print_r($user);
                             echo '</pre>'; */
-                        
+
+                        $resultats = array_filter($user, function($u) use ($recherche) {
+                          return $u['mail'] === 'admin@gmail.com';
+                        });
                         
                         if ( !empty($resultats) ) {
                             echo "Vrai";
@@ -32,14 +35,6 @@
                         else {
                             echo "";
                         }
-                        
-                        
-
-                        
-
-                        $resultats = array_filter($user, function($u) use ($recherche) {
-                          return $u['mail'] === 'admin@gmail.com';
-                        });
 
                         
                             echo "<div class='container'>";
