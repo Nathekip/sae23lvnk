@@ -20,15 +20,14 @@
                         <?php
                             echo "<div class='container'>";
                             # alerte Champ vide
-                            $champs = array_slice($_POST, 0, 4);
-                            print_r($champs);
-                            if ( in_array("",$_POST) ){
+                            if ( in_array("", array_slice($_POST, 0, 4)) ){ 
+                            # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                       </div>";
                             }
                             # alerte Condition d'utilisation
-                            /* else if ((isset($_POST['condu']))==False){
+                            /else if ((isset($_POST['condu']))==False){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
@@ -38,7 +37,7 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
-                            }*/
+                            }
                         ?>
                     </p>
               <div>
