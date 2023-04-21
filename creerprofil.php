@@ -114,7 +114,7 @@
                       <div class="form-check d-flex justify-content-center mb-5">
                         <input class="form-check-input me-2" name="condu" type="checkbox" value="" id="condu" />
                         <label class="form-check-label" for="condu">
-                          J'accepte les <a data-bs-toggle="modal" data-bs-target="#myModal">Conditions d'utilisation</a>
+                          J'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Conditions d'utilisation</a>
                         </label>
                       </div>
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
