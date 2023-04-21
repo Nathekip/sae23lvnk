@@ -63,6 +63,8 @@
 
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
+                        <button type="button" class="btn btn-info btn-lg">S'inscrire</button>
+                        <button type="button" class="btn btn-dark text-white btn-lg">S'inscrire</button>
                       </div>
 
                     </form>
