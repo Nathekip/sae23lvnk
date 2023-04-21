@@ -21,9 +21,9 @@
                         
                             $json = file_get_contents('data/users.json');
                             $user = json_decode($json, true);
-                            echo '<br><pre> data/users.json :<br>';
+                            /* echo '<br><pre> data/users.json :<br>';
                             print_r($user);
-                            echo '</pre>';
+                            echo '</pre>'; 
                         
                         
                         if ( True ) {
@@ -31,7 +31,7 @@
                         }
                         else {
                             echo "Faux";
-                        }
+                        }*/
                         
                         
                         
@@ -55,11 +55,11 @@
                         ];
 
                         // String à rechercher
-                        $recherche = 'jane.smith@example.com';
+                        $recherche = 'admin@gmail.com';
 
                         // Recherche avec array_filter() et une fonction de rappel
-                        $resultats = array_filter($tableaux, function($tableau) use ($recherche) {
-                          return $tableau['mail'] === $recherche;
+                        $resultats = array_filter($user, function($u) use ($recherche) {
+                          return $u['mail'] === $recherche;
                         });
 
                         // Affichage des résultats
