@@ -2,11 +2,11 @@
 <html>
 <body>
 
-<input id="numb">
+<!-- <input id="numb">
 
 <button type="button" onclick="myFunction()">Submit</button>
 
-<p id="demo"></p>
+<p id="demo"></p> -->
 
 <script>
 function myFunction() {
