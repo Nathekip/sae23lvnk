@@ -20,7 +20,13 @@
                         <?php
                             echo "<div class='container'>";
                             # alerte Condition d'utilisation
-                            if ((isset($_POST['condu']))==False){
+                            if (in_array("",$_POST){
+                                echo "<div class='alert alert-danger'>
+                                        <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
+                                      </div>";
+                            }
+                            # alerte Condition d'utilisation
+                            else if ((isset($_POST['condu']))==False){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
