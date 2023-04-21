@@ -66,7 +66,7 @@
         ";    
     }
     
-    echo '</div>
+    echo '</div></div></div></div>
     </header>';
     # echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas
     
