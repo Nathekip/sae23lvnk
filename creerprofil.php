@@ -48,14 +48,14 @@
                                       </div>";
                             }
                             # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
-                            else if ( ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   ) ){
+                            else if ( ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  ) )  ) ){
                             # la fonction array.filter filtre un array selon une fonction
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Le pseudo n'est pas disponible.
                                       </div>";
                             }
                             # alerte mail déjà existant / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   )
-                            else if ( ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   ) ){
+                            else if ( ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ) )  ) ){
                             # si le array est empty, cela veut dire qu'aucune adresse mail dans la base de donnée ne correspond à l'adresse mail envoyée par le formulaire
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> L'adresse mail est déjà utilisée.
