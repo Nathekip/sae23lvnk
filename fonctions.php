@@ -160,7 +160,7 @@ function pageheader(){
   }
     
 
-  function addUser($usr, $mdp, $role="user"){
+  function addUser($usr, $mdp, $mail, $role="user"){
     echo "<br>working on it...<br>";
     $user = array();
     $json = file_get_contents('data/users.json');
@@ -170,6 +170,7 @@ function pageheader(){
     $add['user']=$usr;
     $add['mdp']=password_hash($mdp,PASSWORD_DEFAULT);
     $add['role']=$role;
+    $add['mail']=mail;
     $user[$add['user']]=$add;
 
     $fp = fopen("data/users.json", 'w');
