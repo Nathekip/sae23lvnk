@@ -22,14 +22,15 @@
                             # alerte Condition d'utilisation
                             if ((isset($_POST['condu']))==False){
                                 echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.";
+                                        <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
+                                      </div>";
                             }
                             # alerte Mot de Passe de confirmation
                             if ($_POST['mdp']!=$_POST['cmdp']){
                                 echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.";
+                                        <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
+                                       </div>";
                             }
-                            echo "</div>";
                         ?>
                     </p>
               <div>
