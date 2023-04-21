@@ -20,7 +20,7 @@
                         <?php
                         
                         
-                        if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $_POST['mdp'])) {
+                        if ( ! preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $_POST['mdp']) ) {
                             echo "aaa";
                         }
                         else {
