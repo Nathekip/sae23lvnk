@@ -26,7 +26,7 @@
                                       </div>";
                             }
                             # alerte Mot de Passe de confirmation
-                            if ($_POST['mdp']!=$_POST['cmdp']){
+                            else if ($_POST['mdp']!=$_POST['cmdp']){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
