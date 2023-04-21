@@ -4,7 +4,7 @@ function setup() {
     session_start();
     echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-          <script> src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         ';
     
     $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
@@ -26,22 +26,22 @@ function pr() {
 
 function pagenavbar($page=""){
     $rep = <<<EOD
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link p01" href="page01.php">Page d'accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p02" href="page02.php">Formulaire</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p03" href="page03.php">Informations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p04" href="page04.php">Panier</a>
-                </li>
-            </ul>
-            </nav>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link p01" href="page01.php">Page d'accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p02" href="page02.php">Formulaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p03" href="page03.php">Informations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p04" href="page04.php">Panier</a>
+                    </li>
+                </ul>
+                </nav>
             EOD; 
   $rep = str_replace($page, 'active', $rep);
   echo $rep;
@@ -154,7 +154,7 @@ function pageheader(){
           $_SESSION['utilisateur']=$_POST['utilisateur'];
           $_SESSION['role']=$u['role'];
           $_SESSION['msg'] = "vrai";
-          echo "cringe";
+          echo $page;
           # header($page);
      }
     }
