@@ -39,8 +39,21 @@
                       </form> -->
                       
                       
+                      <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example1c">Nom :</label>
+                            <input type="text" id="form3Example1c" class="form-control" />
+                          </div>
+                        </div>
+                        <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
+                      </form>
+                         
+                          
                       
-                    <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
+                      
+                    <!-- <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
@@ -78,7 +91,7 @@
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button type="submit" class="btn btn-dark text-white btn-lg">S'inscrire</button>
                       </div>
-                    </form>
+                    </form> -->
 
 
                   </div>
