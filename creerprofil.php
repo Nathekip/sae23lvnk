@@ -20,7 +20,7 @@
                         <?php
                             echo "<div class='container'>";
                             # alerte Champ vide
-                            $champs = $_POST['utilisateur','mail','mdp','cmdp'];
+                            $champs = array_slice($_POST, 0, 4);
                             print_r($champs);
                             if ( in_array("",$_POST) ){
                                 echo "<div class='alert alert-danger'>
