@@ -16,43 +16,16 @@
             <div class="card text-black">
               <div class="card-body p-md-5">
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Créer un compte</p>
+                    <div class='container'>
+                      <div class='alert alert-danger'>
+                          <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
+                      </div>
+              <div>
                 <div class="row justify-content-center">
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                   </div>
                   <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                    
-                      
-                      
-                      
-                      
-                      <!-- <form action="creerprofil.php" id="login-form" method="post">
-                        <div class="form-group">
-                          <label>Utilisateur</label>
-                          <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
-                        </div>
-                        <div class="form-group">
-                          <label>Mot de passe</label>
-                          <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-                        </div>
-                        <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
-                      </form> -->
-                      
-                      
-                      <!-- <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
-                        <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                          <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form3Example1c">Nom :</label>
-                            <input type="text" id="form3Example1c" name="utilisateur" class="form-control" />
-                          </div>
-                        </div>
-                        <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
-                      </form> -->
-                         
-                          
-                      
-                      
                     <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -92,8 +65,6 @@
                         <button type="submit" class="btn btn-dark text-white btn-lg">S'inscrire</button>
                       </div>
                     </form>
-
-
                   </div>
                 </div>
               </div>
@@ -104,7 +75,7 @@
     <br><br><br>
 
     <?php
-        pr();
+        
         pagefooter();
     ?>
 
