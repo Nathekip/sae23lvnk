@@ -47,7 +47,7 @@ function pagenavbar($page=""){
   echo $rep;
 }
 
-/*function pageheader(){
+function pageheader(){
     echo '<header>
     <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center mx-auto">
@@ -131,7 +131,7 @@ function pagenavbar($page=""){
                 $(document).ready(function() {
                     $('#myModal').modal('show');
                     });
-                    </script>";
+                    </script>";*/
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
