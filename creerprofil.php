@@ -25,11 +25,6 @@
                             print_r($user);
                             echo '</pre>'; */
 
-                        /*$resultats = array_filter($user, function($u) use ($recherche) {
-                          return $u['mail'] === $_POST['mail'];
-                        });
-                        
-                        if ( !empty($resultats) ) { */
                         if ( False ) {
                             echo "Vrai";
                         }
@@ -47,7 +42,7 @@
                                       </div>";
                             }
                             # alerte Condition d'utilisation
-                            else if ( !isset($_POST['condu']) && isset($_POST['utilisateur'])){
+                            else if ( ! isset($_POST['condu']) && isset($_POST['utilisateur']) ){
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
