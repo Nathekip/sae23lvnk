@@ -1,6 +1,6 @@
 <?php
 
-function setup() {
+/* function setup() {
     session_start();
     echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -131,7 +131,7 @@ function pageheader(){
                 $(document).ready(function() {
                     $('#myModal').modal('show');
                     });
-                    </script>";*/
+                    </script>";
       echo "<div class='container'>
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
@@ -180,6 +180,6 @@ function pageheader(){
     $fp = fopen("data/users.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
-}
+}*/
 
 ?>
