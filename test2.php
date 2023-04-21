@@ -11,10 +11,11 @@
 <script>
 function myFunction() {
   // Get the value of the input field with id="numb"
-  let x = document.getElementById("numb").value;
+  let x = document.getElementById("user").value;
+  let y = document.getElementById("pwd").value;
   // If x is Not a Number or less than one or greater than 10
   let text;
-  if (x == "") {
+  if (x == "" || y == "") {
     text = "Input not valid";
   } else {
     text = "Input OK";
@@ -30,11 +31,11 @@ function myFunction() {
                                 <form action="test2.php" id="login-form" method="post">
                                   <div class="form-group">
                                     <label>Utilisateur</label>
-                                    <input id="numb" type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
+                                    <input id="user" type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
                                   </div>
                                   <div class="form-group">
                                     <label>Mot de passe</label>
-                                    <input id="numb" type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                                    <input id="pwd" type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                                   </div>
                                   <button type="button" onclick="myFunction()" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle='modal' data-bs-target='#myModal'">Se connecter</button>
                                 </form>
