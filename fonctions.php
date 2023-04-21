@@ -154,7 +154,7 @@ function pageheader(){
           $_SESSION['utilisateur']=$_POST['utilisateur'];
           $_SESSION['role']=$u['role'];
           $_SESSION['msg'] = "vrai";
-          header($page);
+          # header($page);
      }
     }
   }
