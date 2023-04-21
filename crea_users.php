@@ -13,7 +13,7 @@ function newUsers(){
     addUser('Georges', 'bonjour', 'georges47@hotmail.com');
     addUser('Kono', 'bonjour', 'konolafripouilledu22@gmail.com');
     addUser('hjeunecrack', 'bonjour', 'hjeune@crack.org');
-    addUser('foret', 'bonjour', 'arbre@ecosia.com', 'visitor');
+    addUser('foret', 'bonjour', 'arbre@ecosia.tz', 'visitor');
     addUser('Emilie', 'bonjour', 'emilieflocon@laposte.net', 'admin');
 
 }
