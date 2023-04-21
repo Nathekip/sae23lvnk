@@ -1,6 +1,6 @@
 <?php
 
-/* function setup() {
+function setup() {
     session_start();
     echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -24,7 +24,7 @@ function pr() {
     echo '</pre>';
 }
 
-function pagenavbar($page=""){
+/*function pagenavbar($page=""){
     $rep = <<<EOD
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav mr-auto">
