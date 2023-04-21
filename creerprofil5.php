@@ -25,14 +25,6 @@
                             print_r($user);
                             echo '</pre>'; */
 
-                        if ( False ) {
-                            echo "Vrai";
-                        }
-                        else {
-                            echo "";
-                        }
-
-                        
                             echo "<div class='container'>";
                             # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
                             if (((in_array("", array_slice($_POST, 0, 4))) && ( isset($_POST['utilisateur']) )  ) { 
