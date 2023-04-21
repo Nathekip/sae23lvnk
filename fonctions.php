@@ -170,7 +170,7 @@ function pageheader(){
     $add['user']=$usr;
     $add['mdp']=password_hash($mdp,PASSWORD_DEFAULT);
     $add['role']=$role;
-    $add['mail']=mail;
+    $add['mail']=$mail;
     $user[$add['user']]=$add;
 
     $fp = fopen("data/users.json", 'w');
