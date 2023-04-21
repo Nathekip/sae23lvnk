@@ -19,6 +19,7 @@ function myFunction() {
     text = "<div class='alert alert-danger'><strong>Erreur</strong>Veuillez remplir les champs</div>";
   } else {
     text = "Input OK";
+    
   }
   document.getElementById("demo").innerHTML = text;
 }
@@ -41,8 +42,6 @@ function myFunction() {
                                 </form>
                                 <div>
                                   <a href="creerprofil.php">Pas de profil ? (décaler à gauche)</a>
-                                </div>
-                                <div>
                                   <a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a>
                                 </div>
                               </div>
