@@ -154,6 +154,7 @@ function pageheader(){
           $_SESSION['utilisateur']=$_POST['utilisateur'];
           $_SESSION['role']=$u['role'];
           $_SESSION['msg'] = "vrai";
+          echo "cringe";
           # header($page);
      }
     }
