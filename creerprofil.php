@@ -19,8 +19,7 @@
                         Créer un compte
                         <?php
                         
-                            $strtest = "abc";
-                            if (True){
+                            if (str_contains("abc","a") ){
                                 echo "aaaaa";
                             }
                         
