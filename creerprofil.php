@@ -26,7 +26,7 @@
                       
                       
                       
-                      <form action="creerpage.php" id="login-form" method="post">
+                      <form action="creerprofil.php" id="login-form" method="post">
                         <div class="form-group">
                           <label>Utilisateur</label>
                           <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
