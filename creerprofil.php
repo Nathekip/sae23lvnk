@@ -146,8 +146,47 @@
               <div class="modal-body text-center">
                  <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
                     <div class="d-flex align-items-center mx-auto">
+                        <h4 class="modal-title">Conditions générales d'utilisation (texte centré)</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        texte de conditions générales d'utilisation zzzzzzzzzzzzz
+                        <br>
+                        1. Objet du service
+                        Le service de location de voitures en ligne est proposé par [nom de l'entreprise] (ci-après dénommée "loueur"), qui permet aux utilisateurs de réserver des véhicules en ligne pour une location temporaire.
+
+                        2. Acceptation des conditions générales
+                        L'utilisation du service de location de voitures en ligne implique l'acceptation pleine et entière des présentes conditions générales d'utilisation.
+
+                        3. Inscription
+                        Pour utiliser le service de location de voitures en ligne, l'utilisateur doit s'inscrire sur le site internet de [nom de l'entreprise] et fournir toutes les informations requises.
+
+                        4. Réservation
+                        La réservation d'un véhicule peut être effectuée en ligne via le site internet de [nom de l'entreprise]. La disponibilité des véhicules est indiquée en temps réel sur le site.
+
+                        5. Tarifs
+                        Les tarifs de location des véhicules sont indiqués sur le site internet de [nom de l'entreprise]. Ils incluent les taxes et assurances obligatoires, mais ne comprennent pas les options supplémentaires éventuelles.
+
+                        6. Paiement
+                        Le paiement de la location peut être effectué en ligne via le site internet de [nom de l'entreprise]. Les modalités de paiement sont indiquées sur le site.
+
+                        7. Modification ou annulation de la réservation
+                        La modification ou l'annulation d'une réservation peut être effectuée en ligne via le site internet de [nom de l'entreprise]. Les conditions de modification ou d'annulation sont indiquées sur le site.
+
+                        8. Prise en charge et restitution du véhicule
+                        Le véhicule peut être pris en charge à l'adresse indiquée lors de la réservation. La restitution doit être effectuée à l'adresse et à la date indiquées lors de la réservation. Tout retard ou toute restitution anticipée doit être signalé au loueur.
+
+                        9. Utilisation du véhicule
+                        Le véhicule doit être utilisé conformément à la réglementation en vigueur et aux conditions générales d'utilisation du loueur. L'utilisateur doit veiller à la bonne utilisation du véhicule et à son entretien durant la période de location.
+
+                        10. Responsabilité de l'utilisateur
+                        L'utilisateur est responsable du véhicule et de ses occupants durant la période de location. Il doit veiller à la sécurité et à la préservation du véhicule durant toute la période de location.
+
+                        11. Assurance
+                        Le véhicule est assuré par le loueur conformément à la réglementation en vigueur. Toutefois, l'utilisateur reste responsable de tout dommage causé au véhicule en cas de non-respect des conditions générales d'utilisation ou de la réglementation en vigueur.
+
+                        12. Réclamation
+                        Toute réclamation doit être formulée auprès du loueur dans les meilleurs délais. Le loueur s'engage à étudier toute réclamation dans les meilleurs délais.
+
+                        13. Protection des données personnelles
+                        Le loueur s'engage à protéger les données personnelles de l'utilisateur conformément à la réglementation en vigueur. Les données personnelles de l'utilisateur sont utilisées
                     </div>
                  </div>
               </div>
