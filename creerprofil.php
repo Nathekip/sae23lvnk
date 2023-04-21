@@ -77,7 +77,7 @@
                             else {
                                 addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail']);
                                 echo "<div class='alert alert-success'>
-                                        <strong>Succès</strong> Le compte a bien été créé U+1F601.
+                                        <strong>Succès</strong> Le compte a bien été créé.
                                        </div>";
                             }
                         ?>
