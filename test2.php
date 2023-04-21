@@ -34,7 +34,7 @@ function myFunction() {
                                   </div>
                                   <div class="form-group">
                                     <label>Mot de passe</label>
-                                    <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                                    <input id="numb" type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                                   </div>
                                   <button type="button" onclick="myFunction()" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle='modal' data-bs-target='#myModal'">Se connecter</button>
                                 </form>
