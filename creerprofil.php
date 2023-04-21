@@ -30,7 +30,7 @@
                         });
                         
                         if ( !empty($resultats) ) { */
-                        if ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   ) ) {
+                        if ( False ) {
                             echo "Vrai";
                         }
                         else {
@@ -50,6 +50,18 @@
                             else if ((isset($_POST['condu']))==False){
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
+                                      </div>";
+                            }
+                            # alerte pseudo déjà pris
+                            else if (( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   ) ){
+                                echo "<div class='alert alert-danger'>
+                                        <strong>Erreur</strong> Le pseudo n'est pas disponible.
+                                      </div>";
+                            }
+                            # alerte mail déjà existant
+                            else if (( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   ) ){
+                                echo "<div class='alert alert-danger'>
+                                        <strong>Erreur</strong> L'adresse mail est déjà utilisée.
                                       </div>";
                             }
                             # alerte mdp trop court
