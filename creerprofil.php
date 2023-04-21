@@ -34,42 +34,42 @@
 
                         
                             echo "<div class='container'>";
-                            # alerte Champ vide
-                            if ( in_array("", array_slice($_POST, 0, 4)) ){ 
+                            # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
+                            if ( True ){ 
                             # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                       </div>";
-                            } /*
-                            # alerte Condition d'utilisation
-                            else if ( (!isset($_POST['condu'])) && (&& isset($_POST['utilisateur'])) ){
+                            } 
+                            # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (&& isset($_POST['utilisateur']))
+                            else if ( True ){
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
                             }
-                            # alerte pseudo déjà pris
-                            else if (( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   ) ){
+                            # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
+                            else if ( True ){
                             # la fonction array.filter filtre un array selon une fonction
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Le pseudo n'est pas disponible.
                                       </div>";
                             }
-                            # alerte mail déjà existant
-                            else if (( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   ) ){
+                            # alerte mail déjà existant / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   )
+                            else if ( True ){
                             # si le array est empty, cela veut dire qu'aucune adresse mail dans la base de donnée ne correspond à l'adresse mail envoyée par le formulaire
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> L'adresse mail est déjà utilisée.
                                       </div>";
                             }
-                            # alerte mdp trop court
-                            else if ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ){
+                            # alerte mdp trop court / ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) )
+                            else if ( True ){
                             # la fonction strlen(string) renvoie le nombre de charactères d'un string
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                                       </div>";
-                            }*/
-                            # alerte Mot de Passe de confirmation
-                            if ($_POST['mdp']!=$_POST['cmdp']){
+                            }
+                            # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
+                            else if ( True ){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
