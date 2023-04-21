@@ -20,11 +20,11 @@
                         <?php
                         
                         
-                        if ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) {
-                            echo "aaa";
+                        if ( True ) {
+                            echo "";
                         }
                         else {
-                            echo "bbb";
+                            echo "Faux";
                         }
                         
                             echo "<div class='container'>";
