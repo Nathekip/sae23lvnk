@@ -33,24 +33,24 @@
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <input type="email" id="form3Example3c" class="form-control" />
                           <label class="form-label" for="form3Example3c">Adresse Mail :</label>
+                          <input type="email" id="form3Example3c" class="form-control" />
                         </div>
                       </div>
 
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <input type="password" id="form3Example4c" class="form-control" />
                           <label class="form-label" for="form3Example4c">Mot de Passe :</label>
+                          <input type="password" id="form3Example4c" class="form-control" />
                         </div>
                       </div>
 
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <input type="password" id="form3Example4cd" class="form-control" />
                           <label class="form-label" for="form3Example4cd">Répéter votre Mot de Passe :</label>
+                          <input type="password" id="form3Example4cd" class="form-control" />
                         </div>
                       </div>
 
