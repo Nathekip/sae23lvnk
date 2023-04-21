@@ -33,7 +33,7 @@
                                       </div>";
                             }
                             # alerte mdp trop court
-                            else if ( ( strlen($_POST['mdp'] < 9 ) ) and ( True ) and ( True ) ){
+                            else if ( ( strlen($_POST['mdp'] < 8 ) ) and ( True ) and ( True ) ){
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                                       </div>";
