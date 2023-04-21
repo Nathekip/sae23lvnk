@@ -6,6 +6,7 @@
       setup();
       pageheader();
       pagenavbar("p01");
+      pr();
     ?>
   </body>
 </html>
