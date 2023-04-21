@@ -19,6 +19,9 @@
                         Créer un compte
                         <?php
                         
+                            $json = file_get_contents('data/users.json');
+                            $user = json_decode($json, true);
+                        
                         
                         if ( True ) {
                             echo "";
@@ -26,6 +29,8 @@
                         else {
                             echo "Faux";
                         }
+                        
+                           
                         
                             echo "<div class='container'>";
                             # alerte Champ vide
