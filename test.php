@@ -5,6 +5,19 @@
     include('fonctions.php');
     setup();
     
+    if(isset($_SESSION['utilisateur'])){
+        echo $_SESSION['utilisateur'];
+        $btndeco = '<form action="deconnexion.php" method="post">
+        <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-warning btn-sm">Se déconnecter</button>
+        </form>';
+        $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
+        echo $btndeco;
+    }
+    
+    #si l'utilisateur n'existe pas, ça veut dire qu'il n'est pas identifié
+    
+    else { 
+    
     $boutons = 'Vous n\'êtes pas connectés
           <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
             Connexion
@@ -50,6 +63,7 @@
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
+    }
                 
    
     if (isset($_POST['page'])){
