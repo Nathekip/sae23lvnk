@@ -180,6 +180,6 @@ function pageheader(){
     $fp = fopen("data/users.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
-}*/
+}
 
 ?>
