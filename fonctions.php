@@ -21,6 +21,8 @@ function pr() {
     print_r($_SESSION);
     echo '<br> Post :<br>';
     print_r($_POST);
+    echo '<br> data/users.json :<br>';
+    print_r($user);
     echo '</pre>';
 }
 
