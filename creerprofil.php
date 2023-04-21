@@ -39,7 +39,7 @@
                       </form> -->
                       
                       
-                      <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
+                      <!-- <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
@@ -48,50 +48,50 @@
                           </div>
                         </div>
                         <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
-                      </form>
+                      </form> -->
                          
                           
                       
                       
-                    <!-- <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
+                    <form action="creerprofil.php" method="post" class="mx-1 mx-md-4">
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example1c">Nom :</label>
-                          <input type="text" id="form3Example1c" class="form-control" />
+                          <label class="form-label" for="utilisateur">Nom :</label>
+                          <input type="text" name="utilisateur" id="utilisateur" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example3c">Adresse Mail :</label>
-                          <input type="email" id="form3Example3c" class="form-control" />
+                          <label class="form-label" for="mail">Adresse Mail :</label>
+                          <input type="email" name="mail" id="mail" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example4c">Mot de Passe :</label>
-                          <input type="password" id="form3Example4c" class="form-control" />
+                          <label class="form-label" for="mdp">Mot de Passe :</label>
+                          <input type="password" name="mdp" id="mdp" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example4cd">Répéter votre Mot de Passe :</label>
-                          <input type="password" id="form3Example4cd" class="form-control" />
+                          <label class="form-label" for="cmdp">Répéter votre Mot de Passe :</label>
+                          <input type="password" name="cmdp" id="cmdp" class="form-control" />
                         </div>
                       </div>
                       <div class="form-check d-flex justify-content-center mb-5">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                        <label class="form-check-label" for="form2Example3">
+                        <input class="form-check-input me-2" name="condu" type="checkbox" value="" id="condu" />
+                        <label class="form-check-label" for="condu">
                           J'accepte les <a href="#!">Conditions d'utilisation</a>
                         </label>
                       </div>
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button type="submit" class="btn btn-dark text-white btn-lg">S'inscrire</button>
                       </div>
-                    </form> -->
+                    </form>
 
 
                   </div>
