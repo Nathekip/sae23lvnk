@@ -8,7 +8,7 @@ function setup() {
         ';
     
     $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
-    $titre = ["Page d'accueil","Formulaire","Informations","Panier"];
+    $titre = ["Page d'accueil","Formulaire","Informations","Panier";"Création de Profil"];
     $key = intval(substr($nomFichier, -1))-1;
     $rep = $titre[$key];
     if ($rep == NULL){
