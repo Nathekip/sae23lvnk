@@ -142,12 +142,15 @@
         <div class="modal fade" id="myModal">
           <div class="modal-dialog">
             <div class="modal-content bg-light">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Conditions générales d'utilisation (texte centré)</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
               <!-- Modal body -->
               <div class="modal-body text-center">
                  <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
                     <div class="d-flex align-items-center mx-auto">
-                        <h4 class="modal-title">Conditions générales d'utilisation (texte centré)</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         <br>
                         1. Objet du service
                         Le service de location de voitures en ligne est proposé par [nom de l'entreprise] (ci-après dénommée "loueur"), qui permet aux utilisateurs de réserver des véhicules en ligne pour une location temporaire.
