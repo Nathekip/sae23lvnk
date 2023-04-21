@@ -51,7 +51,7 @@
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
                 
-    }
+   
     if (isset($_POST['page'])){
         /*echo "<script>
                 $(document).ready(function() {
