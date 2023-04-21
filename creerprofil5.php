@@ -35,7 +35,7 @@
                         
                             echo "<div class='container'>";
                             # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
-                            if (((in_array("", array_slice($_POST, 0, 4))) && ( isset($_POST['utilisateur']) )  ){ 
+                            if True { 
                             # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
