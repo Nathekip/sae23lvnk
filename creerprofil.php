@@ -21,7 +21,12 @@
                       <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                   </div>
                   <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                    <form action="NUMERODEPAGE.php" id="login-form" method="post">
+                    
+                      
+                      
+                      
+                      
+                      <form action="creerpage.php" id="login-form" method="post">
                         <div class="form-group">
                           <label>Utilisateur</label>
                           <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
