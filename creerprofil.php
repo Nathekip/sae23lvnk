@@ -33,7 +33,7 @@
                         }
 
                         
-                            echo "<div class='container'>";
+                            /* echo "<div class='container'>";
                             # alerte Champ vide
                             if ( in_array("", array_slice($_POST, 0, 4)) ){ 
                             # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
@@ -73,7 +73,7 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
-                            }
+                            }*/
                         ?>
                     </p>
               <div>
