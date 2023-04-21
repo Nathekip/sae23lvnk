@@ -35,7 +35,7 @@
                         
                             echo "<div class='container'>";
                             # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
-                            if ( True ){ 
+                            if ( in_array("", array_slice($_POST, 0, 4)) ){ 
                             # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
@@ -69,7 +69,7 @@
                                       </div>";
                             }
                             # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
-                            else if ( True ){
+                            else if ( $_POST['mdp']!=$_POST['cmdp'] ){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
