@@ -27,7 +27,7 @@
                                       </div>";
                             }
                             # alerte Condition d'utilisation
-                            /else if ((isset($_POST['condu']))==False){
+                            else if ((isset($_POST['condu']))==False){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
