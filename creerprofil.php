@@ -15,11 +15,13 @@
           <div class="col-lg-12 col-xl-11">
             <div class="card text-black">
               <div class="card-body p-md-5">
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Créer un compte</p>
-                    <div class='container'>
-                      <div class='alert alert-danger'>
-                          <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
-                      </div>
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                        Créer un compte
+                        <div class='container'>
+                          <div class='alert alert-danger'>
+                              <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
+                          </div>
+                    </p>
               <div>
                 <div class="row justify-content-center">
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
