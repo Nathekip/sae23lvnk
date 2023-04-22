@@ -123,10 +123,10 @@
                                         <strong>Succès</strong> Le compte a bien été créé.
                                        </div>";
                             }
-                            $formulaire = str_replace('phrNom', '', $formulaire);
-                            $formulaire = str_replace('phrMail', '', $formulaire);
-                            $formulaire = str_replace('phrMdp', '', $formulaire);
-                            $formulaire = str_replace('phrCmdp', '', $formulaire);
+                            $formulaire = str_replace('phrNom', '""', $formulaire);
+                            $formulaire = str_replace('phrMail', '""', $formulaire);
+                            $formulaire = str_replace('phrMdp', '""', $formulaire);
+                            $formulaire = str_replace('phrCmdp', '""', $formulaire);
                         ?>
                     </p>
                   
