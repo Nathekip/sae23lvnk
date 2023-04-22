@@ -23,7 +23,7 @@
                                             EOD;
                         
                         
-                        $formulaire <<<EOD
+                        $formulaire = <<<EOD
                                               <div>
                                                 <div class="row justify-content-center">
                                                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -71,6 +71,7 @@
                                                     </form>
                                                   </div>
                                                 </div>
+                                              
                                         EOD;*/
                         
                         
