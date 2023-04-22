@@ -85,28 +85,28 @@
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                           <label class="form-label" for="utilisateur">Nom :</label>
-                          <input value="" type="text" name="utilisateur" id="utilisateur" class="form-control" />
+                          <input value="" type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                           <label class="form-label" for="mail">Adresse Mail :</label>
-                          <input type="email" name="mail" id="mail" class="form-control" />
+                          <input type="email" placeholder="Votre adresse mail" name="mail" id="mail" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                           <label class="form-label" for="mdp">Mot de Passe :</label>
-                          <input type="password" name="mdp" id="mdp" class="form-control" />
+                          <input type="password" placeholder="Votre mot de passe (Au moins 8 charactères, 1 charactère spécial, 1 majuscule)" name="mdp" id="mdp" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                           <label class="form-label" for="cmdp">Répéter votre Mot de Passe :</label>
-                          <input type="password" name="cmdp" id="cmdp" class="form-control" />
+                          <input type="password" placeholder="Répétez votre mot de passe" name="cmdp" id="cmdp" class="form-control" />
                         </div>
                       </div>
                       <div class="form-check d-flex justify-content-center mb-5">
