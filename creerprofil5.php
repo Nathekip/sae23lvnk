@@ -83,6 +83,10 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                       </div>";
+                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                             } 
                             # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))
                             else if (       (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))   ) {
@@ -100,6 +104,9 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Le pseudo n'est pas disponible.
                                       </div>";
+                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                             }
                             # alerte mail déjà existant / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   )
                             else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) ){
@@ -107,6 +114,9 @@
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> L'adresse mail est déjà utilisée.
                                       </div>";
+                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                             }
                             # alerte mdp trop court / ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) )
                             else if ( ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp'])    )      {
@@ -114,12 +124,16 @@
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                                       </div>";
+                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                             }
                             # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
                             else if ( $_POST['mdp']!=$_POST['cmdp'] ){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                        </div>";
+                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                             }
                             else if ( isset($_POST['utilisateur']) ){
                                 addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail']);
