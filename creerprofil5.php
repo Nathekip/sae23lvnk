@@ -19,11 +19,13 @@
                         Créer un compte
                         <?php
                         $formulaire = '
-                                              <div>
-                                                <div class="row justify-content-center">
-                                                </div>  
-                                              </div>
-                                              
+                                    <div>
+                                      <div class="row justify-content-center">
+                                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                          <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
+                                        </div>
+                                      </div>  
+                                    </div>    
                                         ';
                         
                         
