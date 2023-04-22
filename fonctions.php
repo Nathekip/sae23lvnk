@@ -7,7 +7,6 @@ function setup() {
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         ';
     
-    $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
     $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
