@@ -101,7 +101,7 @@ function pageheader(){
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                                 </div>
-                                <a href="page03.php"><button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button></a>
+                                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
                               </form>
                               <div><a href="creerprofil5.php">Pas de profil ? (décaler à gauche)</a></div>
                               <div><a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
