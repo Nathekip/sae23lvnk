@@ -85,7 +85,7 @@
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
                           <label class="form-label" for="utilisateur">Nom :</label>
-                          <input value="test31"type="text" name="utilisateur" id="utilisateur" class="form-control" />
+                          <input value="" type="text" name="utilisateur" id="utilisateur" class="form-control" />
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
