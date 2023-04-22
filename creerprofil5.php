@@ -68,6 +68,10 @@
                                       </div>  
                                     </div>    
                                         ';
+                            $formulaire = str_replace('phrNom', 'aaa', $formulaire);
+                            $formulaire = str_replace('phrMail', 'aaa', $formulaire);
+                            $formulaire = str_replace('phrMdp', 'aaa', $formulaire);
+                            $formulaire = str_replace('phrCmdp', 'aaa', $formulaire);
                         
                         
                             $json = file_get_contents('data/users.json');
@@ -122,6 +126,8 @@
                                 echo "<div class='alert alert-success'>
                                         <strong>Succès</strong> Le compte a bien été créé.
                                        </div>";
+                            }
+                            else {
                             }
                         ?>
                     </p>
