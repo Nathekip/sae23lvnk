@@ -23,7 +23,7 @@
                                             ';
                         
                         
-                        /*$formulaire = <<<EOD
+                        $formulaire = '
                                               <div>
                                                 <div class="row justify-content-center">
                                                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -62,17 +62,17 @@
                                                       <div class="form-check d-flex justify-content-center mb-5">
                                                         <input class="form-check-input me-2" name="condu" type="checkbox" value="" id="condu" />
                                                         <label class="form-check-label" for="condu">
-                                                          J'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Conditions d'utilisation</a>
+                                                          J\'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Conditions d\'utilisation</a>
                                                         </label>
                                                       </div>
                                                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                        <button type="submit" class="btn btn-dark text-white btn-lg">S'inscrire</button>
+                                                        <button type="submit" class="btn btn-dark text-white btn-lg">S\'inscrire</button>
                                                       </div>
                                                     </form>
                                                   </div>
                                                 </div>
                                               
-                                        EOD;*/
+                                        ';*/
                         
                         
                             $json = file_get_contents('data/users.json');
