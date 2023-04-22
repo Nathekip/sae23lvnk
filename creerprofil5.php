@@ -23,54 +23,54 @@
                                             EOD;
                         
                         
-                        /* $formulaire <<<EOD
-                                          <div>
-                                            <div class="row justify-content-center">
-                                              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                                                  <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
-                                              </div>
-                                              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                                <form action="creerprofil5.php" method="post" class="mx-1 mx-md-4">
-                                                  <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                                    <div class="form-outline flex-fill mb-0">
-                                                      <label class="form-label" for="utilisateur">Nom :</label>
-                                                      <input value= type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
-                                                    </div>
+                        $formulaire <<<EOD
+                                              <div>
+                                                <div class="row justify-content-center">
+                                                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                                      <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                                                   </div>
-                                                  <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                                                    <div class="form-outline flex-fill mb-0">
-                                                      <label class="form-label" for="mail">Adresse Mail :</label>
-                                                      <input type="email" placeholder="Votre adresse mail" name="mail" id="mail" class="form-control" />
-                                                    </div>
+                                                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                                    <form action="creerprofil5.php" method="post" class="mx-1 mx-md-4">
+                                                      <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                        <div class="form-outline flex-fill mb-0">
+                                                          <label class="form-label" for="utilisateur">Nom :</label>
+                                                          <input value= type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
+                                                        </div>
+                                                      </div>
+                                                      <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                                        <div class="form-outline flex-fill mb-0">
+                                                          <label class="form-label" for="mail">Adresse Mail :</label>
+                                                          <input type="email" placeholder="Votre adresse mail" name="mail" id="mail" class="form-control" />
+                                                        </div>
+                                                      </div>
+                                                      <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                                        <div class="form-outline flex-fill mb-0">
+                                                          <label class="form-label" for="mdp">Mot de Passe :</label>
+                                                          <input type="password" placeholder="Votre mot de passe" name="mdp" id="mdp" class="form-control" />
+                                                        </div>
+                                                      </div>
+                                                      <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                                        <div class="form-outline flex-fill mb-0">
+                                                          <label class="form-label" for="cmdp">Répéter votre Mot de Passe :</label>
+                                                          <input type="password" placeholder="Répétez votre mot de passe" name="cmdp" id="cmdp" class="form-control" />
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-check d-flex justify-content-center mb-5">
+                                                        <input class="form-check-input me-2" name="condu" type="checkbox" value="" id="condu" />
+                                                        <label class="form-check-label" for="condu">
+                                                          J'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Conditions d'utilisation</a>
+                                                        </label>
+                                                      </div>
+                                                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                                        <button type="submit" class="btn btn-dark text-white btn-lg">S'inscrire</button>
+                                                      </div>
+                                                    </form>
                                                   </div>
-                                                  <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                                    <div class="form-outline flex-fill mb-0">
-                                                      <label class="form-label" for="mdp">Mot de Passe :</label>
-                                                      <input type="password" placeholder="Votre mot de passe" name="mdp" id="mdp" class="form-control" />
-                                                    </div>
-                                                  </div>
-                                                  <div class="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                                                    <div class="form-outline flex-fill mb-0">
-                                                      <label class="form-label" for="cmdp">Répéter votre Mot de Passe :</label>
-                                                      <input type="password" placeholder="Répétez votre mot de passe" name="cmdp" id="cmdp" class="form-control" />
-                                                    </div>
-                                                  </div>
-                                                  <div class="form-check d-flex justify-content-center mb-5">
-                                                    <input class="form-check-input me-2" name="condu" type="checkbox" value="" id="condu" />
-                                                    <label class="form-check-label" for="condu">
-                                                      J'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Conditions d'utilisation</a>
-                                                    </label>
-                                                  </div>
-                                                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button type="submit" class="btn btn-dark text-white btn-lg">S'inscrire</button>
-                                                  </div>
-                                                </form>
-                                              </div>
-                                            </div>
+                                                </div>
                                         EOD;*/
                         
                         
