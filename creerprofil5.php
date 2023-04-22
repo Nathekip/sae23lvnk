@@ -30,7 +30,7 @@
                                               <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="utilisateur">Nom :</label>
-                                                <input value= type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
+                                                <input value=phrNom type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
                                               </div>
                                             </div>
                                         
