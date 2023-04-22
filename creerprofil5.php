@@ -24,6 +24,11 @@
                                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                           <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                                         </div>
+                                        <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                          <form action="creerprofil5.php" method="post" class="mx-1 mx-md-4">
+                                        
+                                          </form>
+                                        </div>
                                       </div>  
                                     </div>    
                                         ';
