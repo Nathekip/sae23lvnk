@@ -30,28 +30,28 @@
                                               <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="utilisateur">Nom :</label>
-                                                <input value=phrNom type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
+                                                <input value="phrNom" type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="mail">Adresse Mail :</label>
-                                                <input value=phrMail type="email" placeholder="Votre adresse mail" name="mail" id="mail" class="form-control" />
+                                                <input value="phrMail" type="email" placeholder="Votre adresse mail" name="mail" id="mail" class="form-control" />
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="mdp">Mot de Passe :</label>
-                                                <input value=phrMdp type="password" placeholder="Votre mot de passe" name="mdp" id="mdp" class="form-control" />
+                                                <input value="phrMdp" type="password" placeholder="Votre mot de passe" name="mdp" id="mdp" class="form-control" />
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="cmdp">Répéter votre Mot de Passe :</label>
-                                                <input value=phrCmdp type="password" placeholder="Répétez votre mot de passe" name="cmdp" id="cmdp" class="form-control" />
+                                                <input value="phrCmdp" type="password" placeholder="Répétez votre mot de passe" name="cmdp" id="cmdp" class="form-control" />
                                               </div>
                                             </div>
                                             <div class="form-check d-flex justify-content-center mb-5">
@@ -89,6 +89,10 @@
                                 echo "<div class='alert alert-warning'>
                                         <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                       </div>";
+                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                             }
                             # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
                             else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )))  ){
@@ -123,10 +127,10 @@
                                         <strong>Succès</strong> Le compte a bien été créé.
                                        </div>";
                             }
-                            $formulaire = str_replace('phrNom', '""', $formulaire);
-                            $formulaire = str_replace('phrMail', '""', $formulaire);
-                            $formulaire = str_replace('phrMdp', '""', $formulaire);
-                            $formulaire = str_replace('phrCmdp', '""', $formulaire);
+                            $formulaire = str_replace('phrNom', '', $formulaire);
+                            $formulaire = str_replace('phrMail', '', $formulaire);
+                            $formulaire = str_replace('phrMdp', '', $formulaire);
+                            $formulaire = str_replace('phrCmdp', '', $formulaire);
                         ?>
                     </p>
                   
