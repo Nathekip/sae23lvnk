@@ -9,8 +9,7 @@ function setup() {
     
     $nomFichier = basename($_SERVER["SCRIPT_NAME"], ".php");
     $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil"];
-    $key = intval(substr($nomFichier, -1))-1;
-    $rep = $listetitre[intval(substr($nomFichier, -1))-1];
+    $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
     $rep = "NomDuSite";}
     echo "<title>$rep</title>";
