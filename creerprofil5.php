@@ -26,6 +26,13 @@
                                         </div>
                                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                                           <form action="creerprofil5.php" method="post" class="mx-1 mx-md-4">
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                              <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="utilisateur">Nom :</label>
+                                                <input value= type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
+                                              </div>
+                                            </div>
                                         
                                           </form>
                                         </div>
