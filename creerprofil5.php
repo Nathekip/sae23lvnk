@@ -18,6 +18,9 @@
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                         Créer un compte
                         <?php
+                        $formulaire = <<<EOD
+                                            <div>test</div>
+                                            EOD;
                         
                         
                         /* $formulaire <<<EOD
