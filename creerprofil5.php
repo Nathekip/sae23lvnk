@@ -68,10 +68,6 @@
                                       </div>  
                                     </div>    
                                         ';
-                            $formulaire = str_replace('phrNom', 'aaa', $formulaire);
-                            $formulaire = str_replace('phrMail', 'aaa', $formulaire);
-                            $formulaire = str_replace('phrMdp', 'aaa', $formulaire);
-                            $formulaire = str_replace('phrCmdp', 'aaa', $formulaire);
                         
                         
                             $json = file_get_contents('data/users.json');
@@ -127,8 +123,10 @@
                                         <strong>Succès</strong> Le compte a bien été créé.
                                        </div>";
                             }
-                            else {
-                            }
+                            $formulaire = str_replace('phrNom', '', $formulaire);
+                            $formulaire = str_replace('phrMail', '', $formulaire);
+                            $formulaire = str_replace('phrMdp', '', $formulaire);
+                            $formulaire = str_replace('phrCmdp', '', $formulaire);
                         ?>
                     </p>
                   
