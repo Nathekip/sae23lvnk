@@ -33,6 +33,13 @@
                                                 <input value=phrNom type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
                                               </div>
                                             </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                              <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                              <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="mail">Adresse Mail :</label>
+                                                <input value=phrMail type="email" placeholder="Votre adresse mail" name="mail" id="mail" class="form-control" />
+                                              </div>
+                                            </div>
                                         
                                           </form>
                                         </div>
