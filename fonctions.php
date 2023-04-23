@@ -59,7 +59,7 @@ function pageheader(){
     if(isset($_SESSION['utilisateur'])){
         echo $_SESSION['utilisateur'];
         $btndeco = '<form action="deconnexion.php" method="post">
-        <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-warning btn-sm">Se déconnecter</button>
+        <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
         </form>';
         $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
         echo $btndeco;
@@ -69,7 +69,7 @@ function pageheader(){
     
     else { 
         $boutons = 'Vous n\'êtes pas connectés
-          <button type="button" class="btn btn-warning btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+          <button type="button" class="btn text-black btn-outline-warning btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
   Connexion
 </button>
 
