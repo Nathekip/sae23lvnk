@@ -69,7 +69,7 @@ function pageheader(){
     
     else { 
         $boutons = 'Vous n\'êtes pas connectés
-          <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+          <button type="button" class="btn btn-warning btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
   Connexion
 </button>
 
@@ -90,7 +90,7 @@ function pageheader(){
           <div class="d-flex align-items-center mx-auto">
             <div class="login-form">
               <form action="NUMERODEPAGE.php" id="login-form" method="post">
-                <div class="pt-4 form-group">
+                <div class="pt-3 form-group">
                   <label>Utilisateur</label>
                   <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
                 </div>
