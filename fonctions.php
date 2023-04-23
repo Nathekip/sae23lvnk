@@ -100,11 +100,13 @@ function pageheader(){
                           <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
                         </div>
                         <div>
+                            <br>
                           <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
                         </div>
                       </form>
                       <div class="d-flex justify-content-between w-100 mt-3">
                         <div> <a href="creerprofil5.php">Pas de profil ?</a> </div>
+                        <br>
                         <div> <a href="creerprofil.php">Mot de passe oublié ?</a> </div>
                       </div>
                     </div>
