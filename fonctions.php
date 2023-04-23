@@ -80,8 +80,8 @@ function pageheader(){
             <div class="modal-content bg-light">
 
               <!-- Modal Header -->
-              <div class="modal-header bg-secondary">
-                <h4 class="modal-title text-center">Connexion (texte centré)</h4>
+              <div class="modal-header bg-secondary text-center">
+                <h4 class="modal-title text-centered">Connexion</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
 
@@ -104,8 +104,8 @@ function pageheader(){
                                 <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
                               </form>
                               <div class="d-flex justify-content-between">
-                                <a href="creerprofil5.php">Pas de profil ? (décaler à gauche)</a>
-                                <a href="creerprofil.php">Mot de passe oublié ? (décaler à droite)</a></div>
+                                <a href="creerprofil5.php">Pas de profil ?</a>
+                                <a href="creerprofil.php">Mot de passe oublié ?</a></div>
                             </div>
                           </div>
                           
