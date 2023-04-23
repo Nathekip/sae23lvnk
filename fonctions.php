@@ -70,57 +70,55 @@ function pageheader(){
     else { 
         $boutons = 'Vous n\'êtes pas connectés
           <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
-            Connexion
-          </button>
-        </div>
+  Connexion
+</button>
 
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content bg-light">
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content bg-light">
 
-              <!-- Modal Header -->
-              <div class="modal-header bg-secondary text-center">
-                <h4 class="modal-title text-center">Connexion</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
+      <!-- Modal Header -->
+      <div class="modal-header bg-secondary text-center">
+        <h4 class="modal-title text-white mx-auto">Connexion</h4>
+        <button type="button" class="btn-close bg-danger btn-outline-dark" data-bs-dismiss="modal"></button>
+      </div>
 
-              <!-- Modal body -->
-              <div class="modal-body text-center">
-                <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
-                  <div class="d-flex align-items-center mx-auto">
-                    <div class="login-form">
-                      <form action="NUMERODEPAGE.php" id="login-form" method="post">
-                        <div class="form-group">
-                          <label>Utilisateur</label>
-                          <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
-                        </div>
-                        <div class="form-group">
-                          <label>Mot de passe</label>
-                          <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-                        </div>
-                        <div>
-                            <br>
-                          <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-success data-bs-toggle="modal" data-bs-target="#myModal"">Se connecter</button>
-                        </div>
-                      </form>
-                      <div class="d-flex justify-content-between w-100 mt-3">
-                        <div> <a href="creerprofil5.php">Pas de profil ?</a> </div>
-                        <br>
-                        <div> <a href="creerprofil.php">Mot de passe oublié ?</a> </div>
-                      </div>
-                    </div>
-                  </div>
+      <!-- Modal body -->
+      <div class="modal-body text-center">
+        <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
+          <div class="d-flex align-items-center mx-auto">
+            <div class="login-form">
+              <form action="NUMERODEPAGE.php" id="login-form" method="post">
+                <div class="pt-4 form-group">
+                  <label>Utilisateur</label>
+                  <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
                 </div>
+                <div class="pt-3 form-group">
+                  <label>Mot de passe</label>
+                  <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                </div>
+                <div class="pt-4">
+                  <button type="submit" name="page" value=NUMERODEPAGE class="btn text-white btn-dark btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal"> Se connecter</button>
+                </div>
+              </form>
+              <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
+                <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
+                <div><a href="creerprofil.php">Mot de passe oublié</a> ?</div>
               </div>
-              
-              <!-- Modal footer -->
-              <div class="modal-footer bg-light">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
-              </div>
-
             </div>
-           </div>';
+          </div>
+        </div>
+      </div>
+              
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark text-white btn-outline-danger" data-bs-dismiss="modal">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+</div>';
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
