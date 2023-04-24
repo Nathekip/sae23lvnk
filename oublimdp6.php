@@ -34,8 +34,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      
 <?php
   if ( True ){
     echo "<div class='alert alert-danger'>
@@ -43,6 +42,8 @@
           </div>";
   }
 ?>
+        </div>
+    </div>
     <?php
       pr();
     ?>
