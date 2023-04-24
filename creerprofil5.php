@@ -61,8 +61,12 @@
                                               </label>
                                             </div>
                                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                              <button type="submit" class="px-2 btn btn-outline-primary btn-dark text-white btn-lg">S\'inscrire</button>
-                                              <a href="page01.php" class="px-2 btn btn-outline-info btn-dark text-white btn-lg">Se connecter</a>
+                                              <div class="px-2"
+                                                <button type="submit" class="btn btn-outline-primary btn-dark text-white btn-lg">S\'inscrire</button>
+                                              </div>
+                                              <div class="px-2">
+                                                <a href="page01.php" class="btn btn-outline-info btn-dark text-white btn-lg">Se connecter</a>
+                                              </div>
                                             </div>
                                           </form>
                                         </div>
