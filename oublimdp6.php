@@ -33,17 +33,17 @@
               </form>
             </div>
           </div>
-        
-      
-<?php
-  if ( True ){
-    echo "<div class='alert alert-danger'>
-            <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
-          </div>";
-  }
-?>
+          <div class="pt-2 mx-auto">
+            <?php
+              if ( True ){
+                echo "<div class='alert alert-danger'>
+                        <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
+                      </div>";
+              }
+            ?>
           </div>
         </div>
+      </div>
     </div>
     <?php
       pr();
