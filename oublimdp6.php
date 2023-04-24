@@ -48,11 +48,6 @@
                         Cette adresse mail n'est pas liée à un compte.
                       </div>";
               } 
-            echo "<pre>";
-            foreach ($user as $u){
-              echo "$u['mail']<br>";
-            }
-            
             ?>
           </div>
         </div>
