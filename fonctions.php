@@ -117,8 +117,7 @@ function pageheader(){
       </div>
 
     </div>
-  </div>
-</div>';
+  </div> ';
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
