@@ -61,7 +61,7 @@
                                               </label>
                                             </div>
                                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                              <div class="px-2"
+                                              <div class="px-2">
                                                 <button type="submit" class="btn btn-outline-primary btn-dark text-white btn-lg">S\'inscrire</button>
                                               </div>
                                               <div class="px-2">
