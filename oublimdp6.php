@@ -22,11 +22,11 @@
               <form action="oublimdp6.php" method="post">
                 <div class="mb-3">
                   <label for="email" class="form-label">Votre adresse mail</label>
-                  <input type="email" id="email" class="form-control" name="email" placeholder="Entrez votre email" required="">
+                  <input type="email" id="email" class="form-control" name="email" placeholder="Entrez votre email" required="aaaaaaaa">
                 </div>
                 <div class="mb-3 d-grid">
                   <button type="submit" class="btn btn-primary">
-                    Reset Password
+                    Réinitialiser le mot de passe
                   </button>
                 </div>
                 <span>Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
