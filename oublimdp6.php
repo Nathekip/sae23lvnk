@@ -11,7 +11,7 @@
     <div class="container d-flex flex-column">
       <div class="row align-items-center justify-content-center
           min-vh-100 g-0">
-        <div class="col-12 col-md-8 col-lg-4 border-top border-3 border-warning">
+        <div class="col-12 col-md-8 col-lg-4 border-top border-3">
           <?php
             if ( True ){
               echo "<div class='alert alert-danger'>
@@ -19,7 +19,7 @@
                     </div>";
             }
           ?>
-          <div class="card shadow-sm">
+          <div class="card shadow-sm border-warning">
             <div class="card-body">
               <div class="mb-4">
                 <h5>Mot de passe oublié ?</h5>
