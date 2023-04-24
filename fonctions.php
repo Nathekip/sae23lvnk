@@ -57,7 +57,7 @@ function pageheader(){
     #si l'utilisateur existe, ça veut dire qu'il est identifié
     
     if(isset($_SESSION['utilisateur'])){
-        echo $_SESSION['utilisateur'];
+        echo "<div class='pe-3'> $_SESSION['utilisateur'] </div>";
         $btndeco = '<form action="deconnexion.php" method="post">
         <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
         </form>';
@@ -68,7 +68,8 @@ function pageheader(){
     #si l'utilisateur n'existe pas, ça veut dire qu'il n'est pas identifié
     
     else { 
-        $boutons = 'Vous n\'êtes pas connectés
+        $boutons = '<div class="pe-3"> Vous n\'êtes pas connectés" </div>
+        
           <button type="button" class="btn text-black btn-outline-warning btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
   Connexion
 </button>
