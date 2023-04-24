@@ -7,7 +7,7 @@ function setup() {
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         ';
     
-    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil"];
+    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
     $rep = "NomDuSite";}
@@ -105,7 +105,7 @@ function pageheader(){
               </form>
               <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
                 <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
-                <div><a href="creerprofil.php">Mot de passe oublié</a> ?</div>
+                <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
               </div>
             </div>
           </div>
