@@ -36,10 +36,15 @@
           <div class="pt-2">
             <?php
               if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
-                echo "<div class='alert alert-danger'>
-                        <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
+                echo "<div class='alert alert-warning'>
+                        Veuillez renseigner votre adresse mail.
                       </div>";
               }
+              else if ( True ){
+               echo "<div class='alert alert-warning'>
+                        Cette adresse mail n'est pas liée à un compte.
+                      </div>";
+              } 
             ?>
           </div>
         </div>
