@@ -52,7 +52,7 @@
             foreach ($user as $u){
               echo $u['mail'];
             }
-            print_r(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }));
+            print_r(array_filter($user, function($u) use ($recherche) { return $u['mail'] == $_POST['mail']; }));
             
             ?>
           </div>
