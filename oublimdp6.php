@@ -11,7 +11,14 @@
     <div class="container d-flex flex-column">
       <div class="row align-items-center justify-content-center
           min-vh-100 g-0">
-        <div class="col-12 col-md-8 col-lg-4 border-top border-3 border-info">
+        <div class="col-12 col-md-8 col-lg-4 border-top border-3 border-warning">
+          <?php
+            if ( True ){
+              echo "<div class='alert alert-danger'>
+                      <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
+                    </div>";
+            }
+          ?>
           <div class="card shadow-sm">
             <div class="card-body">
               <div class="mb-4">
@@ -22,10 +29,10 @@
               <form action="oublimdp6.php" method="post">
                 <div class="mb-3">
                   <label for="email" class="form-label">Votre adresse mail</label>
-                  <input type="email" id="email" class="form-control" name="email" placeholder="Entrez votre email" required="aaaaaaaa">
+                  <input type="email" id="email" class="form-control" name="email" placeholder="Entrez votre email">
                 </div>
                 <div class="mb-3 d-grid">
-                  <button type="submit" class="btn btn-info">
+                  <button type="submit" class="btn btn-warning">
                     Réinitialiser le mot de passe
                   </button>
                 </div>
