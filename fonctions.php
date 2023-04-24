@@ -116,8 +116,7 @@ function pageheader(){
         <button type="button" class="btn btn-dark text-white btn-outline-danger" data-bs-dismiss="modal">Fermer</button>
       </div>
 
-    </div>
-  </div> ';
+    </div> ';
         
         $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
         echo $boutons;
