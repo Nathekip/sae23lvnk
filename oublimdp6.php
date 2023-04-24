@@ -48,8 +48,10 @@
                         Cette adresse mail n'est pas liée à un compte.
                       </div>";
               } 
+            echo "<pre>";
             foreach ($user as $u){
-              print_r($u);
+              print_r($u['mail']);
+              print_r(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }));
             }
             ?>
           </div>
