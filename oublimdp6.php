@@ -20,7 +20,7 @@
                 </p>
               </div>
               <form action="oublimdp6.php" method="post">
-                <div class="mb-x">
+                <div class="mb-3">
                   <label for="email" class="form-label">Votre adresse mail</label>
                   <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
                 </div>
@@ -28,8 +28,8 @@
                   <button type="submit" class="btn btn-warning">
                     Réinitialiser le mot de passe
                   </button>
-                </div class="align-items-center justify-content-center">
-                <span>Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
+                </div>
+                <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
             </div>
           </div>
