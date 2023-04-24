@@ -11,7 +11,7 @@
     <div class="container d-flex flex-column">
       <div class="row align-items-center justify-content-center
           min-vh-100 g-0">
-        <div class="col-12 col-md-8 col-lg-4 border-top border-3 border-primary">
+        <div class="col-12 col-md-8 col-lg-4 border-top border-3 border-danger-50">
           <div class="card shadow-sm">
             <div class="card-body">
               <div class="mb-4">
