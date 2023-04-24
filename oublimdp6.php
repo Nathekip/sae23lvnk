@@ -35,7 +35,7 @@
           </div>
           <div class="pt-2">
             <?php
-              if ( $_POST['mail'] == "" ){
+              if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
                 echo "<div class='alert alert-danger'>
                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                       </div>";
