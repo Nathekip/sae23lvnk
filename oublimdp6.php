@@ -42,7 +42,7 @@
                         Veuillez renseigner votre adresse mail.
                       </div>";
               }
-              else if (  ( in_array($_POST['mail'],$user) ) && isset($_POST['mail'])  ){
+              else if (  (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) ) && isset($_POST['mail'])  ){
                echo "<div class='alert alert-warning'>
                         Cette adresse mail n'est pas liée à un compte.
                       </div>";
