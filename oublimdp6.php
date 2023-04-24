@@ -33,7 +33,7 @@
               </form>
             </div>
           </div>
-        </div>
+        
       
 <?php
   if ( True ){
@@ -42,6 +42,7 @@
           </div>";
   }
 ?>
+          </div>
         </div>
     </div>
     <?php
