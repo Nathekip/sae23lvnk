@@ -176,7 +176,7 @@
           </div>
           <!-- Modal body -->
           <div class="modal-body modal-dialog text-center">
-             <div class="container-fluid text-center py-2 d-flex justify-content-between align-items-center">
+             <div class="container-fluid text-center d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center mx-auto">
                      <p>
                         <strong>1. Objet du service</strong><br>
