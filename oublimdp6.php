@@ -50,9 +50,10 @@
               } 
             echo "<pre>";
             foreach ($user as $u){
-              print_r($u['mail']);
-              print_r(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }));
+              echo $u['mail'];
             }
+            print_r(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }));
+            
             ?>
           </div>
         </div>
