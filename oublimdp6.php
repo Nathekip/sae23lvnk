@@ -43,7 +43,7 @@
                       </div>";
               }
               # (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) )
-              else if ( ( !empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
+              else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
                echo "<div class='alert alert-warning'>
                         Cette adresse mail n'est pas liée à un compte.
                       </div>";
@@ -52,7 +52,6 @@
             foreach ($user as $u){
               echo "$u['mail']<br>";
             }
-            print_r(array_filter($user, function($u) use ($recherche) { return $u['mail'] == $_POST['mail']; }));
             
             ?>
           </div>
