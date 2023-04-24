@@ -48,6 +48,9 @@
                         Cette adresse mail n'est pas liée à un compte.
                       </div>";
               } 
+            foreach ($user as $u){
+              print_r($u);
+            }
             ?>
           </div>
         </div>
