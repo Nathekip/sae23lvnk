@@ -12,13 +12,6 @@
       <div class="row align-items-center justify-content-center
           min-vh-100 g-0">
         <div class="col-12 col-md-8 col-lg-4">
-          <?php
-            if ( True ){
-              echo "<div class='alert alert-danger'>
-                      <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
-                    </div>";
-            }
-          ?>
           <div class="card shadow-sm border-warning">
             <div class="card-body">
               <div class="mb-4">
@@ -43,6 +36,13 @@
         </div>
       </div>
     </div>
+<?php
+  if ( True ){
+    echo "<div class='alert alert-danger'>
+            <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
+          </div>";
+  }
+?>
     <?php
       pr();
     ?>
