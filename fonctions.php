@@ -58,7 +58,7 @@ function pageheader(){
     
     if(isset($_SESSION['utilisateur'])){
         # $_SESSION['utilisateur']
-        echo "<div class='pe-3'>  </div>";
+        echo "<div class='pe-3'>"."aaa"."</div>";
         $btndeco = '<form action="deconnexion.php" method="post">
         <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
         </form>';
