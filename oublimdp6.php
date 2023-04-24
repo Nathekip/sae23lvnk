@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="pt-2 mx-auto">
+        <div class="mx-5">
           <?php
             if ( True ){
               echo "<div class='alert alert-danger'>
