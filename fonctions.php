@@ -57,7 +57,6 @@ function pageheader(){
     #si l'utilisateur existe, ça veut dire qu'il est identifié
     
     if(isset($_SESSION['utilisateur'])){
-        # $_SESSION['utilisateur']
         echo "<div class='pe-2'>".$_SESSION['utilisateur']."</div>";
         $btndeco = '<form action="deconnexion.php" method="post">
         <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
