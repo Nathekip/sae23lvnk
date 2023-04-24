@@ -22,7 +22,7 @@
               <form action="oublimdp6.php" method="post">
                 <div class="mb-3">
                   <label for="email" class="form-label">Votre adresse mail</label>
-                  <input type="email" id="email" class="form-control" name="email" placeholder="Entrez votre email">
+                  <input type="email" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
                 </div>
                 <div class="mb-3 d-grid">
                   <button type="submit" class="btn btn-warning">
@@ -35,7 +35,7 @@
           </div>
           <div class="pt-2">
             <?php
-              if ( True ){
+              if ( $_POST['mail'] == "" ){
                 echo "<div class='alert alert-danger'>
                         <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                       </div>";
