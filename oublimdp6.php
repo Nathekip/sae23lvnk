@@ -16,7 +16,7 @@
             <div class="card-body">
               <div class="mb-4">
                 <h5>Mot de passe oublié ?</h5>
-                <p class="mb-2">Entrez votre adresse mail afin de recevoir un mail de récupération
+                <p class="mb-1 text-black-60 pt-2">Entrez votre adresse mail afin de recevoir un mail de récupération
                 </p>
               </div>
               <form action="oublimdp6.php" method="post">
@@ -28,7 +28,7 @@
                   <button type="submit" class="btn btn-warning">
                     Réinitialiser le mot de passe
                   </button>
-                </div>
+                </div class="text-center">
                 <span>Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
             </div>
