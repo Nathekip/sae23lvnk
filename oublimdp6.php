@@ -35,9 +35,11 @@
                 }
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
+                  echo "<pre>";
                   $_SESSION['PhaseMdp'] = True;
                   $VarTestArrayFilterMail = array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; });
                   print_r($VarTestArrayFilterMail);
+                  echo "</pre>";
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
