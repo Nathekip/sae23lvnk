@@ -97,8 +97,7 @@
       </div>
     </div>
     <?php
-      # print_r($usermodif);
-      print_r($usermodif2);
+      print_r($usermodif);
       pr();
     ?>
   </body>
