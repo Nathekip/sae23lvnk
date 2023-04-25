@@ -71,6 +71,8 @@
               }
               else if (isset($_POST['mail']) ){
                 $PhaseMdp = True;
+                echo $PhaseMdp;
+                if ($PhaseMdp){ echo "yesssss";}
               }
             ?>
           </div>
