@@ -182,4 +182,20 @@ function pageheader(){
     fclose($fp);
 }
 
+function deleteUser($usr){
+    $json = file_get_contents('data/users2.json');
+    $user = json_decode($json, true);
+
+    unset($user[$usr]);
+
+    $fp = fopen("data/users2.json", 'w');
+    fwrite($fp, "");
+    fclose($fp);
+
+    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+    $fp = fopen("data/users2.json", 'a');
+    fwrite($fp, $jsonString);
+    fclose($fp);
+}
+
 ?>
