@@ -43,7 +43,7 @@
                         <div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                            <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
+                            <!-- <a href=""><img src="images/ShPwd.png" alt="Show Password"></a> -->
                           </input>
                         </div>
                         <div class="mb-3">
