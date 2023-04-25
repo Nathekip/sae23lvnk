@@ -90,6 +90,8 @@
                     $alerte = "<div class='alert alert-success'>
                             <strong>Succès</strong> Le mot de passe a bien été modifié.
                            </div>";
+                    unset($_SESSION['PhaseMdp']);
+                    unset($_SESSION['usermodif']);
                     header("Location: page01.php");
                 }
                 $formulaire = str_replace("PhrMdp",'',$formulaire);
