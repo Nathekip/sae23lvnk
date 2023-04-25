@@ -41,11 +41,11 @@
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
-                          <input type="password" id="mdp" value="test" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
+                          <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                         </div>
                         <div class="mb-3">
                           <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
-                          <input type="password" id="cmdp" value="test" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
+                          <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
                         </div>
                         <div class="mb-3 d-grid">
                           <button type="submit" class="btn btn-warning">
@@ -74,6 +74,7 @@
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                            </div>";
+                    $formulaire = str_replace("PhrMdp",$_POST['mdp'],$formulaire);
                 }
                 else if ( isset($_POST['mdp']) ){
                     deleteUser($_SESSION['usermodif']['user']);
@@ -83,6 +84,7 @@
                            </div>";
                     header("Location: page01.php");
                 }
+                $formulaire = str_replace("PhrMdp",'',$formulaire);
                 ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
