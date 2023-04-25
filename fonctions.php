@@ -144,10 +144,10 @@ function pageheader(){
     $user = json_decode($json, true);
     $page = "Location: ".$_POST['page'].".php";
 
-    foreach($user as $u){       
+    foreach($user as $u){
+      print_r($u);
       if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) )
       {
-          print_r($u);
           $_SESSION['utilisateur']=$u['user'];
           $_SESSION['role']=$u['role'];
           $_SESSION['msg'] = "vrai";
