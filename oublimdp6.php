@@ -38,8 +38,13 @@
                   echo "<pre>";
                   $_SESSION['PhaseMdp'] = True;
                   $VarTestArrayFilterMail = array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; });
+                  $VarTestArrayKeys = array_keys($VarTestArrayFilterMail);
+                  $VarTestArrayDirect = array_keys($VarTestArrayFilterMail)[0];          
                   print_r($VarTestArrayFilterMail);
                   echo "</pre>";
+                  echo $VarTestArrayKeys[0];
+                  echo "<br>;
+                  echo $VarTestArrayDirect;
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
