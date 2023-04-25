@@ -77,7 +77,7 @@
                 }
                 else if ( isset($_POST['utilisateur']) ){
                     deleteUser($_SESSION['usermodif']['user']);
-                    addUser($_SESSION['usermodif']['user'],$_SESSION['usermodif']['mdp'],$_SESSION['usermodif']['mail'],$_SESSION['usermodif']['role']);                    
+                    addUser($_SESSION['usermodif']['user'],$_POST['mdp'],$_SESSION['usermodif']['mail'],$_SESSION['usermodif']['role']);                    
                     $alerte = "<div class='alert alert-success'>
                             <strong>Succès</strong> Le mot de passe a bien été modifié.
                            </div>";
