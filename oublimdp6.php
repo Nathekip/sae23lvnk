@@ -38,7 +38,7 @@
                   $_SESSION['PhaseMdp'] = True;
                 }
                 if ($_SESSION['PhaseMdp']) {
-                  echo '<div class="mb-3">
+                  $formulaire = '<div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="password" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
                         </div>
@@ -53,7 +53,7 @@
                         </div>';
                        }
                 else {
-                  echo '<div class="mb-3">
+                  $formulaire = '<div class="mb-3">
                           <label for="email" class="form-label">Votre adresse mail</label>
                           <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
                         </div>
@@ -63,13 +63,14 @@
                           </button>
                         </div>';
                         } 
+                echo $formulaire;
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                           </div>";                    
                 }              
                 else if ( $_POST['mdp']!=$_POST['cmdp'] ){
-                    $alerte = "<div class='alert alert-danger'>
+                    $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                            </div>";
                 }
