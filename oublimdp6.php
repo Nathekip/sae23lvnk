@@ -49,7 +49,10 @@
                       </div>";
               }
               else if (isset($_POST['mail']) ){
-                mail('contact.nathanielguitton@gmail.com', 'Code de confirmation Voiture', '43321');
+                $PhrMail ="feur@hotcom";
+                echo "<div class='alert alert-success'>
+                        Un mail va vous être envoyé à $PhrMail, il vous permettra de configurer un nouveau mot de passe.
+                      </div>";                
               }
             ?>
           </div>
