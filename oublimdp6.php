@@ -38,13 +38,8 @@
                   echo "<pre>";
                   $_SESSION['PhaseMdp'] = True;
                   $VarTestArrayFilterMail = array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; });
-                  $VarTestArrayKeys = array_keys($VarTestArrayFilterMail);
-                  $VarTestArrayDirect = array_keys($VarTestArrayFilterMail)[0];          
-                  print_r($VarTestArrayFilterMail);
-                  echo "</pre>";
-                  echo $VarTestArrayKeys[0];
-                  echo "<br>";
-                  echo $VarTestArrayDirect;
+                  $usermodif = array_keys(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0];
+                  $usermodif2 = array_keys($VarTestArrayFilterMail)[0];
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
@@ -103,6 +98,8 @@
       </div>
     </div>
     <?php
+      echo $usermodif;
+      echo $usermodif2;
       pr();
     ?>
   </body>
