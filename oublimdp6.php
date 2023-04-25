@@ -64,8 +64,6 @@
                           </button>
                         </div>';
                         } 
-                $formulaire = str_replace("PhrMdp",'',$formulaire);
-                echo $formulaire;
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
@@ -86,6 +84,7 @@
                     header("Location: page01.php");
                 }
                 $formulaire = str_replace("PhrMdp",'',$formulaire);
+                echo $formulaire;
                 ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
