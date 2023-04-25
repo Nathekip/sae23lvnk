@@ -36,13 +36,15 @@
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '
-                      <p class="text-black-50 pt-2">Entrez votre adresse mail afin de vous identifier
+                      <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
                       </p>
                     </div>
                     <form action="oublimdp6.php" method="post">
-                        <div class="mb-3">
+                        <div class="mb-3 input-group">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
+                          <div class="input-group-addon">
+                            <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
                         </div>
                         <div class="mb-3">
                           <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
@@ -56,7 +58,7 @@
                        }
                 else {
                   $formulaire = '
-                        <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
+                        <p class="text-black-50 pt-2">Entrez votre adresse mail afin de vous identifier
                         </p>
                       </div>
                       <form action="oublimdp6.php" method="post">
