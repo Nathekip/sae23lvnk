@@ -70,7 +70,7 @@ function pageheader(){
     #si l'utilisateur n'existe pas, ça veut dire qu'il n'est pas identifié
     
     else { 
-        $boutons = '<div class="pe-2"> Vous n\'êtes pas connectés </div>
+        $boutons = '<div class="pe-2"> Vous n\'êtes pas connecté </div>
         
           <button type="button" class="btn text-black btn-outline-warning btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
   Connexion
