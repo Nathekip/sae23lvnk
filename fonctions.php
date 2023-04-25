@@ -147,6 +147,7 @@ function pageheader(){
     foreach($user as $u){       
       if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) )
       {
+          print_r($u);
           $_SESSION['utilisateur']=$u['user'];
           $_SESSION['role']=$u['role'];
           $_SESSION['msg'] = "vrai";
