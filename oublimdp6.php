@@ -96,7 +96,7 @@
       </div>
     </div>
     <?php
-      var_dump($usermodif);
+      var_dump($usermodif[0]);
       pr();
     ?>
   </body>
