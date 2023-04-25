@@ -70,7 +70,7 @@
                       </div>";
               }
               else if (isset($_POST['mail']) ){
-                $PhaseMdp = True
+                $PhaseMdp = True;
               }
             ?>
           </div>
