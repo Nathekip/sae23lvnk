@@ -28,7 +28,6 @@
                           Veuillez renseigner votre adresse mail.
                         </div>";
                 }
-                # (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) )
                 else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
                  $alerte = "<div class='alert alert-warning'>
                           Cette adresse mail n'est pas liée à un compte.
@@ -63,16 +62,12 @@
                             Confirmer l\'adresse mail
                           </button>
                         </div>';
-                        }
-                # alerte mdp trop court / ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) )
-                else if ( ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp'])    )      {
-                # la fonction strlen(string) renvoie le nombre de charactères d'un string
+                        } 
+                if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
-                          </div>";
-                    # $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                }
-                # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
+                          </div>";                    
+                }              
                 else if ( $_POST['mdp']!=$_POST['cmdp'] ){
                     $alerte = "<div class='alert alert-danger'>
                             <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
@@ -84,8 +79,6 @@
                             <strong>Succès</strong> Le compte a bien été créé.
                            </div>";
                 }
-                
-                
                 ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
