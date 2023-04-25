@@ -36,8 +36,7 @@
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
                   $_SESSION['PhaseMdp'] = True;
-                  $usermodif = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
-                  $usermodif2 = $usermodif[0];
+                  $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
@@ -97,7 +96,7 @@
       </div>
     </div>
     <?php
-      print_r($usermodif);
+      print_r($_SESSION['usermodif']);
       pr();
     ?>
   </body>
