@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="pt-2 ps-2 text-primary">
-      <--<a href="page01.php" class="btn btn-link">Retour vers la page d'accueil</a>
+      <a href="page01.php" class="btn btn-link"><-- Retour vers la page d'accueil</a>
     </div>
     <div class="container d-flex flex-column">
       <div class="row align-items-center justify-content-center
