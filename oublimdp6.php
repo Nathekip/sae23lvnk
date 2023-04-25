@@ -35,9 +35,9 @@
                 }
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
-                  $PhaseMdp = True;
+                  $_SESSION['PhaseMdp'] = True;
                 }
-                if ($PhaseMdp) {
+                if ($_SESSION['PhaseMdp']) {
                   echo '<div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="password" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
