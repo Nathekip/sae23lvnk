@@ -75,7 +75,7 @@
                             <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                            </div>";
                 }
-                else if ( isset($_POST['utilisateur']) ){
+                else if ( isset($_POST['mdp']) ){
                     deleteUser($_SESSION['usermodif']['user']);
                     addUser($_SESSION['usermodif']['user'],$_POST['mdp'],$_SESSION['usermodif']['mail'],$_SESSION['usermodif']['role']);                    
                     $alerte = "<div class='alert alert-success'>
