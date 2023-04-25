@@ -36,15 +36,17 @@
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
                   $_SESSION['PhaseMdp'] = True;
+                  $VarTestArrayFilterMail = array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; });
+                  print_r($VarTestArrayFilterMail);
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
-                          <input type="password" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
+                          <input type="password" id="mdp" value="test" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                         </div>
                         <div class="mb-3">
                           <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
-                          <input type="password" id="cmdp" class="form-control" name="mail" placeholder="Confirmez votre nouveau mot de passe">
+                          <input type="password" id="cmdp" value="test" class="form-control" name="mail" placeholder="Confirmez votre nouveau mdp">
                         </div>
                         <div class="mb-3 d-grid">
                           <button type="submit" class="btn btn-warning">
