@@ -148,15 +148,7 @@ function pageheader(){
     $page = "Location: ".$_POST['page'].".php";
 
     foreach($user as $u){       
-      if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['user']))
-      {
-          $_SESSION['utilisateur']=$u['user'];
-          $_SESSION['role']=$u['role'];
-          $_SESSION['msg'] = "vrai";
-          echo $page;
-          header($page);
-     }
-      if ((password_verify($_POST['motdepasse'],$u['mdp'])==1) && ($_POST['utilisateur']==$u['mail']))
+      if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) )
       {
           $_SESSION['utilisateur']=$u['user'];
           $_SESSION['role']=$u['role'];
