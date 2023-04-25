@@ -40,12 +40,10 @@
                       </p>
                     </div>
                     <form action="oublimdp6.php" method="post">
-                        <div class="mb-3 input-group">
+                        <div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                          <div class="input-group-addon">
                             <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
-                        </div>
                         <div class="mb-3">
                           <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
                           <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
