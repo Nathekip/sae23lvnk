@@ -76,7 +76,8 @@
                            </div>";
                 }
                 else if ( isset($_POST['utilisateur']) ){
-                    
+                    #deleteUser();
+                    #addUser();                    
                     $alerte = "<div class='alert alert-success'>
                             <strong>Succès</strong> Le mot de passe a bien été modifié.
                            </div>";
@@ -97,6 +98,8 @@
     </div>
     <?php
       print_r($_SESSION['usermodif']);
+      echo "<br> Role : ";
+      echo $_SESSION['usermodif']['role'];
       pr();
     ?>
   </body>
