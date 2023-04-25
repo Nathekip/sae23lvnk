@@ -43,7 +43,7 @@
                   print_r($VarTestArrayFilterMail);
                   echo "</pre>";
                   echo $VarTestArrayKeys[0];
-                  echo "<br>;
+                  echo "<br>";
                   echo $VarTestArrayDirect;
                 }
                 if ($_SESSION['PhaseMdp']) {
