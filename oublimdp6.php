@@ -47,7 +47,10 @@
                echo "<div class='alert alert-warning'>
                         Cette adresse mail n'est pas liée à un compte.
                       </div>";
-              } 
+              }
+              else if (isset($_POST['mail']) ){
+                mail('contact.nathanielguitton@gmail.com', 'Code de confirmation Voiture', '43321');
+              }
             ?>
           </div>
         </div>
