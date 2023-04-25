@@ -23,6 +23,10 @@
                 <div class="mb-3">
                   <label for="email" class="form-label">Votre adresse mail</label>
                   <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
+                  <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
+                  <input type="input" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
+                  <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
+                  <input type="input" id="cmdp" class="form-control" name="mail" placeholder="Confirmez votre nouveau mot de passe">
                 </div>
                 <div class="mb-3 d-grid">
                   <button type="submit" class="btn btn-warning">
