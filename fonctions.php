@@ -49,7 +49,9 @@ function pagenavbar($page=""){
 
 function pageheader(){
     echo '<header>
-    <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">';
+    <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center mx-auto">
+    </div>';
     
     
     #si l'utilisateur existe, ça veut dire qu'il est identifié
