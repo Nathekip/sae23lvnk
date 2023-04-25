@@ -36,7 +36,7 @@
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
                   $_SESSION['PhaseMdp'] = True;
-                  $usermodif = array_keys(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0];
+                  $usermodif = array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; });
                 }
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '<div class="mb-3">
@@ -76,10 +76,11 @@
                            </div>";
                 }
                 else if ( isset($_POST['utilisateur']) ){
-                    addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail']);
+                    
                     $alerte = "<div class='alert alert-success'>
-                            <strong>Succès</strong> Le compte a bien été créé.
+                            <strong>Succès</strong> Le mot de passe a bien été modifié.
                            </div>";
+                    header("Location: page01.php");
                 }
                 ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
