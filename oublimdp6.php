@@ -36,7 +36,7 @@
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
                   $_SESSION['PhaseMdp'] = True;
-                  $usermodif = array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; });
+                  $usermodif = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                   $usermodif2 = $usermodif[0];
                 }
                 if ($_SESSION['PhaseMdp']) {
