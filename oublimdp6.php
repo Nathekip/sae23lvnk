@@ -45,7 +45,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
-                          <input type="password" id="cmdp" value="test" class="form-control" name="mail" placeholder="Confirmez votre nouveau mdp">
+                          <input type="password" id="cmdp" value="test" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
                         </div>
                         <div class="mb-3 d-grid">
                           <button type="submit" class="btn btn-warning">
