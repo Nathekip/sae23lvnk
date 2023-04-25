@@ -43,6 +43,8 @@ function pagenavbar($page=""){
             EOD; 
   $rep = str_replace($page, 'active', $rep);
   echo $rep;
+  # raccourci pour débug la page mdpounli6.php :
+    $_SESSION['PhaseMdp'] = False;
 }
 
 function pageheader(){
