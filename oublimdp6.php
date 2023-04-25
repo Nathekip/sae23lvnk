@@ -64,6 +64,7 @@
                           </button>
                         </div>';
                         } 
+                $formulaire = str_replace("PhrMdp",'',$formulaire);
                 echo $formulaire;
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
