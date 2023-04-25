@@ -21,6 +21,26 @@
               </div>
               <form action="oublimdp6.php" method="post">
                 <?php
+                $json = file_get_contents('data/users.json');
+              $user = json_decode($json, true);
+              if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
+                $alerte = "<div class='alert alert-warning'>
+                        Veuillez renseigner votre adresse mail.
+                      </div>";
+              }
+              # (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) )
+              else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
+               $alerte = "<div class='alert alert-warning'>
+                        Cette adresse mail n'est pas liée à un compte.
+                      </div>";
+              }
+              else if (isset($_POST['mail']) ){
+                $alerte = "";
+                $PhaseMdp = True;
+                echo $PhaseMdp;
+                if ($PhaseMdp){ echo "yesssss";}
+              }
+                
                 if (!$PhaseMdp) {
                   echo '<div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
@@ -56,24 +76,7 @@
           </div>
           <div class="pt-2">
             <?php
-              $json = file_get_contents('data/users.json');
-              $user = json_decode($json, true);
-              if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
-                echo "<div class='alert alert-warning'>
-                        Veuillez renseigner votre adresse mail.
-                      </div>";
-              }
-              # (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) )
-              else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
-               echo "<div class='alert alert-warning'>
-                        Cette adresse mail n'est pas liée à un compte.
-                      </div>";
-              }
-              else if (isset($_POST['mail']) ){
-                $PhaseMdp = True;
-                echo $PhaseMdp;
-                if ($PhaseMdp){ echo "yesssss";}
-              }
+              echo $alerte;
             ?>
           </div>
         </div>
