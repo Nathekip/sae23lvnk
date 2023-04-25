@@ -21,7 +21,7 @@
               </div>
               <form action="oublimdp6.php" method="post">
                 <?php
-                if ($PhaseMdp) {
+                if (!$PhaseMdp) {
                   echo '<div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="input" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
