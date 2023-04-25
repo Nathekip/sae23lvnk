@@ -20,23 +20,36 @@
                 </p>
               </div>
               <form action="oublimdp6.php" method="post">
-                <div class="mb-3">
-                  <label for="email" class="form-label">Votre adresse mail</label>
-                  <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
-                </div>
-                <div class="mb-3">
-                  <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
-                  <input type="input" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
-                </div>
-                <div class="mb-3">
-                  <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
-                  <input type="input" id="cmdp" class="form-control" name="mail" placeholder="Confirmez votre nouveau mot de passe">
-                </div>
-                <div class="mb-3 d-grid">
-                  <button type="submit" class="btn btn-warning">
-                    Réinitialiser le mot de passe
-                  </button>
-                </div>
+                <?php
+                if ($PhaseMdp) {
+                  echo '<div class="mb-3">
+                          <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
+                          <input type="input" id="mdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mot de passe">
+                        </div>
+                        <div class="mb-3">
+                          <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
+                          <input type="input" id="cmdp" class="form-control" name="mail" placeholder="Confirmez votre nouveau mot de passe">
+                        </div>
+                        <div class="mb-3 d-grid">
+                          <button type="submit" class="btn btn-warning">
+                            Réinitialiser le mot de passe
+                          </button>
+                        </div>';
+                       }
+                else {
+                  echo '<div class="mb-3">
+                          <label for="email" class="form-label">Votre adresse mail</label>
+                          <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
+                        </div>
+                        <div class="mb-3 d-grid">
+                          <button type="submit" class="btn btn-warning">
+                            Confirmer l\'adresse mail
+                          </button>
+                        </div>';
+                        }
+                
+                
+                ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
             </div>
@@ -57,10 +70,7 @@
                       </div>";
               }
               else if (isset($_POST['mail']) ){
-                $PhrMail ="feur@hotcom";
-                echo "<div class='alert alert-success'>
-                        Un mail va vous être envoyé à $PhrMail, il vous permettra de configurer un nouveau mot de passe.
-                      </div>";                
+                $PhaseMdp = True
               }
             ?>
           </div>
