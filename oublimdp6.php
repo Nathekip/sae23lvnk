@@ -16,10 +16,6 @@
             <div class="card-body">
               <div class="mb-4">
                 <h5>Mot de passe oublié ?</h5>
-                <p class="text-black-50 pt-2">Entrez votre adresse mail afin de recevoir un mail de récupération
-                </p>
-              </div>
-              <form action="oublimdp6.php" method="post">
                 <?php
                 $json = file_get_contents('data/users.json');
                 $user = json_decode($json, true);
@@ -39,7 +35,12 @@
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                 }
                 if ($_SESSION['PhaseMdp']) {
-                  $formulaire = '<div class="mb-3">
+                  $formulaire = '
+                      <p class="text-black-50 pt-2">Entrez votre adresse mail afin de vous identifier
+                      </p>
+                    </div>
+                    <form action="oublimdp6.php" method="post">
+                        <div class="mb-3">
                           <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
                           <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                         </div>
@@ -54,7 +55,12 @@
                         </div>';
                        }
                 else {
-                  $formulaire = '<div class="mb-3">
+                  $formulaire = '
+                        <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
+                        </p>
+                      </div>
+                      <form action="oublimdp6.php" method="post">
+                        <div class="mb-3">
                           <label for="email" class="form-label">Votre adresse mail</label>
                           <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
                         </div>
