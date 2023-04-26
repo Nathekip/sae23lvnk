@@ -22,7 +22,6 @@
                 $user = json_decode($json, true);
       
                 if ( isset($_POST['RtrMail']) ){
-                  echo "aaaaaaaaaaaaaaaaaaaa";
                   $_SESSION['PhaseMdp'] = False;
                 }
       
