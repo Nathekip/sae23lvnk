@@ -46,7 +46,7 @@
                   $formulaire = '
                       <form method="post" action="oublimdp6.php">
                         <button type="submit" name="RtrMail" class="btn btn-link">
-                          Revenir en arrière
+                          <-- Revenir en arrière
                         </button>
                       </form>
                       <h5>Mot de passe oublié ?</h5>
