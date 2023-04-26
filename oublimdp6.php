@@ -20,6 +20,8 @@
                 <?php
                 $json = file_get_contents('data/users.json');
                 $user = json_decode($json, true);
+      
+                # phase email - Test
                 if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
                   $alerte = "<div class='alert alert-warning'>
                           Veuillez renseigner votre adresse mail.
@@ -35,6 +37,8 @@
                   $_SESSION['PhaseMdp'] = True;
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                 }
+      
+                # affichage formulaire(phase)
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '
                       <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
@@ -55,7 +59,8 @@
                           <button type="submit" class="btn btn-warning">
                             Réinitialiser le mot de passe
                           </button>
-                        </div>';
+                        </div>
+                      </form>';
                        }
                 else {
                   $formulaire = '
@@ -71,8 +76,11 @@
                           <button type="submit" class="btn btn-warning">
                             Confirmer l\'adresse mail
                           </button>
-                        </div>';
+                        </div>
+                      </form>';
                         } 
+      
+                # phase mdp - Test
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
@@ -92,8 +100,17 @@
                            </div>";
                     $_SESSION['PhaseMdp'] = "";
                     $_SESSION['usermodif'] = "";
-                    header("Location: page01.php");
+                    $formulaire = '
+                    <p class="text-black-50 pt-2">Vous pouvez vous connecter à présent
+                        </p>
+                      </div>
+                        <button type="submit" class="btn text-white btn-outline-warning btn-dark">
+                            Se connecter
+                          </button>                        
+                      </div>';
                 }
+      
+      
                 $formulaire = str_replace("PhrMdp",'',$formulaire);
                 echo $formulaire;
                 ?>
