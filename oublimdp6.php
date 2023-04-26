@@ -105,9 +105,9 @@
                         </p>
                       </div>
                       <div class="mb-3 mx-5 py-4 d-grid">
-                        <button type="submit" class="btn text-white btn-outline-warning btn-dark">
+                        <a href="page01.php" class="btn text-white btn-outline-warning btn-dark">
                             Se connecter
-                          </button>                        
+                          </a>                        
                       </div>';
                 }
       
