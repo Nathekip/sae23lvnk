@@ -23,7 +23,7 @@
       
                 if ( isset($_POST['RtrMail']) ){
                   echo "aaaaaaaaaaaaaaaaaaaa";
-                  $_SESSION['PhaseMdp'] == 0;                  
+                  $_SESSION['PhaseMdp'] = False;
                 }
       
                 # phase email - Test
@@ -39,7 +39,7 @@
                 }
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
-                  # $_SESSION['PhaseMdp'] = True;
+                  $_SESSION['PhaseMdp'] = True;
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                 }
       
