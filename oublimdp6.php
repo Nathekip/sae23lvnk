@@ -16,6 +16,11 @@
           <div class="card shadow-sm border-warning">
             <div class="card-body">
               <div class="mb-4">
+                <form method="post" action="oublimdp6.php">
+                  <button type="submit" value="test" name"oop" class="btn btn-link">
+                    Revenir en arrière
+                  </button>
+                </form> 
                 <h5>Mot de passe oublié ?</h5>
                 <?php
                 $json = file_get_contents('data/users.json');
