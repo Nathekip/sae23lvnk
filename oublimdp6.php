@@ -120,7 +120,11 @@
                         <a href="page01.php" class="btn text-white btn-outline-warning btn-dark">
                             Se connecter
                           </a>                        
-                      </div>';
+                      </div>
+                      <form method="get" action="feur.php">
+                        <button input="submit" class="btn btn-info>AAAAAAAAAAAAAAAAAA</button>
+                      </form>
+                      ';
                 }
       
       
