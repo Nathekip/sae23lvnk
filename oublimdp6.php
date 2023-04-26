@@ -21,7 +21,7 @@
                 $json = file_get_contents('data/users.json');
                 $user = json_decode($json, true);
       
-                if ( $_POST['oop'] == 'test' ){
+                if ( isset($_POST['RtrMail']) ){
                   echo "aaaaaaaaaaaaaaaaaaaa";
                   $_SESSION['PhaseMdp'] == False;                  
                 }
@@ -47,7 +47,7 @@
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '
                     <form method="post" action="oublimdp6.php">
-                      <button type="submit" value="test" name"oop" class="btn btn-link">
+                      <button type="submit" name="RtrMail" class="btn btn-link">
                         Revenir en arrière
                       </button>
                     </form> 
