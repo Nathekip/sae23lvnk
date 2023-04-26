@@ -16,18 +16,18 @@
           <div class="card shadow-sm border-warning">
             <div class="card-body">
               <div class="mb-4">
-                <form method="post" action="oublimdp6.php">
-                  <button type="submit" value="test" name"oop" class="btn btn-link">
-                    Revenir en arrière
-                  </button>
-                </form> 
                 <h5>Mot de passe oublié ?</h5>
                 <?php
                 $json = file_get_contents('data/users.json');
                 $user = json_decode($json, true);
       
+                if ( $_POST['test'] == 'oop' ){
+                  echo "aaaaaaaaaaaaaaaaaaaa";
+                  $_SESSION['PhaseMdp'] == False;                  
+                }
+      
                 # phase email - Test
-                if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
+                else if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
                   $alerte = "<div class='alert alert-warning'>
                           Veuillez renseigner votre adresse mail.
                         </div>";
@@ -46,6 +46,11 @@
                 # affichage formulaire(phase)
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '
+                    <form method="post" action="oublimdp6.php">
+                      <button type="submit" value="test" name"oop" class="btn btn-link">
+                        Revenir en arrière
+                      </button>
+                    </form> 
                       <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
                       </p>
                     </div>
