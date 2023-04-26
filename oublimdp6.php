@@ -22,6 +22,7 @@
       
                 if ( isset($_POST['RtrMail']) ){
                   $_SESSION['PhaseMdp'] = False;
+                  $_SESSION['usermodif'] = "";
                 }
       
                 # phase email - Test
