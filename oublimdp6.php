@@ -104,6 +104,7 @@
                     <p class="text-black-50 pt-2">Vous pouvez vous connecter à présent
                         </p>
                       </div>
+                      <div class="mb-3 d-grid">
                         <button type="submit" class="btn text-white btn-outline-warning btn-dark">
                             Se connecter
                           </button>                        
