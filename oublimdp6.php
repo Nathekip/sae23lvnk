@@ -21,7 +21,7 @@
                 $json = file_get_contents('data/users.json');
                 $user = json_decode($json, true);
       
-                if ( $_POST['test'] == 'oop' ){
+                if ( $_POST['oop'] == 'test' ){
                   echo "aaaaaaaaaaaaaaaaaaaa";
                   $_SESSION['PhaseMdp'] == False;                  
                 }
