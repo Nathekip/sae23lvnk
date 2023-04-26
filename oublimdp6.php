@@ -23,7 +23,7 @@
       
                 if ( isset($_POST['RtrMail']) ){
                   echo "aaaaaaaaaaaaaaaaaaaa";
-                  $_SESSION['PhaseMdp'] == False;                  
+                  $_SESSION['PhaseMdp'] == 0;                  
                 }
       
                 # phase email - Test
