@@ -80,7 +80,7 @@ function pageheader(){
 
       <!-- Modal Header -->
       <div class="modal-header bg-secondary text-center">
-        <h4 class="modal-title text-white mx-auto">Connexion</h4>
+        <h4 class="modal-title text-white-50 mx-auto">Connexion</h4>
         <button type="button" class="btn-close bg-danger btn-outline-dark" data-bs-dismiss="modal"></button>
       </div>
 
