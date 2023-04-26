@@ -122,7 +122,7 @@
                           </a>                        
                       </div>
                       <form method="get" action="feur.php">
-                        <button input="submit" class="btn btn-info>AAAAAAAAAAAAAAAAAA</button>
+                        <button input="submit" class="btn btn-info">AAAAAAAAAAAAAAAAAA</button>
                       </form>
                       ';
                 }
