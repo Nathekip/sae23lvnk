@@ -44,12 +44,12 @@
                 # affichage formulaire(phase)
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '
-                      <h5>Mot de passe oublié ?</h5>
                       <form method="post" action="oublimdp6.php">
                         <button type="submit" name="RtrMail" class="btn btn-link">
                           Revenir en arrière
                         </button>
                       </form>
+                      <h5>Mot de passe oublié ?</h5>
                       <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
                       </p>
                     </div>
