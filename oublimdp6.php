@@ -55,24 +55,26 @@
                       </p>
                     </div>
                     <form action="oublimdp6.php" method="post">
-                        <div class="mb-3 input-group">
-                          <br>
-                            <label for="mdp" class="form-label">Votre nouveau mot de passe</label>
-                            <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                            <span class="input-group-text">
-                              <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
-                            </span>
-                        </div>
-                        <div class="mb-3">
-                          <label for="cmdp" class="form-label">Confirmez votre nouveau mot de passe</label>
-                          <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
-                        </div>
-                        <div class="mb-3 d-grid">
-                          <button type="submit" class="btn btn-warning">
-                            Réinitialiser le mot de passe
-                          </button>
-                        </div>
-                      </form>';
+                    Votre nouveau mot de passe
+                    <div class="pt-1 mb-3 input-group">
+                      <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
+                      <span class="input-group-text">
+                        <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
+                      </span>
+                    </div>
+                    Confirmez votre nouveau mot de passe
+                    <div class="pt-1 mb-3 input-group">
+                      <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
+                      <span class="input-group-text">
+                        <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
+                      </span>
+                    </div>
+                    <div class="pt-4 mb-3 d-grid">
+                      <button type="submit" class="btn btn-warning">
+                        Réinitialiser le mot de passe
+                      </button>
+                    </div>
+                  </form>';
                        }
                 else {
                   $formulaire = '
