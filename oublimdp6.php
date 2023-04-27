@@ -66,14 +66,14 @@
                     <form action="oublimdp6.php" method="post">
                     Votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
-                      <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
+                      <input type="mdpoeil" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                       <button type="submit" class="btn btn-warning" name="mdpoeil" value=True>
                         <img src="images/ShPwd.png" alt="Show Password">
                       </button>                      
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
-                      <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
+                      <input type="cmdpoeil" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
                       <button type="submit" class="btn btn-warning" name="cmdpoeil" value=True>
                         <img src="images/ShPwd.png" alt="Show Password">
                       </button>
@@ -114,6 +114,10 @@
                   $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool'];
                   echo $_SESSION['CmdpBool'];
                 }
+                if ($_SESSION['MdpBool']){ $formulaire = str_replace("mdpoeil","input",$formulaire);}
+                else { $formulaire = str_replace("mdpoeil","password",$formulaire);}
+                if ($_SESSION['CmdpBool']){ $formulaire = str_replace("cmdpoeil","input",$formulaire);}
+                else { $formulaire = str_replace("mdpoeil","password",$formulaire);}
       
                 # phase mdp - Test
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['envoi']) )      {                
