@@ -69,7 +69,7 @@
                         <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
                       </span>
                     </div>
-                    <div class="pt-4 mb-3 d-grid">
+                    <div class="pt-2 mb-3 d-grid">
                       <button type="submit" class="btn btn-warning">
                         Réinitialiser le mot de passe
                       </button>
@@ -93,8 +93,7 @@
                           </button>
                         </div>
                       </form>';
-                        } 
-      
+                        }
                 # phase mdp - Test
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
@@ -130,8 +129,6 @@
                       </form>
                       ';
                 }
-      
-      
                 $formulaire = str_replace("PhrMdp",'',$formulaire);
                 echo $formulaire;
                 ?>
