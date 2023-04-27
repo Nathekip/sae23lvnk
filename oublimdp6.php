@@ -104,12 +104,12 @@
                       </form>';
                         }      
                 # test oeil
-                if ( isset($_POST['mdp']) ){
+                if ( isset($_POST['mdpoeil']) ){
                   echo "mdp";
                   $_SESSION['MdpBool'] = ! $_SESSION['MdpBool'];
                   echo $_SESSION['MdpBool'];
                 }
-                if ( isset($_POST['cmdp']) ){
+                if ( isset($_POST['cmdpoeil']) ){
                   echo "cmdp";
                   $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool'];
                   echo $_SESSION['CmdpBool'];
