@@ -58,14 +58,14 @@
                     Votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
                       <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                      <button type="submit" class="btn btn-warning" name="button1" value="Button1">
+                      <button type="submit" class="btn btn-warning" name="mdpoeil" value=True>
                         <img src="images/ShPwd.png" alt="Show Password">
                       </button>                      
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
                       <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
-                      <button type="submit" class="btn btn-warning" name="button2" value="Button2">
+                      <button type="submit" class="btn btn-warning" name="cmdpoeil" value=True>
                         <img src="images/ShPwd.png" alt="Show Password">
                       </button>
                     </div>
@@ -93,7 +93,12 @@
                           </button>
                         </div>
                       </form>';
-                        }
+                        }      
+                # test oeil
+                if (True ){
+                  echo "aaaaaaaaaaaa";
+                }
+      
                 # phase mdp - Test
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
                     $alerte = "<div class='alert alert-warning'>
