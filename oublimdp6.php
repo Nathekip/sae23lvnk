@@ -58,11 +58,9 @@
                     Votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
                       <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                      
-                        <button type="submit" class="btn btn-white" name="button1" value="Button1">
-                          <img src="images/ShPwd.png" alt="Show Password">
-                        </button>
-                      
+                      <button type="submit" class="btn btn-secondary" name="button1" value="Button1">
+                        <img src="images/ShPwd.png" alt="Show Password">
+                      </button>                      
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
