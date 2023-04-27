@@ -108,10 +108,8 @@
                   echo "mdp";
                   $_SESSION['MdpBool'] = ! $_SESSION['MdpBool'];
                   echo $_SESSION['MdpBool'];
-                
-                  
                 }
-                else if ( isset($_POST['cmdp']) ){
+                if ( isset($_POST['cmdp']) ){
                   echo "cmdp";
                   $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool'];
                   echo $_SESSION['CmdpBool'];
