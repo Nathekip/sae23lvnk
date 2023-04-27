@@ -70,7 +70,7 @@
                       </button>
                     </div>
                     <div class="pt-2 mb-3 d-grid">
-                      <button type="submit" class="btn btn-warning">
+                      <button type="submit" name="envoi" class="btn btn-warning">
                         Réinitialiser le mot de passe
                       </button>
                     </div>
@@ -100,18 +100,18 @@
                 }
       
                 # phase mdp - Test
-                if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp']) )      {                
+                if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['envoi']) )      {                
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                           </div>";                    
                 }              
-                else if ( $_POST['mdp']!=$_POST['cmdp'] ){
+                else if (( $_POST['mdp']!=$_POST['cmdp'] ) && isset($_POST['envoi']) ){
                     $alerte = "<div class='alert alert-warning'>
                             <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                            </div>";
                     $formulaire = str_replace("PhrMdp",$_POST['mdp'],$formulaire);
                 }
-                else if ( isset($_POST['mdp']) ){
+                else if ( isset($_POST['envoi']) ){
                     deleteUser($_SESSION['usermodif']['user']);
                     addUser($_SESSION['usermodif']['user'],$_POST['mdp'],$_SESSION['usermodif']['mail'],$_SESSION['usermodif']['role']);                    
                     $alerte = "<div class='alert alert-success'>
