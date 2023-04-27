@@ -56,14 +56,16 @@
                     </div>
                     <form action="oublimdp6.php" method="post">
                     Votre nouveau mot de passe
-                    <div class="pt-1 mb-3 input-group">
+                    <div class="pt-1 mb-3 input-group-sm">
                       <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                       <span class="input-group-text">
-                        <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
+                        <button type="submit" name="button1" value="Button1">
+                          <img src="images/ShPwd.png" alt="Show Password">
+                        </button>
                       </span>
                     </div>
                     Confirmez votre nouveau mot de passe
-                    <div class="pt-1 mb-3 input-group">
+                    <div class="pt-1 mb-3 input-group-sm">
                       <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
                       <span class="input-group-text">
                         <a href=""><img src="images/ShPwd.png" alt="Show Password"></a>
