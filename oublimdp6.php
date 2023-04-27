@@ -111,7 +111,7 @@
                 
                   
                 }
-                else if ( isset($_POST['mdp']) ){
+                else if ( isset($_POST['cmdp']) ){
                   echo "cmdp";
                   $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool'];
                   echo $_SESSION['CmdpBool'];
