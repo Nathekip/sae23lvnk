@@ -20,6 +20,15 @@
                 $json = file_get_contents('data/users.json');
                 $user = json_decode($json, true);
       
+                # set var base
+                if ( !isset($_SESSION['MdpBool']) ){
+                  $_SESSION['MdpBool'] = False;
+                }
+                if ( !isset($_SESSION['CmdpBool']) ){
+                  $_SESSION['CmdpBool'] = False;
+                }
+      
+      
                 if ( isset($_POST['RtrMail']) ){
                   $_SESSION['PhaseMdp'] = False;
                   $_SESSION['usermodif'] = "";
@@ -95,8 +104,17 @@
                       </form>';
                         }      
                 # test oeil
-                if (True ){
-                  echo "aaaaaaaaaaaa";
+                if ( isset($_POST['mdp']) ){
+                  echo "mdp";
+                  $_SESSION['MdpBool'] = ! $_SESSION['MdpBool'];
+                  echo $_SESSION['MdpBool'];
+                
+                  
+                }
+                else if ( isset($_POST['mdp']) ){
+                  echo "cmdp";
+                  $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool'];
+                  echo $_SESSION['CmdpBool'];
                 }
       
                 # phase mdp - Test
