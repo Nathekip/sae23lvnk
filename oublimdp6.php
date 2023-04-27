@@ -64,7 +64,7 @@
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
-                      <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre nouveau mdp">
+                      <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
                       <button type="submit" class="btn btn-warning" name="button2" value="Button2">
                         <img src="images/ShPwd.png" alt="Show Password">
                       </button>
