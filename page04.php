@@ -31,7 +31,7 @@
                       </button>
                     </div>
                     <div class="pt-2 mb-3 d-grid">
-                      <button type="submit" name="envoi" class="btn btn-dark btn-outline-warning">                      
+                      <button type="submit" name="envoi" class="mx-3 2btn btn-warning text-white btn-outline-dark">                      
                         Réinitialiser le mot de passe
                       </button>
                     </div>
