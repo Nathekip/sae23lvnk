@@ -25,7 +25,7 @@
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
-                      <input type="password" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
+                      <input type="password" id="cmdp" value="PhrCmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
                       <button type="submit" class="btn btn-warning" name="cmdpoeil" value=True>
                         <i class="fa-solid fa-eye"></i>
                       </button>
@@ -36,10 +36,13 @@
                       </button>
                     </div>
                   </form>';
+    
     if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
       $formulaire = str_replace("PhrMdp",$_POST['mdp'],$formulaire);
+      $formulaire = str_replace("PhrCmdp",$_POST['cmdp'],$formulaire);
     }
     $formulaire = str_replace("PhrMdp","",$formulaire);
+    $formulaire = str_replace("PhrCmdp","",$formulaire);
     
     
     ?>
