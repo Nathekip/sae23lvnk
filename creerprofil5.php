@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <?php
-        include('fonctions.php');
-        setup();
-    ?>
-  <meta charset="UTF-8">
-</head>
-<body>
-     
+    <head>
+        <?php
+            include('fonctions.php');
+            setup();
+        ?>
+      <meta charset="UTF-8">
+    </head>
+    <body>
     <br><br><br>
       <div class="container bg-light h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -73,14 +72,11 @@
                                       </div>  
                                     </div>    
                                         ';
-                        
-                        
                             $json = file_get_contents('data/users.json');
                             $user = json_decode($json, true);
                             /* echo '<br><pre> data/users.json :<br>';
                             print_r($user);
                             echo '</pre>'; */
-
                             echo "<div class='container'>";
                             # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
                             if ( (in_array("", array_slice($_POST, 0, 4)) ) && ( isset($_POST['utilisateur'])  ) ){ 
@@ -152,13 +148,7 @@
                             $formulaire = str_replace('phrCmdp', '', $formulaire);
                         ?>
                     </p>
-                  
-                  <?php
-                  
-                  echo $formulaire;
-
-                  ?>
-                
+                <?php echo $formulaire; ?>
               </div>
             </div>
           </div>
@@ -224,12 +214,9 @@
             </div>
           </div>
         </div>
-              
-
     <?php
         pr();
         pagefooter();
     ?>
-
-</body>
-    </html>
+    </body>
+</html>
