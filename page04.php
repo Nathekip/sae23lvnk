@@ -13,7 +13,7 @@
           <div class="card shadow-sm border-warning">
             <div class="card-body">
               <div class="mb-4">
-                <form method="post" action="oublimdp6.php">
+                <form method="post" action="page04.php">
                   <button type="submit" name="RtrMail" class="btn btn-link">
                     <-- Revenir en arrière
                   </button>
@@ -22,7 +22,7 @@
                 <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
                 </p>
               </div>
-              <form action="oublimdp6.php" method="post">
+              <form action="page04.php" method="post">
                 Votre nouveau mot de passe
                 <div class="pt-1 mb-3 input-group">
                   <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
