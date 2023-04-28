@@ -32,6 +32,8 @@
                 if ( isset($_POST['RtrMail']) ){
                   $_SESSION['PhaseMdp'] = False;
                   $_SESSION['usermodif'] = "";
+                  $_SESSION['MdpBool'] = False;
+                  $_SESSION['CmdpBool'] = False;
                 }
       
                 # phase email - Test
@@ -137,6 +139,8 @@
                            </div>";
                     $_SESSION['PhaseMdp'] = "";
                     $_SESSION['usermodif'] = "";
+                    $_SESSION['MdpBool'] = False;
+                    $_SESSION['CmdpBool'] = False;
                     $formulaire = '
                     <h5>Mot de passe oublié ?</h5>
                     <p class="text-black-50 pt-2">Vous pouvez vous connecter à présent
