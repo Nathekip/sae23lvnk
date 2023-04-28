@@ -68,7 +68,7 @@
                     <div class="pt-1 mb-3 input-group">
                       <input type="password" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                       <button type="submit" class="btn btn-warning" name="mdpoeil" value=True>
-                        <img src="images/ShPwd.png" alt="Show Password">
+                        <i class="fa-solid fa-eye"></i>
                       </button>                      
                     </div>
                     Confirmez votre nouveau mot de passe
