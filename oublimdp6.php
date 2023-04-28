@@ -75,11 +75,11 @@
                     <div class="pt-1 mb-3 input-group">
                       <input type="PhrOeilCmdp" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
                       <button type="submit" class="btn btn-warning" name="cmdpoeil" value=True>
-                        <img src="images/ShPwd.png" alt="Show Password">
+                        <i class="fa-solid fa-eye"></i>
                       </button>
                     </div>
                     <div class="pt-2 mb-3 d-grid">
-                      <i class="fa-solid fa-eye"></i>
+                      <button type="submit" name="envoi" class="mx-4 btn btn-dark btn-outline-warning text-white">  
                         Réinitialiser le mot de passe
                       </button>
                     </div>
