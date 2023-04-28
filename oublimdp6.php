@@ -106,10 +106,16 @@
                 # test oeil
                 if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
                 if ( isset($_POST['cmdpoeil']) ){ $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool']; }
-                if ($_SESSION['MdpBool']){ $formulaire = str_replace("PhrOeilMdp","input",$formulaire);}
-                else { $formulaire = str_replace("PhrOeilMdp","password",$formulaire);}
-                if ($_SESSION['CmdpBool']){ $formulaire = str_replace("PhrOeilCmdp","input",$formulaire);}
-                else { $formulaire = str_replace("PhrOeilCmdp","password",$formulaire);}
+                if ($_SESSION['MdpBool']){ $formulaire = str_replace("PhrOeilMdp","input",$formulaire); }
+                else { $formulaire = str_replace("PhrOeilMdp","password",$formulaire); }
+                if ($_SESSION['CmdpBool']){ $formulaire = str_replace("PhrOeilCmdp","input",$formulaire); }
+                else { $formulaire = str_replace("PhrOeilCmdp","password",$formulaire); }
+      
+                # préremplissage oeil
+                if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
+                  $formulaire = str_replace("PhrMdp",$_POST['mdp'],$formulaire);
+                  $formulaire = str_replace("PhrCmdp",$_POST['cmdp'],$formulaire);
+                }
       
                 # phase mdp - Test
                 if (  ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['envoi']) )      {                
