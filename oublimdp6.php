@@ -73,7 +73,7 @@
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
-                      <input type="PhrOeilCmdp" id="cmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
+                      <input type="PhrOeilCmdp" id="cmdp" value="PhrCmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
                       <button type="submit" class="btn btn-warning" name="cmdpoeil" value=True>
                         <i class="fa-solid fa-eye"></i>
                       </button>
@@ -150,6 +150,7 @@
                       ';
                 }
                 $formulaire = str_replace("PhrMdp",'',$formulaire);
+                $formulaire = str_replace("PhrCmdp",'',$formulaire);
                 echo $formulaire;
                 ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
