@@ -38,8 +38,8 @@
                   </form>';
     if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
       $formulaire = str_replace("PhrMdp",$_POST['mdp'],$formulaire);
-      
     }
+    $formulaire = str_replace("PhrMdp","",$formulaire);
     
     
     ?>
