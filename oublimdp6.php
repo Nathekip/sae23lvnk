@@ -70,14 +70,14 @@
                     <div class="pt-1 mb-3 input-group">
                       <input type="PhrOeilMdp" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                       <button type="submit" class="btn btn-warning" name="mdpoeil" value=True>
-                        <i class="fa-solid fa-eye"></i>
+                        LogoOeilMdp
                       </button>                      
                     </div>
                     Confirmez votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
                       <input type="PhrOeilCmdp" id="cmdp" value="PhrCmdp" class="form-control" name="cmdp" placeholder="Confirmez votre mdp">
                       <button type="submit" class="btn btn-warning" name="cmdpoeil" value=True>
-                        <i class="fa-solid fa-eye"></i>
+                        LogoOeilCmdp
                       </button>
                     </div>
                     <div class="pt-2 mb-3 d-grid">
@@ -105,13 +105,26 @@
                         </div>
                       </form>';
                         }      
+      
                 # test oeil
                 if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
                 if ( isset($_POST['cmdpoeil']) ){ $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool']; }
-                if ($_SESSION['MdpBool']){ $formulaire = str_replace("PhrOeilMdp","input",$formulaire); }
-                else { $formulaire = str_replace("PhrOeilMdp","password",$formulaire); }
-                if ($_SESSION['CmdpBool']){ $formulaire = str_replace("PhrOeilCmdp","input",$formulaire); }
-                else { $formulaire = str_replace("PhrOeilCmdp","password",$formulaire); }
+                if ($_SESSION['MdpBool']){
+                  $formulaire = str_replace("PhrOeilMdp","input",$formulaire);
+                  $formulaire = str_replace("LogoOeilMdp",'<i class="fa-solid fa-eye-slash"></i>',$formulaire); 
+                }
+                else { 
+                  $formulaire = str_replace("PhrOeilMdp","password",$formulaire); 
+                  $formulaire = str_replace("LogoOeilMdp",'<i class="fa-solid fa-eye"></i>',$formulaire); 
+                }
+                if ($_SESSION['CmdpBool']){ 
+                  $formulaire = str_replace("PhrOeilCmdp","input",$formulaire); 
+                  $formulaire = str_replace("LogoOeilCmdp",'<i class="fa-solid fa-eye-slash"></i>',$formulaire); 
+                }
+                else { 
+                  $formulaire = str_replace("PhrOeilCmdp","password",$formulaire); 
+                  $formulaire = str_replace("LogoOeilCmdp",'<i class="fa-solid fa-eye"></i>',$formulaire); 
+                }
       
                 # préremplissage oeil
                 if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
