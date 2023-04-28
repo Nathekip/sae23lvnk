@@ -6,7 +6,6 @@
     setup();
     pageheader();
     pagenavbar("p04");
-    pr();
     ?>
     <div class="container d-flex flex-column">
       <div class="row align-items-center justify-content-center min-vh-100 g-0">
@@ -41,5 +40,8 @@
         </div>
       </div>
     </div>
+    <?php
+      pr();
+    ?>
   </body>
 </html>
