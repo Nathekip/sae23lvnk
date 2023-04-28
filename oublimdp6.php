@@ -79,7 +79,7 @@
                       </button>
                     </div>
                     <div class="pt-2 mb-3 d-grid">
-                      <button type="submit" name="envoi" class="btn btn-warning">
+                      <i class="fa-solid fa-eye"></i>
                         Réinitialiser le mot de passe
                       </button>
                     </div>
