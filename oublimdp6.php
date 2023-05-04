@@ -55,7 +55,7 @@
                 }
       
                 # affichage formulaire(phase)
-                if ($_SESSION['PhaseMdp']) {
+                if ($_SESSION['PhaseMdp'] || ($_SESSION['usermodif']['role'] == 0)) {
                   $formulaire = '
                       <form method="post" action="oublimdp6.php">
                         <button type="submit" name="RtrQuestion" class="btn btn-link">
