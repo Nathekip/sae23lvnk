@@ -68,7 +68,7 @@
                                                                   </ul>
                                                                 </div>                                                
                                                 </label>
-                                                <input value="phrRep" type="input" placeholder="Réponse à la question" name="cmdp" id="cmdp" class="form-control" />
+                                                <input value="phrRep" type="input" placeholder="Réponse à la question" name="rep" id="rep" class="form-control" />
                                               </div>
                                             </div>
                                             <div class="form-check d-flex justify-content-center mb-5">
@@ -106,6 +106,7 @@
                                 $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                                 $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                                 $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             } 
                             # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))
                             else if (       (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))   ) {
@@ -116,6 +117,7 @@
                                 $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                                 $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                                 $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
                             else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )))  ){
@@ -126,6 +128,7 @@
                                 $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                                 $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                                 $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             # alerte mail déjà existant / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   )
                             else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) ){
@@ -136,6 +139,7 @@
                                 $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
                                 $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                                 $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             # alerte mdp trop court / ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) )
                             else if ( ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp'])    )      {
@@ -145,6 +149,7 @@
                                       </div>";
                                 $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
                                 $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
                             else if ( $_POST['mdp']!=$_POST['cmdp'] ){
@@ -153,6 +158,7 @@
                                        </div>";
                                 $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
                                 $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             else if ( isset($_POST['utilisateur']) ){
                                 addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail']);
@@ -164,6 +170,7 @@
                             $formulaire = str_replace('phrMail', '', $formulaire);
                             $formulaire = str_replace('phrMdp', '', $formulaire);
                             $formulaire = str_replace('phrCmdp', '', $formulaire);
+                            $formulaire = str_replace('phrRep', '', $formulaire);
                         ?>
                     </p>
                 <?php echo $formulaire; ?>
