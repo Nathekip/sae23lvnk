@@ -75,11 +75,11 @@
                 }
       
                 # test question sécurité
-                if ( isset($_POST['envoirep']) && True ){
+                if ( isset($_POST['envoirep']) && ( $_SESSION['usermodif']['reponse'] == $_POST['reponse'] ) ){
                   $_SESSION['phase']=2;
                 }
                 else {
-                  $alerte = "";
+                  $alerte = "AAAAAAAAAAAAAA";
                 }
       
                 # définition formulaire(phase)
