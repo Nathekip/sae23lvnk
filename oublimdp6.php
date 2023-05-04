@@ -28,10 +28,21 @@
                   $_SESSION['CmdpBool'] = False;
                 }
       
-      
+                # test boutons retour
                 if ( isset($_POST['RtrMail']) ){
-                  $_SESSION['PhaseMdp'] = False;
-                  $_SESSION['PhaseQuestion'] = False;
+                  $_SESSION['phase']=0;
+                  $_SESSION['usermodif'] = "";
+                  $_SESSION['MdpBool'] = False;
+                  $_SESSION['CmdpBool'] = False;
+                }
+      
+                if ( isset($_POST['RtrQuestion']) ){
+                  if ( $_SESSION['usermodif']['question'] == 0 ){
+                    $_SESSION['phase']=0;
+                  }
+                  else {
+                    $_SESSION['phase']=1;
+                  }
                   $_SESSION['usermodif'] = "";
                   $_SESSION['MdpBool'] = False;
                   $_SESSION['CmdpBool'] = False;
@@ -50,13 +61,17 @@
                 }
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
-                  $_SESSION['PhaseQuestion'] = True;
+                  if ( $_SESSION['usermodif']['question'] == 0 ){
+                    $_SESSION['phase']=2;
+                  }
+                  else {
+                    $_SESSION['phase']=1;
+                  }
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                 }
       
-                # affichage formulaire(phase)
-                if ($_SESSION['PhaseMdp'] || ($_SESSION['usermodif']['role'] == 0)) {
-                  $formulaire = '
+                # définition formulaire(phase)
+                $formulaire[2] = '
                       <form method="post" action="oublimdp6.php">
                         <button type="submit" name="RtrQuestion" class="btn btn-link">
                           <-- Revenir en arrière
@@ -87,9 +102,7 @@
                       </button>
                     </div>
                   </form>';
-                       }
-                else if ($_SESSION['PhaseQuestion']) {
-                  $formulaire = '
+                $formulaire[1] = '
                       <form method="post" action="oublimdp6.php">
                         <button type="submit" name="RtrMail" class="btn btn-link">
                           <-- Revenir en arrière
@@ -108,9 +121,7 @@
                         </button>
                       </div>
                     </form>';
-                       }
-                else {
-                  $formulaire = '
+                  $formulaire[0] = '
                         <h5>Mot de passe oublié ?</h5>
                         <p class="text-black-50 pt-2">Entrez votre adresse mail afin de vous identifier
                         </p>
@@ -126,7 +137,6 @@
                           </button>
                         </div>
                       </form>';
-                        }      
       
                 # test oeil
                 if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
@@ -172,11 +182,11 @@
                     $alerte = "<div class='alert alert-success'>
                             <strong>Succès</strong> Le mot de passe a bien été modifié.
                            </div>";
-                    $_SESSION['PhaseMdp'] = "";
                     $_SESSION['usermodif'] = "";
                     $_SESSION['MdpBool'] = False;
                     $_SESSION['CmdpBool'] = False;
-                    $formulaire = '
+                    $_SESSION['phase']=3;
+                    $formulaire[3] = '
                     <h5>Mot de passe oublié ?</h5>
                     <p class="text-black-50 pt-2">Vous pouvez vous connecter à présent
                         </p>
@@ -190,7 +200,7 @@
                 }
                 $formulaire = str_replace("PhrMdp",'',$formulaire);
                 $formulaire = str_replace("PhrCmdp",'',$formulaire);
-                echo $formulaire;
+                echo $formulaire[$_SESSION['phase']];
                 ?>
                 <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
               </form>
