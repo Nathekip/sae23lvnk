@@ -156,6 +156,16 @@
                                 $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                                 $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
+                            # alerte Question Réponse /
+                            else if ( True ){
+                                echo "<div class='alert alert-danger'>
+                                        <strong>Erreur</strong> Vous devez fournir une réponse à la question d'authentification, si vous en voulez une.
+                                       </div>";
+                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                            }
                             else if ( isset($_POST['utilisateur']) ){
                                 addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'], $_POST['question'], $_POST['reponse']);
                                 echo "<div class='alert alert-success'>
