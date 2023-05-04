@@ -75,10 +75,10 @@
                 }
       
                 # test question sécurité
-                if ( isset($_POST['envoirep']) && ( $_SESSION['usermodif']['reponse'] == $_POST['reponse'] ) ){
+                if ( isset($_POST['envoirep']) && ($_SESSION['usermodif']['reponse'] == $_POST['reponse']) ){
                   $_SESSION['phase']=2;
                 }
-                else {
+                else if (isset($_POST['envoirep']) ){
                   $alerte = "AAAAAAAAAAAAAA";
                 }
       
