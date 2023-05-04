@@ -27,6 +27,9 @@
                 if ( !isset($_SESSION['CmdpBool']) ){
                   $_SESSION['CmdpBool'] = False;
                 }
+                if ( !isset($_SESSION['phase']) ){
+                  $_SESSION['phase'] = 0;
+                }
       
                 # test boutons retour
                 if ( isset($_POST['RtrMail']) ){
