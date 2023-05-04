@@ -58,11 +58,9 @@
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="cmdp">
                                                                 <select class="form-select-sm">
-                                                                  <option>Quel est le nom de votre premier 
-                                                                  animal de compagnie ?</option>
+                                                                  <option>Quel est le nom de votre premier animal ?</option>
                                                                   <option>Dans quelle ville êtes vous né ?</option>
-                                                                  <option>Quel est le premier artiste 
-                                                                  que vous avez vu en concert ?</option>
+                                                                  <option>Quel est le premier concert que vous avez vu ?</option>
                                                                 </select>                                                                                                               
                                                 </label>
                                                 <input value="phrRep" type="input" placeholder="Réponse à la question" name="rep" id="rep" class="form-control" />
