@@ -60,7 +60,6 @@
                                                                 <select class="form-select-sm">
                                                                   <option>Quel est le nom de votre premier animal de compagnie ?</option>
                                                                   <option>Dans quelle ville êtes vous né ?</option>
-                                                                  <option>Quel est le deuxième prénom de votre frère ou soeur ainé(e) ?</option>
                                                                   <option>Quel est le premier artiste que vous avez vu en concert ?</option>
                                                                 </select>                                                                                                               
                                                 </label>
