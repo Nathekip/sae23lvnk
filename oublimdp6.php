@@ -64,13 +64,14 @@
                 }
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
+                  $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0];
                   if ( $_SESSION['usermodif']['question'] == 0 ){
                     $_SESSION['phase']=2;
                   }
                   else {
                     $_SESSION['phase']=1;
                   }
-                  $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
+                  
                 }
       
                 # définition formulaire(phase)
