@@ -120,7 +120,7 @@
                       <label class="form-label" for="reponse">PlaceholderQuestionSecurite</label>
                       <input type="password" id="reponse" class="form-control" name="reponse" placeholder="Repondez à la question">
                       <div class="pt-5 mb-3 d-grid">
-                        <button type="submit" name="envoi" class="mx-4 btn btn-dark btn-outline-warning text-white">  
+                        <button type="submit" name="envoirep" class="mx-4 btn btn-dark btn-outline-warning text-white">  
                           Répondre
                         </button>
                       </div>
