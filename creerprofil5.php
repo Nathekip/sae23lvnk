@@ -56,11 +56,13 @@
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-person-circle-question fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
-                                                       <select class="form-select-sm" id="question" name="question">
-                                                          <option>Quel est le nom de votre premier animal ?</option>
-                                                          <option>Dans quelle ville êtes vous né ?</option>
-                                                          <option>Quel est le premier concert que vous avez vu ?</option>
-                                                        </select>  
+                                                <label class="form-label" for="rep">
+                                                   <select class="form-select-sm" id="question" name="question">
+                                                      <option value="1">Quel est le nom de votre premier animal ?</option>
+                                                      <option value="2">Dans quelle ville êtes vous né ?</option>
+                                                      <option value="3">Quel est le premier concert que vous avez vu ?</option>
+                                                    </select>  
+                                                  </label>
                                                 <input value="phrRep" type="input" placeholder="Réponse à la question" name="rep" id="rep" class="form-control" />
                                               </div>
                                             </div>
