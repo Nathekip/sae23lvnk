@@ -58,12 +58,13 @@
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="rep">
                                                    <select class="form-select-sm" id="question" name="question">
+                                                      <option value="0">Je ne désire pas de question de validation<option>
                                                       <option value="1">Quel est le nom de votre premier animal ?</option>
                                                       <option value="2">Dans quelle ville êtes vous né ?</option>
                                                       <option value="3">Quel est le premier concert que vous avez vu ?</option>
                                                     </select>  
                                                   </label>
-                                                <input value="phrRep" type="input" placeholder="Réponse à la question" name="rep" id="rep" class="form-control" />
+                                                <input value="phrRep" type="input" placeholder="Réponse à la question" name="reponse" id="reponse" class="form-control" />
                                               </div>
                                             </div>
                                             <div class="form-check d-flex justify-content-center mb-5">
@@ -156,7 +157,7 @@
                                 $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             else if ( isset($_POST['utilisateur']) ){
-                                addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail']);
+                                addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'], $_POST['question'], $_POST['reponse']);
                                 echo "<div class='alert alert-success'>
                                         <strong>Succès</strong> Le compte a bien été créé.
                                        </div>";
