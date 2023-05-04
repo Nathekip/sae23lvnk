@@ -57,16 +57,12 @@
                                               <i class="fas fa-person-circle-question fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="cmdp">
-                                                                <div class="dropdown">
-                                                                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                                                    Dropdown button
-                                                                  </button>
-                                                                  <ul class="dropdown-menu">
-                                                                    <li><a class="dropdown-item" href="#">Link 1</a></li>
-                                                                    <li><a class="dropdown-item" href="#">Link 2</a></li>
-                                                                    <li><a class="dropdown-item" href="#">Link 3</a></li>
-                                                                  </ul>
-                                                                </div>                                                
+                                                                <select class="form-select-sm">
+                                                                  <option>Question 1</option>
+                                                                  <option>Question 2</option>
+                                                                  <option>Question 3</option>
+                                                                  <option>Question 4</option>
+                                                                </select>                                                                                                               
                                                 </label>
                                                 <input value="phrRep" type="input" placeholder="Réponse à la question" name="rep" id="rep" class="form-control" />
                                               </div>
