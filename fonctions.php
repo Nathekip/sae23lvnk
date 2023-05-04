@@ -170,7 +170,7 @@ function pageheader(){
     $add['role']=$role;
     $add['mail']=$mail;
     $add['question']=$question;
-    $add['reponse']=$reponse;
+    if ( True ) { $add['reponse']=$reponse; }
     $user[$add['user']]=$add;
 
     $fp = fopen("data/users.json", 'w');
