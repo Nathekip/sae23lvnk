@@ -58,7 +58,7 @@
                                               <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="rep">
                                                    <select class="form-select-sm" id="question" name="question">
-                                                      <option value="0">Je ne désire pas de question de validation<option>
+                                                      <option value="0">Je ne désire pas de question de validation</option>
                                                       <option value="1">Quel est le nom de votre premier animal ?</option>
                                                       <option value="2">Dans quelle ville êtes vous né ?</option>
                                                       <option value="3">Quel est le premier concert que vous avez vu ?</option>
