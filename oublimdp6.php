@@ -31,6 +31,7 @@
       
                 if ( isset($_POST['RtrMail']) ){
                   $_SESSION['PhaseMdp'] = False;
+                  $_SESSION['PhaseQuestion'] = False;
                   $_SESSION['usermodif'] = "";
                   $_SESSION['MdpBool'] = False;
                   $_SESSION['CmdpBool'] = False;
@@ -49,7 +50,7 @@
                 }
                 else if (isset($_POST['mail']) ){
                   $alerte = "";
-                  $_SESSION['PhaseMdp'] = True;
+                  $_SESSION['PhaseQuestion'] = True;
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0] ;
                 }
       
@@ -57,7 +58,7 @@
                 if ($_SESSION['PhaseMdp']) {
                   $formulaire = '
                       <form method="post" action="oublimdp6.php">
-                        <button type="submit" name="RtrMail" class="btn btn-link">
+                        <button type="submit" name="RtrQuestion" class="btn btn-link">
                           <-- Revenir en arrière
                         </button>
                       </form>
@@ -83,6 +84,27 @@
                     <div class="pt-2 mb-3 d-grid">
                       <button type="submit" name="envoi" class="mx-4 btn btn-dark btn-outline-warning text-white">  
                         Réinitialiser le mot de passe
+                      </button>
+                    </div>
+                  </form>';
+                       }
+                else if ($_SESSION['PhaseQuestion']) {
+                  $formulaire = '
+                      <form method="post" action="oublimdp6.php">
+                        <button type="submit" name="RtrMail" class="btn btn-link">
+                          <-- Revenir en arrière
+                        </button>
+                      </form>
+                      <h5>Mot de passe oublié ?</h5>
+                      <p class="text-black-50 pt-2">Répondez à cette question de sécurité
+                      </p>
+                    </div>
+                    <form action="oublimdp6.php" method="post">
+                    PlaceholderQuestionSecurite
+                    <input type="password" id="reponse" class="form-control" name="reponse" placeholder="Repondez à la question">
+                    <div class="pt-2 mb-3 d-grid">
+                      <button type="submit" name="envoi" class="mx-4 btn btn-dark btn-outline-warning text-white">  
+                        Répondre
                       </button>
                     </div>
                   </form>';
