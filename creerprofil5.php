@@ -157,7 +157,7 @@
                                 $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                             }
                             # alerte Question Réponse /
-                            else if ( ($_POST['question'] != 0) && (True) ){
+                            else if ( ($_POST['question'] != 0) && ($_POST['reponse'] == "") ){
                                 echo "<div class='alert alert-danger'>
                                         <strong>Erreur</strong> Vous devez fournir une réponse à la question d'authentification, si vous en voulez une.
                                        </div>";
