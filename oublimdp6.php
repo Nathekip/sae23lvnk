@@ -74,6 +74,14 @@
                   
                 }
       
+                # test question sécurité
+                if ( isset($_POST['envoirep']) && True ){
+                  $_SESSION['phase']=2;
+                }
+                else {
+                  $alerte = "";
+                }
+      
                 # définition formulaire(phase)
                 $formulaire[2] = '
                       <form method="post" action="oublimdp6.php">
