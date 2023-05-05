@@ -39,9 +39,13 @@
     
       # Procédure d'enregistrement de l'image 
       $target_dir = "pp/";
-      $target_file = $target_dir . basename("aaa");
+      $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+      echo $target_file;
+      echo "<br>";
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      echo $imageFileType;
+      echo "<br>";
 
       // Check if image file is a actual image or fake image
       if(isset($_POST["submit"])) {
