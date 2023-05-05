@@ -151,7 +151,7 @@
                       </form>';
       
                 # question de sécurité
-                #$question = ["Quel était le nom de votre premier animal de compagnie ?","Dans quelle ville êtes vous né ?","Quel est le premier artiste ou groupe que vous avez vu en concert ?"];
+                $question = ["Quel était le nom de votre premier animal de compagnie ?","Dans quelle ville êtes vous né ?","Quel est le premier artiste ou groupe que vous avez vu en concert ?"];
                 #$formulaire = str_replace("PlaceholderQuestionSecurite", $question[int($_SESSION['usermodif']['question'])-1] ,$formulaire);
       
                 # test oeil
