@@ -39,6 +39,9 @@ function pagenavbar($page=""){
                     <li class="nav-item">
                         <a class="nav-link p04" href="page04.php">Panier</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link p07" href="Monprofil7.php">Mon Profil</a>
+                    </li>
                 </ul>
                 </nav>
             EOD; 
