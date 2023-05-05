@@ -38,7 +38,8 @@
     
       # Procédure d'enregistrement de l'image 
       $target_dir = "pp/";
-      $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+      #$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+      $target_file = $target_dir . "aaaaaaaaaaaaaaaaaa.jpeg";
       echo $target_file;
       echo "<br>";
       echo basename($_FILES["fileToUpload"]["name"]);
