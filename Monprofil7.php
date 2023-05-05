@@ -39,7 +39,7 @@
     
       # Procédure d'enregistrement de l'image 
       $target_dir = "pp/";
-      $target_file = $target_dir . basename("aaa",["name"]);
+      $target_file = $target_dir . basename("aaa");
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
