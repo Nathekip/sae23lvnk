@@ -42,6 +42,8 @@
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       echo $target_file;
       echo "<br>";
+      echo basename($_FILES["fileToUpload"]["name"]);
+      echo "<br>";
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       echo $imageFileType;
