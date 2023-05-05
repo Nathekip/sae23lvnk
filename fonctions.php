@@ -8,7 +8,7 @@ function setup() {
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         ';
     
-    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié"];
+    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
     $rep = "NomDuSite";}
