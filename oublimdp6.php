@@ -152,9 +152,9 @@
       
                 # question de sécurité
                 $question = ["Quel était le nom de votre premier animal de compagnie ?","Dans quelle ville êtes vous né ?","Quel est le premier artiste ou groupe que vous avez vu en concert ?"];
-                #$clequestion = int($_SESSION['usermodif']['question'])-1;
-                echo ($_SESSION['usermodif']['question'] - 1);
-                #$formulaire = str_replace("PlaceholderQuestionSecurite",$question[$clequestion], $formulaire);
+                $clequestion = $_SESSION['usermodif']['question']-1;
+                echo $question[$_SESSION['usermodif']['question']-1];
+                $formulaire = str_replace("PlaceholderQuestionSecurite",$question[$clequestion], $formulaire);
       
                 # test oeil
                 if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
