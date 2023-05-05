@@ -34,7 +34,6 @@
                     EOD;
         #$card = str_replace("",$_SESSION,$card);
         echo $card;
-        pagefooter();
     
     
       # Procédure d'enregistrement de l'image 
