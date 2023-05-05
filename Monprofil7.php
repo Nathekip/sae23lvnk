@@ -14,40 +14,29 @@
     </form>
     
     
-    
-    
-    <h1 class="my-4 text-center">Vos informations</h1>
-
-    <div class="container">
-        <div class="row">
-            <div class="offset-2 col-8">
-                <form action="modifier_profil.php">
-                    <div class="form-group">
-                        <label for="nomUtilisateurInput">Nom d'utilisateur</label>
-                        <input type="text" class="form-control" id="nomUtilisateurInput" value= <?php echo $_SESSION['utilisateur']; ?>
-                        
-                        
-                        
-                        disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="emailInput">E-mail</label>
-                        <input type="email" class="form-control" id="emailInput" value="<?php echo $_SESSION['mail']; ?>" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="aProposInputArea">A propos de moi</label>
-                        <textarea class="form-control" id="aProposInputArea" rows="3" name="a_propos" disabled><?php echo $_SESSION['apropos']; ?></textarea>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <footer class="py-5">
-        <!-- Un peu d'espace à la fin -->
-    </footer>
-</body>
-    
     <?php
+        $name = $_SESSION['utilisateur'];
+        $role = $_SESSION['role'];
+        $card = <<<EOD
+                    <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
+                      <div class="d-flex align-items-center mx-auto">
+                        <div class="card" style="width:400px">
+                          <img class="card-img-top" src="images/user.png" alt="Card image" style="width:100%">
+                          <div class="card-body">
+                            <h4 class="card-title">$name</h4>
+                            <p class="card-text">Votre rôle est $role</p>
+                            <a href="#" class="btn btn-warning">Changer de photo de profil</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    EOD;
+                    echo $card;
+
+
+        pagefooter();
+    
     
       # Procédure d'enregistrement de l'image 
       $target_dir = "pp/";
