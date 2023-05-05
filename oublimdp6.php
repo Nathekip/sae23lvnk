@@ -40,13 +40,8 @@
                 }
       
                 if ( isset($_POST['RtrQuestion']) ){
-                  if ( $_SESSION['usermodif']['question'] == 0 ){
-                    $_SESSION['phase']=0;
-                    $_SESSION['usermodif'] = "";
-                  }
-                  else {
-                    $_SESSION['phase']=1;
-                  }
+                  $_SESSION['phase']=0;
+                  $_SESSION['usermodif'] = "";
                   $_SESSION['MdpBool'] = False;
                   $_SESSION['CmdpBool'] = False;
                 }
