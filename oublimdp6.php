@@ -74,7 +74,9 @@
                   $_SESSION['phase']=2;
                 }
                 else if (isset($_POST['envoirep']) ){
-                  $alerte = "AAAAAAAAAAAAAA";
+                  $alerte = "<div class='alert alert-danger'>
+                          Mauvaise réponse.
+                        </div>";
                 }
       
                 # définition formulaire(phase)
