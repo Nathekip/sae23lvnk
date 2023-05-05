@@ -42,11 +42,11 @@
                 if ( isset($_POST['RtrQuestion']) ){
                   if ( $_SESSION['usermodif']['question'] == 0 ){
                     $_SESSION['phase']=0;
+                    $_SESSION['usermodif'] = "";
                   }
                   else {
                     $_SESSION['phase']=1;
                   }
-                  $_SESSION['usermodif'] = "";
                   $_SESSION['MdpBool'] = False;
                   $_SESSION['CmdpBool'] = False;
                 }
@@ -153,7 +153,7 @@
                 # question de sécurité
                 $question = ["Quel était le nom de votre premier animal de compagnie ?","Dans quelle ville êtes vous né ?","Quel est le premier artiste ou groupe que vous avez vu en concert ?"];
                 #$formulaire = str_replace("PlaceholderQuestionSecurite", $question[int($_SESSION['usermodif']['question'])-1] ,$formulaire);
-                $formulaire = str_replace("PlaceholderQuestionSecurite",$question[1], $formulaire);
+                $formulaire = str_replace("PlaceholderQuestionSecurite",$question[int("4")-1], $formulaire);
       
                 # test oeil
                 if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
