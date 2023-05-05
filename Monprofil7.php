@@ -13,7 +13,43 @@
       <input type="submit" value="Upload Image" name="submit">
     </form>
     
+    
+    
+    
+    <h1 class="my-4 text-center">Vos informations</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-2 col-8">
+                <form action="modifier_profil.php">
+                    <div class="form-group">
+                        <label for="nomUtilisateurInput">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" id="nomUtilisateurInput" value= <?php echo $_SESSION['utilisateur']; ?>
+                        
+                        
+                        
+                        disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">E-mail</label>
+                        <input type="email" class="form-control" id="emailInput" value="<?php echo $_SESSION['mail']; ?>" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="aProposInputArea">A propos de moi</label>
+                        <textarea class="form-control" id="aProposInputArea" rows="3" name="a_propos" disabled><?php echo $_SESSION['apropos']; ?></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="py-5">
+        <!-- Un peu d'espace à la fin -->
+    </footer>
+</body>
+    
     <?php
+    
+      # Procédure d'enregistrement de l'image 
       $target_dir = "pp/";
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
