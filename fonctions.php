@@ -42,10 +42,10 @@ function pagenavbar($page=""){
 	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-garage-car fa-2x"></i></a>
 	       	     </li>
 		     <li class="nav-item">
-	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-garage-car"></i></a>
+	       	       <a class="nav-link p02" href="page02.php"><i class="fa-solid fa-garage-car"></i></a>
 	       	     </li>
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
+	       	       <a class="nav-link p03" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="🚧🚧🚧" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
