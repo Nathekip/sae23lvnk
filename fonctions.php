@@ -2,16 +2,20 @@
 
 function setup() {
     session_start();
-    echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    echo '<meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="shortcut icon" href="assets/images/icone.png">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <body class="bg-warning bg-opacity-25"></body>
         ';
     
     $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
-    $rep = "NomDuSite";}
+    $rep = "Car Fusion";}
     echo "<title>$rep</title>";
     }
 
