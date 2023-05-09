@@ -85,7 +85,7 @@ function pagenavbar($page=""){
 	 
   if ( isset($_SESSION['utilisateur']) ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white navbar-brand border" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle navbar-brand circle border" width="36" height="36" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
