@@ -83,6 +83,7 @@ function pagenavbar($page=""){
   
     
   echo '<script>
+          var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         </script>
         <style>
           .btn:hover, .btn:focus {
