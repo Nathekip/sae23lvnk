@@ -63,7 +63,7 @@ function pagenavbar($page=""){
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="page02.php">Trouver Une Voiture</a>
+						<a class="nav-link active" href="page02.php">Trouver Une Voiture</a>
 					</li>
 					<li class="nav-item">
 						<a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
@@ -72,7 +72,7 @@ function pagenavbar($page=""){
 						<a class="nav-link" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="page04.php"><i class="fa fa-user fa-2x"></i></a>
+						<a class="nav-link active" href="page04.php"><i class="fa fa-user fa-2x"></i></a>
 					</li>
 				</ul>
 			</div>
