@@ -49,13 +49,81 @@ function pagenavbar($page=""){
 		     </li>
 		     <li class="nav-item">
 	       	       <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
-	       	     </li>
-	       	   </ul>
+	       	     </li>';
+	       	   
+  
+  $navbar = str_replace($page, 'active', $navbar);
+  echo $navbar;
+  if(isset($_SESSION['utilisateur'])){
+        echo "<div class='pe-2'>".$_SESSION['utilisateur']."</div>";
+        $btndeco = '<form action="deconnexion.php" method="post">
+        <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
+        </form>';
+        $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
+        echo $btndeco;
+    }
+  else {
+	$boutons = '<div class="pe-2"> Vous n\'êtes pas connecté </div>
+          	      <button type="button" class="btn text-black btn-outline-warning btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
+		        Connexion
+		      </button>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content bg-light">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-secondary text-center">
+        <h4 class="modal-title text-white mx-auto">Connexion</h4>
+        <button type="button" class="btn-close bg-danger btn-outline-dark" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-center">
+        <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
+          <div class="d-flex align-items-center mx-auto">
+            <div class="login-form">
+              <form action="NUMERODEPAGE.php" id="login-form" method="post">
+                <div class="pt-3 form-group">
+                  <label>Utilisateur</label>
+                  <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
+                </div>
+                <div class="pt-3 form-group">
+                  <label>Mot de passe</label>
+                  <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                </div>
+                <div class="pt-4">
+                  <button type="submit" name="page" value=NUMERODEPAGE class="btn text-white btn-dark btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal"> Se connecter</button>
+                </div>
+              </form>
+              <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
+                <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
+                <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+              
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark text-white btn-outline-danger" data-bs-dismiss="modal">Fermer</button>
+      </div>
+
+    </div> ';
+        
+        $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
+        echo $boutons;
+                
+    }
+	
+	
+  
+  echo            '</ul>
 	       	 </div>
 	       </div>
     	     </nav>';
-  $navbar = str_replace($page, 'active', $navbar);
-  echo $navbar;
   
   /* echo '<script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
