@@ -53,8 +53,7 @@ function pagenavbar($page=""){
   echo $navbar;
   if(isset($_SESSION['utilisateur'])){
         $btndeco = '<li class="nav-item">
-	       	      <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
-		      <form action="deconnexion.php" method="post">
+                      <form action="deconnexion.php" method="post">
 	                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-outline-custom">Se déconnecter</button>
 	              </form>
 	       	    </li>';
