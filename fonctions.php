@@ -53,6 +53,21 @@ function pr() {
 
 function pagenavbar($page=""){
 	
+  $json = file_get_contents('data/users.json');
+  $user = json_decode($json, true);
+  $page = "Location: ".$_POST['page'].".php";
+  foreach($user as $u){
+    #print_r($u);
+    if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) ){
+      $_SESSION['utilisateur']=$u['user'];
+      $_SESSION['role']=$u['role'];
+      $_SESSION['msg'] = "vrai";
+      echo $page;
+      header($page);
+      $_POST['page'] = "";
+    }
+  }
+	
   #fixed-top
   $navbar = '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
 	       <div class="container">
@@ -152,21 +167,7 @@ function pagenavbar($page=""){
 	
     # echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas
     
-    $json = file_get_contents('data/users.json');
-    $user = json_decode($json, true);
-    $page = "Location: ".$_POST['page'].".php";
-    foreach($user as $u){
-      #print_r($u);
-      if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) )
-      {
-          $_SESSION['utilisateur']=$u['user'];
-          $_SESSION['role']=$u['role'];
-          $_SESSION['msg'] = "vrai";
-          echo $page;
-          header($page);
-	  $_POST['page'] = "";
-     }
-    }
+    
     echo            '</div>
                    </ul>
 	       	 </div>
