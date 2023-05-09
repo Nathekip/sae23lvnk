@@ -82,20 +82,18 @@ function pagenavbar($page=""){
   echo $navbar;
   
     
-  echo '
-    
-    <style>
-    .btn:hover, .btn:focus {
-        color: #c1c5c7;
-        background-color: transparent;
-        border-color: #c1c5c7;
-    } 
-    # Choix couleur du bouton connexion
-    .btn-outline-custom {
-        color: #889496; # Couleur du texte 
-        border-color: #889496; # Couleur de la bordure 
-    }
-    </style>';*/
+  echo '<style>
+          .btn:hover, .btn:focus {
+              color: #c1c5c7;
+              background-color: transparent;
+              border-color: #c1c5c7;
+          } 
+          /* Choix couleur du bouton connexion */
+          .btn-outline-custom {
+              color: #889496; /* Couleur du texte */
+              border-color: #889496; /* Couleur de la bordure */
+          }
+        </style>';
     
 }
 
