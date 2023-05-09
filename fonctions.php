@@ -46,25 +46,27 @@ function pagenavbar($page=""){
 	       	     </li>
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa fa-circle-user fa-2x"></i></a>
-		     </li>
-		     <li class="nav-item">
-	       	       <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
-	       	     </li>';
+		     </li>';
 	       	   
   
   $navbar = str_replace($page, 'active', $navbar);
   echo $navbar;
   if(isset($_SESSION['utilisateur'])){
-        $btndeco = '<form action="deconnexion.php" method="post">
-        <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
-        </form>';
+        $btndeco = '<li class="nav-item">
+	       	      <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
+		      <form action="deconnexion.php" method="post">
+	                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-outline-custom">Se déconnecter</button>
+	              </form>
+	       	    </li>';
         $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
         echo $btndeco;
     }
   else {
-	$boutons = '<button type="button" class="btn text-black btn-outline-warning btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
-		      Connexion
-		    </button>
+	$boutons = '<li class="nav-item">
+	              <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
+		        Connexion
+		      </button>
+		    </li>
 		    <!-- The Modal -->
 		    <div class="modal fade" id="myModal">
 		      <div class="modal-dialog">
