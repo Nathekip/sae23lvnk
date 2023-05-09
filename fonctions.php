@@ -72,7 +72,7 @@ function pagenavbar($page=""){
 	       	         <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
 	       	       </li>
 	       	       <li class="nav-item">
-	       	         <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hooray!" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
+	       	         <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="🚧🚧🚧" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
 		       </li>
 	       	     </ul>
 	       	   </div>
