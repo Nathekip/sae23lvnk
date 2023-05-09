@@ -88,7 +88,7 @@ function pagenavbar($page=""){
 		     </li>';
   
   $navbar .=        '<li class="nav-item">
-	       	       <a class="nav-link ppimg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="rounded-circle" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="rounded-circle" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	
   $navbar = str_replace($page, 'active', $navbar);
