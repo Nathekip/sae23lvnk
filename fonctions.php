@@ -39,12 +39,12 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-garage-open fa-2x"></i></a>
+	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-car fa-2x"></i></a>
 	       	     </li>
 		     <li class="nav-item">
-	       	       <a class="nav-link p02" href="page02.php"><i class="fa-solid fa-garage-open"></i></a>
+	       	       <a class="nav-link p02" href="page02.php"><i class="fa-solid fa-cars"></i></a>
 	       	     </li>
-		     <i class="fa-solid fa-garage-open"></i>
+		     <i class="fa-solid fa-garage"></i>
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p03" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>
