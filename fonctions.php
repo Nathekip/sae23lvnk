@@ -122,16 +122,15 @@ function pagenavbar($page=""){
                   <div class='alert alert-danger'>
                       <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
                   </div>
-              <div>
-        ";
+              <div>";
     } 
-    
+    echo "</div>";
+	
     # echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas
     
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
     $page = "Location: ".$_POST['page'].".php";
-
     foreach($user as $u){
       #print_r($u);
       if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) )
@@ -143,10 +142,7 @@ function pagenavbar($page=""){
           header($page);
      }
     }
-	
-  
-	
-  echo              '</div>
+    echo            '</div>
                    </ul>
 	       	 </div>
 	       </div>
@@ -172,111 +168,6 @@ function pagenavbar($page=""){
           }
         </style>';
 }
-
-function pageheader(){
-    echo '<header>
-    <div class="container-fluid bg-info text-center py-3 d-flex justify-content-between align-items-center">
-    <div class="d-flex align-items-center mx-auto">
-    </div>';
-    
-    
-    #si l'utilisateur existe, ça veut dire qu'il est identifié
-    
-    if(isset($_SESSION['utilisateur'])){
-        echo "<div class='pe-2'>".$_SESSION['utilisateur']."</div>";
-        $btndeco = '<form action="deconnexion.php" method="post">
-        <button type="submit" name="page" value=NUMERODEPAGE class="btn text-black btn-outline-warning btn-info btn-sm">Se déconnecter</button>
-        </form>';
-        $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
-        echo $btndeco;
-    }
-    
-    #si l'utilisateur n'existe pas, ça veut dire qu'il n'est pas identifié
-    
-    else { 
-        $boutons = '<div class="pe-2"> Vous n\'êtes pas connecté </div>
-                      <button type="button" class="btn text-black btn-outline-warning btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">
-                        Connexion
-                      </button>
-		      <!-- The Modal -->
-                      <div class="modal fade" id="myModal">
-                        <div class="modal-dialog">
-                          <div class="modal-content bg-light">
-			    <!-- Modal Header -->
-                            <div class="modal-header bg-secondary text-center">
-                              <h4 class="modal-title text-white mx-auto">Connexion</h4>
-                              <button type="button" class="btn-close bg-danger btn-outline-dark" data-bs-dismiss="modal"></button>
-                            </div>
-			    <!-- Modal body -->
-                            <div class="modal-body text-center">
-                              <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
-                                <div class="d-flex align-items-center mx-auto">
-                                  <div class="login-form">
-                                    <form action="NUMERODEPAGE.php" id="login-form" method="post">
-                                      <div class="pt-3 form-group">
-                                        <label>Utilisateur</label>
-                                        <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
-                                      </div>
-                                      <div class="pt-3 form-group">
-                                        <label>Mot de passe</label>
-                                        <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-                                      </div>
-                                      <div class="pt-4">
-                                        <button type="submit" name="page" value=NUMERODEPAGE class="btn text-white btn-dark btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal"> Se connecter</button>
-                                      </div>
-                                    </form>
-                                    <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
-                                      <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
-                                      <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-			    <!-- Modal footer -->
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-dark text-white btn-outline-danger" data-bs-dismiss="modal">Fermer</button>
-                            </div>
-			  </div>';
-        
-        $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
-        echo $boutons;
-                
-    }
-    if (isset($_POST['page'])){
-        /*echo "<script>
-                $(document).ready(function() {
-                    $('#myModal').modal('show');
-                    });
-                    </script>";*/
-      echo "<div class='container'>
-                  <div class='alert alert-danger'>
-                      <strong>Erreur</strong> Le mot de passe ou l'identifiant sont invalides.
-                  </div>
-              <div>
-        ";
-    } 
-    
-    echo '</div>
-    </header>';
-    # echo '<script> $("login-form").submit(function(e) { e.preventDefault(); }); </script>';    # cette ligne est censée empecher le modal de se fermer mais elle ne fonctionne pas
-    
-    $json = file_get_contents('data/users.json');
-    $user = json_decode($json, true);
-    $page = "Location: ".$_POST['page'].".php";
-
-    foreach($user as $u){
-      #print_r($u);
-      if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) )
-      {
-          $_SESSION['utilisateur']=$u['user'];
-          $_SESSION['role']=$u['role'];
-          $_SESSION['msg'] = "vrai";
-          echo $page;
-          header($page);
-     }
-    }
-  }
     
 
   function addUser($usr, $mdp, $mail, $role="user",$question=0,$reponse=NULL){
