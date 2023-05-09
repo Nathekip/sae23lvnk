@@ -62,7 +62,7 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	     <ul class="navbar-nav ms-auto">
 	       	       <li class="nav-item">
-	       	         <a class="nav-link p01" href="page02.php">Trouver Une Voiture</a>
+	       	         <a class="nav-link p02" href="page02.php">Trouver Une Voiture</a>
 	       	       </li>
 	       	       <li class="nav-item">
 	       	         <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
