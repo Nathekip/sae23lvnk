@@ -53,31 +53,32 @@ function pagenavbar($page=""){
   echo $rep;
     
   #fixed-top
-  echo '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
-		<div class="container">
-			<a class="navbar-brand" href="page01.php"><img src="images/Logo.png" alt="Logo CarFusion"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item">
-						<a class="nav-link active" href="page02.php">Trouver Une Voiture</a>
-					</li>
-					<li class="nav-item">
-						<a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="page04.php"><i class="fa fa-user fa-2x"></i></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-    </nav>';
+  $navbar = '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
+	       <div class="container">
+	         <a class="navbar-brand" href="page01.php"><img src="images/Logo.png" alt="Logo CarFusion"></a>
+	         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	           <span class="navbar-toggler-icon"></span>
+	         </button>
+	         <div class="collapse navbar-collapse" id="navbarNav">
+	       	     <ul class="navbar-nav ms-auto">
+	       	       <li class="nav-item">
+	       	         <a class="nav-link p01" href="page02.php">Trouver Une Voiture</a>
+	       	       </li>
+	       	       <li class="nav-item">
+	       	         <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
+	       	       </li>
+	       	       <li class="nav-item">
+	       	         <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
+	       	       </li>
+	       	       <li class="nav-item">
+	       	         <a class="nav-link p07" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
+	       	       </li>
+	       	     </ul>
+	       	   </div>
+		 </div>
+    	       </nav>';
+  $navbar = str_replace($page, 'active', $navbar);
+  echo $navbar;
   
     
   echo '
