@@ -41,6 +41,9 @@ function pagenavbar($page=""){
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-garage-car fa-2x"></i></a>
 	       	     </li>
+		     <li class="nav-item">
+	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
+	       	     </li>
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
 	       	     </li>
