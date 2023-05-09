@@ -4,7 +4,6 @@
     <?php
       include('fonctions.php');
       setup();
-      pageheader();
       pagenavbar("p07");
     ?>
     <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
