@@ -82,19 +82,19 @@ function pagenavbar($page=""){
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
-	       	   
-  $navbar .=        '<li class="nav-item">
-	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
-		     </li>';
-  
-  $navbar .=        '<li class="nav-item">
+	 
+  if ( isset($_SESSION['utilisateur']) ){
+	  $navbar .= '<li class="nav-item">
 	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle border" width="36" height="36" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
 		     </li>';
-	
-  $navbar = str_replace($page, 'active', $navbar);
-  if ( isset($_SESSION['utilisateur']) ){
-  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
+	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
+  else {
+	  $navbar .= '<li class="nav-item">
+	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Vous n\'avez pas de compte" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
+		     </li>';
+  }
+  $navbar = str_replace($page, 'active', $navbar);
   echo $navbar;
   if(isset($_SESSION['utilisateur'])){
         $btndeco = '<li class="nav-item">
