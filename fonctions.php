@@ -82,7 +82,9 @@ function pagenavbar($page=""){
   echo $navbar;
   
     
-  echo '<style>
+  echo '<script>
+        </script>
+        <style>
           .btn:hover, .btn:focus {
               color: #c1c5c7;
               background-color: transparent;
