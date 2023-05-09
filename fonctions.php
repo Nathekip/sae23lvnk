@@ -39,13 +39,13 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-car fa-2x"></i></a>
+	       	       <a class="nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php"><i class="fa fa-car fa-2x"></i></a>
 	       	     </li>
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p03" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
+	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="🚧🚧🚧" href="Monprofil7.php"><i class="fa fa-circle-user fa-2x"></i></a>
+	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa fa-circle-user fa-2x"></i></a>
 		     </li>
 		     <li class="nav-item">
 	       	       <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
