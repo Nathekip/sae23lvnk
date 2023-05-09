@@ -86,7 +86,6 @@ function pagenavbar($page=""){
 	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa fa-circle-user fa-2x"></i></a>
 		     </li>';
 	       	   
-  echo $page;
   $navbar = str_replace($page, 'active', $navbar);
   if ( isset($_SESSION['utilisateur']) ){
   $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
