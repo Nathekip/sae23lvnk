@@ -82,7 +82,7 @@ function pagenavbar($page=""){
   #echo $navbar;
   
     
-  echo '
+  /*echo '
     <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -97,10 +97,10 @@ function pagenavbar($page=""){
     } 
     # Choix couleur du bouton connexion
     .btn-outline-custom {
-        color: #889496; /* Couleur du texte */
-        border-color: #889496; /* Couleur de la bordure */
+        color: #889496; # Couleur du texte 
+        border-color: #889496; # Couleur de la bordure 
     }
-    </style>';
+    </style>';*/
     
 }
 
