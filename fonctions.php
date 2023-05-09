@@ -55,15 +55,15 @@ function pagenavbar($page=""){
 	
   $json = file_get_contents('data/users.json');
   $user = json_decode($json, true);
-  $page = "Location: ".$_POST['page'].".php";
+  $pagehead = "Location: ".$_POST['page'].".php";
   foreach($user as $u){
     #print_r($u);
     if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) ){
       $_SESSION['utilisateur']=$u['user'];
       $_SESSION['role']=$u['role'];
       $_SESSION['msg'] = "vrai";
-      echo $page;
-      header($page);
+      #echo $pagehead;
+      header($pagehead);
     }
   }
 	
