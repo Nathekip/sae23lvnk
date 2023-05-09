@@ -53,6 +53,7 @@ function pagenavbar($page=""){
   echo $rep;
     
   #fixed-top
+  #<a href="#" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hooray!">Bottom</a>
   $navbar = '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
 	       <div class="container">
 	         <a class="navbar-brand" href="page01.php"><img src="images/Logo.png" alt="Logo CarFusion"></a>
@@ -71,8 +72,8 @@ function pagenavbar($page=""){
 	       	         <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
 	       	       </li>
 	       	       <li class="nav-item">
-	       	         <a class="nav-link p07" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
-	       	       </li>
+	       	         <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hooray!" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
+		       </li>
 	       	     </ul>
 	       	   </div>
 		 </div>
@@ -82,13 +83,19 @@ function pagenavbar($page=""){
   
     
   echo '
+    <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    </script>
     <style>
     .btn:hover, .btn:focus {
         color: #c1c5c7;
         background-color: transparent;
         border-color: #c1c5c7;
     } 
-    /* Choic couleur du bouton connexion */
+    # Choix couleur du bouton connexion
     .btn-outline-custom {
         color: #889496; /* Couleur du texte */
         border-color: #889496; /* Couleur de la bordure */
