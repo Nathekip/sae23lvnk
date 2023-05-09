@@ -78,8 +78,8 @@ function pagenavbar($page=""){
 	       	   </div>
 		 </div>
     	       </nav>';
-  #$navbar = str_replace($page, 'active', $navbar);
-  #echo $navbar;
+  $navbar = str_replace($page, 'active', $navbar);
+  echo $navbar;
   
     
   /*echo '
