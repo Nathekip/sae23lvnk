@@ -1,5 +1,29 @@
 <?php
 
+function addUser($usr, $mdp, $mail, $role="user",$question=0,$reponse=NULL){
+    $user = array();
+    $json = file_get_contents('data/users.json');
+    $user = json_decode($json, true);
+
+    $add = array();
+    $add['user']=$usr;
+    $add['mdp']=password_hash($mdp,PASSWORD_DEFAULT);
+    $add['role']=$role;
+    $add['mail']=$mail;
+    $add['question']=$question;
+    if ( True ) { $add['reponse']=$reponse; }
+    $user[$add['user']]=$add;
+
+    $fp = fopen("data/users.json", 'w');
+    fwrite($fp, "");
+    fclose($fp);
+
+    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+    $fp = fopen("data/users.json", 'a');
+    fwrite($fp, $jsonString);
+    fclose($fp);
+}
+
 function setup() {
     session_start();
     echo '<meta charset="utf-8">
@@ -170,29 +194,7 @@ function pagenavbar($page=""){
 }
     
 
-  function addUser($usr, $mdp, $mail, $role="user",$question=0,$reponse=NULL){
-    $user = array();
-    $json = file_get_contents('data/users.json');
-    $user = json_decode($json, true);
-
-    $add = array();
-    $add['user']=$usr;
-    $add['mdp']=password_hash($mdp,PASSWORD_DEFAULT);
-    $add['role']=$role;
-    $add['mail']=$mail;
-    $add['question']=$question;
-    if ( True ) { $add['reponse']=$reponse; }
-    $user[$add['user']]=$add;
-
-    $fp = fopen("data/users.json", 'w');
-    fwrite($fp, "");
-    fclose($fp);
-
-    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users.json", 'a');
-    fwrite($fp, $jsonString);
-    fclose($fp);
-}
+  
 
 function deleteUser($usr){
     $json = file_get_contents('data/users2.json');
