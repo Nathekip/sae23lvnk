@@ -163,7 +163,7 @@ function pagenavbar($page=""){
           $_SESSION['role']=$u['role'];
           $_SESSION['msg'] = "vrai";
           echo $page;
-          header($page);
+          #header($page);
      }
     }
     echo            '</div>
