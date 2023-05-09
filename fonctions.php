@@ -28,32 +28,8 @@ function pr() {
 }
 
 function pagenavbar($page=""){
-    $rep = <<<EOD
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link p01" href="page01.php">Page d'accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p02" href="page02.php">Formulaire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p03" href="page03.php">Informations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p04" href="page04.php">Panier</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p07" href="Monprofil7.php">Mon Profil</a>
-                    </li>
-                </ul>
-                </nav>
-            EOD; 
-  $rep = str_replace($page, 'active', $rep);
-  echo $rep;
-    
+	
   #fixed-top
-  #<a href="#" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hooray!">Bottom</a>
   $navbar = '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
 	       <div class="container">
 	         <a class="navbar-brand" href="page01.php"><img src="images/Logo.png" alt="Logo CarFusion"></a>
@@ -61,23 +37,23 @@ function pagenavbar($page=""){
 	           <span class="navbar-toggler-icon"></span>
 	         </button>
 	         <div class="collapse navbar-collapse" id="navbarNav">
-	       	     <ul class="navbar-nav ms-auto">
-	       	       <li class="nav-item">
-	       	         <a class="nav-link p02" href="page02.php">Trouver Une Voiture</a>
-	       	       </li>
-	       	       <li class="nav-item">
-	       	         <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
-	       	       </li>
-	       	       <li class="nav-item">
-	       	         <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
-	       	       </li>
-	       	       <li class="nav-item">
-	       	         <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="🚧🚧🚧" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
-		       </li>
-	       	     </ul>
-	       	   </div>
-		 </div>
-    	       </nav>';
+	       	   <ul class="navbar-nav ms-auto">
+	       	     <li class="nav-item">
+	       	       <a class="nav-link p02" href="page02.php"><i class="fa fa-garage-car fa-2x"></i></a>
+	       	     </li>
+	       	     <li class="nav-item">
+	       	       <a class="nav-link p03" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
+	       	     </li>
+	       	     <li class="nav-item">
+	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="🚧🚧🚧" href="Monprofil7.php"><i class="fa fa-user fa-2x"></i></a>
+		     </li>
+		     <li class="nav-item">
+	       	       <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
+	       	     </li>
+	       	   </ul>
+	       	 </div>
+	       </div>
+    	     </nav>';
   $navbar = str_replace($page, 'active', $navbar);
   echo $navbar;
   
@@ -100,7 +76,6 @@ function pagenavbar($page=""){
               border-color: #889496; /* Couleur de la bordure */
           }
         </style>';
-    
 }
 
 function pageheader(){
