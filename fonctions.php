@@ -88,7 +88,7 @@ function pagenavbar($page=""){
 		     </li>';
   
   $navbar .=        '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="rounded-circle" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="rounded-circle" width="50" height="50" src="pp/Kono.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	
   $navbar = str_replace($page, 'active', $navbar);
@@ -185,10 +185,6 @@ function pagenavbar($page=""){
         </script>'; */
         
   echo '<style>
-          .ppimg {
-              width: 50px;
-              height: 50px; 
-          }
           .btn:hover, .btn:focus {
               color: #c1c5c7;
               background-color: transparent;
