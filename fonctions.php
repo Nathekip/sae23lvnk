@@ -55,7 +55,7 @@ function pagenavbar($page=""){
   #fixed-top
   echo '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
 		<div class="container">
-			<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Logo CarFusion"></a>
+			<a class="navbar-brand" href="page01.php"><img src="../images/logo.png" alt="Logo CarFusion"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -63,16 +63,16 @@ function pagenavbar($page=""){
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="#.html">Trouver Une Voiture</a>
+						<a class="nav-link" href="page02.php">Trouver Une Voiture</a>
 					</li>
 					<li class="nav-item">
 						<a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#.html"><i class="fa fa-shopping-cart fa-2x"></i></a>
+						<a class="nav-link" href="page03.php"><i class="fa fa-shopping-cart fa-2x"></i></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#.html"><i class="fa fa-user fa-2x"></i></a>
+						<a class="nav-link" href="page04.php"><i class="fa fa-user fa-2x"></i></a>
 					</li>
 				</ul>
 			</div>
