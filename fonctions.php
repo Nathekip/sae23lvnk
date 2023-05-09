@@ -82,13 +82,7 @@ function pagenavbar($page=""){
   echo $navbar;
   
     
-  echo '<script>
-          var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-          var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-          })
-        </script>
-        <style>
+  echo '<style>
           .btn:hover, .btn:focus {
               color: #c1c5c7;
               background-color: transparent;
