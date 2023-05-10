@@ -14,7 +14,7 @@
           <h2 class="text-white text-uppercase fw-bold text-shadow" style="text-shadow: 0 0 10px black;">Heureux de vous voir ici !</h2>
         </div> 
       </div>
-      <img src="assets/images/banniere.png" alt="Bannière" class="w-100">
+      <img src="images/banniere.png" alt="Bannière" class="w-100">
     </div>
 
   </body>
