@@ -235,9 +235,12 @@ function deleteUser($usr){
 function ppTrue($usr){
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
-
+	
+    echo "<pre><br>";
+    echo $user[$usr]['pp']=True;
     $user[$usr]['pp']=True;
-    echo "<pre>";
+    echo $user[$usr]['pp']=True;
+    echo "<br>";
     print_r($user);		
     echo "</pre>";
 
