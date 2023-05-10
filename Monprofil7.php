@@ -109,7 +109,7 @@
       // if everything is ok, try to upload file
       } else {
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
-          echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
         } else {
           echo "Sorry, there was an error uploading your file.";
         }
