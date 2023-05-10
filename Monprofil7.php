@@ -21,7 +21,10 @@
       $btn = <<<EOD
                    <label class="custom-file-upload">
                      <input type="file" name="Upload">
-                     <input class="btn btn-warning" type="submit" value="<i class="fa fa-cloud-upload"></i>Changer de photo de profil" name="submit">
+                     <input class="btn btn-warning" type="submit" value="" name="submit">
+                       <i class="fa fa-cloud-upload"></i>
+                       Changer de photo de profil
+                     </input>
                    </label>
       EOD;
       $btn2 = <<<EOD
