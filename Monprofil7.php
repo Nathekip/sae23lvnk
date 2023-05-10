@@ -41,6 +41,7 @@
                             <p class="card-text">Votre rôle est $role</p>
                             <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
                               $btn
+                              $btn2
                             </form>
                           </div>
                         </div>
