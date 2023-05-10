@@ -45,9 +45,8 @@ function setup() {
     if ( isset($_SESSION['utilisateur']) ){
         $json = file_get_contents('data/users.json');
         $user = json_decode($json, true);
-        echo $user[$_SESSION['utilisateur']]['pp'];
         if ( $user[$_SESSION['utilisateur']]['pp'] ){
-	        echo "aaaa";
+	        $_SESSION['pp'] = True;
         }    
     }
 }
