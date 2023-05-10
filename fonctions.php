@@ -118,7 +118,7 @@ function pagenavbar($page=""){
   if( isset($_SESSION['utilisateur']) ){
         $btndeco = '<li class="nav-item">
                       <form action="deconnexion.php" method="post">
-	                <button type="submit" name="page" value=NUMERODEPAGE class="pt-1 ps-1 btn btn-outline-custom">Se déconnecter</button>
+	                <button type="submit" name="page" value=NUMERODEPAGE class="pt-2 ps-2 btn btn-outline-custom">Se déconnecter</button>
 	              </form>
 	       	    </li>';
         $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
