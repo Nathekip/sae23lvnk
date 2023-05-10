@@ -296,5 +296,98 @@ function pagefooter(){
             </div>
         </footer>';
 }
+function trierParPrixCroissant($a, $b) {
+  return $a['prix'] - $b['prix'];
+}      
+function trierParPrixDecroissant($a, $b) {
+  return $b['prix'] - $a['prix'];
+}
+function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $modele1)
+{
+  foreach($voitures as $index => $voiture)
+  {
+    if(($etat == "tous" || $voiture['etat'] == $etat) && ($couleur == "toutes" || $voiture['couleur'] == $couleur))
+    {
+      $prix = $voiture['prix'];
+      if(($prix_min == "" || $prix >= $prix_min) && ($prix_max == "" || $prix <= $prix_max) && (empty($modele1) || stristr($voiture['modele'], $modele1)))
+      {
+        $modele = $voiture['modele'];
+        $marque = $voiture['marque'];
+        $prix = $voiture['prix'];
+        $description = $voiture['description'];
+        $image = $voiture['image'];
+        $annee = $voiture['annee'];
+        $kilometrage = $voiture['kilometrage'];
+        $etat_voiture = $voiture['etat'];
+        $puissance = $voiture['puissance'];
+        $carburant = $voiture['carburant'];
+        $boite = $voiture['boite'];
+        $mani = isset($voiture['maniabilite']) ? $voiture['maniabilite'] : null;
+        $fiab = isset($voiture['fiabilite']) ? $voiture['fiabilite'] : null;
+        $conf = isset($voiture['confort']) ? $voiture['confort'] : null;
+        $i = 0;
+        $stars1 = '';
+        $stars2 = '';
+        $stars3 = '';
+        for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $mani) {
+              $stars1 .= '<i class="fas fa-star"></i>';
+            } 
+            else {
+              $stars1 .= '<i class="far fa-star"></i>';
+            }
+        }
+        for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $conf) {
+              $stars2 .= '<i class="fas fa-star"></i>';
+            }
+            else {
+              $stars2 .= '<i class="far fa-star"></i>';
+            }
+        }
+        for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $fiab) {
+              $stars3 .= '<i class="fas fa-star"></i>';
+            }
+            else {
+              $stars3 .= '<i class="far fa-star"></i>';
+            }
+        }
+        echo <<<EOD
+                   <div class="col-md-3 mb-3">
+                     <img src="$image" class="card-img-top" alt="Photo de la voiture">
+                     <div class="card border rounded-3">
+                       <div class="card-body">
+                         <center><h5 class="card-title"> $marque $modele</h5></center> 
+                         <p class="card-text">$description</p>
+                         <div class="d-flex justify-content-between align-items-center">
+                           <p class="card-text mb-0">Prix : $prix €</p>
+                           <span class="badge bg-secondary rounded-3">$etat_voiture</span>
+                         </div>
+                         <hr>
+                         <form method="post" action="reservation.php">
+                           <input type="hidden" name="marque" value="$marque">
+                           <input type="hidden" name="modele" value="$modele">
+                           <input type="hidden" name="annee" value="$annee">
+                           <input type="hidden" name="prix" value="$prix">
+                           <input type="hidden" name="etat" value="$etat">
+                           <input type="hidden" name="kilometrage" value="$kilometrage">
+                           <input type="hidden" name="couleur" value="$couleur">
+                           <input type="hidden" name="carburant" value="$carburant">
+                           <input type="hidden" name="boite" value="$boite">
+                           <input type="hidden" name="puissance" value="$puissance">
+                           <input type="hidden" name="description" value="$description">
+                           <input type="hidden" name="image" value="$image">
+                           <button type="submit" name="submit" value="Acheter" class="btn btn-success rounded-3 ms-2">Acheter</button>
+                         </form>
+                         <button type="button" class="btn btn-secondary rounded-3" data-bs-toggle="modal" data-bs-target="#myModal$index">Voir plus</button>
+                       </div>
+                     </div>
+                   </div>
+                EOD;
+      }
+    }
+  }
+}
 
 ?>
