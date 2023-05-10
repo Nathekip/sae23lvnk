@@ -9,7 +9,7 @@ function movevoiturebleue() {
   document.getElementById("Voiture Rouge").style.display = "none";
   document.getElementById("Voiture Logo").style.display = "none";
   let img = document.getElementById("Voiture Bleue");  // Récupère l'élément image par son ID
-  img.src = "assets/images/voiture-bleue.png";
+  img.src = "images/voiture-bleue.png";
 
   // Affiche l'image
   img.style.display = "block";
@@ -54,7 +54,7 @@ function movevoitureverte() {
   document.getElementById("Voiture Rouge").style.display = "none";
   document.getElementById("Voiture Logo").style.display = "none";
   let img = document.getElementById("Voiture Verte");  // Récupère l'élément image par son ID
-  img.src = "assets/images/voiture-verte.png";
+  img.src = "images/voiture-verte.png";
 
   // Affiche l'image
   img.style.display = "block";
@@ -100,7 +100,7 @@ function movevoiturerouge() {
   document.getElementById("Voiture Rouge").style.display = "none";
   document.getElementById("Voiture Logo").style.display = "none";
   let img = document.getElementById("Voiture Rouge");  // Récupère l'élément image par son ID
-  img.src = "assets/images/voiture-rouge.png";
+  img.src = "images/voiture-rouge.png";
 
   // Cache l'image
   img.style.display = "block";
@@ -145,7 +145,7 @@ function movevoiturelogo() {
   document.getElementById("Voiture Rouge").style.display = "none";
   document.getElementById("Voiture Logo").style.display = "none";
   let img = document.getElementById("Voiture Logo");  // Récupère l'élément image par son ID
-  img.src = "assets/images/voiture-logo.png";
+  img.src = "images/voiture-logo.png";
 
   // Cache l'image
   img.style.display = "block";
