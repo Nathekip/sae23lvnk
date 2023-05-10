@@ -21,7 +21,7 @@
       $btn = <<<EOD
                    <label class="custom-file-upload">
                      <input type="file" name="Upload">
-                     <input class="btn btn-warning" type="submit" value="" name="submit">
+                     
                        <i class="fa fa-cloud-upload"></i>
                        Changer de photo de profil
                      </input>
