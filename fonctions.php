@@ -237,9 +237,12 @@ function ppTrue($usr){
     $user = json_decode($json, true);
 	
     echo "<pre><br>";
-    echo $user[$usr]['pp']=True;
+    print_r($user[$usr]);
+    echo "<br>";
+    echo $user[$usr]['pp'];
     $user[$usr]['pp']=True;
-    echo $user[$usr]['pp']=True;
+    echo "<br>";
+    echo $user[$usr]['pp'];
     echo "<br>";
     print_r($user);		
     echo "</pre>";
