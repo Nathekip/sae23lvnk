@@ -108,7 +108,7 @@
       // if everything is ok, try to upload file
       } else {
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
-          ppTrue($_SESSION['utilisateur']);
+          #ppTrue($_SESSION['utilisateur']);
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
         } else {
           echo "Sorry, there was an error uploading your file.";
