@@ -11,7 +11,8 @@ function addUser($usr, $mdp, $mail, $role="user",$question=0,$reponse=NULL){
     $add['role']=$role;
     $add['mail']=$mail;
     $add['question']=$question;
-    if ( True ) { $add['reponse']=$reponse; }
+    $add['pp']=False;
+    $add['reponse']=$reponse;
     $user[$add['user']]=$add;
 
     $fp = fopen("data/users.json", 'w');
@@ -62,6 +63,7 @@ function pagenavbar($page=""){
       $_SESSION['utilisateur']=$u['user'];
       $_SESSION['role']=$u['role'];
       $_SESSION['msg'] = "vrai";
+      $_SESSION['pp']=$u['pp'];
       #echo $pagehead;
       header($pagehead);
     }
@@ -83,9 +85,15 @@ function pagenavbar($page=""){
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
 	 
-  if ( isset($_SESSION['utilisateur']) ){
+  if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
 	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
+		     </li>';
+	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
+  }
+  else if ( isset($_SESSION['utilisateur']) ){
+	  $navbar .= '<li class="nav-item">
+	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
@@ -96,7 +104,7 @@ function pagenavbar($page=""){
   }
   $navbar = str_replace($page, 'active', $navbar);
   echo $navbar;
-  if(isset($_SESSION['utilisateur'])){
+  if( isset($_SESSION['utilisateur']) ){
         $btndeco = '<li class="nav-item">
                       <form action="deconnexion.php" method="post">
 	                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-outline-custom">Se déconnecter</button>
