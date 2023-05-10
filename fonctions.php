@@ -237,6 +237,9 @@ function ppTrue($usr){
     $user = json_decode($json, true);
 
     $user[$usr]['pp']=True;
+    echo "<pre>";
+    print_r($user);		
+    echo "</pre>";
 
     $fp = fopen("data/users.json", 'w');
     fwrite($fp, "");
