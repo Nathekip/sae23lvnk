@@ -109,8 +109,7 @@
       } else {
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
-          #ppTrue($_SESSION['utilisateur']);
-          ppTrue('Georges');
+          ppTrue($_SESSION['utilisateur']);
         } else {
           echo "Sorry, there was an error uploading your file.";
         }
