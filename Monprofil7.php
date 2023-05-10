@@ -17,7 +17,6 @@
       # <a href="#" class="btn btn-warning">Changer de photo de profil</a>         fileToUpload
       $name = $_SESSION['utilisateur'];
       $role = $_SESSION['role'];
-      # if
       $btn = <<<EOD
                    <label class="custom-file-upload">
                      <input type="file" name="Upload">
@@ -109,6 +108,7 @@
       // if everything is ok, try to upload file
       } else {
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
+          ppTrue($_SESSION['utilisateur']);
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
         } else {
           echo "Sorry, there was an error uploading your file.";
