@@ -14,11 +14,10 @@
     
     
     <?php
-    
-        # <a href="#" class="btn btn-warning">Changer de photo de profil</a>         fileToUpload
-        $name = $_SESSION['utilisateur'];
-        $role = $_SESSION['role'];
-        $card = <<<EOD
+      # <a href="#" class="btn btn-warning">Changer de photo de profil</a>         fileToUpload
+      $name = $_SESSION['utilisateur'];
+      $role = $_SESSION['role'];
+      $card = <<<EOD
                     <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
                       <div class="d-flex align-items-center mx-auto">
                         <div class="card" style="width:400px">
@@ -27,7 +26,13 @@
                             <h4 class="card-title">$name</h4>
                             <p class="card-text">Votre rôle est $role</p>
                             <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
-                              <input class="btn btn-warning" type="file" value="Changer de photo de profil" name="Upload">
+                              <label class="custom-file-upload">
+                                <input type="file" name="Upload">
+                                <a class="btn btn-warning">
+                                  <i class="fa fa-cloud-upload"></i>
+                                  Changer de photo de profil
+                                </a>
+                              </label>
                               <input class="btn btn-warning" type="submit" value="Valider" name="submit">
                             </form>
                           </div>
@@ -36,10 +41,16 @@
                     </div>
 
                     EOD;
-        #$card = str_replace("",$_SESSION,$card);
-        echo $card;
+      #$card = str_replace("",$_SESSION,$card);
+      echo $card;
+      ?>
+      <style>
+        input[type="file"] {
+            display: none;
+        }
+      </style>
     
-    
+      <?php
       # Procédure d'enregistrement de l'image 
       $target_dir = "pp/";
       #$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
