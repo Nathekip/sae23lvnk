@@ -17,10 +17,11 @@
       # <a href="#" class="btn btn-warning">Changer de photo de profil</a>         fileToUpload
       $name = $_SESSION['utilisateur'];
       $role = $_SESSION['role'];
-      if 
+      # if
       $btn = <<<EOD
                    <label class="custom-file-upload">
                      <input type="file" name="Upload">
+                     <input class="btn btn-warning" type="submit" value="<i class="fa fa-cloud-upload"></i>Changer de photo de profil" name="submit">
                      
                        <i class="fa fa-cloud-upload"></i>
                        Changer de photo de profil
