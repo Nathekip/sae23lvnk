@@ -237,13 +237,13 @@ function ppTrue($usr){
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
 
-    echo "<pre><br>user : ";
-    print_r($user);
-    echo "<br>user[usr] : ";
-    print_r($user[$usr]);
-    echo "<br>user[usr]['pp'] : </pre>";
+    
+    echo "user[usr]['pp'] avant : ";
     echo $user[$usr]['pp'];
     $user[$usr]['pp']=True;
+    echo "user[usr]['pp'] après : ";
+    echo $user[$usr]['pp'];
+    
 
     $fp = fopen("data/users.json", 'w');
     fwrite($fp, "");
