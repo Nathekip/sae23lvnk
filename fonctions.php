@@ -118,7 +118,7 @@ function pagenavbar($page=""){
   if( isset($_SESSION['utilisateur']) ){
         $btndeco = '<li class="nav-item">
                       <form action="deconnexion.php" method="post">
-	                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn-outline-custom">Se déconnecter</button>
+	                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn1 btn-outline-custom">Se déconnecter</button>
 	              </form>
 	       	    </li>';
         $btndeco = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $btndeco);
@@ -126,7 +126,7 @@ function pagenavbar($page=""){
     }
   else {
 	$boutons = '<li class="nav-item">
-	              <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
+	              <button type="button" class="btn btn1 btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
 		        Connexion
 		      </button>
 		    </li>
@@ -204,7 +204,7 @@ function pagenavbar($page=""){
         </script>'; */
         
   echo '<style>
-          .btn:hover, .btn:focus {
+          .btn1:hover, .btn:focus {
               color: #c1c5c7;
               background-color: transparent;
               border-color: #c1c5c7;
