@@ -17,13 +17,11 @@
       # <a href="#" class="btn btn-warning">Changer de photo de profil</a>         fileToUpload
       $name = $_SESSION['utilisateur'];
       $role = $_SESSION['role'];
+      if 
       $btn = <<<EOD
                    <label class="custom-file-upload">
                      <input type="file" name="Upload">
-                     <a class="btn btn-warning">
-                       <i class="fa fa-cloud-upload"></i>
-                       Changer de photo de profil
-                     </a>
+                     <input class="btn btn-warning" type="submit" value="<i class="fa fa-cloud-upload"></i>Changer de photo de profil" name="submit">
                    </label>
       EOD;
       $btn2 = <<<EOD
@@ -39,7 +37,6 @@
                             <p class="card-text">Votre rôle est $role</p>
                             <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
                               $btn
-                              $btn2
                             </form>
                           </div>
                         </div>
