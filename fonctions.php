@@ -218,7 +218,7 @@ function pagenavbar($page=""){
   
 
 function deleteUser($usr){
-    $json = file_get_contents('data/users2.json');
+    $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
 
     unset($user[$usr]);
@@ -228,13 +228,13 @@ function deleteUser($usr){
     fclose($fp);
 
     $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users2.json", 'a');
+    $fp = fopen("data/users.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
 }
 
 function ppTrue($usr){
-    $json = file_get_contents('data/users2.json');
+    $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
 
     echo "<pre><br>user : ";
@@ -245,7 +245,7 @@ function ppTrue($usr){
     echo $user[$usr]['pp'];
     $user[$usr]['pp']=True;
 
-    $fp = fopen("data/users2.json", 'w');
+    $fp = fopen("data/users.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
