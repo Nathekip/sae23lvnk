@@ -42,7 +42,15 @@ function setup() {
     if ($rep == NULL){
     $rep = "Car Fusion";}
     echo "<title>$rep</title>";
+    if ( isset($_SESSION['utilisateur']) ){
+        $json = file_get_contents('data/users.json');
+        $user = json_decode($json, true);
+        echo $user[$_SESSION['utilisateur']]['pp'];
+        if ( $user[$_SESSION['utilisateur']]['pp'] ){
+	        echo "aaaa";
+        }    
     }
+}
 
 function pr() {
     echo '<pre> Session :<br>';
