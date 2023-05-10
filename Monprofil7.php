@@ -14,6 +14,8 @@
     
     
     <?php
+    
+        # <a href="#" class="btn btn-warning">Changer de photo de profil</a>
         $name = $_SESSION['utilisateur'];
         $role = $_SESSION['role'];
         $card = <<<EOD
@@ -25,11 +27,11 @@
                             <h4 class="card-title">$name</h4>
                             <p class="card-text">Votre rôle est $role</p>
                             <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
-                              <input type="file" name="fileToUpload" id="fileToUpload">
-                                <a href="#" class="btn btn-warning">Changer de photo de profil</a>
+                              <input class="btn btn-warning" type="file" name="fileToUpload" id="fileToUpload">
+                                Changer de photo de profil
                               </input>
-                              <input type="submit" value="Upload Image" name="submit">
-                                <a href="#" class="btn btn-warning">Valider</a>
+                              <input class="btn btn-warning" type="submit" value="Upload Image" name="submit">
+                                Valider
                               </input>
                             </form>
                           </div>
