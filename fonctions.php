@@ -87,8 +87,8 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
-	       	       <a class="text-center nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
-		         Trouver une voiture
+	       	       <a class="nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
+		         <div class="pb-2 pe-5">Trouver une voiture</div>
 		         <i class="fa fa-car fa-2x"></i>
 		       </a>
 	       	     </li>
