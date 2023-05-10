@@ -87,29 +87,29 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
-		         Trouver une voiture
+	       	       <a class="shadow nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
+		         <p>Trouver une voiture</p>
 		         <i class="fa fa-car fa-2x"></i>
 		       </a>
 	       	     </li>
-	       	     <li class="nav-item">
+	       	     <li class="shadow nav-item">
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
 	 
   if ( $_SESSION['pp'] ){
-	  $navbar .= '<li class="nav-item">
+	  $navbar .= '<li class="shadow nav-item">
 	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
   else if ( isset($_SESSION['utilisateur']) ){
-	  $navbar .= '<li class="nav-item">
+	  $navbar .= '<li class="shadow nav-item">
 	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
   else {
-	  $navbar .= '<li class="nav-item">
+	  $navbar .= '<li class="shadow nav-item">
 	       	       <a class="nav-link disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Vous n\'avez pas de compte" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
   }
