@@ -24,7 +24,14 @@
                           <div class="card-body">
                             <h4 class="card-title">$name</h4>
                             <p class="card-text">Votre rôle est $role</p>
-                            <a href="#" class="btn btn-warning">Changer de photo de profil</a>
+                            <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
+                              <input type="file" name="fileToUpload" id="fileToUpload">
+                                <a href="#" class="btn btn-warning">Changer de photo de profil</a>
+                              </input>
+                              <input type="submit" value="Upload Image" name="submit">
+                                <a href="#" class="btn btn-warning">Valider</a>
+                              </input>
+                            </form>
                           </div>
                         </div>
                       </div>
