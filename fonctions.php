@@ -88,8 +88,8 @@ function pagenavbar($page=""){
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
 	       	       <a class="d-flex flex-row-reverse nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
-		         <div class="pb-2 pe-5">Trouver une voiture</div>
 		         <i class="fa fa-car fa-2x"></i>
+		         <div class="pb-2">Trouver une voiture</div>
 		       </a>
 	       	     </li>
 	       	     <li class="nav-item">
