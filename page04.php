@@ -8,19 +8,14 @@
     $a = "974 ------- La trix";
     echo "$a|";
     echo "<br>";
-    $b = substr($a, 0, 3);
-    echo "$b|";
-    echo "<br>";
-    $c = trim($b," ");
+    $c = trim(substr($a, 0, 3)," ");
     echo "$c|";
     echo "<br>";
+    
     $a = "44 ------- La trix";
     echo "$a|";
     echo "<br>";
-    $b = substr($a, 0, 3);
-    echo "$b|";
-    echo "<br>";
-    $c = trim($b," ");
+    $c = trim(substr($a, 0, 3)," ");
     echo "$c|";
     pr();
     ?>
