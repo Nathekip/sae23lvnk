@@ -109,7 +109,12 @@
                                     </div>    
                                         ';
                         $dep = ["Hors France","Ain","Aisne","Allier"];
-                        $formulaire = str_replace("PlaceholderOptionsDep","<option>feur</option>",$formulaire);                
+                        $OptionsDep = "";
+                        #"<option>feur</option>"
+                        foreach($dep as $d){
+                            $OptionsDep .= "<option>".$d."</option>"
+                        }
+                        $formulaire = str_replace("PlaceholderOptionsDep",$OptionsDep,$formulaire);                
                         # test oeil
                         if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
                         if ( isset($_POST['cmdpoeil']) ){ $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool']; }
