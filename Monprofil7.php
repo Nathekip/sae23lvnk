@@ -6,6 +6,8 @@
       setup();
       pagenavbar("p07");
     
+      $a = ! isset($_SESSION['utilisateur']);
+      echo $a;
       if ( ! isset($_SESSION['utilisateur']) ){
         header('Location: page01.php');  
       }
