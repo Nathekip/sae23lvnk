@@ -1,6 +1,6 @@
 <?php
 
-function addUser($usr, $mdp, $mail, $role="user",$question=0,$reponse=NULL){
+function addUser($usr, $mdp, $mail, $departement, $role="user",$question=0,$reponse=NULL){
     $user = array();
     $json = file_get_contents('data/users.json');
     $user = json_decode($json, true);
@@ -10,6 +10,7 @@ function addUser($usr, $mdp, $mail, $role="user",$question=0,$reponse=NULL){
     $add['mdp']=password_hash($mdp,PASSWORD_DEFAULT);
     $add['role']=$role;
     $add['mail']=$mail;
+    $add['departement']=$departement;
     $add['question']=$question;
     $add['pp']=False;
     $add['reponse']=$reponse;
