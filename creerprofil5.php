@@ -111,8 +111,8 @@
                         $dep = ["Hors France","Ain","Aisne","Allier"];
                         $OptionsDep = "";
                         #"<option>feur</option>"
-                        foreach($dep as $d){
-                            $OptionsDep .= "<option>".$d."</option>";
+                        for ($i = 0; $i < count($dep); $i++){
+                            $OptionsDep .= "<option>".$i." -- ".$dep[$i]."</option>";
                         }
                         $formulaire = str_replace("PlaceholderOptionsDep",$OptionsDep,$formulaire);                
                         # test oeil
