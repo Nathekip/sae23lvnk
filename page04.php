@@ -6,7 +6,7 @@
     setup();
     pagenavbar("p04");
     echo "<br>";
-    echo "44 ------- La trix";
+    echo "974 ------- La trix";
     echo "<br>";
     $a = substr("44 ", 0, 3);
     echo "$a|";
