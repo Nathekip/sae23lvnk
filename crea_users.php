@@ -2,8 +2,6 @@
 
 include('fonctions.php');
 function newUsers(){
-    
-    echo "salut !";
 
     $fp = fopen("data/users.json", 'w');
     fwrite($fp, "");
@@ -18,5 +16,8 @@ function newUsers(){
 
 }
 newUsers();
-
+echo "<pre>"
+$json = file_get_contents('data/users.json');
+$user = json_decode($json, true);
+print_r($user);
 ?>
