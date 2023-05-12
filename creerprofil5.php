@@ -74,7 +74,6 @@
                                                     <option>2A - Corse-du-Sud</option>
                                                     <option>2B - Haute-Corse</option>
                                                   </select>
-                                                  <label for="dep" class="form-label">Choisissez un département parmis la liste ci-dessous :</label>
                                                 </div>
                                               </div>
                                             </div>
