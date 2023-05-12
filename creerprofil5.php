@@ -68,7 +68,7 @@
                                               <div class="form-outline flex-fill mb-0">
                                                 Confirmez ce mot de Passe :
                                                 <div class="input-group">
-                                                  <input type="phrOeilCmdp" id="mdp" value="phrCmdp" class="form-control" name="cmdp" placeholder="Confirmez ce mdp">
+                                                  <input type="phrOeilCmdp" id="cmdp" value="phrCmdp" class="form-control" name="cmdp" placeholder="Confirmez ce mdp">
                                                   <button type="submit" class="btn btn-secondary btn-outline-info text-white" name="cmdpoeil" value=True>
                                                     LogoOeilCmdp
                                                   </button>
