@@ -51,7 +51,7 @@
                                                   <label class="form-check-label" for="radio1"></label>
                                                   <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>France
                                                   <label class="form-check-label" for="radio2"></label>
-                                                  <select class="form-select">
+                                                  <select class="mx-5 form-select">
                                                     <option>01 - Ain</option>
                                                     <option>02 - Aisne</option>
                                                     <option>03 - Allier</option>
