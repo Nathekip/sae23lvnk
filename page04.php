@@ -13,6 +13,15 @@
     echo "<br>";
     $c = trim($b," ");
     echo "$c|";
+    echo "<br>";
+    $a = "44 ------- La trix";
+    echo "$a|";
+    echo "<br>";
+    $b = substr($a, 0, 3);
+    echo "$b|";
+    echo "<br>";
+    $c = trim($b," ");
+    echo "$c|";
     pr();
     ?>
   </body>
