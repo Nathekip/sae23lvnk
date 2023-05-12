@@ -11,7 +11,7 @@
     <br><br><br>
       <div class="container bg-light h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <!-- <div class="col-lg-12 col-xl-11"> -->
+          <div class="col-lg-12 col-xl-11"> -->
             <div class="card text-black">
               <div class="card-body p-md-5">
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
