@@ -5,6 +5,10 @@
       include('fonctions.php');
       setup();
       pagenavbar("p07");
+    
+      if ( ! isset($_SESSION['utilisateur']) ){
+        header('Location: page01.php');  
+      }
     ?>
     <!-- <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
       Select image to upload:
