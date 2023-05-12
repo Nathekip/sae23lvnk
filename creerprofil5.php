@@ -51,7 +51,7 @@
                                                   <label class="form-check-label" for="radio1"></label>
                                                   <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>France
                                                   <label class="form-check-label" for="radio2"></label>
-                                                  <select class="w-25 form-select">
+                                                  <select class="w-25 form-select" name= "dep" id="dep">
                                                     <option>01 - Ain</option>
                                                     <option>02 - Aisne</option>
                                                     <option>03 - Allier</option>
@@ -68,7 +68,13 @@
                                                     <option>14 - Calvados</option>
                                                     <option>15 - Cantal</option>
                                                     <option>16 - Charente</option>
+                                                    <option>17 - Charente-Maritime</option>
+                                                    <option>18 - Cher</option>
+                                                    <option>19 - Corrèze</option>
+                                                    <option>2A - Corse-du-Sud</option>
+                                                    <option>2B - Haute-Corse</option>
                                                   </select>
+                                                  <label for="dep" class="form-label">Choisissez un département parmis la liste ci-dessous :</label>
                                                 </div>
                                               </div>
                                             </div>
