@@ -9,6 +9,7 @@
       $a = ! isset($_SESSION['utilisateur']);
       echo $a;
       if ( ! isset($_SESSION['utilisateur']) ){
+        echo "a";
         header('Location: page01.php');  
       }
     ?>
