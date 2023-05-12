@@ -48,7 +48,7 @@
                                                 Mot de Passe :
                                                 <div class="input-group">
                                                   <input type="phrOeilMdp" id="mdp" value="phrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                                                  <button type="submit" class="btn btn-info" name="mdpoeil" value=True>
+                                                  <button type="submit" class="btn btn-secondary btn-outline-info" name="mdpoeil" value=True>
                                                     LogoOeilMdp
                                                   </button>
                                                 </div>
@@ -60,7 +60,7 @@
                                                 Confirmez ce mot de Passe :
                                                 <div class="input-group">
                                                   <input type="phrOeilCmdp" id="mdp" value="phrCmdp" class="form-control" name="cmdp" placeholder="Confirmez ce mdp">
-                                                  <button type="submit" class="btn btn-secondary" name="cmdpoeil" value=True>
+                                                  <button type="submit" class="btn btn-secondary btn-outline-info" name="cmdpoeil" value=True>
                                                     LogoOeilCmdp
                                                   </button>
                                                 </div>
