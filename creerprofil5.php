@@ -141,6 +141,9 @@
                         if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
                           $formulaire = str_replace("phrMdp",$_POST['mdp'],$formulaire);
                           $formulaire = str_replace("phrCmdp",$_POST['cmdp'],$formulaire);
+                          $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                          $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                          $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                         }
                            
                         $json = file_get_contents('data/users.json');
