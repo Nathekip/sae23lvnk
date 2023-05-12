@@ -46,16 +46,30 @@
                                               <i class="fas fa-duotone fa-house fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 Domicile :
-                                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
-                                                <label class="form-check-label" for="radio1"></label>
-                                                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>Option 2
-                                                <label class="form-check-label" for="radio2"></label>
-                                                <select class="form-select">
-                                                  <option>1</option>
-                                                  <option>2</option>
-                                                  <option>3</option>
-                                                  <option>4</option>
-                                                </select>
+                                                <div>
+                                                  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Hors France
+                                                  <label class="form-check-label" for="radio1"></label>
+                                                  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>France
+                                                  <label class="form-check-label" for="radio2"></label>
+                                                  <select class="form-select">
+                                                    <option>01 - Ain</option>
+                                                    <option>02 - Aisne</option>
+                                                    <option>03 - Allier</option>
+                                                    <option>04 - Alpes de Haute-Provence</option>
+                                                    <option>05 - Hautes-Alpes</option>
+                                                    <option>06 - Alpes-Maritimes</option>
+                                                    <option>07 - Ardêche</option>
+                                                    <option>08 - Ardennes</option>
+                                                    <option>09 - Ariège</option>
+                                                    <option>10 - Aube</option>
+                                                    <option>11 - Aude</option>
+                                                    <option>12 - Aveyron</option>
+                                                    <option>13 - Bouches-du-Rhône</option>
+                                                    <option>14 - Calvados</option>
+                                                    <option>15 - Cantal</option>
+                                                    <option>16 - Charente</option>
+                                                  </select>
+                                                </div>
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
