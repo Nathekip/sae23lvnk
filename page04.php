@@ -6,13 +6,13 @@
     setup();
     pagenavbar("p04");
     echo "<br>";
-    echo "44 ";
+    echo "44 ------- La trix";
     echo "<br>";
     $a = substr("44 ", 0, 3);
-    echo $a;
+    echo "$a|";
     echo "<br>";
     $b = trim($a," ");
-    echo $b;
+    echo "$b|";
     pr();
     ?>
   </body>
