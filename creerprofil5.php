@@ -23,7 +23,7 @@
                         $formulaire = '
                                     <div>
                                       <div class="row justify-content-center">
-                                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 pt-5 order-lg-1">
                                           <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                                         </div>
                                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
@@ -46,35 +46,9 @@
                                               <i class="fas fa-duotone fa-house fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 Domicile :
-                                                <div class="d-flex flex-row">
-                                                  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Hors France
-                                                  <label class="form-check-label" for="radio1"></label>
-                                                  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>France
-                                                  <label class="form-check-label" for="radio2"></label>
-                                                  <select class="w-25 form-select" name= "dep" id="dep">
-                                                    <option>01 - Ain</option>
-                                                    <option>02 - Aisne</option>
-                                                    <option>03 - Allier</option>
-                                                    <option>04 - Alpes de Haute-Provence</option>
-                                                    <option>05 - Hautes-Alpes</option>
-                                                    <option>06 - Alpes-Maritimes</option>
-                                                    <option>07 - Ardêche</option>
-                                                    <option>08 - Ardennes</option>
-                                                    <option>09 - Ariège</option>
-                                                    <option>10 - Aube</option>
-                                                    <option>11 - Aude</option>
-                                                    <option>12 - Aveyron</option>
-                                                    <option>13 - Bouches-du-Rhône</option>
-                                                    <option>14 - Calvados</option>
-                                                    <option>15 - Cantal</option>
-                                                    <option>16 - Charente</option>
-                                                    <option>17 - Charente-Maritime</option>
-                                                    <option>18 - Cher</option>
-                                                    <option>19 - Corrèze</option>
-                                                    <option>2A - Corse-du-Sud</option>
-                                                    <option>2B - Haute-Corse</option>
-                                                  </select>
-                                                </div>
+                                                <select class="form-select" name= "dep">
+                                                  PlaceholderOptionsDep
+                                                </select>
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
@@ -134,6 +108,8 @@
                                       </div>  
                                     </div>    
                                         ';
+                        $dep = ["Hors France","Ain","Aisne","Allier"];
+                        $formulaire = str_replace("","<option>feur</option>",$formulaire);                
                         # test oeil
                         if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
                         if ( isset($_POST['cmdpoeil']) ){ $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool']; }
