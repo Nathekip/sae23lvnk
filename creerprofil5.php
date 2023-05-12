@@ -4,6 +4,9 @@
         <?php
             include('fonctions.php');
             setup();
+            # set var base
+            if ( !isset($_SESSION['MdpBool']) ){ $_SESSION['MdpBool'] = False; }
+            if ( !isset($_SESSION['CmdpBool']) ){ $_SESSION['CmdpBool'] = False; }
         ?>
       <meta charset="UTF-8">
     </head>
@@ -44,8 +47,8 @@
                                               <div class="form-outline flex-fill mb-0">
                                                 Mot de Passe :
                                                 <div class="pt-1 mb-3 input-group">
-                                                  <input type="PhrOeilMdp" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
-                                                  <button type="submit" class="btn btn-warning" name="mdpoeil" value=True>
+                                                  <input type="phrOeilMdp" id="mdp" value="phrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
+                                                  <button type="submit" class="btn btn-light" name="mdpoeil" value=True>
                                                     LogoOeilMdp
                                                   </button>
                                                 </div>
@@ -93,97 +96,123 @@
                                       </div>  
                                     </div>    
                                         ';
-                            $json = file_get_contents('data/users.json');
-                            $user = json_decode($json, true);
-                            /* echo '<br><pre> data/users.json :<br>';
-                            print_r($user);
-                            echo '</pre>'; */
-                            echo "<div class='container'>";
-                            # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
-                            if ( (in_array("", array_slice($_POST, 0, 4)) ) && ( isset($_POST['utilisateur'])  ) ){ 
-                            # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
-                                echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
-                                      </div>";
-                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
-                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
-                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
-                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
-                            } 
-                            # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))
-                            else if (       (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))   ) {
-                                echo "<div class='alert alert-warning'>
-                                        <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
-                                      </div>";
-                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
-                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
-                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
-                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
-                            }
-                            # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
-                            else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )))  ){
-                            # la fonction array.filter filtre un array selon une fonction
-                                echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> Le pseudo n'est pas disponible.
-                                      </div>";
-                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
-                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
-                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
-                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
-                            }
-                            # alerte mail déjà existant / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   )
-                            else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) ){
-                            # si le array est empty, cela veut dire qu'aucune adresse mail dans la base de donnée ne correspond à l'adresse mail envoyée par le formulaire
-                                echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> L'adresse mail est déjà utilisée.
-                                      </div>";
-                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
-                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
-                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
-                            }
-                            # alerte mdp trop court / ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) )
-                            else if ( ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp'])    )      {
-                            # la fonction strlen(string) renvoie le nombre de charactères d'un string
-                                echo "<div class='alert alert-warning'>
-                                        <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
-                                      </div>";
-                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
-                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
-                            }
-                            # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
-                            else if ( $_POST['mdp']!=$_POST['cmdp'] ){
-                                echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
-                                       </div>";
-                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
-                                $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
-                            }
-                            # alerte Question Réponse /
-                            else if ( ($_POST['question'] != 0) && ($_POST['reponse'] == "") ){
-                                echo "<div class='alert alert-danger'>
-                                        <strong>Erreur</strong> Vous devez fournir une réponse à la question d'authentification, si vous en voulez une.
-                                       </div>";
-                                $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
-                                $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
-                                $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
-                                $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
-                            }
-                            else if ( isset($_POST['utilisateur']) ){
-                                addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'],"user", $_POST['question'], $_POST['reponse']);
-                                echo "<div class='alert alert-success'>
-                                        <strong>Succès</strong> Le compte a bien été créé.
-                                       </div>";
-                            }
-                            $formulaire = str_replace('phrNom', '', $formulaire);
-                            $formulaire = str_replace('phrMail', '', $formulaire);
-                            $formulaire = str_replace('phrMdp', '', $formulaire);
-                            $formulaire = str_replace('phrCmdp', '', $formulaire);
-                            $formulaire = str_replace('phrRep', '', $formulaire);
+                        # test oeil
+                        if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
+                        if ( isset($_POST['cmdpoeil']) ){ $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool']; }
+                        if ($_SESSION['MdpBool']){
+                          $formulaire = str_replace("phrOeilMdp","input",$formulaire);
+                          $formulaire = str_replace("LogoOeilMdp",'<i class="fa-solid fa-eye-slash"></i>',$formulaire); 
+                        }
+                        else { 
+                          $formulaire = str_replace("phrOeilMdp","password",$formulaire); 
+                          $formulaire = str_replace("LogoOeilMdp",'<i class="fa-solid fa-eye"></i>',$formulaire); 
+                        }
+                        if ($_SESSION['CmdpBool']){ 
+                          $formulaire = str_replace("phrOeilCmdp","input",$formulaire); 
+                          $formulaire = str_replace("LogoOeilCmdp",'<i class="fa-solid fa-eye-slash"></i>',$formulaire); 
+                        }
+                        else { 
+                          $formulaire = str_replace("phrOeilCmdp","password",$formulaire); 
+                          $formulaire = str_replace("LogoOeilCmdp",'<i class="fa-solid fa-eye"></i>',$formulaire); 
+                        }
+                        
+                        # préremplissage oeil
+                        if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
+                          $formulaire = str_replace("phrMdp",$_POST['mdp'],$formulaire);
+                          $formulaire = str_replace("phrCmdp",$_POST['cmdp'],$formulaire);
+                        }
+                           
+                        $json = file_get_contents('data/users.json');
+                        $user = json_decode($json, true);
+                        /* echo '<br><pre> data/users.json :<br>';
+                        print_r($user);
+                        echo '</pre>'; */
+                        echo "<div class='container'>";
+                        # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
+                        if ( (in_array("", array_slice($_POST, 0, 4)) ) && ( isset($_POST['utilisateur'])  ) ){ 
+                        # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
+                            echo "<div class='alert alert-danger'>
+                                    <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
+                                  </div>";
+                            $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                            $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                            $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                            $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                            $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
+                        } 
+                        # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))
+                        else if (       (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))   ) {
+                            echo "<div class='alert alert-warning'>
+                                    <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
+                                  </div>";
+                            $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                            $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                            $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                            $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                            $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
+                        }
+                        # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
+                        else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )))  ){
+                        # la fonction array.filter filtre un array selon une fonction
+                            echo "<div class='alert alert-danger'>
+                                    <strong>Erreur</strong> Le pseudo n'est pas disponible.
+                                  </div>";
+                            $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                            $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                            $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                            $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
+                        }
+                        # alerte mail déjà existant / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  )   )
+                        else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['mail'] === $_POST['mail']; }  ))) ){
+                        # si le array est empty, cela veut dire qu'aucune adresse mail dans la base de donnée ne correspond à l'adresse mail envoyée par le formulaire
+                            echo "<div class='alert alert-danger'>
+                                    <strong>Erreur</strong> L'adresse mail est déjà utilisée.
+                                  </div>";
+                            $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                            $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                            $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                            $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
+                        }
+                        # alerte mdp trop court / ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) )
+                        else if ( ( ( strlen( $_POST['mdp'] ) < 8 ) or ( ! preg_match('/[\'^£$%&?*()}{@#~><>,|=_+¬-]/', $_POST['mdp']) ) or ( ! preg_match('/[A-Z]/', $_POST['mdp']) ) ) && isset($_POST['mdp'])    )      {
+                        # la fonction strlen(string) renvoie le nombre de charactères d'un string
+                            echo "<div class='alert alert-warning'>
+                                    <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
+                                  </div>";
+                            $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                            $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                            $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
+                        }
+                        # alerte Mot de Passe de confirmation / $_POST['mdp']!=$_POST['cmdp']
+                        else if ( $_POST['mdp']!=$_POST['cmdp'] ){
+                            echo "<div class='alert alert-danger'>
+                                    <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
+                                   </div>";
+                            $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                            $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                            $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
+                        }
+                        # alerte Question Réponse /
+                        else if ( ($_POST['question'] != 0) && ($_POST['reponse'] == "") ){
+                            echo "<div class='alert alert-danger'>
+                                    <strong>Erreur</strong> Vous devez fournir une réponse à la question d'authentification, si vous en voulez une.
+                                   </div>";
+                            $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                            $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
+                            $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
+                            $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
+                        }
+                        else if ( isset($_POST['utilisateur']) ){
+                            addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'],"user", $_POST['question'], $_POST['reponse']);
+                            echo "<div class='alert alert-success'>
+                                    <strong>Succès</strong> Le compte a bien été créé.
+                                   </div>";
+                        }
+                        $formulaire = str_replace('phrNom', '', $formulaire);
+                        $formulaire = str_replace('phrMail', '', $formulaire);
+                        $formulaire = str_replace('phrMdp', '', $formulaire);
+                        $formulaire = str_replace('phrCmdp', '', $formulaire);
+                        $formulaire = str_replace('phrRep', '', $formulaire);
                         ?>
                     </p>
                 <?php echo $formulaire; ?>
