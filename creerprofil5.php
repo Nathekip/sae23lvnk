@@ -46,7 +46,7 @@
                                               <i class="fas fa-duotone fa-house fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 Département de domicile :
-                                                <select class="form-select" name= "dep">
+                                                <select class="form-select" value="44 - Loire-Atlantique" name="dep">
                                                   PlaceholderOptionsDep
                                                 </select>
                                               </div>
