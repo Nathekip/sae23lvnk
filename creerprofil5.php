@@ -46,7 +46,7 @@
                                               <i class="fas fa-duotone fa-house fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 Domicile :
-                                                <div>
+                                                <div class="d-flex flex-row">
                                                   <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Hors France
                                                   <label class="form-check-label" for="radio1"></label>
                                                   <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>France
