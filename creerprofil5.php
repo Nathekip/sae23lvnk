@@ -227,7 +227,7 @@
                               $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                           }
                           else if ( isset($_POST['utilisateur']) ){
-                              addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'],"user", $_POST['question'], $_POST['reponse']);
+                              addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'], $_POST['departement'],"user", $_POST['question'], $_POST['reponse']);
                               echo "<div class='alert alert-success'>
                                       <strong>Succès</strong> Le compte a bien été créé.
                                      </div>";
