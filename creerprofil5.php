@@ -46,7 +46,7 @@
                                               <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
                                                 Mot de Passe :
-                                                <div class="pt-1 mb-3 input-group">
+                                                <div class="input-group">
                                                   <input type="phrOeilMdp" id="mdp" value="phrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                                                   <button type="submit" class="btn btn-light" name="mdpoeil" value=True>
                                                     LogoOeilMdp
@@ -57,8 +57,12 @@
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="cmdp">Répéter votre Mot de Passe :</label>
-                                                <input value="phrCmdp" type="password" placeholder="Répétez votre mot de passe" name="cmdp" id="cmdp" class="form-control" />
+                                                <div class="input-group">
+                                                  <input type="phrOeilCmdp" id="mdp" value="phrCmdp" class="form-control" name="cmdp" placeholder="Confirmez ce mdp">
+                                                  <button type="submit" class="btn btn-light" name="cmdpoeil" value=True>
+                                                    LogoOeilCmdp
+                                                  </button>
+                                                </div>
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
