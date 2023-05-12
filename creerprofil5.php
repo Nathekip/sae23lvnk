@@ -112,7 +112,7 @@
                         $OptionsDep = "";
                         #"<option>feur</option>"
                         for ($i = 0; $i < count($dep); $i++){
-                            $OptionsDep .= "<option>".$i." -- ".$dep[$i]."</option>";
+                            $OptionsDep .= "<option>".$i." - ".$dep[$i]."</option>";
                         }
                         $formulaire = str_replace("PlaceholderOptionsDep",$OptionsDep,$formulaire);                
                         # test oeil
