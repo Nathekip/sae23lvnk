@@ -11,7 +11,7 @@
     <br><br><br>
       <div class="container bg-light h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-lg-12 col-xl-11"> -->
+          <!-- <div class="col-lg-12 col-xl-11"> -->
             <div class="card text-black">
               <div class="card-body p-md-5">
                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
@@ -47,7 +47,8 @@
                                                   <input type="PhrOeilMdp" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
                                                   <button type="submit" class="btn btn-warning" name="mdpoeil" value=True>
                                                     LogoOeilMdp
-                                                  </button>  
+                                                  </button>
+                                                </div>
                                                 <label class="form-label" for="mdp">Mot de Passe :</label>
                                                 <input value="phrMdp" type="password" placeholder="Votre mot de passe" name="mdp" id="mdp" class="form-control" />
                                               </div>
