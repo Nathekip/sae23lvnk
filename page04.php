@@ -5,14 +5,14 @@
     include('fonctions.php');
     setup();
     pagenavbar("p04");
-    echo "<br>";
-    echo "974 ------- La trix";
-    echo "<br>";
-    $a = substr("44 ", 0, 3);
+    $a = "974 ------- La trix";
     echo "$a|";
     echo "<br>";
-    $b = trim($a," ");
+    $b = substr($a, 0, 3);
     echo "$b|";
+    echo "<br>";
+    $c = trim($b," ");
+    echo "$c|";
     pr();
     ?>
   </body>
