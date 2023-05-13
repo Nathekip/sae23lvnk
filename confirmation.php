@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <li>Marque : <?php echo $_POST['marque']; ?></li>
               <li>Modèle : <?php echo $_POST['modele']; ?></li>
               <li>Année : <?php echo $_POST['annee']; ?></li>
-              <li>Prix : <?php echo $_POST['prix']; ?> €</li>()
+              <li>Prix : <?php echo $_POST['prix']; ?> €</li>
               <li>Kilométrage : <?php echo $_POST['kilometrage']; ?> km</li>
               <li>Carburant : <?php echo $_POST['carburant']; ?></li>
               <li>Boîte de vitesses : <?php echo $_POST['boite']; ?></li>
