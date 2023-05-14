@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reserv['test']['test'] = $reservation;
 
     // Écrit le tableau $reserv dans le fichier 'reserv.json'
-    $fp = fopen("data/users.json", 'w');
+    $fp = fopen("data/reserv.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
     $jsonString = json_encode($reserv, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users.json", 'a');
+    $fp = fopen("data/reserv.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
 }
