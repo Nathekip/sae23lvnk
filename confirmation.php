@@ -23,13 +23,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'ville' => $ville
     ];
 
+    // Récupère les données du fichier reserv.json dans la variable $reserv
+    $json = file_get_contents('data/reserv.json');
+    $reserv = json_decode($json, true);
 
+    // Intègre $reservation dans $reserv
+    $reserv['test']['test'] = $reservation;
 
-    // Convertit le tableau en chaîne JSON
-    $json = json_encode($reservation,JSON_PRETTY_PRINT);
+    // Écrit le tableau $reserv dans le fichier 'reserv.json'
+    $fp = fopen("data/users.json", 'w');
+    fwrite($fp, "");
+    fclose($fp);
 
-    // Écrit la chaîne JSON dans le fichier 'reserv.json'
-    file_put_contents('reserv.json', $json);
+    $jsonString = json_encode($reserv, JSON_PRETTY_PRINT);
+    $fp = fopen("data/users.json", 'a');
+    fwrite($fp, $jsonString);
+    fclose($fp);
 }
 ?>
 
