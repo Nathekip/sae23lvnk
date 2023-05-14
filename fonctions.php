@@ -98,9 +98,9 @@ function pagenavbar($page=""){
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
 	 
-  if ( True ){
+  if ( $_SESSION['role'] == 'admin' ){
           $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="admin4.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
+	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="admin4.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
 	       	     </li>';
 	  
   }
