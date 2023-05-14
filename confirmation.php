@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reserv = json_decode($json, true);
 
     // Intègre $reservation dans $reserv
-    $reserv['test']['test'] = $reservation;
+    $reserv[$_SESSION['utilisateur']][$modele] = $reservation;
 
     // Écrit le tableau $reserv dans le fichier 'reserv.json'
     $fp = fopen("data/reserv.json", 'w');
