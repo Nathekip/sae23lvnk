@@ -98,6 +98,13 @@ function pagenavbar($page=""){
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
 	 
+  if ( True ){
+          $navbar .= '<li class="nav-item">
+	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="admin4.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
+	       	     </li>';
+	  
+  }
+	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
 	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
