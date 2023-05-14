@@ -70,6 +70,7 @@ function pagenavbar($page=""){
     #print_r($u);
     if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) ){
       $_SESSION['utilisateur']=$u['user'];
+      $_SESSION['mail']=$u['mail'];
       $_SESSION['role']=$u['role'];
       $_SESSION['msg'] = "vrai";
       $_SESSION['pp']=$u['pp'];
