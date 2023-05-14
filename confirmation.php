@@ -18,8 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'modele' => $modele,
         'annee' => $annee,
         'prix' => $prix,
-        'email' => $_SESSION['mail'],
-        'nom' => $_SESSION['utilisateur'],
         'ville' => $ville
     ];
 
