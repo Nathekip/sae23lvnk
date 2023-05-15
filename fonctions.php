@@ -398,4 +398,28 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
   }
 }
 
+function addChat($uemmetteur, $ureceveur, $message){
+    $path = 'chat/'.$uemmetteur.'_'.$ureceveur.'.json'
+    $json = file_get_contents($path);
+    $chat = json_decode($json, true);
+	
+    $len = count($user);
+    for ($i = 1; $i <= $len; $i++){
+	    $chat[$len-$i]=$chat[$len-$i-1];
+    }
+    $chat[0] = $message;
+    
+
+    $fp = fopen($path, 'w');
+    fwrite($fp, "");
+    fclose($fp);
+
+    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+    $fp = fopen($path, 'a');
+    fwrite($fp, $jsonString);
+    fclose($fp);
+	
+	
+}
+
 ?>
