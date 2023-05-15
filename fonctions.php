@@ -399,7 +399,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
 }
 
 function addChat($uemmetteur, $ureceveur, $message){
-    $path = 'chat/'.$uemmetteur.'_'.$ureceveur.'.json'
+    $path = 'chat/'.$uemmetteur.'_'.$ureceveur.'.json';
     $json = file_get_contents($path);
     $chat = json_decode($json, true);
 	
