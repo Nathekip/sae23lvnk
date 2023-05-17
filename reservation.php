@@ -100,6 +100,7 @@
           <input type="hidden" name="carburant" value="<?php echo $_POST['carburant']; ?>">
           <input type="hidden" name="boite" value="<?php echo $_POST['boite']; ?>">
           <input type="hidden" name="puissance" value="<?php echo $_POST['puissance']; ?>">
+          <br>
           <button type="submit" class="btn btn-primary">Réserver</button>
         </form>
       </div>
