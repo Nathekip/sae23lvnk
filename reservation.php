@@ -1,3 +1,9 @@
+<?php
+      include('fonctions.php');
+      setup();
+      pagenavbar("");
+    ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,16 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Récapitulatif de réservation</title>
-  <!-- Liens vers les fichiers CSS de Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<?php
-      include('fonctions.php');
-      setup();
-      pagenavbar();
-      #pr();
-    ?>
   <div class="container my-5">
     <h1 class="mb-4">Récapitulatif de réservation</h1>
     <div class="row">
@@ -35,7 +33,18 @@
           <li>Puissance : <?php echo $_POST['puissance']; ?> ch</li>
         </ul>
         <form method="post" action="confirmation.php">
-
+          <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" name="nom" required>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
           <div class="form-group">
             <label for="ville">Ville de réservation :</label>
           <select class="form-control" id="ville" name="ville" required>
@@ -91,29 +100,10 @@
           <input type="hidden" name="carburant" value="<?php echo $_POST['carburant']; ?>">
           <input type="hidden" name="boite" value="<?php echo $_POST['boite']; ?>">
           <input type="hidden" name="puissance" value="<?php echo $_POST['puissance']; ?>">
-          
-
-<?php
-
-          if( isset($_SESSION['utilisateur']) ){
-
-          $bouton = '<button type="submit" class="btn btn-primary">Réserver</button></form>';
-          }
-          else {
-          $bouton = '</form><a href="page01.php" class="btn btn-primary">Se connecter</a>';
-          }
-          echo $bouton;
-
-?>
-          
-        
+          <button type="submit" class="btn btn-primary">Réserver</button>
+        </form>
       </div>
     </div>
   </div>
-
-  <!-- Liens vers les fichiers JavaScript de Bootstrap -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body> 
 </html>
