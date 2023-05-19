@@ -35,11 +35,11 @@ function setup() {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	  <script src="js/fonction.js"></script>
-          <body class="bg-warning bg-opacity-25"></body>
+	        <script src="js/fonction.js"></script>
+          <body class="bg-secondary bg-opacity-25"></body>
         ';
     
-    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil"];
+    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
     $rep = "Car Fusion";}
@@ -58,6 +58,8 @@ function pr() {
     print_r($_SESSION);
     echo '<br> Post :<br>';
     print_r($_POST);
+    echo '<br> Files :<br>';
+    print_r($_FILES);
     echo '</pre>';
 }
 
@@ -65,16 +67,18 @@ function pagenavbar($page=""){
 	
   $json = file_get_contents('data/users.json');
   $user = json_decode($json, true);
-  $pagehead = "Location: ".$_POST['page'].".php";
+  if ( isset($_POST['page']) ){ $pagehead = "Location: ".$_POST['page'].".php"; }
   foreach($user as $u){
     #print_r($u);
-    if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail']) ) ){
-      $_SESSION['utilisateur']=$u['user'];
-      $_SESSION['role']=$u['role'];
-      $_SESSION['msg'] = "vrai";
-      $_SESSION['pp']=$u['pp'];
-      #echo $pagehead;
-      header($pagehead);
+    if ( isset($_POST['motdepasse']) && isset($_POST['utilisateur']) ){
+      if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail'])) ){
+        $_SESSION['utilisateur']=$u['user'];
+        $_SESSION['role']=$u['role'];
+        $_SESSION['msg'] = "vrai";
+        $_SESSION['pp']=$u['pp'];
+        #echo $pagehead;
+        header($pagehead);
+      }
     }
   }
 	
@@ -97,12 +101,17 @@ function pagenavbar($page=""){
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
 	 
+  if ( isset($_SESSION['utilisateur']) ){
+          $navbar .= '<li class="nav-item">
+                  <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier8.php"><i class="fa-solid fa-file fa-2x"></i></a>
+                </li>';
+  }
+  if (isset($_SESSION['role'])){
   if ( $_SESSION['role'] == 'admin' ){
           $navbar .= '<li class="nav-item">
 	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="admin4.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
 	       	     </li>';
-	  
-  }
+  }}
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
@@ -133,53 +142,91 @@ function pagenavbar($page=""){
         echo $btndeco;
     }
   else {
-	$boutons = '<li class="nav-item">
-	              <button type="button" class="btn btn1 btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
-		        Connexion
-		      </button>
-		    </li>
-		    <!-- The Modal -->
-		    <div class="modal fade" id="myModal">
-		      <div class="modal-dialog">
-		        <div class="modal-content bg-light">
-                          <!-- Modal Header -->
-		          <div class="modal-header bg-secondary text-center">
-		    	    <h4 class="modal-title text-white mx-auto">Connexion</h4>
-		    	    <button type="button" class="btn-close bg-danger btn-outline-dark" data-bs-dismiss="modal"></button>
-		          </div>
-		          <!-- Modal body -->
-		          <div class="modal-body text-center">
-		    	    <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
-		    	      <div class="d-flex align-items-center mx-auto">
-		    	        <div class="login-form">
-		    	          <form action="NUMERODEPAGE.php" id="login-form" method="post">
-		    	            <div class="pt-3 form-group">
-		    	              <label>Utilisateur</label>
-		    	              <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
-		    	  	    </div>
-		    	  	    <div class="pt-3 form-group">
-		    	  	      <label>Mot de passe</label>
-		    	  	      <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-		    	  	    </div>
-		       	  	    <div class="pt-4">
-		       	  	      <button type="submit" name="page" value=NUMERODEPAGE class="btn text-white btn-dark btn-outline-success" data-bs-toggle="modal" data-bs-target="#myModal"> Se connecter</button>
-		       	  	    </div>
-		       	          </form>
-		       	          <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
-		       	  	    <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
-		       	  	    <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
-		       	          </div>
-		       	        </div>
-		       	      </div>
-		       	    </div>
-		          </div>
-		          <!-- Modal footer -->
-		          <div class="modal-footer">
-		            <button type="button" class="btn btn-dark text-white btn-outline-danger" data-bs-dismiss="modal">Fermer</button>
-		          </div>
-			</div>';
-        $boutons = str_replace('NUMERODEPAGE', basename($_SERVER["SCRIPT_NAME"], ".php"), $boutons);
-        echo $boutons;
+	echo '<li class="nav-item">
+                <button type="button" class="btn btn1 btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
+                  Connexion
+                </button>
+                </li>
+                <!-- The Modal -->
+                <div class="modal fade" id="myModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-light">
+                      <!-- Modal Header -->
+                      <div class="modal-header bg-secondary text-center">
+                        <h4 class="modal-title text-white mx-auto">Connexion</h4>
+                        <button type="button" class="btn-close bg-danger btn-outline-dark btn-close-modal" data-bs-dismiss="modal"></button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center bg-white">
+                          <div class="d-flex align-items-center mx-auto">
+                            <div class="login-form">
+                              <form id="login-form" method="post">
+                                <div class="pt-3 form-group">
+                                  <label>Utilisateur</label>
+                                  <input type="text" class="form-control" name="utilisateur" placeholder="Utilisateur">
+                                </div>
+                                <div class="pt-3 form-group">
+                                  <label>Mot de passe</label>
+                                  <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
+                                  <input type="hidden" name="page" value="page01">
+                                </div>
+                                <div class="pt-4">
+                                <button type="submit" class="btn text-white btn-dark btn-outline-success btn-login" id="submitBtn">Se connecter</button>
+                                </div>
+                              </form>
+                              <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
+                                <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
+                                <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-dark text-white btn-outline-danger btn-close-modal" data-bs-dismiss="modal">Fermer</button>
+                      </div>
+                    </div>      
+                    <div class="container" id="alerte">
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                    var form = document.getElementById("login-form");
+                    var modal = document.getElementById("myModal");
+                    var loginButton = document.querySelector("#login-form button.btn-login");
+                    form.addEventListener("submit", function(e) {
+                      e.preventDefault(); // Empêcher le rechargement de la page
+                      var formData = new FormData(form);
+                      var xhr = new XMLHttpRequest();
+                      xhr.open("POST", "process.php", true);
+                      xhr.onload = function() {
+                        if (xhr.status === 200) {
+                          var alerteDiv = document.getElementById("alerte");
+                          alerteDiv.innerHTML = xhr.responseText;
+                          alerteDiv.style.display = "block";
+                          $(modal).modal("handleUpdate"); // Actualiser le modal après la soumission du formulaire          
+                          if (xhr.responseText.indexOf("Erreur") === -1) {
+                            window.location.assign(';
+                            echo '"http://sae23/'.basename($_SERVER['PHP_SELF']).'"';
+                          echo ');            
+                          }
+                        }
+                      };
+                      xhr.send(formData);
+                    });
+                    modal.addEventListener("hidden.bs.modal", function() {
+                      var form = document.getElementById("login-form");
+                      form.reset(); // Effacer les champs du formulaire
+                      var alerteDiv = document.getElementById("alerte");
+                      alerteDiv.innerHTML = ""; // Supprimer le contenu du message derreur
+                      alerteDiv.style.display = "none"; // Masquer le message derreur
+                    });
+                    
+                  });
+                </script>';
     }
   if (isset($_POST['page'])){
         /*echo "<script>
@@ -234,12 +281,8 @@ function deleteUser($usr){
 
     unset($user[$usr]);
 
-    $fp = fopen("data/users2.json", 'w');
-    fwrite($fp, "");
-    fclose($fp);
-
     $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users.json", 'a');
+    $fp = fopen("data/users.json", 'w');
     fwrite($fp, $jsonString);
     fclose($fp);
 }
@@ -398,28 +441,105 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
   }
 }
 
-function addChat($uemmetteur, $ureceveur, $message){
-    $path = 'chat/'.$uemmetteur.'_'.$ureceveur.'.json';
-    $json = file_get_contents($path);
-    $chat = json_decode($json, true);
-	
-    $len = count($user);
-    for ($i = 1; $i <= $len; $i++){
-	    $chat[$len-$i]=$chat[$len-$i-1];
+function addChat($u_emmetteur, $u_receveur, $message){
+    $path1 = 'chat/'.$u_emmetteur.'_'.$u_receveur.'.json';
+    $path2 = 'chat/'.$u_receveur.'_'.$u_emmetteur.'.json';
+    if ( file_exists($path1) and file_exists($path2) ){ 
+      $json1 = file_get_contents($path1);
+      $chat1 = json_decode($json1, true);
+      $json2 = file_get_contents($path2);
+      $chat2 = json_decode($json2, true);
+      $len = count($chat1)+1;
+      for ($i = 1; $i <= $len; $i++){
+        $key = $len-$i-1;
+        if ( $key >= -1 ){
+          echo $i;
+          $chat1[$key+1]=$chat1[$key];
+          $chat2[$key+1]=$chat2[$key];
+        }
+	    }
     }
-    $chat[0] = $message;
-    
-
-    $fp = fopen($path, 'w');
-    fwrite($fp, "");
+    else {
+      $chat1 = array();
+      $chat2 = array();
+    }
+    $chat1[0] = ['turn' => TRUE, 'message' => $message, 'temps' => time()];
+    $chat2[0] = ['turn' => FALSE, 'message' => $message, 'temps' => time()];        
+    $jsonString1 = json_encode($chat1, JSON_PRETTY_PRINT);       
+    $jsonString2 = json_encode($chat2, JSON_PRETTY_PRINT);
+    $fp = fopen($path1, 'w');
+    fwrite($fp, $jsonString1);
+    fclose($fp);	
+    $fp = fopen($path2, 'w');
+    fwrite($fp, $jsonString2);
     fclose($fp);
-
-    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen($path, 'a');
-    fwrite($fp, $jsonString);
-    fclose($fp);
-	
-	
 }
+
+function showFiles($root){
+  $tab = array();
+  echo '
+              <div class="container">
+               <form method="post" action="fichier8.php">
+                <table class="table table-dark table-striped">
+                  <thead>
+                    <tr>
+                      <!-- <input type="checkbox" class="form-check-input" name="option1" value="something" checked> -->
+                      <th scope="col"><input type="checkbox" class="form-check-input" name="option1" value="something"></th>
+                      <th scope="col">Nom</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Auteur</th>
+                      <th scope="col">Taille</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Supprimmer tout</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              ';
+  
+  $n=0;
+  $json = file_get_contents('data/files.json');
+  $files = json_decode($json, true);
+  foreach($files as $file){
+      #print_r($file);
+      #echo "<br>";
+        
+      $tab[$n] = '<tr>
+                    <th scope="row"><input type="checkbox" class="form-check-input" name="option" value="something"></th>
+                    <td>nom</td>
+                    <td>typefichier</td>
+                    <td>auteur</td>
+                    <td>taille</td>
+                    <td>date</td>
+                    <td>supprimmer</td>
+                  </tr>';
+      $tab[$n]= str_replace("nom",$file['name'],$tab[$n]);
+      $tab[$n]= str_replace("typefichier",$file['type'],$tab[$n]);
+      $tab[$n]= str_replace("auteur",$file['author'],$tab[$n]);
+      $tab[$n]= str_replace("taille",$file['size'],$tab[$n]);
+      $tab[$n]= str_replace("date",$file['date'],$tab[$n]);
+      echo $tab[$n];
+      $n++;  
+  }
+  echo '
+                </tbody>
+              </table>
+             </form>
+            </div>
+          ';
+
+
+}
+
+function formatBytes($octets) { 
+  $unites = array('o', 'Ko', 'Mo', 'Go', 'To'); 
+
+  $octets = max($octets, 0); 
+  $puissance = floor(($octets ? log($octets) : 0) / log(1024)); 
+  $puissance = min($puissance, count($unites) - 1); 
+
+  $octets /= (1 << (10 * $puissance)); 
+
+  return round($octets, 2) . ' ' . $unites[$puissance]; 
+} 
 
 ?>
