@@ -23,6 +23,7 @@
           $_FILES["Upload"]['author'] = $_SESSION['utilisateur'];
           $_FILES["Upload"]['type'] = pathinfo($_FILES["Upload"]['name'], PATHINFO_EXTENSION);
           $_FILES["Upload"]['name'] = explode('.',$_FILES["Upload"]['name'])[0];
+          $_FILES["Upload"]['path'] = 'files/'.$_FILES["Upload"]['name'].'.'.$_FILES["Upload"]['type'];
           array_push($files,$_FILES["Upload"]);
 
           $jsonString = json_encode($files, JSON_PRETTY_PRINT);
@@ -40,11 +41,11 @@
     <div class="container-fluid text-center py-4 d-flex justify-content-center align-items-center flex-column">
       <h3 class="mb-0 pb-4 flex-fill text-center">Uploader un fichier</h3>
       <form action="fichier8.php" method="post" enctype="multipart/form-data">
-        <table class="table table-secondary table-striped">
+        <table class="table table-info table-striped">
           <td class="align-middle">
             <label class="custom-file-upload">  
               <input type="file" name="Upload" multiple=True>
-                <a class="btn btn-secondary"> 
+                <a class="btn btn-light"> 
                   <i class="fa fa-cloud-upload me-1"></i>
                     Parcourir dans les fichiers personnels
                 </a>
@@ -52,14 +53,7 @@
             </label>
           </td>
           <td class="align-middle">
-            <?php
-            if ( True ){
-              echo '<button type="submit" name="check" value=True class="btn btn-success">';
-            }
-            else{
-              echo '<button type="submit" class="btn btn-secondary disabled">';
-            }
-            ?>              
+            <button type="submit" name="check" value=True class="btn btn-success">
               <i class="fa-solid fa-circle-check fa-2x"></i>
             </button>
           </td>
@@ -70,6 +64,31 @@
       showFiles('');
       ?>
     </div>
+
+    <script>
+      var btnsSupprimer = document.getElementsByClassName("btn-danger");
+
+      // Parcourir tous les boutons et ajouter un gestionnaire d'événement
+      for (var i = 0; i < btnsSupprimer.length; i++) {
+        btnsSupprimer[i].addEventListener("click", function() {
+          // Récupérer le paramètre spécifique à partir de l'attribut personnalisé
+          var parametre = this.getAttribute("data-parametre");
+
+          // Créer une instance de l'objet XMLHttpRequest
+          var xhr = new XMLHttpRequest();
+
+          // Construire les données à envoyer
+          var data = new FormData();
+          data.append("parametre", parametre);
+
+          // Configurer la requête Ajax avec la méthode POST et l'URL cible
+          xhr.open("POST", "btn_suppr.php", true);
+
+          // Envoyer la requête Ajax avec les données
+          xhr.send(data);
+        });
+      }
+    </script>
     <style>
     input[type="file"] {
         display: none;
