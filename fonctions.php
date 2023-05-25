@@ -592,33 +592,14 @@ function showFiles($root){
                       <th scope="col">Auteur</th>
                       <th scope="col">Taille</th>
                       <th scope="col">Date</th>
-                      <th scope="col">Supprimmer tout</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-              ';
-  
-  $n=0;
-  $json = file_get_contents('data/files.json');
-  $files = json_decode($json, true);
-  foreach($files as $file){
-      #print_r($file);
-      #echo "<br>";
-        
-      $tab[$n] = '<tr>
-                    <th scope="row"><input type="checkbox" class="form-check-input" name="option" value="something"></th>
-                    <td>nom</td>
-                    <td>typefichier</td>
-                    <td>auteur</td>
-                    <td>taille</td>
-                    <td>date</td>
-                    <td>supprimmer</td>
+                      <td><button class="btn btn-danger" data-parametre="filepath"><i class="fa-solid fa-trash-can"></i></button></td>
                   </tr>';
       $tab[$n]= str_replace("nom",$file['name'],$tab[$n]);
       $tab[$n]= str_replace("typefichier",$file['type'],$tab[$n]);
       $tab[$n]= str_replace("auteur",$file['author'],$tab[$n]);
       $tab[$n]= str_replace("taille",$file['size'],$tab[$n]);
       $tab[$n]= str_replace("date",$file['date'],$tab[$n]);
+      $tab[$n]= str_replace("filepath",$file['path'],$tab[$n]);
       echo $tab[$n];
       $n++;  
   }
@@ -628,6 +609,44 @@ function showFiles($root){
              </form>
             </div>
           ';
+
+
+}
+
+function delfiltest($filepath){
+  unlink($filepath);
+  $json = file_get_contents('data/files.json');
+  $files = json_decode($json, true);
+
+  for($i=0; $i < count($files); $i++){
+    if ($files[$i]['path'] == $filepath){
+      unset($files[$i]);
+    }
+  }
+  
+  $jsonString = json_encode($files, JSON_PRETTY_PRINT);
+  $fp = fopen("data/files.json", 'w');
+  fwrite($fp, $jsonString);
+  fclose($fp);
+  echo "</pre>".$filepath .'removed';
+}
+
+function deleteFile($deletefile){
+  foreach($deletefile as $file){
+    unlink($file);
+    $json = file_get_contents('data/files.json');
+    $files = json_decode($json, true);
+
+    foreach ($files as $key => $value){
+      if ($files[$key]['path'] == $file){
+        unset($files[$key]);
+      }
+    }
+  }
+  $jsonString = json_encode($files, JSON_PRETTY_PRINT);
+  $fp = fopen("data/files.json", 'w');
+  fwrite($fp, $jsonString);
+  fclose($fp);
 
 
 }
