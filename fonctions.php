@@ -435,6 +435,108 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                        </div>
                      </div>
                    </div>
+
+                   <div class="modal fade" id="myModal{$index}" >
+                    <div class="modal-dialog modal-dialog-centered" >
+                     <div class="modal-body">
+                       <div class="card">
+                         <div class="card-body">
+                           <div class="row">
+                             <div class="modal-body">
+                               <div class="row">
+                                 <div class="col-md-12">
+                                   <img src="$image" class="img-fluid rounded" alt="Photo de la voiture">
+                                 </div>
+                               </div>
+                               <br>
+                               <div class="row">
+                                 <div class="col-md-6">
+                                   <h4 class="text-center">Général</h4>
+                                   <div class="category">
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       État :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $etat_voiture
+                                     </p>
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Couleur :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $couleur
+                                     </p>
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Kilométrage :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $kilometrage
+                                     </p>
+                                   </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                   <h4 class="text-center">Mécanique</h4>
+                                   <div class="category">
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Puissance :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $puissance CV
+                                     </p>
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Boîte de vitesse :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $boite
+                                     </p>
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Carburant :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $carburant
+                                     </p>
+                                   </div>
+                                 </div>
+                               </div>
+                               <div class="row">
+                                 <h4 class="text-center">Avis</h4>
+                                 <div class="col-md-4">
+                                   <div class="category">
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Maniabilité :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $stars1
+                                     </p>
+                                   </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                   <div class="category">
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Fiabilité :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $stars2
+                                     </p>
+                                   </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                   <div class="category">
+                                     <div class="bg-dark bg-opacity-75 text-white fw-bold rounded p-2 text-center">
+                                       Confort :
+                                     </div>
+                                     <p class="text-center fw-bold">
+                                       $stars3
+                                     </p>
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
                 EOD;
       }
     }
