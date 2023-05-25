@@ -10,7 +10,8 @@
       echo $a;
       if ( ! isset($_SESSION['utilisateur']) ){
         echo "a";
-        header('Location: 172.18.50.11/SAE23LVNK/page01.php');  
+        header('Location: 172.18.50.11/SAE23LVNK/page01.php');
+        #header('Location: sae23/page01.php');
       }
     ?>
     <!-- <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
