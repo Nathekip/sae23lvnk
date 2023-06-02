@@ -592,6 +592,26 @@ function showFiles($root){
                       <th scope="col">Auteur</th>
                       <th scope="col">Taille</th>
                       <th scope="col">Date</th>
+		      <th scope="col"><a class="btn btn-danger">Supprimer tout ('.count($deletefile).')</a></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              ';
+  
+  $n=0;
+  $json = file_get_contents('data/files.json');
+  $files = json_decode($json, true);
+  foreach($files as $file){
+      #print_r($file);
+      #echo "<br>";
+        
+      $tab[$n] = '<tr>
+                    <th scope="row"><input type="checkbox" class="form-check-input" name="option" value="something"></th>
+                    <td>nom</td>
+                    <td>typefichier</td>
+                    <td>auteur</td>
+                    <td>taille</td>
+                    <td>date</td>
                       <td><button class="btn btn-danger" data-parametre="filepath"><i class="fa-solid fa-trash-can"></i></button></td>
                   </tr>';
       $tab[$n]= str_replace("nom",$file['name'],$tab[$n]);
