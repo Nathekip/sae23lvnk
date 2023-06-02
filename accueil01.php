@@ -3,7 +3,7 @@
 
 <head>
   <?php
-  include('vu_accueil01.php');
+  include('Vue/vu_accueil01.php');
   setup();
   pagenavbar();
   ?>
