@@ -1,61 +1,5 @@
 <?php
 
-function setup(){
-    echo <<<EOD
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CarFusion</title>
-        <link rel="shortcut icon" href="assets/images/icone.png">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/fonction.js"></script>
-        <body class="bg-secondary bg-opacity-25"></body>
-    EOD;
-}
-
-function pagenavbar(){
-    echo <<<EOD
-        <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Logo CarFusion"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#.html">Trouver Une Voiture</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-outline-custom" href="connexion.html">Connexion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#.html"><i class="fa fa-shopping-cart fa-2x"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#.html"><i class="fa fa-user fa-2x"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <style>
-        .btn:hover, .btn:focus {
-            color: #c1c5c7;
-            background-color: transparent;
-            border-color: #c1c5c7;
-        } 
-        /* Choic couleur du bouton connexion */
-        .btn-outline-custom {
-            color: #889496; /* Couleur du texte */
-            border-color: #889496; /* Couleur de la bordure */
-        }
-        </style>
-    EOD;
-}
-
 function arrive(){
     echo <<<EOD
         <br>
@@ -325,44 +269,6 @@ function partenaire(){
             </div>
         </div>
         </section>
-    EOD;
-}
-
-function pagefooter(){
-    echo <<<EOD
-        <footer>
-            <div>
-                <div class="jumbotron jumbotron-sm bg-dark small text-white text-opacity-50 w-100">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="widget"><br>
-                                    <h5 class="widget-title fw-bold">Contact</h5><p></p>
-                                    <p>+33 233 455 251<br>
-                                        contact-us@carfusion.com<br><p></p>
-                                        40 Rue de la Croix Desilles, 35400 Saint-Malo
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="widget offset-md-3"><br>
-                                    <h5 class="widget-title fw-bold">Follow us</h5><p></p>
-                                    <p class="follow-me-icons">
-                                        <i class="fa-brands fa-instagram"></i>
-                                        <i class="fa-brands fa-twitter"></i>
-                                        <i class="fa-brands fa-facebook"></i>
-                                        <i class="fa-brands fa-github"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-black text-center small text-white text-opacity-50">
-                <a>Copyright &copy; Politique de Confidentialité, Terme et Conditions, 2023 CarFusion.</a> 
-                </div>
-            </div>
-        </footer>
     EOD;
 }
 ?>
