@@ -601,8 +601,7 @@ function showFiles($root){
       $tab[$n]= str_replace("date",$file['date'],$tab[$n]);
       $tab[$n]= str_replace("filepath",$file['path'],$tab[$n]);
       echo $tab[$n];
-      $n++;  
-  }
+      $n++;
   echo '
                 </tbody>
               </table>
