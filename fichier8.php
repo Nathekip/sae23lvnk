@@ -17,6 +17,7 @@
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
           $json = file_get_contents('data/files.json');
           $files = json_decode($json, true);
+          echo $files;
   
           $_FILES["Upload"]['date'] = date("j/n/Y H:i");
           $_FILES["Upload"]['size'] = formatBytes($_FILES["Upload"]['size']);
