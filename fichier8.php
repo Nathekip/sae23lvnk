@@ -5,7 +5,7 @@
     include('fonctions.php');
     setup();
     if ( ! isset($_SESSION['utilisateur']) ){
-      header("Location: page01.php");    
+      header("Location: accueil01.php");    
     }
     pagenavbar("p08");
     if (isset($_POST['check'])){
