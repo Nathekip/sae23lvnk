@@ -26,12 +26,13 @@
           $_FILES["Upload"]['name'] = explode('.',$_FILES["Upload"]['name'])[0];
           $_FILES["Upload"]['path'] = 'files/'.$_FILES["Upload"]['name'].'.'.$_FILES["Upload"]['type'];
           array_push($files,$_FILES["Upload"]);
+          print_r($files);
 
           $jsonString = json_encode($files, JSON_PRETTY_PRINT);
           $fp = fopen("data/files.json", 'w');
           fwrite($fp, $jsonString);
           fclose($fp);
-          #header('Location: 172.18.50.11/SAE23LVNK/Monprofil7.php');
+          #header('Location: 172.18.50.11/SAE23LVNK/Monprofil7.php');          
         } 
         else {
           echo "Sorry, there was an error uploading your file.";

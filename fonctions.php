@@ -365,6 +365,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
         $modele = $voiture['modele'];
         $marque = $voiture['marque'];
         $prix = $voiture['prix'];
+	$couleur= $voiture['couleur'];
         $description = $voiture['description'];
         $image = $voiture['image'];
         $annee = $voiture['annee'];
@@ -421,7 +422,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                            <input type="hidden" name="modele" value="$modele">
                            <input type="hidden" name="annee" value="$annee">
                            <input type="hidden" name="prix" value="$prix">
-                           <input type="hidden" name="etat" value="$etat">
+                           <input type="hidden" name="etat" value="$etat_voiture">
                            <input type="hidden" name="kilometrage" value="$kilometrage">
                            <input type="hidden" name="couleur" value="$couleur">
                            <input type="hidden" name="carburant" value="$carburant">
