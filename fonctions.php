@@ -169,7 +169,7 @@ function pagenavbar($page=""){
                                 <div class="pt-3 form-group">
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-                                  <input type="hidden" name="page" value="page01">
+                                  <input type="hidden" name="page" value="accueil01">
                                 </div>
                                 <div class="pt-4">
                                 <button type="submit" class="btn text-white btn-dark btn-outline-success btn-login" id="submitBtn">Se connecter</button>
