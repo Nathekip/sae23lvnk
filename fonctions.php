@@ -191,8 +191,8 @@ function pagenavbar($page=""){
                     <div class="container" id="alerte">
                     </div>
                   </div>
-                </div>
-                <script>
+                </div>';
+                /*<script>
                   document.addEventListener("DOMContentLoaded", function() {
                     var form = document.getElementById("login-form");
                     var modal = document.getElementById("myModal");
