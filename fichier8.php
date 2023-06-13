@@ -32,7 +32,7 @@
           $fp = fopen("data/files.json", 'w');
           fwrite($fp, $jsonString);
           fclose($fp);
-          #header('Location: 172.18.50.11/SAE23LVNK/Monprofil7.php');          
+          #header('Location: 172.18.50.11/sae23lvnk/Monprofil7.php');          
         } 
         else {
           echo "Sorry, there was an error uploading your file.";
