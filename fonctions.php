@@ -142,6 +142,7 @@ function pagenavbar($page=""){
         echo $btndeco;
     }
   else {
+	  echo $_SERVER['PHP_SELF'];
 	echo '<li class="nav-item">
                 <button type="button" class="btn btn1 btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
                   Connexion
