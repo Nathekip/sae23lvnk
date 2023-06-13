@@ -1,23 +1,23 @@
-²<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ajouter des partenaires</title>
 </head>
 <body>
     <?php
-    include('fonctions.php');
+    include('../Vue/fonctions.php');
     setup();
     pagenavbar();
 
     // Fonction pour supprimer un partenaire du fichier JSON
     function deletePartner($partnerName) {
-        $json_data = file_get_contents('../partenaire.json');
+        $json_data = file_get_contents('../Vue/partenaire.json');
         $partners = json_decode($json_data, true);
 
         foreach ($partners as $key => $partner) {
             if ($partner['nom'] === $partnerName) {
                 // Supprimer la photo du partenaire du dossier images/partenaire
-                $photoPath = 'images/partenaire/' . basename($partner['photo']);
+                $photoPath = '../images/partenaire/' . basename($partner['photo']);
                 if (file_exists($photoPath)) {
                     unlink($photoPath);
                 }
@@ -28,7 +28,7 @@
         }
 
         $updated_json_data = json_encode($partners, JSON_PRETTY_PRINT);
-        file_put_contents('partenaire.json', $updated_json_data);
+        file_put_contents('../Vue/partenaire.json', $updated_json_data);
     }
 
     // Traitement du formulaire d'ajout de partenaire
@@ -39,10 +39,10 @@
 
         if ($photo['error'] === 0) {
             $photo_tmp = $photo['tmp_name'];
-            $photo_destination = 'images/partenaire/' . $photo['name'];
+            $photo_destination = '../images/partenaire/' . $photo['name'];
             move_uploaded_file($photo_tmp, $photo_destination);
 
-            $json_data = file_get_contents('partenaire.json');
+            $json_data = file_get_contents('../Vue/partenaire.json');
             $partners = json_decode($json_data, true);
 
             $new_partner = [
@@ -54,7 +54,7 @@
             $partners[] = $new_partner;
 
             $updated_json_data = json_encode($partners, JSON_PRETTY_PRINT);
-            file_put_contents('partenaire.json', $updated_json_data);
+            file_put_contents('../Vue/partenaire.json', $updated_json_data);
         }
     }
 
@@ -65,7 +65,7 @@
     }
 
     // Affichage des partenaires existants
-    $json_data = file_get_contents('partenaire.json');
+    $json_data = file_get_contents('../Vue/partenaire.json');
     $partners = json_decode($json_data, true);
     ?>
 
