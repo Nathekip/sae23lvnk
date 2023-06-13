@@ -1,5 +1,4 @@
 <?php
-
 function addUser($usr, $mdp, $mail, $departement, $role="user",$question=0,$reponse=NULL){
     $user = array();
     $json = file_get_contents('data/users.json');
@@ -30,12 +29,12 @@ function setup() {
     session_start();
     echo '<meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="shortcut icon" href="assets/images/icone.png">
+          <link rel="shortcut icon" href="../images/icone.png">
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	        <script src="js/fonction.js"></script>
+	        <script src="../Vue/fonction.js"></script>
           <body class="bg-secondary bg-opacity-25"></body>
         ';
     
@@ -65,7 +64,7 @@ function pr() {
 
 function pagenavbar($page=""){
 	
-  $json = file_get_contents('data/users.json');
+  $json = file_get_contents('../data/users.json');
   $user = json_decode($json, true);
   if ( isset($_POST['page']) ){ $pagehead = "Location: ".$_POST['page'].".php"; }
   foreach($user as $u){
@@ -85,7 +84,7 @@ function pagenavbar($page=""){
   #fixed-top
   $navbar = '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
 	       <div class="container">
-	         <a class="navbar-brand" href="accueil01.php"><img src="images/Logo.png" alt="Logo CarFusion"></a>
+	         <a class="navbar-brand" href="page01.php"><img src="../images/Logo.png" alt="Logo CarFusion"></a>
 	         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	           <span class="navbar-toggler-icon"></span>
 	         </button>
@@ -169,7 +168,7 @@ function pagenavbar($page=""){
                                 <div class="pt-3 form-group">
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-                                  <input type="hidden" name="page" value="accueil01">
+                                  <input type="hidden" name="page" value="page01">
                                 </div>
                                 <div class="pt-4">
                                 <button type="submit" class="btn text-white btn-dark btn-outline-success btn-login" id="submitBtn">Se connecter</button>
@@ -209,9 +208,9 @@ function pagenavbar($page=""){
                           alerteDiv.style.display = "block";
                           $(modal).modal("handleUpdate"); // Actualiser le modal après la soumission du formulaire          
                           if (xhr.responseText.indexOf("Erreur") === -1) {
-			    window.location.assign(';
-	  		    echo '"172.18.50.11/sae23lvnk/'.basename($_SERVER['PHP_SELF']).'"
-                           )            
+                            window.location.assign(';
+                            echo '"http://SAE23LVNK/'.basename($_SERVER['PHP_SELF']).'"';
+                          echo ');            
                           }
                         }
                       };
@@ -365,17 +364,10 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
         $modele = $voiture['modele'];
         $marque = $voiture['marque'];
         $prix = $voiture['prix'];
-	$couleur= $voiture['couleur'];
         $description = $voiture['description'];
         $image = $voiture['image'];
         $annee = $voiture['annee'];
         $kilometrage = $voiture['kilometrage'];
-	$couleur = $voiture['couleur'];
-        if ($kilometrage === null) {
-          $newkilometre = "0 km";
-        } else {
-          $newkilometre = number_format(round($kilometrage), 0, '.', ' ') . " km";
-        }
         $etat_voiture = $voiture['etat'];
         $puissance = $voiture['puissance'];
         $carburant = $voiture['carburant'];
@@ -428,7 +420,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                            <input type="hidden" name="modele" value="$modele">
                            <input type="hidden" name="annee" value="$annee">
                            <input type="hidden" name="prix" value="$prix">
-                           <input type="hidden" name="etat" value="$etat_voiture">
+                           <input type="hidden" name="etat" value="$etat">
                            <input type="hidden" name="kilometrage" value="$kilometrage">
                            <input type="hidden" name="couleur" value="$couleur">
                            <input type="hidden" name="carburant" value="$carburant">
@@ -476,7 +468,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                                        Kilométrage :
                                      </div>
                                      <p class="text-center fw-bold">
-                                       $newkilometrage
+                                       $kilometrage
                                      </p>
                                    </div>
                                  </div>
@@ -588,7 +580,7 @@ function showFiles($root){
   $tab = array();
   echo '
               <div class="container">
-               <form method="post" action="fichier8.php">
+               <form method="post" action="../fichier8.php">
                 <table class="table table-dark table-striped">
                   <thead>
                     <tr>
@@ -606,7 +598,7 @@ function showFiles($root){
               ';
   
   $n=0;
-  $json = file_get_contents('data/files.json');
+  $json = file_get_contents('../data/files.json');
   $files = json_decode($json, true);
   foreach($files as $file){
       #print_r($file);

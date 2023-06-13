@@ -10,7 +10,7 @@ function arrive(){
             <h2 class="text-white text-uppercase fw-bold text-shadow" style="text-shadow: 0 0 10px black;">Heureux de vous voir ici !</h2>
             </div> 
         </div>
-        <img src="assets/images/banniere.png" alt="Bannière" class="w-100">
+        <img src="../images/banniere.png" alt="Bannière" class="w-100">
         </div>
     
     
@@ -70,15 +70,15 @@ function timeline(){
     
     
         <div class="horizontal-timeline">
-        <img src="assets\images\piste.png" alt="Route" class="position-absolute w-100" style="height: 6%; left: 0%">
+        <img src="..\images\piste.png" alt="Route" class="position-absolute w-100" style="height: 6%; left: 0%">
         <div class="container-fluid">
             <div class="row">
             <div class="col-lg-12">
                 <div class="horizontal-timeline">
-                <img id="Voiture Bleue" src="assets/images/voiture-bleue.png" alt="Voiture Bleue" class="position-absolute" style="width: 5%; height: 6%">
-                <img id="Voiture Verte" src="assets/images/voiture-verte.png" alt="Voiture Verte" class="position-absolute" style="width: 7%; height: 6%; display: none">
-                <img id="Voiture Rouge" src="assets/images/voiture-rouge.png" alt="Voiture Rouge" class="position-absolute" style="	width: 8%; height: 6%; display: none">
-                <img id="Voiture Logo" src="assets/images/voiture-logo.png" alt="Voiture Logo" class="position-absolute" style="	width: 8%; height: 6%; display: none">
+                <img id="Voiture Bleue" src="../images/voiture-bleue.png" alt="Voiture Bleue" class="position-absolute" style="width: 5%; height: 6%">
+                <img id="Voiture Verte" src="../images/voiture-verte.png" alt="Voiture Verte" class="position-absolute" style="width: 7%; height: 6%; display: none">
+                <img id="Voiture Rouge" src="../images/voiture-rouge.png" alt="Voiture Rouge" class="position-absolute" style="	width: 8%; height: 6%; display: none">
+                <img id="Voiture Logo" src="../images/voiture-logo.png" alt="Voiture Logo" class="position-absolute" style="	width: 8%; height: 6%; display: none">
                 </div>
             </div>
             </div>
@@ -136,7 +136,7 @@ function presentation(){
     echo <<<EOD
         <h2 class="fw-bold text-uppercase text-center">Qui et où sommes nous ?</h2>
         <br><br><br>
-        <img src="assets\images\carte.png" alt="Carte" class="mx-auto d-block" style="width: 35%">
+        <img src="..\images\carte.png" alt="Carte" class="mx-auto d-block" style="width: 35%">
         <br><br><br>
         <div class="position-relative text-dark border border-3 border-dark rounded-0 p-3 w-75 h-75" style="left: 12.5%; text-align: justify">
         <p class="text-dark">CarFusion, comme son nom l’indique, est une entreprise fondée autour de l’automobile.<br><br>
@@ -208,7 +208,7 @@ function fondateurs(){
             <div class="row text-center">
             <div class="col-md-3">
                 <div class="team-member">
-                <img class="mx-auto rounded-circle" src="assets/images/louis.png" alt="Photo" /><br><br>
+                <img class="mx-auto rounded-circle" src="../images/louis.png" alt="Photo" /><br><br>
                 <h4>Louis Courteille</h4>
                 <p class="text-muted">Co-fondateurs</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/louis-courteille-199895251/"><i class="fab fa-linkedin-in"></i></a><br><br>
@@ -216,7 +216,7 @@ function fondateurs(){
             </div>
             <div class="col-md-3">
                 <div class="team-member">
-                <img class="mx-auto rounded-circle" src="assets/images/victor.png" alt="Photo" /><br><br>
+                <img class="mx-auto rounded-circle" src="../images/victor.png" alt="Photo" /><br><br>
                 <h4>Victor Gillet</h4>
                 <p class="text-muted">Co-fondateurs</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/victor-gillet-40b003245/"><i class="fab fa-linkedin-in"></i></a><br><br>
@@ -224,7 +224,7 @@ function fondateurs(){
             </div>
             <div class="col-md-3">
                 <div class="team-member">
-                <img class="mx-auto rounded-circle" src="assets/images/konogan.png" alt="Photo" /><br><br>
+                <img class="mx-auto rounded-circle" src="../images/konogan.png" alt="Photo" /><br><br>
                 <h4>Konogan Godefroy</h4>
                 <p class="text-muted">Co-fondateurs</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/konogan-godefroy-10b580263/"><i class="fab fa-linkedin-in"></i></a><br><br>
@@ -232,7 +232,7 @@ function fondateurs(){
             </div>
             <div class="col-md-3">
                 <div class="team-member">
-                <img class="mx-auto rounded-circle" src="assets/images/nathaniel.png" alt="Photo" /><br><br>
+                <img class="mx-auto rounded-circle" src="../images/nathaniel.png" alt="Photo" /><br><br>
                 <h4>Nathaniel Guitton</h4>
                 <p class="text-muted">Co-fondateurs</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/nathaniel-guitton-381352241/"><i class="fab fa-linkedin-in"></i></a><br><br>
@@ -249,26 +249,48 @@ function fondateurs(){
     EOD;
 }
 
-function partenaire(){
-    echo <<<EOD
+    // Appel Modele
+    function getPartenaire(){
+        $json_data = file_get_contents('../Vue/partenaire.json');
+        $partners = json_decode($json_data, true);
+        return $partners;
+    }
+    // Vue
+    function partenaire($partners) {
+        $output = '';
+    
+        // Section "Nos indispensables partenaires"
+        $output .= <<<EOD
         <section>
         <div class="container">
-            <h2 class="fw-bold text-center text-uppercase">Notre indispensable partenaire</h2><br><br><br>
-        </div>
-        <div class="d-flex justify-content-center">
-            <img src="assets\images\cupra1.png" alt="Cupra" class="w-100">
+            <h2 class="fw-bold text-center text-uppercase">Nos indispensables partenaires</h2><br><br><br>
         </div>
         <div class="container">
-            <hr>
             <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <p class="large text-muted">CUPRA, constructeur automobile mondialement connu, est notre partenaire principal dans cette aventure.<br>
-                Nous avons créé une relation de confiance basée sur le respect, l’entraide, mais surtout l’esprit commercial.<br>
-                CUPRA offre une expérience unique et nous permet d’étendre notre réseau au quotidien.</p>
-            </div>
+        EOD;
+    
+        foreach ($partners as $partner) {
+            $output .= <<<EOD
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-center mb-4">
+                        <img src="{$partner['photo']}" alt="{$partner['nom']}" class="img-thumbnail" style="width: 200px;">
+                    </div>
+                    <div class="text-center">
+                        <h5>{$partner['nom']}</h5>
+                        <p>{$partner['description']}</p>
+                    </div>
+                </div>
+            EOD;
+        }
+    
+        // Fermeture des balises de la section
+        $output .= <<<EOD
             </div>
         </div>
         </section>
-    EOD;
-}
+        EOD;
+    
+        echo $output;
+    }
+    
 ?>
