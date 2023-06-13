@@ -208,8 +208,7 @@ function pagenavbar($page=""){
                           alerteDiv.innerHTML = xhr.responseText;
                           alerteDiv.style.display = "block";
                           $(modal).modal("handleUpdate"); // Actualiser le modal après la soumission du formulaire          
-                          if (xhr.responseText.indexOf("Erreur") === -1) {';
-                /*
+                          if (xhr.responseText.indexOf("Erreur") === -1) {
                             window.location.assign(';
                             echo '"http://SAE23LVNK/'.basename($_SERVER['PHP_SELF']).'"';
                           echo ');            
@@ -217,7 +216,8 @@ function pagenavbar($page=""){
                         }
                       };
                       xhr.send(formData);
-                    });
+                    });';
+                /*
                     modal.addEventListener("hidden.bs.modal", function() {
                       var form = document.getElementById("login-form");
                       form.reset(); // Effacer les champs du formulaire
