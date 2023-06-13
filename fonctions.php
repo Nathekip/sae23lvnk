@@ -216,12 +216,12 @@ function pagenavbar($page=""){
                         }
                       };
                       xhr.send(formData);
-                    });';
-                /*
+                    });
                     modal.addEventListener("hidden.bs.modal", function() {
                       var form = document.getElementById("login-form");
                       form.reset(); // Effacer les champs du formulaire
-                      var alerteDiv = document.getElementById("alerte");
+                      var alerteDiv = document.getElementById("alerte");';
+                /*
                       alerteDiv.innerHTML = ""; // Supprimer le contenu du message derreur
                       alerteDiv.style.display = "none"; // Masquer le message derreur
                     });
