@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 // Vérifier si des données ont été envoyées via la méthode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erreur=False;
