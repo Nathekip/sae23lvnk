@@ -211,7 +211,7 @@ function pagenavbar($page=""){
                           $(modal).modal("handleUpdate"); // Actualiser le modal après la soumission du formulaire          
                           if (xhr.responseText.indexOf("Erreur") === -1) {
 			    window.location.assign(';
-	  		    echo '"http://SAE23LVNK/'.basename($_SERVER['PHP_SELF']).'"
+	  		    echo '"http://sae23lvnk/'.basename($_SERVER['PHP_SELF']).'"
                            )            
                           }
                         }
