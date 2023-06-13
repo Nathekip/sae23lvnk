@@ -142,6 +142,7 @@ function pagenavbar($page=""){
         echo $btndeco;
     }
   else {
+	  echo $_SERVER['PHP_SELF'];
 	echo '<li class="nav-item">
                 <button type="button" class="btn btn1 btn-outline-custom" data-bs-toggle="modal" data-bs-target="#myModal">
                   Connexion
@@ -192,7 +193,7 @@ function pagenavbar($page=""){
                     </div>
                   </div>
                 </div>
-		<script>
+                <script>
                   document.addEventListener("DOMContentLoaded", function() {
                     var form = document.getElementById("login-form");
                     var modal = document.getElementById("myModal");
