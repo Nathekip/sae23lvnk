@@ -201,15 +201,15 @@ function pagenavbar($page=""){
                       e.preventDefault(); // Empêcher le rechargement de la page
                       var formData = new FormData(form);
                       var xhr = new XMLHttpRequest();
-                      xhr.open("POST", "process.php", true);';
-                /*
+                      xhr.open("POST", "process.php", true);
                       xhr.onload = function() {
                         if (xhr.status === 200) {
                           var alerteDiv = document.getElementById("alerte");
                           alerteDiv.innerHTML = xhr.responseText;
                           alerteDiv.style.display = "block";
                           $(modal).modal("handleUpdate"); // Actualiser le modal après la soumission du formulaire          
-                          if (xhr.responseText.indexOf("Erreur") === -1) {
+                          if (xhr.responseText.indexOf("Erreur") === -1) {';
+                /*
                             window.location.assign(';
                             echo '"http://SAE23LVNK/'.basename($_SERVER['PHP_SELF']).'"';
                           echo ');            
