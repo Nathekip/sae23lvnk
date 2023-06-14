@@ -3,7 +3,7 @@
 <head>
     <title>Formulaire PHP</title>
     <?php
-    include('fonctions.php');
+    include('../Vue/fonctions.php');
     setup();
     ?>
 </head>
@@ -83,7 +83,7 @@
                 e.preventDefault(); // Empêcher le rechargement de la page
                 var formData = new FormData(form);
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "../process.php", true);
+                xhr.open("POST", "../Vue/process.php", true);
                 xhr.onload = function() {
                     if (xhr.status === 200) {
                         var alerteDiv = document.getElementById("alerte");
