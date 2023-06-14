@@ -38,7 +38,7 @@ function setup() {
           <body class="bg-secondary bg-opacity-25"></body>
         ';
     
-    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers"];
+    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
     $rep = "Car Fusion";}
@@ -95,22 +95,29 @@ function pagenavbar($page=""){
 		         <i class="fa fa-car fa-2x"></i>
 		         <div class="pt-1 pe-3">Trouver une voiture</div>
 		       </a>
-	       	     </li>
-	       	     <li class="nav-item">
-	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mon Panier" href="page03.php"><i class="fa-solid fa-shopping-cart fa-2x"></i></a>
 	       	     </li>';
-	 
-  if ( isset($_SESSION['utilisateur']) ){
-          $navbar .= '<li class="nav-item">
-                  <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier8.php"><i class="fa-solid fa-file fa-2x"></i></a>
-                </li>';
-  }
+if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] ) ){
+	$navbar .= '
+	       	     <li class="nav-item">
+	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ajout Voiture" href="ajoutvoiture03.php"><i class="fa-solid fa-car-on fa-2x"></i></a>
+	       	     </li>
+	      	<li class="nav-item">
+	       	       <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier8.php"><i class="fa-solid fa-file fa-2x"></i></a>
+	       	     </li>';
+} 
   if (isset($_SESSION['role'])){
   if ( $_SESSION['role'] == 'admin' ){
           $navbar .= '<li class="nav-item">
 	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="admin4.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
 	       	     </li>';
   }}
+  if ( in_array( $_SESSION['role'],['admin','communication'] ) ){
+	$navbar .= '
+	       	     <li class="nav-item">
+	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire.php"><i class="fa-solid fa-car-on fa-2x"></i></a>
+	       	     </li>';
+  }
+	
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
