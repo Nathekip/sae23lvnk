@@ -1,9 +1,9 @@
 <?php
 
-include('Vue/fonctions.php');
+include('../Vue/fonctions.php');
 function newUsers(){
 
-    $fp = fopen("data/users.json", 'w');
+    $fp = fopen("../data/users.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
@@ -17,7 +17,7 @@ function newUsers(){
 }
 newUsers();
 echo "<pre>";
-$json = file_get_contents('data/users.json');
+$json = file_get_contents('../data/users.json');
 $user = json_decode($json, true);
 print_r($user);
 ?>
