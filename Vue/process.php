@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../Modèle/users.php');
 // Vérifier si des données ont été envoyées via la méthode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erreur=False;
