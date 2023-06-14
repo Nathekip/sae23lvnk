@@ -2,11 +2,11 @@
 <html>
   <body>
     <?php
-    include('fonctions.php');
+    include('../Vue/fonctions.php');
     setup();
     pagenavbar("p02");
     // Lecture du fichier JSON
-    $json = file_get_contents('data/voitures.json');
+    $json = file_get_contents('../data/voitures.json');
     // Décodage du JSON en tableau associatif
     $data = json_decode($json, true);
     // Stockage des données de voitures dans un tableau
