@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('Vue/fonctions.php');
+include('../Vue/fonctions.php');
 
 $keys = array_keys($_POST);
 $usr = $keys[2];
@@ -13,16 +13,16 @@ if (($_POST['mdp']=$_POST['cmdp'])&&($_SESSION['role']=='admin'))
     $user[$usr]['mdp']=password_hash($_POST['mdp'],PASSWORD_DEFAULT);
     
 
-    $fp = fopen("data/users.json", 'w');
+    $fp = fopen("../data/users.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
     $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users.json", 'a');
+    $fp = fopen("../data/users.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
 
 }
 
-header('Location: page06.php');
+header('Location: ../Controleur/page06.php');
 ?>
