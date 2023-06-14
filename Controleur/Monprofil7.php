@@ -2,7 +2,7 @@
 <html>
   <body>
     <?php
-      include('fonctions.php');
+      include('../Vue/fonctions.php');
       setup();
       pagenavbar("p07");
     
@@ -10,8 +10,8 @@
       echo $a;
       if ( ! isset($_SESSION['utilisateur']) ){
         echo "a";
-        header('Location: 172.18.50.11/sae23lvnk/page01.php');
-        #header('Location: sae23/page01.php');
+        header('Location: 172.18.50.11/sae23lvnk/Controleur/page01.php');
+        #header('Location: sae23/Controleur/page01.php');
       }
     ?>
     <!-- <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
@@ -118,7 +118,7 @@
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
           ppTrue($_SESSION['utilisateur']);
-          #header('Location: 172.18.50.11/SAE23LVNK/Monprofil7.php');
+          #header('Location: 172.18.50.11/SAE23LVNK/Controleur/Monprofil7.php');
         } else {
           echo "Sorry, there was an error uploading your file.";
         }
