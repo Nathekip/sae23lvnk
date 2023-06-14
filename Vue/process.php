@@ -4,8 +4,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erreur=False;
     // Effectuer les actions souhaitées avec les données du formulaire
-    $json = file_get_contents('data/users.json');
-    $user = json_decode($json, true);
+    $user = readUser();
     foreach($user as $u){
       #print_r($u);
       if ( isset($_POST['motdepasse']) && isset($_POST['utilisateur']) ){
