@@ -84,7 +84,7 @@ function pagenavbar($page=""){
   #fixed-top
   $navbar = '<nav class="navbar navbar-expand-lg bg-black navbar-dark">
 	       <div class="container">
-	         <a class="navbar-brand" href="page01.php"><img src="../images/Logo.png" alt="Logo CarFusion"></a>
+	         <a class="navbar-brand" href="accueil01.php"><img src="../images/Logo.png" alt="Logo CarFusion"></a>
 	         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	           <span class="navbar-toggler-icon"></span>
 	         </button>
@@ -168,7 +168,7 @@ function pagenavbar($page=""){
                                 <div class="pt-3 form-group">
                                   <label>Mot de passe</label>
                                   <input type="password" class="form-control" name="motdepasse" placeholder="Mot de passe">
-                                  <input type="hidden" name="page" value="page01">
+                                  <input type="hidden" name="page" value="accueil01">
                                 </div>
                                 <div class="pt-4">
                                 <button type="submit" class="btn text-white btn-dark btn-outline-success btn-login" id="submitBtn">Se connecter</button>
@@ -209,7 +209,7 @@ function pagenavbar($page=""){
                           $(modal).modal("handleUpdate"); // Actualiser le modal après la soumission du formulaire          
                           if (xhr.responseText.indexOf("Erreur") === -1) {
                             window.location.assign(';
-                            echo '"http://SAE23LVNK/'.basename($_SERVER['PHP_SELF']).'"';
+                            echo '"'.basename($_SERVER['PHP_SELF']).'"';
                           echo ');            
                           }
                         }
@@ -364,10 +364,17 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
         $modele = $voiture['modele'];
         $marque = $voiture['marque'];
         $prix = $voiture['prix'];
+        $couleur= $voiture['couleur'];
         $description = $voiture['description'];
         $image = $voiture['image'];
         $annee = $voiture['annee'];
         $kilometrage = $voiture['kilometrage'];
+        $couleur = $voiture['couleur'];
+        if ($kilometrage === null) {
+          $newkilometre = "0 km";
+        } else {
+          $newkilometre = number_format(round($kilometrage), 0, '.', ' ') . " km";
+        }
         $etat_voiture = $voiture['etat'];
         $puissance = $voiture['puissance'];
         $carburant = $voiture['carburant'];
@@ -420,7 +427,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                            <input type="hidden" name="modele" value="$modele">
                            <input type="hidden" name="annee" value="$annee">
                            <input type="hidden" name="prix" value="$prix">
-                           <input type="hidden" name="etat" value="$etat">
+                           <input type="hidden" name="etat" value="$etat_voiture">
                            <input type="hidden" name="kilometrage" value="$kilometrage">
                            <input type="hidden" name="couleur" value="$couleur">
                            <input type="hidden" name="carburant" value="$carburant">
@@ -468,7 +475,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                                        Kilométrage :
                                      </div>
                                      <p class="text-center fw-bold">
-                                       $kilometrage
+                                       $newkilometrage
                                      </p>
                                    </div>
                                  </div>
