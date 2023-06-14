@@ -2,7 +2,7 @@
 <html>
   <head>
       <?php
-          include('fonctions.php');
+          include('../Vue/fonctions.php');
           setup();
       ?>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
             <div class="card-body">
               <div class="mb-4">
                 <?php
-                $json = file_get_contents('data/users.json');
+                $json = file_get_contents('../data/users.json');
                 $user = json_decode($json, true);
       
                 # set var base
