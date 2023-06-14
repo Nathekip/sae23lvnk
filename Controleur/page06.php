@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php
-        include('Vue/fonctions.php');
+        include('../Vue/fonctions.php');
         setup();
     ?>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
         <h3 class="mb-0 flex-fill text-center">Liste des utilisateurs :</h3><br>
       
         <?php 
-        $jsonString = file_get_contents('data/users.json');
+        $jsonString = file_get_contents('../data/users.json');
 
         // Convertir le contenu JSON en tableau associatif
         $users = json_decode($jsonString, true);
@@ -35,8 +35,8 @@
             </select>
         </td>
         <td class="align-middle">
-            <button type="submit" onclick="addbtn.php" class="btn btn-white">
-                <img class='rounded' src='images/adduser.png' alt='logo'>
+            <button type="submit" onclick="../Modèle/addbtn.php" class="btn btn-white">
+                <img class='rounded' src='../images/adduser.png' alt='logo'>
             </button>
         </td>
         </table>
