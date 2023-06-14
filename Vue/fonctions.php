@@ -24,6 +24,77 @@ function addUser($usr, $mdp, $mail, $departement, $role="user",$question=0,$repo
     fwrite($fp, $jsonString);
     fclose($fp);
 }
+function showusers($users) {
+  $rep = <<<EOT
+  <div class="container">
+      <table class="table table-bordered table-hover">
+          <thead class="thead-dark">
+              <tr>
+                  <th scope="col">User</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Nouveau mdp</th>
+                  <th scope="col">Confirmation</th>
+                  <th scope="col">Valider</th>
+                  <th scope="col">Supprimer</th>
+              </tr>
+          </thead>
+          <tbody>
+  EOT;
+
+  foreach ($users as $user) {
+      $selectedVisiteur = ($user['role'] == 'visiteur') ? 'selected' : '';
+      $selectedCommunication = ($user['role'] == 'communication') ? 'selected' : '';
+      $selectedAdmin = ($user['role'] == 'admin') ? 'selected' : '';
+      $selectedManager = ($user['role'] == 'manager') ? 'selected' : '';
+
+      $rep .= <<<EOT
+      <tr>
+          <th scope="row">{$user['user']}</th>
+          <td>
+              <form action="pwdbtn.php" method="post">
+                  <input type="hidden" name="user" value="{$user['user']}">
+                  <select class="form-control" name="role">
+                      <option value="visiteur" $selectedVisiteur>Visiteur</option>
+                      <option value="communication" $selectedCommunication>Communication</option>
+                      <option value="admin" $selectedAdmin>Admin</option>
+                      <option value="manager" $selectedManager>Manager</option>
+                  </select>
+          </td>
+          <td>
+                  <div class="form-group">
+                      <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
+                  </div>
+          </td>
+          <td>
+                  <div class="form-group">
+                      <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
+                  </div>
+          </td>
+          <td>
+                  <button type="submit" class="btn btn-success rounded-pill" name="submit">
+                      <img class="img-fluid" src="images/check.png" alt="logo">
+                  </button>
+              </form>
+          </td>
+          <td>
+              <form action="delbtn.php" method="post">
+                  <button type="submit" class="btn btn-danger rounded-pill" name="user">
+                      <img class="img-fluid" src="images/cancel.png" alt="logo">
+                  </button>
+              </form>
+          </td>
+      </tr>
+      EOT;
+  }
+
+  $rep .= <<<EOT
+      </tbody>
+  </table>
+  </div>
+  EOT;
+
+  return $rep;
+}
 
 function setup() {
     session_start();
