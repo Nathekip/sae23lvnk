@@ -355,19 +355,19 @@ if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] )
   
 
 function deleteUser($usr){
-    $json = file_get_contents('data/users.json');
+    $json = file_get_contents('../data/users.json');
     $user = json_decode($json, true);
 
     unset($user[$usr]);
 
     $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users.json", 'w');
+    $fp = fopen("../data/users.json", 'w');
     fwrite($fp, $jsonString);
     fclose($fp);
 }
 
 function ppTrue($usr){
-    $json = file_get_contents('data/users.json');
+    $json = file_get_contents('../data/users.json');
     $user = json_decode($json, true);
 	
     echo "<pre><br>";
@@ -381,12 +381,12 @@ function ppTrue($usr){
     print_r($user);		
     echo "</pre>";
 
-    $fp = fopen("data/users.json", 'w');
+    $fp = fopen("../data/users.json", 'w');
     fwrite($fp, "");
     fclose($fp);
 
     $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("data/users.json", 'a');
+    $fp = fopen("../data/users.json", 'a');
     fwrite($fp, $jsonString);
     fclose($fp);
 }
