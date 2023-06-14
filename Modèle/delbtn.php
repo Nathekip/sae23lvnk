@@ -1,6 +1,7 @@
 <?php
 session_start();
-include('Vue/fonctions.php');
+include('../Modèle/users.php');
+include('../Vue/fonctions.php');
 echo "<pre>";
 print_r($_SESSION);
 if ($_SESSION['role']=='admin'){

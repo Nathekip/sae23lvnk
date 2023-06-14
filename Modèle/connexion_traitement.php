@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php
-        include('fonctions.php');
+        include('../Vue/fonctions.php');
         setup();
     ?>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 <?php
     pr();
 
-    $json = file_get_contents('data/users.json');
+    $json = file_get_contents('../data/users.json');
     $user = json_decode($json, true);
     $_SESSION['msg'] = True;
     $page = "Location: ".$_POST['page'].".php";

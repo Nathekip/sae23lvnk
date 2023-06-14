@@ -2,7 +2,8 @@
 <html lang="fr">
     <head>
         <?php
-            include('fonctions.php');
+            include('../Modèle/users.php');
+            include('../Vue/fonctions.php');
             setup();
             # set var base
             if ( !isset($_SESSION['MdpBool']) ){ $_SESSION['MdpBool'] = False; }
