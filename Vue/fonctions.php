@@ -207,7 +207,7 @@ if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] )
                       e.preventDefault(); // Empêcher le rechargement de la page
                       var formData = new FormData(form);
                       var xhr = new XMLHttpRequest();
-                      xhr.open("POST", "../process.php", true);
+                      xhr.open("POST", "process.php", true);
                       xhr.onload = function() {
                         if (xhr.status === 200) {
                           var alerteDiv = document.getElementById("alerte");
