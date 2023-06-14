@@ -185,7 +185,7 @@ if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] )
   if ( in_array( $_SESSION['role'],['admin','communication'] ) ){
 	$navbar .= '
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire.php"><i class="fa-solid fa-car-on fa-2x"></i></a>
+	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire.php"><i class="fa-solid fa-handshake fa-2x"></i></a>
 	       	     </li>';
   }
 	
