@@ -117,9 +117,11 @@ function setup() {
     if ( isset($_SESSION['utilisateur']) ){
         $json = file_get_contents('data/users.json');
         $user = json_decode($json, true);
-        if ( $user[$_SESSION['utilisateur']]['pp'] ){
+	if ( isset($user[$_SESSION['utilisateur']]['pp'])){
+	  if ( $user[$_SESSION['utilisateur']]['pp'] ){
 	        $_SESSION['pp'] = True;
-        }    
+	  }  
+	}
     }
 }
 
@@ -211,7 +213,7 @@ if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] )
   echo $navbar;
   if( isset($_SESSION['utilisateur']) ){
         $btndeco = '<li class="nav-item">
-                      <form action="deconnexion.php" method="post">
+                      <form action="../Vue/deconnexion.php" method="post">
 	                <button type="submit" name="page" value=NUMERODEPAGE class="btn btn1 btn-outline-custom">Se déconnecter</button>
 	              </form>
 	       	    </li>';
