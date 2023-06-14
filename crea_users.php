@@ -1,6 +1,6 @@
 <?php
 
-include('fonctions.php');
+include('../Vue/fonctions.php');
 function newUsers(){
 
     $fp = fopen("data/users.json", 'w');
