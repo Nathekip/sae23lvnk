@@ -2,10 +2,10 @@
 <html>
   <body>
     <?php
-    include('fonctions.php');
+    include('../Vue/fonctions.php');
     setup();
     if ( ! isset($_SESSION['utilisateur']) ){
-      header("Location: accueil01.php");    
+      header("Location: ../Controleur/accueil01.php");    
     }
     pagenavbar("p08");
     if (isset($_POST['check'])){
@@ -15,7 +15,7 @@
       if ( ! file_exists($target_file)){
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
-          $json = file_get_contents('data/files.json');
+          $json = file_get_contents('../data/files.json');
           $files = json_decode($json, true);
           echo $files;
   
@@ -29,10 +29,10 @@
           print_r($files);
 
           $jsonString = json_encode($files, JSON_PRETTY_PRINT);
-          $fp = fopen("data/files.json", 'w');
+          $fp = fopen("../data/files.json", 'w');
           fwrite($fp, $jsonString);
           fclose($fp);
-          #header('Location: 172.18.50.11/sae23lvnk/Monprofil7.php');          
+          #header('Location: 172.18.50.11/sae23lvnk/Controleur/Monprofil7.php');          
         } 
         else {
           echo "Sorry, there was an error uploading your file.";
