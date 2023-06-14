@@ -1,5 +1,5 @@
 <?php
-      include('fonctions.php');
+      include('../Vue/fonctions.php');
       setup();
       pagenavbar("");
     ?>
