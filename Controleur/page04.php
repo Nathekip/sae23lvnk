@@ -2,7 +2,7 @@
 <html>
   <body>
     <?php
-    include('fonctions.php');
+    include('../Vue/fonctions.php');
     setup();
     pagenavbar("p04");
     addChat('useremmeteur','userrecepteur','message tah Lewandoskaïe');
