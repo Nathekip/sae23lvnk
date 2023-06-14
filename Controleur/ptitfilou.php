@@ -9,7 +9,6 @@
 </head>
 <body>
     <?php
-    session_start();
     // Vérifier si le formulaire a été soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Récupérer la valeur du champ de formulaire
