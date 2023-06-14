@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Formulaire PHP</title>
+	<?php
+	include('fonctions.php');
+  	setup();
+	?>
 </head>
 <body>
     <?php
