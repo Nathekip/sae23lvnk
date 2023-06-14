@@ -181,7 +181,7 @@ if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] )
   if (isset($_SESSION['role'])){
   if ( $_SESSION['role'] == 'admin' ){
           $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="admin4.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
+	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="page06.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
 	       	     </li>';
   }}
   if ( in_array( $_SESSION['role'],['admin','communication'] ) ){
