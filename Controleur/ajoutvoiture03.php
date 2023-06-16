@@ -188,7 +188,7 @@
       $image = $_POST["image"];
 
       // Charger le contenu du fichier JSON dans une variable
-      $data = file_get_contents("voitures1.json");
+      $data = file_get_contents("../data/voitures.json");
 
       // Convertir le contenu JSON en tableau associatif
       $voitures = json_decode($data, true);
@@ -219,7 +219,7 @@
       $nouveau_contenu = json_encode($voitures, JSON_PRETTY_PRINT);
 
       // Écrire le nouveau contenu dans le fichier JSON
-      file_put_contents("voitures1.json", $nouveau_contenu);
+      file_put_contents("../data/voitures.json", $nouveau_contenu);
 
     }
     ?>
