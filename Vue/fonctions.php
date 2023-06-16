@@ -342,15 +342,15 @@ function showusers($users) {
                   </div>
           </td>
           <td>
-                  <button type="submit" class="btn btn-success rounded-pill" name="submit">
-                      <img class="img-fluid" src="images/check.png" alt="logo">
+		<button type="submit" class="btn btn-success rounded-pill" name="submit">
+                      <i class="fa-regular fa-circle-check"></i>
                   </button>
               </form>
           </td>
           <td>
               <form action="delbtn.php" method="post">
                   <button type="submit" class="btn btn-danger rounded-pill" name="user">
-                      <img class="img-fluid" src="images/cancel.png" alt="logo">
+                      <i class="fa-regular fa-circle-xmark"></i>
                   </button>
               </form>
           </td>
