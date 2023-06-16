@@ -6,6 +6,8 @@
 <body>
     <?php
     include('../Vue/fonctions.php');
+    setup();
+    pagenavbar($page="");
 
     // Fonction pour supprimer un partenaire du fichier JSON
     function deletePartner($partnerName) {
