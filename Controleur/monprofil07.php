@@ -5,11 +5,7 @@
       include('../Vue/fonctions.php');
       setup();
       pagenavbar("p07");
-    
-      $a = ! isset($_SESSION['utilisateur']);
-      echo $a;
       if ( ! isset($_SESSION['utilisateur']) ){
-        echo "a";
         header('Location: 172.18.50.11/sae23lvnk/Controleur/accueil01.php');
         #header('Location: sae23/Controleur/page01.php');
       }
@@ -39,13 +35,14 @@
                    <input class="btn btn-warning" type="submit" value="Valider" name="submit">
       EOD;
       $image_PP = 'PP';
+      $nomcomplet = getNom( $_SESSION['utilisateur'] );
       $card = <<<EOD
       <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center mx-auto">
           <div class="card" style="width:400px">
             <img class="card-img-top" src="pp/$name.jpeg" alt="Card image" style="width:100%" onerror="this.src='https://via.placeholder.com/400x400.png?text=$image_PP'">
             <div class="card-body">
-              <h4 class="card-title">$name</h4>
+              <h4 class="card-title">$nomcomplet</h4>
               <p class="card-text">Votre rôle est $role</p>
               <form action="monprofil07.php" method="post" enctype="multipart/form-data">
                 $btn
