@@ -7,13 +7,13 @@
     <?php
     include('../Vue/fonctions.php');
     setup();
-    pagenavbar();
+    pagenavbar($page="");
 
     // Fonction pour supprimer un partenaire du fichier JSON
     function deletePartner($partnerName) {
         $json_data = file_get_contents('../Vue/partenaire.json');
         $partners = json_decode($json_data, true);
-
+        
         foreach ($partners as $key => $partner) {
             if ($partner['nom'] === $partnerName) {
                 // Supprimer la photo du partenaire du dossier images/partenaire
