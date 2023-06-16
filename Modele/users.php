@@ -22,6 +22,7 @@ function addUser($usr, $mdp, $mail, $departement, $role="visiteur",$question=0,$
 }
 
 function newUsers(){
+  echo "test";
   addUser("Josué Gagnon","bonjour","jgagnon@carfusion.com",25,"manager");
   addUser("Mathieu Courvoisier","bonjour","mcourvoisier@carfusion.com",37,"visiteur",1,"codesecret");
   addUser("Pascal Bouhier","bonjour","pbouhier@carfusion.com",95,"communication");
