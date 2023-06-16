@@ -424,14 +424,14 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
         $description = $voiture['description'];
         $image = $voiture['image'];
         $annee = $voiture['annee'];
-        $kilometrage = $voiture['kilometrage'];
+
         $couleur = $voiture['couleur'];
 	$newkilometre = "";
-        if ($kilometrage === null) {
+        if ($voiture['kilometrage'] === null) {
           $newkilometre = "0 km";
 	}
 	else{
-	  $newkilometre = $kilometrage;
+	  $newkilometre = $voiture['kilometrage'];
         }
         $etat_voiture = $voiture['etat'];
         $puissance = $voiture['puissance'];
@@ -486,7 +486,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                            <input type="hidden" name="annee" value="$annee">
                            <input type="hidden" name="prix" value="$prix">
                            <input type="hidden" name="etat" value="$etat_voiture">
-                           <input type="hidden" name="kilometrage" value="$kilometrage">
+                           <input type="hidden" name="kilometrage" value="$newkilometre">
                            <input type="hidden" name="couleur" value="$couleur">
                            <input type="hidden" name="carburant" value="$carburant">
                            <input type="hidden" name="boite" value="$boite">
