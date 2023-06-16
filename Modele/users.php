@@ -1,12 +1,12 @@
 <?php
-function addUser($usr, $nom $mdp, $mail, $departement, $role="visiteur",$question=0,$reponse=NULL){
+function addUser($usr, $nom, $mdp, $mail, $departement, $role="visiteur",$question=0,$reponse=NULL){
   $user = array();
   $json = file_get_contents('../data/users.json');
   $user = json_decode($json, true);
 
   $add = array();
   $add['user']=$usr;
-  $add['nom']=nom;
+  $add['nom']=$nom;
   $add['mdp']=password_hash($mdp,PASSWORD_DEFAULT);
   $add['role']=$role;
   $add['mail']=$mail;
@@ -39,7 +39,6 @@ function newUsers(){
 }
 
 function readUser(){
-  echo "test";
   $user = array();
   $json = file_get_contents('../data/users.json');
   $user = json_decode($json, true);
