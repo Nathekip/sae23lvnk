@@ -1,9 +1,8 @@
 <?php
 include('../Modele/users.php');
-include('../Vue/fonctions.php');
 
-//newUsers();
+newUsers();
 echo "<pre>";
-/*$user = readUsers();
-print_r($user);*/
+$user = readUsers();
+print_r($user);
 ?>
