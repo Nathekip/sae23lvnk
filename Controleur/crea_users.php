@@ -1,5 +1,5 @@
 <?php
-include('../Modele/users.php');
+include('../Modèle/users.php');
 include('../Vue/fonctions.php');
 
 //newUsers();
