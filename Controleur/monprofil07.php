@@ -14,7 +14,7 @@
         #header('Location: sae23/Controleur/page01.php');
       }
     ?>
-    <!-- <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
+    <!-- <form action="monprofil07.php" method="post" enctype="multipart/form-data">
       Select image to upload:
       <input type="file" name="fileToUpload" id="fileToUpload">
       <input type="submit" value="Upload Image" name="submit">
@@ -47,7 +47,7 @@
             <div class="card-body">
               <h4 class="card-title">$name</h4>
               <p class="card-text">Votre rôle est $role</p>
-              <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
+              <form action="monprofil07.php" method="post" enctype="multipart/form-data">
                 $btn
                 $btn2
               </form>
@@ -118,7 +118,7 @@
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
           echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
           ppTrue($_SESSION['utilisateur']);
-          #header('Location: 172.18.50.11/SAE23LVNK/Controleur/Monprofil7.php');
+          #header('Location: 172.18.50.11/SAE23LVNK/Controleur/monprofil07.php');
         } else {
           echo "Sorry, there was an error uploading your file.";
         }
