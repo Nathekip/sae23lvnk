@@ -23,7 +23,7 @@ include('../Modele/partenaire.php');
             $photo_destination = '../images/partenaire/' . $photo['name'];
             move_uploaded_file($photo_tmp, $photo_destination);
 
-            addPartenaire($nom,$description,$photo);
+            addPartenaire($nom, $description, $photo_destination);
         }
     }
 
@@ -73,7 +73,7 @@ include('../Modele/partenaire.php');
                     <tr>
                         <td><?php echo $partner['nom']; ?></td>
                         <td><?php echo $partner['description']; ?></td>
-                        <td><img src="<?php echo $partner['photo']; ?>" width="100"></td>
+                        <td>a<!-- <img src="<?php //echo $partner['photo']; ?>" width="100">--></td>
                         <td>
                             <form method="post">
                                 <input type="hidden" name="delete" value="<?php echo $partner['nom']; ?>">
@@ -88,5 +88,3 @@ include('../Modele/partenaire.php');
 
 </body>
 </html>
-
-
