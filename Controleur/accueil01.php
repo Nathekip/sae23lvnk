@@ -5,7 +5,6 @@
   <?php
   include('../Vue/vu_accueil01.php');
   include('../Vue/fonctions.php');
-  include('../Modele/partenaire.php');
   setup();
   pagenavbar();
   ?>
