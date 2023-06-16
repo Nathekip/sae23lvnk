@@ -63,7 +63,7 @@
       </form>
       <h3 class="mb-0 py-4 flex-fill text-center">Arborescence de fichier</h3>
       <?php
-      showFiles('');
+      showFiles([]);
       ?>
     </div>
 
@@ -96,8 +96,5 @@
         display: none;
     }
     </style>
-    <?php
-    pr();
-    ?>
   </body>
 </html>

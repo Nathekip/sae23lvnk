@@ -1,5 +1,6 @@
 <?php
 include('../Modele/users.php');
+include('../Modele/files.php');
 function setup() {
     session_start();
     echo '<meta charset="utf-8">
@@ -13,7 +14,7 @@ function setup() {
           <body class="bg-secondary bg-opacity-25"></body>
         ';
     
-    $listetitre = ["Page d'accueil","Formulaire","Informations","Panier","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
+    $listetitre = ["Page d'accueil","Trouver une voiture","Ajout de voiture","Gestion de user","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
     if ($rep == NULL){
     $rep = "Car Fusion";}
@@ -26,6 +27,8 @@ function setup() {
 	  }  
 	}
     }
+  if ( ! isset($_SESSION['pp']) ){ $_SESSION['pp']=False; }
+  if ( ! isset($_SESSION['role']) ){ $_SESSION['role']=''; }
 }
 
 function pr() {
@@ -65,7 +68,7 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
-	       	       <a class="d-flex flex-row-reverse nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
+	       	       <a class="d-flex flex-row-reverse nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="voiture02.php">
 		         <i class="fa fa-car fa-2x"></i>
 		         <div class="pt-1 pe-3">Trouver une voiture</div>
 		       </a>
@@ -76,38 +79,38 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ajout Voiture" href="ajoutvoiture03.php"><i class="fa-solid fa-car-on fa-2x"></i></a>
 	       	     </li>
 	      	<li class="nav-item">
-	       	       <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier8.php"><i class="fa-solid fa-file fa-2x"></i></a>
+	       	       <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier08.php"><i class="fa-solid fa-file fa-2x"></i></a>
 	       	     </li>';
 } 
   if (isset($_SESSION['role'])){
   if ( $_SESSION['role'] == 'admin' ){
           $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="page06.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
+	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="gestionuser04.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
 	       	     </li>';
   }}
   if ( in_array( $_SESSION['role'],['admin','communication'] ) ){
 	$navbar .= '
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire.php"><i class="fa-solid fa-handshake fa-2x"></i></a>
+	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire09.php"><i class="fa-solid fa-handshake fa-2x"></i></a>
 	       	     </li>';
   }
 	
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
   else if ( isset($_SESSION['utilisateur']) ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
+	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
   else {
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Vous n\'avez pas de compte" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
+	       	       <a class="nav-link disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Vous n\'avez pas de compte" href="monprofil07.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
   }
   $navbar = str_replace($page, 'active', $navbar);
@@ -320,7 +323,7 @@ function showusers($users) {
       <tr>
           <th scope="row">{$user['user']}</th>
           <td>
-              <form action="pwdbtn.php" method="post">
+              <form action="../Modele/pwdbtn.php" method="post">
                   <input type="hidden" name="user" value="{$user['user']}">
                   <select class="form-control" name="role">
                       <option value="visiteur" $selectedVisiteur>Visiteur</option>
@@ -340,15 +343,15 @@ function showusers($users) {
                   </div>
           </td>
           <td>
-                  <button type="submit" class="btn btn-success rounded-pill" name="submit">
-                      <img class="img-fluid" src="images/check.png" alt="logo">
+		<button type="submit" class="btn btn-success rounded-pill" name="submit">
+                      <i class="fa-regular fa-circle-check"></i>
                   </button>
               </form>
           </td>
           <td>
-              <form action="delbtn.php" method="post">
+              <form action="../Modele/delbtn.php" method="post">
                   <button type="submit" class="btn btn-danger rounded-pill" name="user">
-                      <img class="img-fluid" src="images/cancel.png" alt="logo">
+                      <i class="fa-regular fa-circle-xmark"></i>
                   </button>
               </form>
           </td>
@@ -639,7 +642,7 @@ function addChat($u_emmetteur, $u_receveur, $message){
     fclose($fp);
 }
 
-function showFiles($root){
+function showFiles($deletefile){
   $tab = array();
   echo '
               <div class="container">
@@ -661,8 +664,7 @@ function showFiles($root){
               ';
   
   $n=0;
-  $json = file_get_contents('../data/files.json');
-  $files = json_decode($json, true);
+  $files = getFiles();
   foreach($files as $file){
       #print_r($file);
       #echo "<br>";

@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Effectuer les actions souhaitées avec les données du formulaire
     $user = readUser();
     foreach($user as $u){
-      print_r($u);
+      #print_r($u);
       if ( isset($_POST['motdepasse']) && isset($_POST['utilisateur']) ){
         if ( (password_verify($_POST['motdepasse'],$u['mdp'])==1) && ( ($_POST['utilisateur']==$u['user']) || ($_POST['utilisateur']==$u['mail'])) ){
           $_SESSION['utilisateur']=$u['user'];
