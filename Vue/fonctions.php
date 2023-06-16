@@ -333,19 +333,19 @@ function showusers($users) {
                   </select>
           </td>
           <td>
-                  <div class="form-group">
-                      <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
-                  </div>
+              <div class="form-group">
+                  <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
+              </div>
           </td>
           <td>
-                  <div class="form-group">
-                      <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
-                  </div>
+              <div class="form-group">
+                  <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
+              </div>
           </td>
           <td>
-		<button type="submit" class="btn btn-success rounded-pill" name="submit">
-                      <i class="fa-regular fa-circle-check"></i>
-                  </button>
+              <button type="submit" class="btn btn-success rounded-pill" name="submit">
+                  <i class="fa-regular fa-circle-check"></i>
+              </button>
               </form>
           </td>
           <td>
