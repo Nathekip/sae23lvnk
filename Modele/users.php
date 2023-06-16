@@ -39,7 +39,6 @@ function newUsers(){
 }
 
 function readUser(){
-  echo "test";
   $user = array();
   $json = file_get_contents('../data/users.json');
   $user = json_decode($json, true);
