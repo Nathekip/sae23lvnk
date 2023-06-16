@@ -1,5 +1,6 @@
 <?php 
 include('../Vue/fonctions.php');
+include('../Modele/partenaire.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,9 +12,6 @@ include('../Vue/fonctions.php');
 <body>
     <?php
     pagenavbar($page="");
-
-    
-
     // Traitement du formulaire d'ajout de partenaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nom = $_POST['nom'];
@@ -25,19 +23,7 @@ include('../Vue/fonctions.php');
             $photo_destination = '../images/partenaire/' . $photo['name'];
             move_uploaded_file($photo_tmp, $photo_destination);
 
-            $json_data = file_get_contents('../Vue/partenaire.json');
-            $partners = json_decode($json_data, true);
-
-            $new_partner = [
-                'nom' => $nom,
-                'description' => $description,
-                'photo' => $photo_destination
-            ];
-
-            $partners[] = $new_partner;
-
-            $updated_json_data = json_encode($partners, JSON_PRETTY_PRINT);
-            file_put_contents('../Vue/partenaire.json', $updated_json_data);
+            addPartenaire($nom,$description,$photo);
         }
     }
 
