@@ -455,7 +455,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
           $newkilometre = "0 km";
 	}
 	else{
-	  $newkilometre = $kilometrage
+	  $newkilometre = $kilometrage;
         }
         $etat_voiture = $voiture['etat'];
         $puissance = $voiture['puissance'];
