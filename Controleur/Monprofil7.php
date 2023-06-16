@@ -10,7 +10,7 @@
       echo $a;
       if ( ! isset($_SESSION['utilisateur']) ){
         echo "a";
-        header('Location: 172.18.50.11/sae23lvnk/Controleur/page01.php');
+        header('Location: 172.18.50.11/sae23lvnk/Controleur/accueil01.php');
         #header('Location: sae23/Controleur/page01.php');
       }
     ?>
