@@ -6,6 +6,7 @@
     setup();
     pagenavbar("p03");
     pr();
+    ?>
     <form id="car-form" method="post" class="text-center" enctype="multipart/form-data">
     <div class="container">
       <h2>Formulaire de voiture</h2>
