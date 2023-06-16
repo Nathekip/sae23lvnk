@@ -44,4 +44,16 @@ function readUser(){
   $user = json_decode($json, true);
   return $user;
 }
+
+
+function getNom($usr=''){
+  $users = readUser();
+  foreach($users as $user){
+    if ($user['user']==$usr){
+      return $user['nom'];
+    }
+  }
+  return '';
+
+}
 ?>
