@@ -322,7 +322,7 @@ function showusers($users) {
       <tr>
           <th scope="row">{$user['user']}</th>
           <td>
-              <form action="pwdbtn.php" method="post">
+              <form action="../Modele/pwdbtn.php" method="post">
                   <input type="hidden" name="user" value="{$user['user']}">
                   <select class="form-control" name="role">
                       <option value="visiteur" $selectedVisiteur>Visiteur</option>
@@ -348,7 +348,7 @@ function showusers($users) {
               </form>
           </td>
           <td>
-              <form action="delbtn.php" method="post">
+              <form action="../Modele/delbtn.php" method="post">
                   <button type="submit" class="btn btn-danger rounded-pill" name="user">
                       <i class="fa-regular fa-circle-xmark"></i>
                   </button>
