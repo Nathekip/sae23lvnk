@@ -1,4 +1,5 @@
 <?php
+include('../Modele/partenaire.php');
 
 function arrive(){
     echo <<<EOD
