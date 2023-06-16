@@ -169,7 +169,7 @@ function pagenavbar($page=""){
 		         <div class="pt-1 pe-3">Trouver une voiture</div>
 		       </a>
 	       	     </li>';
-if ( in_array( $_SESSION['role'],['employe','admin','communication','manager'] ) ){
+if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','manager'] ) ){
 	$navbar .= '
 	       	     <li class="nav-item">
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ajout Voiture" href="ajoutvoiture03.php"><i class="fa-solid fa-car-on fa-2x"></i></a>
