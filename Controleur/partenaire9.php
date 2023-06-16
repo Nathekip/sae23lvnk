@@ -1,35 +1,18 @@
+<?php 
+include('../Vue/fonctions.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ajouter des partenaires</title>
+<?php
+    setup();
+?>
 </head>
 <body>
     <?php
-    include('../Vue/fonctions.php');
-    setup();
     pagenavbar($page="");
 
-    // Fonction pour supprimer un partenaire du fichier JSON
-    function deletePartner($partnerName) {
-        $json_data = file_get_contents('../Vue/partenaire.json');
-        $partners = json_decode($json_data, true);
-        
-        foreach ($partners as $key => $partner) {
-            if ($partner['nom'] === $partnerName) {
-                // Supprimer la photo du partenaire du dossier images/partenaire
-                $photoPath = '../images/partenaire/' . basename($partner['photo']);
-                if (file_exists($photoPath)) {
-                    unlink($photoPath);
-                }
-
-                unset($partners[$key]);
-                break;
-            }
-        }
-
-        $updated_json_data = json_encode($partners, JSON_PRETTY_PRINT);
-        file_put_contents('../Vue/partenaire.json', $updated_json_data);
-    }
+    
 
     // Traitement du formulaire d'ajout de partenaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
