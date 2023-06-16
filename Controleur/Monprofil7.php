@@ -38,24 +38,24 @@
       $btn2 = <<<EOD
                    <input class="btn btn-warning" type="submit" value="Valider" name="submit">
       EOD;
+      $image_PP = 'PP';
       $card = <<<EOD
-                    <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
-                      <div class="d-flex align-items-center mx-auto">
-                        <div class="card" style="width:400px">
-                          <img class="card-img-top" src="pp/$name.jpeg" alt="Card image" style="width:100%">
-                          <div class="card-body">
-                            <h4 class="card-title">$name</h4>
-                            <p class="card-text">Votre rôle est $role</p>
-                            <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
-                              $btn
-                              $btn2
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    EOD;
+      <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center mx-auto">
+          <div class="card" style="width:400px">
+            <img class="card-img-top" src="pp/$name.jpeg" alt="Card image" style="width:100%" onerror="this.src='https://via.placeholder.com/400x400.png?text=$image_PP'">
+            <div class="card-body">
+              <h4 class="card-title">$name</h4>
+              <p class="card-text">Votre rôle est $role</p>
+              <form action="Monprofil7.php" method="post" enctype="multipart/form-data">
+                $btn
+                $btn2
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      EOD;
       #$card = str_replace("",$_SESSION,$card);
       echo $card;
       ?>
