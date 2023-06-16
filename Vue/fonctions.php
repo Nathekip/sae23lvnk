@@ -67,7 +67,7 @@ function pagenavbar($page=""){
 	         <div class="collapse navbar-collapse" id="navbarNav">
 	       	   <ul class="navbar-nav ms-auto">
 	       	     <li class="nav-item">
-	       	       <a class="d-flex flex-row-reverse nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="page02.php">
+	       	       <a class="d-flex flex-row-reverse nav-link p02" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Trouver une voiture" href="voiture02.php">
 		         <i class="fa fa-car fa-2x"></i>
 		         <div class="pt-1 pe-3">Trouver une voiture</div>
 		       </a>
@@ -78,38 +78,38 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
 	       	       <a class="nav-link p03" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ajout Voiture" href="ajoutvoiture03.php"><i class="fa-solid fa-car-on fa-2x"></i></a>
 	       	     </li>
 	      	<li class="nav-item">
-	       	       <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier8.php"><i class="fa-solid fa-file fa-2x"></i></a>
+	       	       <a class="nav-link p08" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Partage de Fichier" href="fichier08.php"><i class="fa-solid fa-file fa-2x"></i></a>
 	       	     </li>';
 } 
   if (isset($_SESSION['role'])){
   if ( $_SESSION['role'] == 'admin' ){
           $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="page06.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
+	       	       <a class="nav-link p04" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion Admin" href="gestionuser04.php"><i class="fa-solid fa-wrench fa-2x"></i></a>
 	       	     </li>';
   }}
   if ( in_array( $_SESSION['role'],['admin','communication'] ) ){
 	$navbar .= '
 	       	     <li class="nav-item">
-	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire.php"><i class="fa-solid fa-handshake fa-2x"></i></a>
+	       	       <a class="nav-link p09" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gestion de partenaires" href="partenaire09.php"><i class="fa-solid fa-handshake fa-2x"></i></a>
 	       	     </li>';
   }
 	
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
   else if ( isset($_SESSION['utilisateur']) ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
+	       	       <a class="nav-link p07" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
   else {
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Vous n\'avez pas de compte" href="Monprofil7.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
+	       	       <a class="nav-link disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Vous n\'avez pas de compte" href="monprofil07.php"><i class="fa-solid fa-circle-user fa-2x"></i></a>
 		     </li>';
   }
   $navbar = str_replace($page, 'active', $navbar);
