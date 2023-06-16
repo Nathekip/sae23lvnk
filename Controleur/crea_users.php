@@ -3,6 +3,6 @@ include('../Modele/users.php');
 
 newUsers();
 echo "<pre>";
-$user = readUsers();
+$user = readUser();
 print_r($user);
 ?>
