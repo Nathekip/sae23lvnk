@@ -21,6 +21,8 @@ function addUser($usr, $mdp, $mail, $departement, $role="user",$question=0,$repo
   fclose($fp);
 }
 
+function newUsers(
+
 function readUser(){
   $user = array();
   $json = file_get_contents('../data/users.json');
