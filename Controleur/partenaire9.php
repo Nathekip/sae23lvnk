@@ -34,8 +34,7 @@ include('../Modele/partenaire.php');
     }
 
     // Affichage des partenaires existants
-    $json_data = file_get_contents('../Vue/partenaire.json');
-    $partners = json_decode($json_data, true);
+    $partners = getPartenaire();
     ?>
 
     <div class="container mt-5">
