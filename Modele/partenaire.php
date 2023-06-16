@@ -1,8 +1,14 @@
 <?php
-// Fonction pour supprimer un partenaire du fichier JSON
+
+function getPartenaire(){
+    $json_data = file_get_contents('../data/partenaire.json');
+    $partners = json_decode($json_data, true);
+    return $partners;
+}
 function deletePartner($partnerName) {
-    $partners = getPartenaire();
-    
+    $json_data = file_get_contents('../data/partenaire.json');
+    $partners = json_decode($json_data, true);
+
     foreach ($partners as $key => $partner) {
         if ($partner['nom'] === $partnerName) {
             // Supprimer la photo du partenaire du dossier images/partenaire
@@ -35,9 +41,5 @@ function addPartenaire($nom, $description, $photo_destination){
     file_put_contents('../data/partenaire.json', $updated_json_data);
 }
 
-function getPartenaire(){
-    $json_data = file_get_contents('../data/partenaire.json');
-    $partners = json_decode($json_data, true);
-    return $partners;
-}
+
 ?>
