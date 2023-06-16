@@ -1,5 +1,6 @@
 <?php
 include('../Modele/users.php');
+include('../Modele/files.php');
 function setup() {
     session_start();
     echo '<meta charset="utf-8">
@@ -641,7 +642,7 @@ function addChat($u_emmetteur, $u_receveur, $message){
     fclose($fp);
 }
 
-function showFiles($root){
+function showFiles($deletefile){
   $tab = array();
   echo '
               <div class="container">
@@ -663,8 +664,7 @@ function showFiles($root){
               ';
   
   $n=0;
-  $json = file_get_contents('../data/files.json');
-  $files = json_decode($json, true);
+  $files = getFiles();
   foreach($files as $file){
       #print_r($file);
       #echo "<br>";
