@@ -450,6 +450,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
         $annee = $voiture['annee'];
         $kilometrage = $voiture['kilometrage'];
         $couleur = $voiture['couleur'];
+	$newkilometre = "O km";
         if ($kilometrage === null) {
           $newkilometre = "0 km";
         } else {
