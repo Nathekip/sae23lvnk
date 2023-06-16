@@ -88,3 +88,5 @@ include('../Modele/partenaire.php');
 
 </body>
 </html>
+
+
