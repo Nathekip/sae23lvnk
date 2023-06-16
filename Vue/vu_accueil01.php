@@ -250,12 +250,7 @@ function fondateurs(){
 }
 
     // Appel Modele
-    function getPartenaire(){
-        $json_data = file_get_contents('../Vue/partenaire.json');
-        $partners = json_decode($json_data, true);
-        return $partners;
-    }
-    // Vue
+    $partners = getPartenaire();
     function partenaire($partners) {
         $output = '';
     
