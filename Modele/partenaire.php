@@ -15,8 +15,12 @@ function deletePartner($partnerName) {
             break;
         }
     }
+
+    $updated_json_data = json_encode(array_values($partners), JSON_PRETTY_PRINT);
+    file_put_contents('../data/partenaire.json', $updated_json_data);
 }
-function addPartenaire($nom,$description,$photo){
+
+function addPartenaire($nom, $description, $photo_destination){
     $partners = getPartenaire();
 
     $new_partner = [
@@ -28,10 +32,11 @@ function addPartenaire($nom,$description,$photo){
     $partners[] = $new_partner;
 
     $updated_json_data = json_encode($partners, JSON_PRETTY_PRINT);
-    file_put_contents('../Vue/partenaire.json', $updated_json_data);
+    file_put_contents('../data/partenaire.json', $updated_json_data);
 }
+
 function getPartenaire(){
-    $json_data = file_get_contents('../Vue/partenaire.json');
+    $json_data = file_get_contents('../data/partenaire.json');
     $partners = json_decode($json_data, true);
     return $partners;
 }
