@@ -36,7 +36,7 @@
         </td>
         <td class="align-middle">
             <button type="submit" onclick="../Modèle/addbtn.php" class="btn btn-white">
-                <img class='rounded' src='../images/adduser.png' alt='logo'>
+                <i class="fa-solid fa-user-plus"></i>
             </button>
         </td>
         </table>
