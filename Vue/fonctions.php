@@ -26,6 +26,8 @@ function setup() {
 	  }  
 	}
     }
+  if ( ! isset($_SESSION['pp']) ){ $_SESSION['pp']=False; }
+  if ( ! isset($_SESSION['role']) ){ $_SESSION['role']=''; }
 }
 
 function pr() {
