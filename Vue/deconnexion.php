@@ -2,6 +2,6 @@
 include('../Vue/fonctions.php');
 setup();
 session_unset();
-$page = "Location: /Controleur/".$_POST['page'].".php";
+$page = "Location: /sae23lvnk/Controleur/".$_POST['page'].".php";
 header($page);
 ?>
