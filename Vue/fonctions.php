@@ -1,4 +1,5 @@
 <?php
+include('../Modele/users.php');
 function setup() {
     session_start();
     echo '<meta charset="utf-8">
@@ -18,8 +19,7 @@ function setup() {
     $rep = "Car Fusion";}
     echo "<title>$rep</title>";
     if ( isset($_SESSION['utilisateur']) ){
-        $json = file_get_contents('data/users.json');
-        $user = json_decode($json, true);
+        $user = readUser();
 	if ( isset($user[$_SESSION['utilisateur']]['pp'])){
 	  if ( $user[$_SESSION['utilisateur']]['pp'] ){
 	        $_SESSION['pp'] = True;
@@ -39,9 +39,7 @@ function pr() {
 }
 
 function pagenavbar($page=""){
-	
-  $json = file_get_contents('../data/users.json');
-  $user = json_decode($json, true);
+  $user = readUser();
   if ( isset($_POST['page']) ){ $pagehead = "Location: ".$_POST['page'].".php"; }
   foreach($user as $u){
     #print_r($u);
