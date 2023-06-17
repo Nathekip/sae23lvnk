@@ -24,7 +24,10 @@ function setup() {
 	if ( isset($user[$_SESSION['utilisateur']]['pp'])){
 	  if ( $user[$_SESSION['utilisateur']]['pp'] ){
 	        $_SESSION['pp'] = True;
-	  }  
+	  }
+	  else {
+		$_SESSION['pp'] = False;
+	  }
 	}
     }
   if ( ! isset($_SESSION['pp']) ){ $_SESSION['pp']=False; }
@@ -98,7 +101,7 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="../images/pp/User.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="../images/pp/User.jpeg" alt="PP User"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
@@ -269,32 +272,6 @@ function deleteUser($usr){
     fwrite($fp, $jsonString);
     fclose($fp);
 }
-
-function ppTrue($usr){
-    $json = file_get_contents('../data/users.json');
-    $user = json_decode($json, true);
-	
-    echo "<pre><br>";
-    print_r($user[$usr]);
-    echo "<br>";
-    echo $user[$usr]['pp'];
-    $user[$usr]['pp']=True;
-    echo "<br>";
-    echo $user[$usr]['pp'];
-    echo "<br>";
-    print_r($user);		
-    echo "</pre>";
-
-    $fp = fopen("../data/users.json", 'w');
-    fwrite($fp, "");
-    fclose($fp);
-
-    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("../data/users.json", 'a');
-    fwrite($fp, $jsonString);
-    fclose($fp);
-}
-
 
 function showusers($users) {
   $rep = <<<EOT
