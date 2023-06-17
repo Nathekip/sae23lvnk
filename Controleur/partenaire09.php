@@ -5,9 +5,11 @@ include('../Modele/partenaire.php');
 <!DOCTYPE html>
 <html>
 <head>
-<?php
+    <?php
     setup();
-?>
+    ?>
+    <!--page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <?php
@@ -62,11 +64,13 @@ include('../Modele/partenaire.php');
                 <label for="description">Description :</label>
                 <textarea name="description" id="description" class="form-control" required></textarea>
             </div>
+            <br/>
 
             <div class="form-group">
                 <label for="photo">Photo :</label>
                 <input type="file" name="photo" id="photo" class="form-control-file" required>
             </div>
+            <br/>
 
             <button type="submit" class="btn btn-primary">Ajouter le partenaire</button>
         </form>
