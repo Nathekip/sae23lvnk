@@ -9,30 +9,23 @@
     }
     pagenavbar("p08");
     if (isset($_POST['check'])){
-      $target_dir = "files/";
+      $target_dir = "../files/";
       $target_file = $target_dir . basename($_FILES["Upload"]["name"]);
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       if ( ! file_exists($target_file)){
         if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
-          echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
-          $json = file_get_contents('../data/files.json');
-          $files = json_decode($json, true);
-          echo $files;
+          //echo "The file ". htmlspecialchars( basename( $_FILES["Upload"]["name"])). " has been uploaded.";
+          $files = getFiles();
   
           $_FILES["Upload"]['date'] = date("j/n/Y H:i");
           $_FILES["Upload"]['size'] = formatBytes($_FILES["Upload"]['size']);
-          $_FILES["Upload"]['author'] = $_SESSION['utilisateur'];
+          $_FILES["Upload"]['author'] = getNom($_SESSION['utilisateur']);
           $_FILES["Upload"]['type'] = pathinfo($_FILES["Upload"]['name'], PATHINFO_EXTENSION);
           $_FILES["Upload"]['name'] = explode('.',$_FILES["Upload"]['name'])[0];
-          $_FILES["Upload"]['path'] = 'files/'.$_FILES["Upload"]['name'].'.'.$_FILES["Upload"]['type'];
+          $_FILES["Upload"]['path'] = '../files/'.$_FILES["Upload"]['name'].'.'.$_FILES["Upload"]['type'];
           array_push($files,$_FILES["Upload"]);
-          print_r($files);
-
-          $jsonString = json_encode($files, JSON_PRETTY_PRINT);
-          $fp = fopen("../data/files.json", 'w');
-          fwrite($fp, $jsonString);
-          fclose($fp);
-          #header('Location: 172.18.50.11/sae23lvnk/Controleur/Monprofil7.php');          
+          writeFiles($files);
+          #header('Location: 172.18.50.11/sae23lvnk/Controleur/monprofil07.php');          
         } 
         else {
           echo "Sorry, there was an error uploading your file.";
@@ -84,7 +77,7 @@
           data.append("parametre", parametre);
 
           // Configurer la requête Ajax avec la méthode POST et l'URL cible
-          xhr.open("POST", "btn_suppr.php", true);
+          xhr.open("POST", "../Vue/btn_suppr.php", true);
 
           // Envoyer la requête Ajax avec les données
           xhr.send(data);
