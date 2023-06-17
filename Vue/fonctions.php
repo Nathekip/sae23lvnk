@@ -98,7 +98,7 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="../images/pp/User.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
