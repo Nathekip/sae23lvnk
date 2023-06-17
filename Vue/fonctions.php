@@ -101,7 +101,7 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="../images/pp/User.jpeg" alt="PP User"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
@@ -570,75 +570,36 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
   }
 }
 
-function addChat($u_emmetteur, $u_receveur, $message){
-    $path1 = 'chat/'.$u_emmetteur.'_'.$u_receveur.'.json';
-    $path2 = 'chat/'.$u_receveur.'_'.$u_emmetteur.'.json';
-    if ( file_exists($path1) and file_exists($path2) ){ 
-      $json1 = file_get_contents($path1);
-      $chat1 = json_decode($json1, true);
-      $json2 = file_get_contents($path2);
-      $chat2 = json_decode($json2, true);
-      $len = count($chat1)+1;
-      for ($i = 1; $i <= $len; $i++){
-        $key = $len-$i-1;
-        if ( $key >= -1 ){
-          echo $i;
-          $chat1[$key+1]=$chat1[$key];
-          $chat2[$key+1]=$chat2[$key];
-        }
-	    }
-    }
-    else {
-      $chat1 = array();
-      $chat2 = array();
-    }
-    $chat1[0] = ['turn' => TRUE, 'message' => $message, 'temps' => time()];
-    $chat2[0] = ['turn' => FALSE, 'message' => $message, 'temps' => time()];        
-    $jsonString1 = json_encode($chat1, JSON_PRETTY_PRINT);       
-    $jsonString2 = json_encode($chat2, JSON_PRETTY_PRINT);
-    $fp = fopen($path1, 'w');
-    fwrite($fp, $jsonString1);
-    fclose($fp);	
-    $fp = fopen($path2, 'w');
-    fwrite($fp, $jsonString2);
-    fclose($fp);
-}
-
-function showFiles($deletefile){
-  $tab = array();
+function showFiles(){
+  $tab = array();  
+  $n=0;
+  $files = getFiles();
   echo '
               <div class="container">
                <form method="post" action="../fichier08.php">
                 <table class="table table-dark table-striped">
                   <thead>
                     <tr>
-                      <!-- <input type="checkbox" class="form-check-input" name="option1" value="something" checked> -->
-                      <th scope="col"><input type="checkbox" class="form-check-input" name="option1" value="something"></th>
+		      <th scope="col">Supprimer</th>
                       <th scope="col">Nom</th>
                       <th scope="col">Type</th>
                       <th scope="col">Auteur</th>
                       <th scope="col">Taille</th>
                       <th scope="col">Date</th>
-		      <th scope="col"><a class="btn btn-danger">Supprimer tout ('.count($deletefile).')</a></th>
+		      <th scope="col">Télécharger</th>
                     </tr>
                   </thead>
                   <tbody>
               ';
-  
-  $n=0;
-  $files = getFiles();
   foreach($files as $file){
-      #print_r($file);
-      #echo "<br>";
-        
       $tab[$n] = '<tr>
-                    <th scope="row"><input type="checkbox" class="form-check-input" name="option" value="something"></th>
+                    <td><button class="btn btn-danger disabled" data-parametre="filepath"><i class="fa-solid fa-trash-can"></i></button></td>
                     <td>nom</td>
                     <td>typefichier</td>
                     <td>auteur</td>
                     <td>taille</td>
                     <td>date</td>
-                      <td><button class="btn btn-danger" data-parametre="filepath"><i class="fa-solid fa-trash-can"></i></button></td>
+                    <td><a class="btn btn-success" href="filepath"><i class="fa-solid fa-download"></i></a></td>
                   </tr>';
       $tab[$n]= str_replace("nom",$file['name'],$tab[$n]);
       $tab[$n]= str_replace("typefichier",$file['type'],$tab[$n]);
@@ -646,54 +607,18 @@ function showFiles($deletefile){
       $tab[$n]= str_replace("taille",$file['size'],$tab[$n]);
       $tab[$n]= str_replace("date",$file['date'],$tab[$n]);
       $tab[$n]= str_replace("filepath",$file['path'],$tab[$n]);
+      if (in_array($_SESSION['role'],["admin","manager","admin"])){
+        $tab[$n]= str_replace(" disabled","",$tab[$n]);
+      }
       echo $tab[$n];
       $n++;
+  }
   echo '
                 </tbody>
               </table>
              </form>
             </div>
           ';
-
-  }
-}
-
-function delfiltest($filepath){
-  unlink($filepath);
-  $json = file_get_contents('../data/files.json');
-  $files = json_decode($json, true);
-
-  for($i=0; $i < count($files); $i++){
-    if ($files[$i]['path'] == $filepath){
-      unset($files[$i]);
-    }
-  }
-  
-  $jsonString = json_encode($files, JSON_PRETTY_PRINT);
-  $fp = fopen("../data/files.json", 'w');
-  fwrite($fp, $jsonString);
-  fclose($fp);
-  echo "</pre>".$filepath .'removed';
-}
-
-function deleteFile($deletefile){
-  foreach($deletefile as $file){
-    unlink($file);
-    $json = file_get_contents('../data/files.json');
-    $files = json_decode($json, true);
-
-    foreach ($files as $key => $value){
-      if ($files[$key]['path'] == $file){
-        unset($files[$key]);
-      }
-    }
-  }
-  $jsonString = json_encode($files, JSON_PRETTY_PRINT);
-  $fp = fopen("../data/files.json", 'w');
-  fwrite($fp, $jsonString);
-  fclose($fp);
-
-
 }
 
 function formatBytes($octets) { 
