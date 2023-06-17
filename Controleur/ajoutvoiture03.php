@@ -230,8 +230,9 @@
         move_uploaded_file($image_tmp, "../images/" . $filename);
         $image = "../images/" . $filename;
     
-        // Le fichier a été téléchargé avec succès, vous pouvez maintenant l'utiliser comme souhaité
-    } 
+        echo "<br ><div class='alert bg-success'>
+        <strong>Confirmation :</strong> La voiture a été ajouté.</div>";    
+      } 
     
     
   
