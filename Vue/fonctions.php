@@ -364,7 +364,8 @@ function pagefooter(){
 }
 function trierParPrixCroissant($a, $b) {
   return $a['prix'] - $b['prix'];
-}      
+}
+
 function trierParPrixDecroissant($a, $b) {
   return $b['prix'] - $a['prix'];
 }
@@ -384,14 +385,13 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
         $description = $voiture['description'];
         $image = $voiture['image'];
         $annee = $voiture['annee'];
-
         $couleur = $voiture['couleur'];
 	$newkilometre = "";
         if ($voiture['kilometrage'] === null) {
-          $newkilometre = "0 km";
+        $newkilometre = "0 km";
 	}
 	else{
-	  $newkilometre = $voiture['kilometrage'];
+	$newkilometre = $voiture['kilometrage'];
         }
         $etat_voiture = $voiture['etat'];
         $puissance = $voiture['puissance'];
@@ -493,7 +493,7 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                                        Kilométrage :
                                      </div>
                                      <p class="text-center fw-bold">
-                                       $newkilometrage
+                                       $newkilometre
                                      </p>
                                    </div>
                                  </div>
