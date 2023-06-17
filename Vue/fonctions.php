@@ -14,7 +14,7 @@ function setup() {
           <body class="bg-secondary bg-opacity-25"></body>
         ';
     
-    $listetitre = ["Page d'accueil","Trouver une voiture","Ajout de voiture","Gestion de user","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
+    $listetitre = ["Test","Page d'accueil","Trouver une voiture","Ajout de voiture","Gestion de user","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))];
     if ($rep == NULL){
     $rep = "Car Fusion";}

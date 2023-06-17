@@ -5,5 +5,5 @@ if ($_POST['mdp']==$_POST['cmdp']){
     addUser($_POST['pseudo'],$_POST['mdp'],$_POST['role']);
 }
 
-header('Location: gestionuser04.php');
+header('Location: ../Controleur/gestionuser04.php');
 ?>
