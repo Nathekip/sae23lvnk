@@ -466,9 +466,15 @@ function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $mod
                            <input type="hidden" name="puissance" value="$puissance">
                            <input type="hidden" name="description" value="$description">
                            <input type="hidden" name="image" value="$image">
-                           <button type="submit" name="submit" value="Acheter" class="btn btn-success rounded-3 ms-2">Acheter</button>
-                         </form>
-                         <button type="button" class="btn btn-secondary rounded-3" data-bs-toggle="modal" data-bs-target="#myModal$index">Voir plus</button>
+                           <div class="row">
+                           	<div class="col-md-6">
+                            		<button type="submit" name="submit" value="Acheter" class="btn btn-success rounded-3 ms-2">Acheter</button>
+                           	</div>
+                            </form>
+                            	<div class="col-md-6">
+                            		<button type="button" class="btn btn-secondary rounded-3" data-bs-toggle="modal" data-bs-target="#myModal$index">Voir plus</button>
+                            	</div>
+                          </div>
                        </div>
                      </div>
                    </div>
