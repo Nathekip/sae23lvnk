@@ -58,7 +58,7 @@
                                 </form>
                                 <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
                                     <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
-                                    <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
+                                    <div><a href="oublimdp06.php">Mot de passe oublié</a> ?</div>
                                 </div>
                             </div>
                         </div>
