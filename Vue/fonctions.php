@@ -15,7 +15,7 @@ function setup() {
         ';
     
     $listetitre = ["Page d'accueil","Trouver une voiture","Ajout de voiture","Gestion de user","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
-    $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
+    $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))];
     if ($rep == NULL){
     $rep = "Car Fusion";}
     echo "<title>$rep</title>";
@@ -24,10 +24,7 @@ function setup() {
 	if ( isset($user[$_SESSION['utilisateur']]['pp'])){
 	  if ( $user[$_SESSION['utilisateur']]['pp'] ){
 	        $_SESSION['pp'] = True;
-	  }
-	  else {
-		$_SESSION['pp'] = False;
-	  }
+	  }  
 	}
     }
   if ( ! isset($_SESSION['pp']) ){ $_SESSION['pp']=False; }
@@ -101,7 +98,7 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
 	
   if ( $_SESSION['pp'] ){
 	  $navbar .= '<li class="nav-item">
-	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="../images/pp/User.jpeg" alt="PP User"></i></a>
+	       	       <a class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="User" href="monprofil07.php"><img class="border border-2 border-white rounded-circle circle border" width="36" height="36" src="pp/User.jpeg" alt="PP Kono"></i></a>
 		     </li>';
 	  $navbar = str_replace("User", $_SESSION['utilisateur'], $navbar);
   }
@@ -162,8 +159,8 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
                                 </div>
                               </form>
                               <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
-                                <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
-                                <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
+                                <div><a href="creerprofil05.php">Pas de profil</a> ?</div>
+                                <div><a href="oublimdp06.php">Mot de passe oublié</a> ?</div>
                               </div>
                             </div>
                           </div>
@@ -273,6 +270,32 @@ function deleteUser($usr){
     fclose($fp);
 }
 
+function ppTrue($usr){
+    $json = file_get_contents('../data/users.json');
+    $user = json_decode($json, true);
+	
+    echo "<pre><br>";
+    print_r($user[$usr]);
+    echo "<br>";
+    echo $user[$usr]['pp'];
+    $user[$usr]['pp']=True;
+    echo "<br>";
+    echo $user[$usr]['pp'];
+    echo "<br>";
+    print_r($user);		
+    echo "</pre>";
+
+    $fp = fopen("../data/users.json", 'w');
+    fwrite($fp, "");
+    fclose($fp);
+
+    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+    $fp = fopen("../data/users.json", 'a');
+    fwrite($fp, $jsonString);
+    fclose($fp);
+}
+
+
 function showusers($users) {
   $rep = <<<EOT
   <div class="container">
@@ -297,42 +320,42 @@ function showusers($users) {
       $selectedManager = ($user['role'] == 'manager') ? 'selected' : '';
 
       $rep .= <<<EOT
-		      <tr>
-		          <th scope="row">{$user['user']}</th>
-		          <td>
-		              <form action="../Modele/pwdbtn.php" method="post">
-		                  <input type="hidden" name="user" value="{$user['user']}">
-		                  <select class="form-control" name="role">
-		                      <option value="visiteur" $selectedVisiteur>Visiteur</option>
-		                      <option value="communication" $selectedCommunication>Communication</option>
-		                      <option value="admin" $selectedAdmin>Admin</option>
-		                      <option value="manager" $selectedManager>Manager</option>
-		                  </select>
-		          </td>
-		          <td>
-		                  <div class="form-group">
-		                      <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
-		                  </div>
-		          </td>
-		          <td>
-		                  <div class="form-group">
-		                      <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
-		                  </div>
-		          </td>
-		          <td>
-				<button type="submit" class="btn btn-success rounded-pill" name="submit">
-		                      <i class="fa-regular fa-circle-check"></i>
-		                  </button>
-		              </form>
-		          </td>
-		          <td>
-		              <form action="../Modele/delbtn.php" method="post">
-		                  <button type="submit" class="btn btn-danger rounded-pill" name="user">
-		                      <i class="fa-regular fa-circle-xmark"></i>
-		                  </button>
-		              </form>
-		          </td>
-		      </tr>
+      <tr>
+          <th scope="row">{$user['user']}</th>
+          <td>
+              <form action="../Modele/pwdbtn.php" method="post">
+                  <input type="hidden" name="user" value="{$user['user']}">
+                  <select class="form-control" name="role">
+                      <option value="visiteur" $selectedVisiteur>Visiteur</option>
+                      <option value="communication" $selectedCommunication>Communication</option>
+                      <option value="admin" $selectedAdmin>Admin</option>
+                      <option value="manager" $selectedManager>Manager</option>
+                  </select>
+          </td>
+          <td>
+              <div class="form-group">
+                  <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
+              </div>
+          </td>
+          <td>
+              <div class="form-group">
+                  <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
+              </div>
+          </td>
+          <td>
+              <button type="submit" class="btn btn-success rounded-pill" name="submit">
+                  <i class="fa-regular fa-circle-check"></i>
+              </button>
+              </form>
+          </td>
+          <td>
+              <form action="../Modele/delbtn.php" method="post">
+                  <button type="submit" class="btn btn-danger rounded-pill" name="user">
+                      <i class="fa-regular fa-circle-xmark"></i>
+                  </button>
+              </form>
+          </td>
+      </tr>
       EOT;
   }
 
@@ -623,7 +646,7 @@ function showFiles($deletefile){
   $tab = array();
   echo '
               <div class="container">
-               <form method="post" action="../fichier8.php">
+               <form method="post" action="../fichier08.php">
                 <table class="table table-dark table-striped">
                   <thead>
                     <tr>
