@@ -25,6 +25,9 @@ function setup() {
 	  if ( $user[$_SESSION['utilisateur']]['pp'] ){
 	        $_SESSION['pp'] = True;
 	  }  
+	  else {
+      		$_SESSION['pp'] = False;
+    		}
 	}
     }
   if ( ! isset($_SESSION['pp']) ){ $_SESSION['pp']=False; }
