@@ -146,7 +146,7 @@
                           $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                         }
                            
-                        $json = file_get_contents('data/users.json');
+                        $json = file_get_contents('../data/users.json');
                         $user = json_decode($json, true);
                         /* echo '<br><pre> data/users.json :<br>';
                         print_r($user);
