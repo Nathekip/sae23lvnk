@@ -13,7 +13,7 @@ include('../Modele/partenaire.php');
 </head>
 <body>
     <?php
-    pagenavbar($page="");
+    pagenavbar("p09");
     // Traitement du formulaire d'ajout de partenaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nom = $_POST['nom'];
