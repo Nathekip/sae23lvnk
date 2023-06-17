@@ -282,43 +282,51 @@ function showusers($users) {
       $selectedManager = ($user['role'] == 'manager') ? 'selected' : '';
 
       $rep .= <<<EOT
-      <tr>
-          <th scope="row">{$user['user']}</th>
-          <td>
-              <form action="../Modele/pwdbtn.php" method="post">
-                  <input type="hidden" name="user" value="{$user['user']}">
-                  <select class="form-control" name="role">
-                      <option value="visiteur" $selectedVisiteur>Visiteur</option>
-                      <option value="communication" $selectedCommunication>Communication</option>
-                      <option value="admin" $selectedAdmin>Admin</option>
-                      <option value="manager" $selectedManager>Manager</option>
-                  </select>
+        <tr>
+            <th scope="row">{$user['user']}</th>
+            <td>
+            <form action="" method="post">
+                <input type="hidden" name="user" value="{$user['user']}">
+                <select class="form-control" name="role">
+                    <option value="visiteur" $selectedVisiteur>Visiteur</option>
+                    <option value="communication" $selectedCommunication>Communication</option>
+                    <option value="admin" $selectedAdmin>Admin</option>
+                    <option value="manager" $selectedManager>Manager</option>
+                </select>
+        </td>
+        <td>
+            <div class="form-group">
+                <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
+            </div>
+        </td>
+        <td>
+            <button type="submit" class="btn btn-primary rounded-pill" name="tcheck">
+                Tcheck
+            </button>
+        </td>
+        </form>
+      
           </td>
           <td>
-              <div class="form-group">
-                  <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
-              </div>
-          </td>
-          <td>
-              <div class="form-group">
-                  <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
-              </div>
-          </td>
-          <td>
-              <button type="submit" class="btn btn-success rounded-pill" name="submit">
-                  <i class="fa-regular fa-circle-check"></i>
-              </button>
-              </form>
-          </td>
-          <td>
-              <form action="../Modele/delbtn.php" method="post">
-                  <button type="submit" class="btn btn-danger rounded-pill" name="user">
-                      <i class="fa-regular fa-circle-xmark"></i>
-                  </button>
-              </form>
-          </td>
+            <form method="post">
+                <input type="hidden" name="user" value="{$user['user']}">
+                <button type="submit" class="btn btn-danger rounded-pill" name="delbtn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
+            </form>
+        </td>
+      
       </tr>
       EOT;
+      if (isset($_POST['delbtn']) && isset($_POST['user'])) {
+        $usr = $_POST['user'];
+        deleteUser($usr);
+    }
   }
 
   $rep .= <<<EOT
@@ -328,6 +336,8 @@ function showusers($users) {
   EOT;
 
   return $rep;
+
+
 }
 
 function pagefooter(){
