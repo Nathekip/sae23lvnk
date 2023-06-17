@@ -254,47 +254,6 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
           }
         </style>';
 }
-    
-
-  
-
-function deleteUser($usr){
-    $json = file_get_contents('../data/users.json');
-    $user = json_decode($json, true);
-
-    unset($user[$usr]);
-
-    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("../data/users.json", 'w');
-    fwrite($fp, $jsonString);
-    fclose($fp);
-}
-
-function ppTrue($usr){
-    $json = file_get_contents('../data/users.json');
-    $user = json_decode($json, true);
-	
-    echo "<pre><br>";
-    print_r($user[$usr]);
-    echo "<br>";
-    echo $user[$usr]['pp'];
-    $user[$usr]['pp']=True;
-    echo "<br>";
-    echo $user[$usr]['pp'];
-    echo "<br>";
-    print_r($user);		
-    echo "</pre>";
-
-    $fp = fopen("../data/users.json", 'w');
-    fwrite($fp, "");
-    fclose($fp);
-
-    $jsonString = json_encode($user, JSON_PRETTY_PRINT);
-    $fp = fopen("../data/users.json", 'a');
-    fwrite($fp, $jsonString);
-    fclose($fp);
-}
-
 
 function showusers($users) {
   $rep = <<<EOT
