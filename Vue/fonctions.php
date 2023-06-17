@@ -305,8 +305,8 @@ function showusers($users) {
             </div>
         </td>
         <td>
-            <button type="submit" class="btn btn-primary rounded-pill" name="tcheck">
-                Tcheck
+            <button type="submit" class="btn btn-success rounded-pill" name="tcheck">
+                <i class="fa-solid fa-check"></i>
             </button>
         </td>
         </form>
