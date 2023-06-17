@@ -5,27 +5,28 @@
     include('../Vue/fonctions.php');
     setup();
     pagenavbar("p03");
-    pr();
-    ?>
+    ?><br ><br >
     <form id="car-form" method="post" class="text-center" enctype="multipart/form-data">
+    <div class="container border border-4 border-warning">
+      <BR >
     <div class="container">
-      <h2>Formulaire de voiture</h2>
+      <h2><strong>Formulaire de voiture</strong></h2>
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
-            <label for="marque">Marque :</label>
+            <label for="marque"><strong>Marque :</strong></label>
             <input type="text" class="form-control" id="marque" name="marque" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label for="modele">Modèle :</label>
+            <label for="modele"><strong>Modèle :</strong></label>
             <input type="text" class="form-control" id="modele" name="modele" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label for="annee">Année :</label>
+            <label for="annee"><strong>Année :</strong></label>
             <input type="number" class="form-control" id="annee" name="annee" required>
           </div>
         </div>
@@ -33,120 +34,136 @@
     </div>
 
 
-    <div class="form-group">
-      <h3 class="text-center mb-4">Informations supplémentaires</h3>
-
-      <div class="form-row justify-content-center">
-        <div class="form-group col-md-3">
-          <label for="prix" class="col-form-label">Prix :</label>
-          <input type="number" class="form-control" id="prix" name="prix" required>
-        </div>
-
-        <div class="form-group col-md-3">
-          <label for="etat" class="col-form-label">Etat :</label>
-          <select class="form-control" id="etat" name="etat" required>
-            <option value="Neuf">Neuf</option>
-            <option value="Occasion">Occasion</option>
-          </select>
-        </div>
-
-        <div class="form-group col-md-3">
-          <label for="kilometrage" class="col-form-label">Kilométrage :</label>
-          <input type="number" class="form-control" id="kilometrage" name="kilometrage" required>
-        </div>
-
-        <div class="form-group col-md-3">
-          <label for="couleur" class="col-form-label">Couleur :</label>
-          <input type="text" class="form-control" id="couleur" name="couleur" required>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="form-group">
-      <h3 class="text-center mb-4">Caractéristiques techniques</h3>
-
-      <div class="form-row justify-content-center">
-        <div class="form-group col-md-3">
-          <label for="carburant" class="col-form-label">Carburant :</label>
-          <select class="form-control" id="carburant" name="carburant" required>
-            <option value="Essence">Essence</option>
-            <option value="Diesel">Diesel</option>
-            <option value="Hybrid">Hybrid</option>
-            <option value="Electrique">Electrique</option>
-          </select>
-        </div>
-
-        <div class="form-group col-md-3">
-          <label for="puissance" class="col-form-label">Puissance :</label>
-          <input type="number" class="form-control" id="puissance" name="puissance" min="1" max="500" required>
-        </div>
-
-        <div class="form-group col-md-3">
-          <label for="boite" class="col-form-label">Boite :</label>
-          <select class="form-control" id="boite" name="boite" required>
-            <option value="Automatique">Automatique</option>
-            <option value="Manuelle">Manuelle</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-
-        <div class="form-group row justify-content-center">
-          <label for="description" class="col-sm-2 col-form-label">Description :</label>
-          <div class="col-sm-6">
-            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-          </div>
-        </div>
-
-
-        <div class="form-group row justify-content-center">
-          <label for="image" class="col-sm-2 col-form-label">Image :</label>
-          <div class="col-sm-6">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="image" name="image" required>
-              <label class="custom-file-label" for="image">Choisir un fichier</label>
+    <div class="container">
+        <h3 class="text-center mb-4"><strong>Informations supplémentaires</strong></h3>
+        <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+                    <label for="prix" class="col-form-label"><strong>Prix :</strong></label>
+                    <input type="number" class="form-control" id="prix" name="prix" required>
+                </div>
             </div>
-          </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="etat" class="col-form-label"><strong>Etat :</strong></label>
+                    <select class="form-control" id="etat" name="etat" required>
+                        <option value="Neuf">Neuf</option>
+                        <option value="Occasion">Occasion</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="kilometrage" class="col-form-label"><strong>Kilométrage :</strong></label>
+                    <input type="number" class="form-control" id="kilometrage" name="kilometrage" required>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="couleur" class="col-form-label"><strong>Couleur :</strong></label>
+                    <input type="text" class="form-control" id="couleur" name="couleur" required>
+                </div>
+            </div>
         </div>
-        <div class="form-group row justify-content-center">
-          <label for="maniabilite" class="col-sm-2 col-form-label">Maniabilité :</label>
-          <div class="col-sm-2">
-            <input type="number" id="maniabilite" name="maniabilite" min="1" max="5" class="form-control" required>
-          </div>
-          <label for="fiabilite" class="col-sm-2 col-form-label">Fiabilité :</label>
-          <div class="col-sm-2">
-            <input type="number" id="fiabilite" name="fiabilite" min="1" max="5" class="form-control" required>
-          </div>
-          <label for="confort" class="col-sm-2 col-form-label">Confort :</label>
-          <div class="col-sm-2">
-            <input type="number" id="confort" name="confort" min="1" max="5" class="form-control" required>
-          </div>
+    </div>
+
+    <div class="container">
+    <h3 class="text-center mb-4"><strong>Caractéristiques techniques</strong></h3>
+    <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+                <label for="carburant" class="col-form-label"><strong>Carburant :</strong></label>
+                <select class="form-control" id="carburant" name="carburant" required>
+                    <option value="Essence">Essence</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Electrique">Electrique</option>
+                </select>
+            </div>
         </div>
-        <input type="submit" value="Créer voiture">
-    </form>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="puissance" class="col-form-label"><strong>Puissance :</strong></label>
+                <input type="number" class="form-control" id="puissance" name="puissance" min="1" max="500" required>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="boite" class="col-form-label"><strong>Boite :</strong></label>
+                <select class="form-control" id="boite" name="boite" required>
+                    <option value="Automatique">Automatique</option>
+                    <option value="Manuelle">Manuelle</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<br >
+<div class='container'>
+    <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+          <label for="description" class="col-sm-2 col-form-label"><strong>Description :</strong></label>
+
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+    </div>
+</div>
+<div class="col-sm-6">
+    <label for="image" class="col-sm-2 col-form-label"><strong>Image :</strong></label>
+
+        <div class="custom-file">
+        <input type="file" class="custom-file-input btn btn-warning text-white " id="image" name="image" accept="image/png, image/jpeg, image/gif" required>
+        
+
+
+        </div>
+    </div>
+</div>
+</div>
+<br >
+<div class='container'>
+  <div class="row">
+      <div class="col-md-2">
+      <div class="form-group">
+          <label for="maniabilite" class="col-form-label"><strong>Maniabilité :</strong></label>
+          <input type="number" id="maniabilite" name="maniabilite" min="1" max="5" class="form-control" required>
+      </div>
+      </div>
+      <div class="col-md-2">
+      <div class="form-group">
+          <label for="fiabilite" class="col-form-label"><strong>Fiabilité :</strong></label>
+          <input type="number" id="fiabilite" name="fiabilite" min="1" max="5" class="form-control" required>
+      </div>
+      </div>
+      <div class="col-md-2">
+      <div class="form-group">
+          <label for="confort" class="col-form-label"><strong>Confort :</strong></label>
+          <input type="number" id="confort" name="confort" min="1" max="5" class="form-control" required>
+      </div>
+      </div>
+      <div class="col-md-1">
+      <div class="form-group">
+  </div>
+  </div>
+      <div class="col-md-4">
+      <div class="form-group">
+      <img id="preview-image" src="#" alt="Aperçu de l'image" class="img-fluid" style="display: none; margin-top: 10px;">
+      </div>
+    </div>
+    </div>
+    </div>
+ <br >
+
+
+ <input type="submit" value="Créer une voiture" class="btn btn-warning text-white ">
+
+</form> 
+</br> 
+</div></div>  
 
 
     <script>
-      const input = document.getElementById('image');
-      const preview = document.getElementById('preview-image');
-      const customLabel = document.querySelector('.custom-file-label');
 
-      input.addEventListener('change', () => {
-        const file = input.files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-          preview.src = reader.result;
-          preview.style.display = 'block';
-        });
-
-        reader.readAsDataURL(file);
-
-        // Change custom file label to display file name
-        customLabel.textContent = file.name;
-      });
 
 
 
@@ -165,6 +182,20 @@
             });
           });
 
+          $(document).ready(function() {
+  $('#image').change(function() {
+    var file = $(this)[0].files[0];
+    if (file) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#preview-image').attr('src', e.target.result).show();
+      };
+      reader.readAsDataURL(file);
+    } else {
+      $('#preview-image').attr('src', '#').hide();
+    }
+  });
+});
     </script>
 
 
@@ -186,7 +217,25 @@
       $maniabilite = intval($_POST["maniabilite"]);
       $fiabilite = intval($_POST["fiabilite"]);
       $confort = intval($_POST["confort"]);
-      $image = $_POST["image"];
+
+      // Vérifier si un fichier a été sélectionné
+      if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+        $image = $_FILES["image"]["name"];
+        $image_tmp = $_FILES["image"]["tmp_name"];
+    
+        // Extraire le nom du fichier
+        $filename = basename($image);
+    
+        // Déplacer le fichier temporaire vers l'emplacement souhaité
+        move_uploaded_file($image_tmp, "../images/" . $filename);
+        $image = "../images/" . $filename;
+    
+        // Le fichier a été téléchargé avec succès, vous pouvez maintenant l'utiliser comme souhaité
+    } 
+    
+    
+  
+
 
       // Charger le contenu du fichier JSON dans une variable
       $data = file_get_contents("../data/voitures.json");
@@ -224,7 +273,12 @@
 
     }
     ?>
-
-    ?>
+<style>
+  .custom-container {
+    background-color: #E7C349;
+    padding: 20px;
+    color: white;
+  }
+</style>
   </body>
 </html>
