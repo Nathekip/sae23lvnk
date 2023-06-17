@@ -22,6 +22,21 @@ function addUser($usr, $nom, $mdp, $mail, $departement, $role="visiteur",$questi
   fclose($fp);
 }
 
+function modUser($usr, $role, $mdp) {
+  $json = file_get_contents('../data/users.json');
+  $users = json_decode($json, true);
+
+  if (isset($users[$usr])) {
+      $users[$usr]['role'] = $role;
+      if (!empty($mdp)) {
+          $users[$usr]['mdp'] = password_hash($mdp, PASSWORD_DEFAULT);
+      }
+
+      $jsonString = json_encode($users, JSON_PRETTY_PRINT);
+      file_put_contents('../data/users.json', $jsonString);
+  }
+}
+
 function newUsers(){
   addUser("jgagnon","Josué Gagnon","bonjour","jgagnon@carfusion.com",25,"manager");
   addUser("mcourvoisier","Mathieu Courvoisier","bonjour","mcourvoisier@carfusion.com",37,"visiteur",1,"codesecret");
