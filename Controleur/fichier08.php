@@ -42,7 +42,7 @@
     ?>
     <div class="container-fluid text-center py-4 d-flex justify-content-center align-items-center flex-column">
       <h3 class="mb-0 pb-4 flex-fill text-center">Uploader un fichier</h3>
-      <form action="fichier8.php" method="post" enctype="multipart/form-data">
+      <form action="fichier08.php" method="post" enctype="multipart/form-data">
         <table class="table table-info table-striped">
           <td class="align-middle">
             <label class="custom-file-upload">  
