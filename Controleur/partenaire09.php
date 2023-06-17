@@ -23,7 +23,19 @@ include('../Modele/partenaire.php');
             $photo_destination = '../images/partenaire/' . $photo['name'];
             move_uploaded_file($photo_tmp, $photo_destination);
 
-            addPartenaire($nom, $description, $photo_destination);
+            $json_data = file_get_contents('../data/partenaire.json');
+            $partners = json_decode($json_data, true);
+
+            $new_partner = [
+                'nom' => $nom,
+                'description' => $description,
+                'photo' => $photo_destination
+            ];
+
+            $partners[] = $new_partner;
+
+            $updated_json_data = json_encode($partners, JSON_PRETTY_PRINT);
+            file_put_contents('../data/partenaire.json', $updated_json_data);
         }
     }
 
@@ -34,7 +46,8 @@ include('../Modele/partenaire.php');
     }
 
     // Affichage des partenaires existants
-    $partners = getPartenaire();
+    $json_data = file_get_contents('../data/partenaire.json');
+    $partners = json_decode($json_data, true);
     ?>
 
     <div class="container mt-5">
@@ -69,11 +82,11 @@ include('../Modele/partenaire.php');
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($partners as $partner): ?>
+                <?php foreach ($partners as $partner): ;?>
                     <tr>
                         <td><?php echo $partner['nom']; ?></td>
                         <td><?php echo $partner['description']; ?></td>
-                        <td>a<!-- <img src="<?php //echo $partner['photo']; ?>" width="100">--></td>
+                        <td><img src="<?php echo $partner['photo']; ?>" width="100"></td>
                         <td>
                             <form method="post">
                                 <input type="hidden" name="delete" value="<?php echo $partner['nom']; ?>">
