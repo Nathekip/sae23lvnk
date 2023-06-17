@@ -1,12 +1,12 @@
 [
     {
         "nom": "Cupra",
-        "description": "CUPRA, constructeur automobile mondialement connu, est notre partenaire principal dans cette aventure.\r\nNous avons cr\u00e9\u00e9 une relation de confiance bas\u00e9e sur le respect, l\u2019entraide, mais surtout l\u2019esprit commercial.\r\nCUPRA offre une exp\u00e9rience unique et nous permet d\u2019\u00e9tendre notre r\u00e9seau au quotidien.",
-        "photo": "../images/partenaire/cupra.png"
+        "description": "CUPRA, constructeur automobile mondialement connu, est notre partenaire principal dans cette aventure. Nous avons cr\u00e9\u00e9 une relation de confiance bas\u00e9e sur le respect, l\u2019entraide, mais surtout l\u2019esprit commercial. CUPRA offre une exp\u00e9rience unique et nous permet d\u2019\u00e9tendre notre r\u00e9seau au quotidien.",
+        "photo": "..\/images\/partenaire\/cupra.png"
     },
     {
-        "nom": "eeee",
-        "description": "ee",
-        "photo": "../images/partenaire/th (2).jpg"
+        "nom": "Audi",
+        "description": "Audi, une marque automobile r\u00e9put\u00e9e mondialement, est notre partenaire dans cette aventure. Nous avons \u00e9tabli une relation solide fond\u00e9e sur la confiance, la collaboration et une vision commune. Audi offre une exp\u00e9rience de conduite exceptionnelle et nous permet d'\u00e9largir notre r\u00e9seau chaque jour. En tant que partenaire de choix, Audi renforce notre pr\u00e9sence sur le march\u00e9 et contribue \u00e0 notre succ\u00e8s continu.",
+        "photo": "..\/images\/partenaire\/audi.png"
     }
 ]
