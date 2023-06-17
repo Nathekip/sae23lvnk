@@ -6,7 +6,7 @@
       setup();
       pagenavbar("p07");
       if ( ! isset($_SESSION['utilisateur']) ){
-        header('Location: 172.18.50.11/sae23lvnk/Controleur/accueil01.php');
+        header('Location: 172.18.50.11/sae23lvnk-main/Controleur/accueil01.php');
       }
       $uploadOk = 1;
       $name = $_SESSION['utilisateur'];
