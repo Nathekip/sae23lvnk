@@ -1,5 +1,5 @@
 <?php
-function addUser($usr, $nom, $mdp, $mail, $departement, $role,$question=0,$reponse=NULL){
+function addUser($usr, $nom, $mdp, $mail, $departement, $role="visiteur",$question=0,$reponse=NULL){
   $user = array();
   $json = file_get_contents('../data/users.json');
   $user = json_decode($json, true);
