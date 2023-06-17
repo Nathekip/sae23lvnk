@@ -40,7 +40,7 @@
       <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center mx-auto">
           <div class="card" style="width:400px">
-            <img class="card-img-top" src="pp/$name.jpeg" alt="Card image" style="width:100%" onerror="this.src='https://via.placeholder.com/400x400.png?text=$image_PP'">
+            <img class="card-img-top" src="../images/pp/$name.jpeg" alt="Card image" style="width:100%" onerror="this.src='https://via.placeholder.com/400x400.png?text=$image_PP'">
             <div class="card-body">
               <h4 class="card-title">$nomcomplet</h4>
               <p class="card-text">Votre rôle est $role</p>
