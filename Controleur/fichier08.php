@@ -15,7 +15,7 @@
         $target_file = $target_dir . basename($_FILES["Upload"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         if ( ! file_exists($target_file)){
-          if (in_array($imageFileType, ["jpeg","png","pdf","zip","odt","xls","docx","jpg","txt","rar"])){
+          if (in_array($imageFileType, ["jpeg","png","pdf","zip","odt","xls","docx","doc","jpg","txt","rar"])){
             if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
               $files = getFiles();
       
@@ -61,7 +61,7 @@
     ?>
     <div class="container-fluid text-center py-4 d-flex justify-content-center align-items-center flex-column">
       <h3 class="mb-0 pb-4 flex-fill text-center">Uploader un fichier</h3>
-      <form action="fichier08.php" method="post" enctype="multipart/form-data">
+      <form action="../Controleur/fichier08.php" method="post" enctype="multipart/form-data">
         <table class="table table-info table-striped">
           <td class="align-middle">
             <label class="custom-file-upload">  
@@ -88,8 +88,6 @@
 
     <script>
       var btnsSupprimer = document.getElementsByClassName("btn-danger");
-      var btnsTelecharger = document.getElementsByClassName("btndl");
-
       // Parcourir tous les boutons et ajouter un gestionnaire d'événement
       for (var i = 0; i < btnsSupprimer.length; i++) {
         btnsSupprimer[i].addEventListener("click", function() {
@@ -105,25 +103,6 @@
 
           // Configurer la requête Ajax avec la méthode POST et l'URL cible
           xhr.open("POST", "../Vue/btn_suppr.php", true);
-
-          // Envoyer la requête Ajax avec les données
-          xhr.send(data);
-        });
-      }
-      for (var i = 0; i < btnsTelecharger.length; i++) {
-        btnsTelecharger[i].addEventListener("click", function() {
-          // Récupérer le paramètre spécifique à partir de l'attribut personnalisé
-          var parametre = this.getAttribute("data-parametre");
-
-          // Créer une instance de l'objet XMLHttpRequest
-          var xhr = new XMLHttpRequest();
-
-          // Construire les données à envoyer
-          var data = new FormData();
-          data.append("parametre", parametre);
-
-          // Configurer la requête Ajax avec la méthode POST et l'URL cible
-          xhr.open("POST", "../Vue/btn_dl.php", true);
 
           // Envoyer la requête Ajax avec les données
           xhr.send(data);

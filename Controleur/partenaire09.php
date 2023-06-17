@@ -5,13 +5,15 @@ include('../Modele/partenaire.php');
 <!DOCTYPE html>
 <html>
 <head>
-<?php
+    <?php
     setup();
-?>
+    ?>
+    <!--page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <?php
-    pagenavbar($page="");
+    pagenavbar("p09");
     // Traitement du formulaire d'ajout de partenaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nom = $_POST['nom'];
@@ -62,11 +64,13 @@ include('../Modele/partenaire.php');
                 <label for="description">Description :</label>
                 <textarea name="description" id="description" class="form-control" required></textarea>
             </div>
+            <br/>
 
             <div class="form-group">
                 <label for="photo">Photo :</label>
-                <input type="file" name="photo" id="photo" class="form-control-file" required>
+                <input type="file" name="photo" id="photo" class="form-control-file" accept="image/png, image/jpeg, image/gif" required>
             </div>
+            <br/>
 
             <button type="submit" class="btn btn-primary">Ajouter le partenaire</button>
         </form>

@@ -210,7 +210,7 @@ function fondateurs(){
                 <div class="team-member">
                 <img class="mx-auto rounded-circle" src="../images/louis.png" alt="Photo" /><br><br>
                 <h4>Louis Courteille</h4>
-                <p class="text-muted">Co-fondateurs</p>
+                <p class="text-muted">Co-fondateur</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/louis-courteille-199895251/"><i class="fab fa-linkedin-in"></i></a><br><br>
                 </div>
             </div>
@@ -218,7 +218,7 @@ function fondateurs(){
                 <div class="team-member">
                 <img class="mx-auto rounded-circle" src="../images/victor.png" alt="Photo" /><br><br>
                 <h4>Victor Gillet</h4>
-                <p class="text-muted">Co-fondateurs</p>
+                <p class="text-muted">Co-fondateur</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/victor-gillet-40b003245/"><i class="fab fa-linkedin-in"></i></a><br><br>
                 </div>
             </div>
@@ -226,7 +226,7 @@ function fondateurs(){
                 <div class="team-member">
                 <img class="mx-auto rounded-circle" src="../images/konogan.png" alt="Photo" /><br><br>
                 <h4>Konogan Godefroy</h4>
-                <p class="text-muted">Co-fondateurs</p>
+                <p class="text-muted">Co-fondateur</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/konogan-godefroy-10b580263/"><i class="fab fa-linkedin-in"></i></a><br><br>
                 </div>
             </div>
@@ -234,7 +234,7 @@ function fondateurs(){
                 <div class="team-member">
                 <img class="mx-auto rounded-circle" src="../images/nathaniel.png" alt="Photo" /><br><br>
                 <h4>Nathaniel Guitton</h4>
-                <p class="text-muted">Co-fondateurs</p>
+                <p class="text-muted">Co-fondateur</p>
                 <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.linkedin.com/in/nathaniel-guitton-381352241/"><i class="fab fa-linkedin-in"></i></a><br><br>
                 </div>
             </div>

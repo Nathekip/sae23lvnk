@@ -35,7 +35,7 @@
                     <option selected disabled>Choisir un rôle</option>
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
-                    <option value="visitor">Visitor</option>
+                    <option value="visitor">Visiteur</option>
                     <option value="visitor">Employe</option>
                     <option value="visitor">Communication</option>
                 </select>
