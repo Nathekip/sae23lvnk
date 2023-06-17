@@ -68,7 +68,7 @@ include('../Modele/partenaire.php');
 
             <div class="form-group">
                 <label for="photo">Photo :</label>
-                <input type="file" name="photo" id="photo" class="form-control-file" required>
+                <input type="file" name="photo" id="photo" class="form-control-file" accept="image/png, image/jpeg, image/gif" required>
             </div>
             <br/>
 
