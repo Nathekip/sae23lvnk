@@ -31,7 +31,7 @@
         </ul>
         <br>
         <p>Votre réservation a été effectuée avec succès. Nous vous remercions pour votre confiance et vous souhaitons une agréable expérience avec notre voiture.</p>
-        <p>Votre voiture sera disponible dans notre agence de <?php echo $_POST['ville']; ?>, et n'hésitez pas à suivre son avancement.</p>
+        <p>Votre voiture sera disponible dans notre agence de <?php echo $_POST['ville']; ?>, n'hésitez pas à suivre son avancement.</p>
       </div>
     </div>
   </div>
