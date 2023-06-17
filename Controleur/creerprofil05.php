@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <?php
-            include('../Modèle/users.php');
+            include('../Modele/users.php');
             include('../Vue/fonctions.php');
             setup();
             # set var base

@@ -56,6 +56,15 @@ function getNom($usr=''){
   return '';
 }
 
+function deleteUser($usr){
+  $user = readUser();
+  unset($user[$usr]);
+  $jsonString = json_encode($user, JSON_PRETTY_PRINT);
+  $fp = fopen("../data/users.json", 'w');
+  fwrite($fp, $jsonString);
+  fclose($fp);
+}
+
 function ppTrue($usr){
   $users = readUser();
   $users[$usr]['pp']=True;
