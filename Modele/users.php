@@ -1,5 +1,5 @@
 <?php
-function addUser($usr, $nom, $mdp, $mail, $departement, $role="visiteur",$question=0,$reponse=NULL){
+function addUser($usr, $nom, $mdp, $mail, $departement, $role,$question=0,$reponse=NULL){
   $user = array();
   $json = file_get_contents('../data/users.json');
   $user = json_decode($json, true);
@@ -20,6 +20,21 @@ function addUser($usr, $nom, $mdp, $mail, $departement, $role="visiteur",$questi
   $fp = fopen("../data/users.json", 'w');
   fwrite($fp, $jsonString);
   fclose($fp);
+}
+
+function modUser($usr, $role, $mdp) {
+  $json = file_get_contents('../data/users.json');
+  $users = json_decode($json, true);
+
+  if (isset($users[$usr])) {
+      $users[$usr]['role'] = $role;
+      if (!empty($mdp)) {
+          $users[$usr]['mdp'] = password_hash($mdp, PASSWORD_DEFAULT);
+      }
+
+      $jsonString = json_encode($users, JSON_PRETTY_PRINT);
+      file_put_contents('../data/users.json', $jsonString);
+  }
 }
 
 function newUsers(){
