@@ -657,7 +657,7 @@ function showFiles($deletefile){
 
 function delfiltest($filepath){
   unlink($filepath);
-  $json = file_get_contents('data/files.json');
+  $json = file_get_contents('../data/files.json');
   $files = json_decode($json, true);
 
   for($i=0; $i < count($files); $i++){
@@ -667,7 +667,7 @@ function delfiltest($filepath){
   }
   
   $jsonString = json_encode($files, JSON_PRETTY_PRINT);
-  $fp = fopen("data/files.json", 'w');
+  $fp = fopen("../data/files.json", 'w');
   fwrite($fp, $jsonString);
   fclose($fp);
   echo "</pre>".$filepath .'removed';
@@ -676,7 +676,7 @@ function delfiltest($filepath){
 function deleteFile($deletefile){
   foreach($deletefile as $file){
     unlink($file);
-    $json = file_get_contents('data/files.json');
+    $json = file_get_contents('../data/files.json');
     $files = json_decode($json, true);
 
     foreach ($files as $key => $value){
@@ -686,7 +686,7 @@ function deleteFile($deletefile){
     }
   }
   $jsonString = json_encode($files, JSON_PRETTY_PRINT);
-  $fp = fopen("data/files.json", 'w');
+  $fp = fopen("../data/files.json", 'w');
   fwrite($fp, $jsonString);
   fclose($fp);
 
