@@ -1,1 +1,145 @@
-{}
+{
+    "jgagnon": {
+        "user": "jgagnon",
+        "nom": "Josu\u00e9 Gagnon",
+        "mdp": "$2y$10$i0rNIuFsKFId99ZHBbTiQOgsxS2Zd6imGbFoQ1AMwarrI.L2mWWmC",
+        "role": "manager",
+        "mail": "jgagnon@carfusion.com",
+        "departement": 25,
+        "question": 0,
+        "pp": false,
+        "reponse": null
+    },
+    "mcourvoisier": {
+        "user": "mcourvoisier",
+        "nom": "Mathieu Courvoisier",
+        "mdp": "$2y$10$0uMqfAESvEwnhO6Y9rYW7uSCCNh7GLaFuO5IBbrrIUbjoWOT3hmwO",
+        "role": "visiteur",
+        "mail": "mcourvoisier@carfusion.com",
+        "departement": 37,
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    },
+    "pbouhier": {
+        "user": "pbouhier",
+        "nom": "Pascal Bouhier",
+        "mdp": "$2y$10$1vrYCDtSzg5Wk8tLfpzib.1dRnFqUdKCXv7JwRJO0TVq4SP5sqbdK",
+        "role": "communication",
+        "mail": "pbouhier@carfusion.com",
+        "departement": 95,
+        "question": 0,
+        "pp": false,
+        "reponse": null
+    },
+    "aroatta": {
+        "user": "aroatta",
+        "nom": "Amadou Roatta",
+        "mdp": "$2y$10$MpckCqrap8\/3NYnI7d8AcOOFZWCVj6lRkj60S2Ofei4PX3aVwsbgK",
+        "role": "visiteur",
+        "mail": "aroatta@carfusion.com",
+        "departement": 12,
+        "question": 0,
+        "pp": false,
+        "reponse": null
+    },
+    "aregnard": {
+        "user": "aregnard",
+        "nom": "Amaury Regnard",
+        "mdp": "$2y$10$b4wJnx.MRssgqxENNQq4qOE3h\/vlPdq8dFWMeatHSkVqCIqBgbJLC",
+        "role": "manager",
+        "mail": "aregnard@carfusion.com",
+        "departement": 7,
+        "question": 0,
+        "pp": false,
+        "reponse": null
+    },
+    "aguillaume": {
+        "user": "aguillaume",
+        "nom": "Axelle Guillaume",
+        "mdp": "$2y$10$zwapKW0KNw\/fnGYsP6CES.kXc\/200DEOKibgxZ\/.amdromc6mYw4C",
+        "role": "communication",
+        "mail": "aguillaume@carfusion.com",
+        "departement": 35,
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    },
+    "cbonnot": {
+        "user": "cbonnot",
+        "nom": "Claudia Bonnot",
+        "mdp": "$2y$10$GL.2ZBfJQsQcymkQemMPnuxUvxMH79x2WfabwA5I8nVDL8LospQhC",
+        "role": "visiteur",
+        "mail": "cbonnot@carfusion.com",
+        "departement": 44,
+        "question": 0,
+        "pp": false,
+        "reponse": null
+    },
+    "vmarchant": {
+        "user": "vmarchant",
+        "nom": "Virginie Marchant",
+        "mdp": "$2y$10$Z8zF4qpXplhW9dUd5OrvPe6hC8OkGfpMjAGTzVZct0sW7J0WCFl4K",
+        "role": "manager",
+        "mail": "vmarchant@carfusion.com",
+        "departement": 93,
+        "question": 0,
+        "pp": false,
+        "reponse": null
+    },
+    "mcdeslys": {
+        "user": "mcdeslys",
+        "nom": "Marie-Claude Deslys",
+        "mdp": "$2y$10$AHyj\/3AgDV\/EeX7nQGgBLOZIKlzshPcMN\/8\/QzLFkTlGdc4wrM.ti",
+        "role": "employe",
+        "mail": "mcdeslys@carfusion.com",
+        "departement": "2B",
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    },
+    "vgillet": {
+        "user": "vgillet",
+        "nom": "Victor Gillet",
+        "mdp": "$2y$10$iZyjfylpN60uaYUzX0PdbOYJAAfJSv5gUXo1SLtGxW4EV1PrdWY5a",
+        "role": "admin",
+        "mail": "vgillet@carfusion.com",
+        "departement": 72,
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    },
+    "kgodefroy": {
+        "user": "kgodefroy",
+        "nom": "Konogan Godefroy",
+        "mdp": "$2y$10$5W4L6v4A5TF6SfG79d\/KFeKReEtA2VAP7gBhdjhndcA4ejom0yUNm",
+        "role": "admin",
+        "mail": "kgodefroy@carfusion.com",
+        "departement": 22,
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    },
+    "lcourteille": {
+        "user": "lcourteille",
+        "nom": "Louis Courteille",
+        "mdp": "$2y$10$U0kQ2iwYtE9sONin.8eCx.XpYLxLpexz1MHrzuBasqHSfpKyA43Ia",
+        "role": "admin",
+        "mail": "lcourteille@carfusion.com",
+        "departement": 50,
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    },
+    "nguitton": {
+        "user": "nguitton",
+        "nom": "Nathaniel Guitton",
+        "mdp": "$2y$10$wtV3okro7FBjC\/uuIv50auddoOuHe6M5JLJ7PRPQwxxWw\/3WQXyQu",
+        "role": "admin",
+        "mail": "nguitton@carfusion.com",
+        "departement": 44,
+        "question": 1,
+        "pp": false,
+        "reponse": "codesecret"
+    }
+}
