@@ -14,7 +14,7 @@
       $role = $_SESSION['role'];
       $btn = <<<EOD
         <label class="custom-file-upload">
-          <input type="file" name="Upload">
+          <input type="file" accept="image/png, image/jpeg, image/gif" name="Upload">
           <a class="btn btn-warning"> 
             <i class="fa fa-cloud-upload"></i>
             Changer de photo de profil
