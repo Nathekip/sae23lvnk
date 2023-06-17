@@ -36,7 +36,9 @@
       catch (Exception $e){
         $image_PP = 'PP';
       }    
-      
+      if($role == "employe"){
+        $role = "employé(e)";
+      } 
       $card = <<<EOD
       <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center mx-auto">
