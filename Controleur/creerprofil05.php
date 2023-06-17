@@ -2,7 +2,6 @@
 <html lang="fr">
     <head>
         <?php
-            include('../Modele/users.php');
             include('../Vue/fonctions.php');
             setup();
             # set var base
