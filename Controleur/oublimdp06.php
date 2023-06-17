@@ -81,7 +81,7 @@
       
                 # définition formulaire(phase)
                 $formulaire[2] = '
-                      <form method="post" action="oublimdp6.php">
+                      <form method="post" action="oublimdp06.php">
                         <button type="submit" name="RtrQuestion" class="btn btn-link">
                           <-- Revenir en arrière
                         </button>
@@ -90,7 +90,7 @@
                       <p class="text-black-50 pt-2">Entrez un nouveau mot de passe afin de changer votre ancien mot de passe
                       </p>
                     </div>
-                    <form action="oublimdp6.php" method="post">
+                    <form action="oublimdp06.php" method="post">
                     Votre nouveau mot de passe
                     <div class="pt-1 mb-3 input-group">
                       <input type="PhrOeilMdp" id="mdp" value="PhrMdp" class="form-control" name="mdp" placeholder="Entrez votre nouveau mdp">
@@ -112,7 +112,7 @@
                     </div>
                   </form>';
                 $formulaire[1] = '
-                      <form method="post" action="oublimdp6.php">
+                      <form method="post" action="oublimdp06.php">
                         <button type="submit" name="RtrMail" class="btn btn-link">
                           <-- Revenir en arrière
                         </button>
@@ -121,7 +121,7 @@
                       <p class="text-black-50 pt-2">Répondez à cette question de sécurité
                       </p>
                     </div>
-                    <form action="oublimdp6.php" method="post">
+                    <form action="oublimdp06.php" method="post">
                       <label class="form-label" for="reponse">PlaceholderQuestionSecurite</label>
                       <input type="password" id="reponse" class="form-control" name="reponse" placeholder="Repondez à la question">
                       <div class="pt-5 mb-3 d-grid">
@@ -135,7 +135,7 @@
                         <p class="text-black-50 pt-2">Entrez votre adresse mail afin de vous identifier
                         </p>
                       </div>
-                      <form action="oublimdp6.php" method="post">
+                      <form action="oublimdp06.php" method="post">
                         <div class="mb-3">
                           <label for="email" class="form-label">Votre adresse mail</label>
                           <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
@@ -217,7 +217,7 @@
                 $formulaire = str_replace("PhrCmdp",'',$formulaire);
                 echo $formulaire[$_SESSION['phase']];
                 ?>
-                <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil5.php">S'inscrire</a></span>
+                <span class="align-items-center justify-content-center" >Pas de profil ? <a href="creerprofil05.php">S'inscrire</a></span>
               </form>
             </div>
           </div>

@@ -15,7 +15,7 @@ function setup() {
         ';
     
     $listetitre = ["Page d'accueil","Trouver une voiture","Ajout de voiture","Gestion de user","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
-    $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))-1];
+    $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))];
     if ($rep == NULL){
     $rep = "Car Fusion";}
     echo "<title>$rep</title>";
@@ -159,8 +159,8 @@ if ( in_array( $_SESSION['role'],['visiteur','employe','admin','communication','
                                 </div>
                               </form>
                               <div class="pt-2 d-flex text-primary justify-content-between w-100 m-2 mt-3">
-                                <div><a href="creerprofil5.php">Pas de profil</a> ?</div>
-                                <div><a href="oublimdp6.php">Mot de passe oublié</a> ?</div>
+                                <div><a href="creerprofil05.php">Pas de profil</a> ?</div>
+                                <div><a href="oublimdp06.php">Mot de passe oublié</a> ?</div>
                               </div>
                             </div>
                           </div>
@@ -646,7 +646,7 @@ function showFiles($deletefile){
   $tab = array();
   echo '
               <div class="container">
-               <form method="post" action="../fichier8.php">
+               <form method="post" action="../fichier08.php">
                 <table class="table table-dark table-striped">
                   <thead>
                     <tr>

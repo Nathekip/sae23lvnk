@@ -44,4 +44,33 @@ function readUser(){
   $user = json_decode($json, true);
   return $user;
 }
+
+
+function getNom($usr=''){
+  $users = readUser();
+  foreach($users as $user){
+    if ($user['user']==$usr){
+      return $user['nom'];
+    }
+  }
+  return '';
+}
+
+function ppTrue($usr){
+  $users = readUser();
+  $users[$usr]['pp']=True;
+  $jsonString = json_encode($users, JSON_PRETTY_PRINT);
+  $fp = fopen("../data/users.json", 'w');
+  fwrite($fp, $jsonString);
+  fclose($fp);
+}
+
+function ppFalse($usr){
+  $users = readUser();
+  $users[$usr]['pp']=False;
+  $jsonString = json_encode($users, JSON_PRETTY_PRINT);
+  $fp = fopen("../data/users.json", 'w');
+  fwrite($fp, $jsonString);
+  fclose($fp);
+}
 ?>
