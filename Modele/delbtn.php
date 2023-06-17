@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../Modèle/users.php');
+include('../Modele/users.php');
 include('../Vue/fonctions.php');
 echo "<pre>";
 print_r($_SESSION);
