@@ -24,5 +24,5 @@ if (($_POST['mdp']=$_POST['cmdp'])&&($_SESSION['role']=='admin'))
 
 }
 
-header('Location: ../Controleur/page06.php');
+header('Location: ../Controleur/gestionuser04.php');
 ?>
