@@ -14,15 +14,28 @@
   <meta charset="UTF-8">
 </head>
 <body>
-        <?php pagenavbar("p04"); ?>
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['action']) && $_POST['action'] === 'addUser') {
+        addUser($_POST['pseudo'], $_POST['nom'], $_POST['mdp'], $_POST['email'], $_POST['departement'], $_POST['role']);
+        header('Location: ../Controleur/gestionuser04.php');
+
+    }
+}
+if (isset($_POST['tcheck']) && isset($_POST['user'])) {
+    $usr = $_POST['user'];
+    $role = $_POST['role'];
+    $mdp = $_POST['mdp'];
+    modUser($usr, $role, $mdp);
+    header('Location: ../Controleur/gestionuser04.php');
+}
+ pagenavbar("p04"); ?>
 
         <h3 class="mb-0 flex-fill text-center">Liste des utilisateurs :</h3><br>
       
         <?php 
-        $jsonString = file_get_contents('../data/users.json');
-
-        // Convertir le contenu JSON en tableau associatif
-        $users = json_decode($jsonString, true);
+        $users = readUser();
         echo showusers($users);
          ?>
         <h3 class="mb-0 flex-fill text-center">Ajouter un utilisateur :</h3><br>
@@ -39,7 +52,7 @@
             <td class="align-middle">
                 <select class="form-select" name="role" required>
                     <option selected disabled>Choisir un rôle</option>
-                    <option value="user">User</option>
+                    <option value="manager">Manager</option>
                     <option value="admin">Admin</option>
                     <option value="visitor">Visiteur</option>
                     <option value="visitor">Employe</option>
@@ -54,21 +67,7 @@
     </table>
 </form>
 
-<?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['action']) && $_POST['action'] === 'addUser') {
-        addUser($_POST['pseudo'], $_POST['nom'], $_POST['mdp'], $_POST['email'], $_POST['departement'], $_POST['role']);
-    }
-}
-if (isset($_POST['tcheck']) && isset($_POST['user'])) {
-    $usr = $_POST['user'];
-    $role = $_POST['role'];
-    $mdp = $_POST['mdp'];
-    modUser($usr, $role, $mdp);
-}
-
-?>
 
         <?php
         pagefooter();
