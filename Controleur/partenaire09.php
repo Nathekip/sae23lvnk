@@ -7,6 +7,9 @@ include('../Modele/partenaire.php');
 <head>
     <?php
     setup();
+    if ( !isset($_SESSION['utilisateur'])){
+    header("Location: ../Controleur/accueil01.php");
+    }
     ?>
     <!--page responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
