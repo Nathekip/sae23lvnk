@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <?php
-      include('../Vue/fonctions.php');
-      setup();
-      if ( ! isset($_SESSION['utilisateur']) ){
-        header("Location: ../Controleur/accueil01.php");    
-      }
-      pagenavbar("p07");
-      $uploadOk = 1;
-      $name = $_SESSION['utilisateur'];
-      $role = $_SESSION['role'];
-      $btn = <<<EOD
-                   <label class="custom-file-upload">
-                     <input type="file" name="Upload" accept="image/png, image/jpeg, image/gif">
-                       <a class="btn btn-warning"> 
-                         <i class="fa fa-cloud-upload"></i>
-                         Changer de photo de profil
-                       </a>
-                     </input>
-                   </label>
-      EOD;
-      $btn2 = <<<EOD
-                   <input class="btn btn-warning" type="submit" value="Valider" name="submit">
-      EOD;
-      $btn3 = <<<EOD
-                    <form class="pt-3" action="monprofil07.php" method="post">
-                      <input class="btn btn-danger text-white btn-outline-dark" type="submit" value="Supprimer la photo de profil" name="remove">
-                    </form>
-      EOD;
-      $nomcomplet = getNom( $_SESSION['utilisateur']);
-      try {
-        $image_PP = explode(" ",$nomcomplet)[0][0].explode(" ",$nomcomplet)[1][0];
-      }
-      catch (Exception $e){
-        $image_PP = 'PP';
-      }    
-      if ($role=="employe"){
-       $role="employé(e);
-      }
-      $card = <<<EOD
-      <div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center mx-auto">
-          <div class="card" style="width:400px">
+
+
+<?php
+include('../Vue/fonctions.php');
+setup();
+if (!isset($_SESSION['utilisateur'])) {
+    header("Location: ../Controleur/accueil01.php");
+}
+pagenavbar("p07");
+$uploadOk = 1;
+$name = $_SESSION['utilisateur'];
+$role = $_SESSION['role'];
+$email = getEmail($name);
+$btn = <<<EOD
+<label class="custom-file-upload">
+    <input type="file" name="Upload">
+    <a class="btn btn-warning"> 
+        <i class="fa fa-cloud-upload"></i>
+        Changer de photo de profil
+    </a>
+    </input>
+</label>
+EOD;
+$btn2 = <<<EOD
+<input class="btn btn-warning" type="submit" value="Valider" name="submit">
+EOD;
+$btn3 = <<<EOD
+<form class="pt-3" action="monprofil07.php" method="post">
+    <input class="btn btn-danger text-white btn-outline-dark" type="submit" value="Supprimer la photo de profil" name="remove">
+</form>
+EOD;
+$nomcomplet = getNom($_SESSION['utilisateur']);
+try {
+    $image_PP = explode(" ", $nomcomplet)[0][0] . explode(" ", $nomcomplet)[1][0];
+} catch (Exception $e) {
+    $image_PP = 'PP';
+}
+
+$card = <<<EOD
+<div class="container-fluid text-center py-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center mx-auto">
+        <div class="card" style="width:400px">
             <img class="card-img-top" src="../images/pp/$name.jpeg" alt="Card image" style="width:100%" onerror="this.src='https://via.placeholder.com/400x400.png?text=$image_PP'">
             <div class="card-body">
-              <h4 class="card-title">$nomcomplet</h4>
-              <p class="card-text">Votre rôle est $role</p>
-              <form action="monprofil07.php" method="post" enctype="multipart/form-data">
-                $btn
-                $btn2
-              </form>
-              $btn3
+                <h4 class="card-title">$nomcomplet</h4>
+                </p>Votre rôle est <strong>$role</strong><br>
+                Votre nom d'utilisateur est <strong>$name</strong><br>
+                Votre adresse email est <strong>$email</strong></p>
+                <form action="monprofil07.php" method="post" enctype="multipart/form-data">
+                    $btn
+                    $btn2
+                </form>
+                $btn3
             </div>
-      EOD;
-      $alerte = '';
-      ?>
+EOD;
+$alerte = '';
+?>
       <style>
         input[type="file"] {
             display: none;
