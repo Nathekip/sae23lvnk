@@ -7,38 +7,37 @@
     pagenavbar("p02");
     // Lecture du fichier JSON
     $json = file_get_contents('../data/voitures.json');
-    // Décodage du JSON en tableau associatif
+    // Décodage du JSON en tableau associatif 
     $data = json_decode($json, true);
     // Stockage des données de voitures dans un tableau
     $voitures = $data['voitures'];
-    shuffle($voitures);
+
     $etat = isset($_POST['etat']) ? $_POST['etat'] : "tous";
-    $couleur = isset($_POST['couleur']) ? $_POST['couleur'] : "toutes";
+    $couleur1 = isset($_POST['couleur']) ? $_POST['couleur'] : "toutes";
     $prix_min = isset($_POST['prix_min']) ? $_POST['prix_min'] : "";
     $prix_max = isset($_POST['prix_max']) ? $_POST['prix_max'] : "";
     $modele1 = isset($_POST['modele1']) ? $_POST['modele1'] : "";
 
-    $tri = null;
     if (isset($_POST['tri'])) {
       $tri_option = $_POST['tri'];
       if ($tri_option == "croissant") {
-        $tri = 'trierParPrixCroissant';
+        usort($voitures, 'trierParPrixCroissant');
       } else if ($tri_option == "decroissant") {
-        $tri = 'trierParPrixDecroissant';
+        usort($voitures, 'trierParPrixDecroissant');
+      } else {shuffle($voitures);
       }
     }
 
-    if ($tri) {
-      usort($voitures, $tri);
-      }
+
     ?>
+    <BR >
     <div class="container">
       <form method="post" class="bg-light p-4 rounded shadow">
         <div class="row">
           <div class="col-md-4">
             <div class="form-group">
-              <label for="modele" class="form-label">Modèle :</label>
-              <input type="text" class="form-control" id="modele1" name="modele1" placeholder="Entrez le modèle de la voiture">
+              <label for="modele" class="form-label">Modèle ou marque:</label>
+              <input type="text" class="form-control" id="modele1" name="modele1" placeholder="Entrez le modèle ou la marque de la voiture">
             </div>
           </div>
           <div class="col-md-4">
@@ -55,48 +54,55 @@
             <div class="form-group">
               <label for="couleur" class="form-label">Couleur :</label>
               <select class="form-control" name="couleur" id="couleur">
-                <option value="toutes" <?php if($couleur=="toutes") echo "selected"; ?>>Toute couleur</option>
-                <option value="noir" <?php if($couleur=="noir") echo "selected"; ?>>Noir</option>
-                <option value="gris" <?php if($couleur=="gris") echo "selected"; ?>>Gris</option>
-                <option value="bleu" <?php if($couleur=="bleu") echo "selected"; ?>>Bleu</option>
-                <option value="rouge" <?php if($couleur=="rouge") echo "selected"; ?>>Rouge</option>
-                <option value="blanc" <?php if($couleur=="blanc") echo "selected"; ?>>Blanc</option>
-                <option value="jaune" <?php if($couleur=="jaune") echo "selected"; ?>>Jaune</option>
-                <option value="argent" <?php if($couleur=="argent") echo "selected"; ?>>Argent</option>
+                <option value="toutes" <?php if($couleur1=="toutes") echo "selected"; ?>>Toute couleur</option>
+                <option value="noir" <?php if($couleur1=="noir") echo "selected"; ?>>Noir</option>
+                <option value="gris" <?php if($couleur1=="gris") echo "selected"; ?>>Gris</option>
+                <option value="bleu" <?php if($couleur1=="bleu") echo "selected"; ?>>Bleu</option>
+                <option value="rouge" <?php if($couleur1=="rouge") echo "selected"; ?>>Rouge</option>
+                <option value="blanc" <?php if($couleur1=="blanc") echo "selected"; ?>>Blanc</option>
+                <option value="jaune" <?php if($couleur1=="jaune") echo "selected"; ?>>Jaune</option>
+                <option value="argent" <?php if($couleur1=="argent") echo "selected"; ?>>Argent</option>
+              </select>
+            </div>
+          </div>
+        </div><BR>
+        <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="prix_min" class="form-label">Prix minimum :</label>
+              <input type="text" class="form-control" id="prix_min" name="prix_min" placeholder="Entrez le prix minimum">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="prix_max" class="form-label">Prix maximum :</label>
+              <input type="text" class="form-control" id="prix_max" name="prix_max" placeholder="Entrez le prix maximum">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="tri_prix" class="form-label">Trier par prix :</label>
+              <select class="form-control" id="tri_prix" name="tri">
+                <option value="">Tous</option>
+                <option value="croissant">Croissant</option>
+                <option value="decroissant">Décroissant</option>
               </select>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="prix_min" class="form-label">Prix minimum :</label>
-                <input type="number" class="form-control" id="prix_min" name="prix_min" value="<?php echo $prix_min; ?>" placeholder="Prix min">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="prix_max" class="form-label">Prix maximum :</label>
-                <input type="number" class="form-control" id="prix_max" name="prix_max" value="<?php echo $prix_max; ?>" placeholder="Prix max">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <select name="tri" class="form-select mb-2">
-              <option value="" selected>Trier par prix</option>
-              <option value="croissant">Prix croissant</option>
-              <option value="decroissant">Prix décroissant</option>
-            </select>
-          </div>
+        <BR>
         </div>
         <div class="row justify-content-center">
           <button type="submit" class="btn btn-outline-secondary">Filtrer</button>
         </div>
       </form>
       <div class="row mt-5">
-        <?php afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $modele1); ?>
+        <?php afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $modele1); ?>
       </div>
     </div>
+
+
+
   </body>
 </html>    
