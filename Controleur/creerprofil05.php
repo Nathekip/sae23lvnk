@@ -100,7 +100,7 @@
                                                 <button type="submit" name="send" class="btn btn-outline-primary btn-dark text-white btn-lg">S\'inscrire</button>
                                               </div>
                                               <div class="px-2">
-                                                <a href="page01.php" class="btn btn-outline-info btn-dark text-white btn-lg">Se connecter</a>
+                                                <a href="../Controleur/accueil01.php" class="btn btn-outline-info btn-dark text-white btn-lg">Se connecter</a>
                                               </div>
                                             </div>
                                           </form>
