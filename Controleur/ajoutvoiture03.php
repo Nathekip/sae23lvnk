@@ -79,7 +79,7 @@
                 <select class="form-control" id="carburant" name="carburant" required>
                     <option value="Essence">Essence</option>
                     <option value="Diesel">Diesel</option>
-                    <option value="Hybrid">Hybrid</option>
+                    <option value="Hybrid">Hybride</option>
                     <option value="Electrique">Electrique</option>
                 </select>
             </div>

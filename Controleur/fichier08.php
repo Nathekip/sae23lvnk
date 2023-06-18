@@ -52,7 +52,7 @@
         $alerte =  <<<EOD
                       <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                        <strong>Erreur</strong> Vous n'êtes pas autorisé à upload un fichier
+                        <strong>Erreur</strong> Vous n'êtes pas autorisé(e) à upload un fichier
                       </div>
                       EOD;
       }
