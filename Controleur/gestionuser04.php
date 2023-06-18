@@ -4,6 +4,12 @@
     <?php
         include('../Vue/fonctions.php');
         setup();
+        if ($_SESSION['role'] !==  "admin") {
+            header('Location: ../Controleur/accueil01.php');
+        }
+        /*if ( !isset($_SESSION['utilisateur'])){
+            header("Location: ../Controleur/accueil01.php");
+        }*/
     ?>
   <meta charset="UTF-8">
 </head>

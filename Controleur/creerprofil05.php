@@ -4,9 +4,22 @@
         <?php
             include('../Vue/fonctions.php');
             setup();
+            if ( !isset($_SESSION['utilisateur'])){
+            header("Location: ../Controleur/accueil01.php");
+            }
             # set var base
             if ( !isset($_SESSION['MdpBool']) ){ $_SESSION['MdpBool'] = False; }
             if ( !isset($_SESSION['CmdpBool']) ){ $_SESSION['CmdpBool'] = False; }
+            if ( !isset($_POST['mdpoeil']) ){ $_POST['mdpoeil'] = ''; }
+            if ( !isset($_POST['cmdpoeil']) ){ $_POST['cmdpoeil'] = ''; }
+            if ( !isset($_POST['prenom']) ){ $_POST['prenom'] = ''; }
+            if ( !isset($_POST['nom']) ){ $_POST['nom'] = ''; }
+            if ( !isset($_POST['rep']) ){ $_POST['rep'] = ''; }
+
+            $BoolUtilisateur = ($_POST['nom'] !== '') && ($_POST['prenom'] !== ''); //condition de remplissage de nom et prénom
+            if ($BoolUtilisateur) {
+              $nomuser = strtolower($_POST['prenom'][0].$_POST['nom']); //création nomuser
+            }
         ?>
       <meta charset="UTF-8">
     </head>
@@ -24,17 +37,24 @@
                                     <div>
                                       <div class="row justify-content-center">
                                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 pt-5 order-lg-1">
-                                          <img src="images/Register.jpg" class="img-fluid rounded" alt="Sample image">
+                                          <img src="../images/Register.jpg" class="img-fluid rounded" alt="Sample image">
                                         </div>
                                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                                           <form action="creerprofil05.php" method="post" class="mx-1 mx-md-4">
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-duotone fa-user fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="utilisateur">Nom :</label>
-                                                <input value="phrNom" type="text" placeholder="Votre pseudo" name="utilisateur" id="utilisateur" class="form-control" />
+                                                <label class="form-label" for="prenom">Prénom :</label>
+                                                <input value="phrPrenom" type="text" placeholder="Votre prénom" name="prenom" id="prenom" class="form-control" />
                                               </div>
                                             </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-duotone fa-signature fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                              <label class="form-label" for="nom">Nom :</label>
+                                              <input value="phrNom" type="text" placeholder="Votre nom" name="nom" id="nom" class="form-control" />
+                                            </div>
+                                          </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
@@ -141,13 +161,13 @@
                         if ( $_POST['mdpoeil'] || $_POST['cmdpoeil'] ){
                           $formulaire = str_replace("phrMdp",$_POST['mdp'],$formulaire);
                           $formulaire = str_replace("phrCmdp",$_POST['cmdp'],$formulaire);
-                          $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                          $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                          $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                           $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                           $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                         }
                            
-                        $json = file_get_contents('../data/users.json');
-                        $user = json_decode($json, true);
+                        $user = readUser();
                         /* echo '<br><pre> data/users.json :<br>';
                         print_r($user);
                         echo '</pre>'; */
@@ -156,30 +176,32 @@
                         # alertes
                         if ( isset($_POST['send']) ) {
                           # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
-                          if ( (in_array("", array_slice($_POST, 0, 4)) ) && ( isset($_POST['utilisateur'])  ) ){ 
+                          if ( (in_array("", array_slice($_POST, 0, 4)) ) && $BoolUtilisateur ){ 
                           # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
                                     </div>";
-                              $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                              $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                              $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                               $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                               $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                               $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                               $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                           } 
-                          # alerte Condition d'utilisation / (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))
-                          else if (       (!isset($_POST['condu'])) && (isset($_POST['utilisateur']))   ) {
+                          # alerte Condition d'utilisation / (!isset($_POST['condu'])) && $BoolUtilisateur
+                          else if (       (!isset($_POST['condu'])) && $BoolUtilisateur  ) {
                               echo "<div class='alert alert-warning'>
                                       <strong>Erreur</strong> Veuillez accepter les Conditions d'utilisation.
                                     </div>";
-                              $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                              $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                              $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                               $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                               $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                               $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                               $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                           }
-                          # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )   )
-                          else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['utilisateur']; }  )))  ){
+                          # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $nomuser; }  )   )
+                          else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $nomuser; }  )))  ){
                           # la fonction array.filter filtre un array selon une fonction
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> Le pseudo n'est pas disponible.
@@ -195,7 +217,8 @@
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> L'adresse mail est déjà utilisée.
                                     </div>";
-                              $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                              $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                              $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                               $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                               $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                               $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
@@ -206,7 +229,8 @@
                               echo "<div class='alert alert-warning'>
                                       <strong>Erreur</strong> Mot de passe non conforme (Au moins 8 charactères, 1 charactère spécial, 1 majuscule).
                                     </div>";
-                              $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                              $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                              $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                               $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                               $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                           }
@@ -215,7 +239,8 @@
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> Les deux mots de passe tapés ne correspondent pas.
                                      </div>";
-                              $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                              $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                              $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                               $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                               $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                           }
@@ -224,19 +249,22 @@
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> Vous devez fournir une réponse à la question d'authentification, si vous en voulez une.
                                      </div>";
-                              $formulaire = str_replace('phrNom', $_POST['utilisateur'], $formulaire);
+                              $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                              $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                               $formulaire = str_replace('phrMail', $_POST['mail'], $formulaire);
                               $formulaire = str_replace('phrMdp', $_POST['mdp'], $formulaire);
                               $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                           }
-                          else if ( isset($_POST['utilisateur']) ){
-                              addUser($_POST['utilisateur'], $_POST['mdp'], $_POST['mail'], $_POST['dep'],"user", $_POST['question'], $_POST['reponse']);
-                              echo "<div class='alert alert-success'>
+                          else if ( $BoolUtilisateur ){
+                            $nomcomplet = $_POST['prenom']." ".$_POST['nom'];
+                            addUser($nomuser, $nomcomplet, $_POST['mdp'], $_POST['mail'], $_POST['dep'],"user", $_POST['question'], $_POST['reponse']);
+                            echo "<div class='alert alert-success'>
                                       <strong>Succès</strong> Le compte a bien été créé.
                                      </div>";
                           }
                         }
-                        $formulaire = str_replace('phrNom', '', $formulaire);
+                        $formulaire = str_replace('phrPrenom', $_POST['prenom'], $formulaire);
+                        $formulaire = str_replace('phrNom', $_POST['nom'], $formulaire);
                         $formulaire = str_replace('phrMail', '', $formulaire);
                         $formulaire = str_replace('phrMdp', '', $formulaire);
                         $formulaire = str_replace('phrCmdp', '', $formulaire);

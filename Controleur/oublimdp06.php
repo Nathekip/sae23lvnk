@@ -4,6 +4,9 @@
       <?php
           include('../Vue/fonctions.php');
           setup();
+          if (!isset($_POST['mail'])){
+            $_POST['mail']='';
+          }
       ?>
     <meta charset="UTF-8">
   </head>
@@ -47,17 +50,17 @@
                 }
       
                 # phase email - Test
-                else if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
+                else if ( ( $_POST['mail'] == "" ) && isset($_POST['envoimail']) ){
                   $alerte = "<div class='alert alert-warning'>
                           Veuillez renseigner votre adresse mail.
                         </div>";
                 }
-                else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
+                else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['envoimail'])) {
                  $alerte = "<div class='alert alert-warning'>
                           Cette adresse mail n'est pas liée à un compte.
                         </div>";
                 }
-                else if (isset($_POST['mail']) ){
+                else if (isset($_POST['envoimail']) ){
                   $alerte = "";
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0];
                   if ( $_SESSION['usermodif']['question'] == 0 ){
@@ -141,7 +144,7 @@
                           <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
                         </div>
                         <div class="mb-3 d-grid">
-                          <button type="submit" class="btn btn-warning">
+                          <button type="submit" name="envoimail" class="btn btn-warning">
                             Confirmer l\'adresse mail
                           </button>
                         </div>
@@ -151,8 +154,9 @@
                 $question = ["Quel était le nom de votre premier animal de compagnie ?","Dans quelle ville êtes vous né ?","Quel est le premier artiste ou groupe que vous avez vu en concert ?"];
                 #$clequestion = $_SESSION['usermodif']['question']-1;
                 #echo $question[$clequestion];
-                $formulaire = str_replace("PlaceholderQuestionSecurite",$question[$_SESSION['usermodif']['question']-1], $formulaire);
-      
+                if (isset($_SESSION['usermodif']['question'])) {
+                  $formulaire = str_replace("PlaceholderQuestionSecurite",$question[$_SESSION['usermodif']['question']-1], $formulaire);
+                }
                 # test oeil
                 if ( isset($_POST['mdpoeil']) ){ $_SESSION['MdpBool'] = ! $_SESSION['MdpBool']; }
                 if ( isset($_POST['cmdpoeil']) ){ $_SESSION['CmdpBool'] = ! $_SESSION['CmdpBool']; }
@@ -192,8 +196,7 @@
                     $formulaire = str_replace("PhrMdp",$_POST['mdp'],$formulaire);
                 }
                 else if ( isset($_POST['envoi']) ){
-                    deleteUser($_SESSION['usermodif']['user']);
-                    addUser($_SESSION['usermodif']['user'],$_POST['mdp'],$_SESSION['usermodif']['mail'],$_SESSION['usermodif']['role']);                    
+                    changePwd($_SESSION['usermodif']['user'],$_POST['mdp']);                    
                     $alerte = "<div class='alert alert-success'>
                             <strong>Succès</strong> Le mot de passe a bien été modifié.
                            </div>";
@@ -207,7 +210,7 @@
                         </p>
                       </div>
                       <div class="mb-3 mx-5 py-4 d-grid">
-                        <a href="page01.php" class="btn text-white btn-outline-warning btn-dark">
+                        <a href="../Controleur/accueil01.php" class="btn text-white btn-outline-warning btn-dark">
                             Se connecter
                           </a>                        
                       </div>

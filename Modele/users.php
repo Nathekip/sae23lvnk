@@ -60,6 +60,14 @@ function readUser(){
   return $user;
 }
 
+function changePwd($usr, $mdp){
+  $users = readUser();
+  $users[$usr]['mdp'] = password_hash($mdp,PASSWORD_DEFAULT);
+  $jsonString = json_encode($users, JSON_PRETTY_PRINT);
+  $fp = fopen("../data/users.json", 'w');
+  fwrite($fp, $jsonString);
+  fclose($fp);  
+}
 
 function getNom($usr=''){
   $users = readUser();

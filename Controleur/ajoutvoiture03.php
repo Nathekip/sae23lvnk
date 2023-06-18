@@ -4,6 +4,9 @@
     <?php
     include('../Vue/fonctions.php');
     setup();
+    if ( !isset($_SESSION['utilisateur'])){
+    header("Location: ../Controleur/accueil01.php");
+    }
     pagenavbar("p03");
     ?><br ><br >
     <form id="car-form" method="post" class="text-center" enctype="multipart/form-data">

@@ -255,37 +255,39 @@ function fondateurs(){
         $output = '';
     
         // Section "Nos indispensables partenaires"
-        $output .= <<<EOD
-        <section>
-        <div class="container">
-            <h2 class="fw-bold text-center text-uppercase">Nos indispensables partenaires</h2><br><br><br>
-        </div>
-        <div class="container">
-            <div class="row">
-        EOD;
-    
-        foreach ($partners as $partner) {
+        if (!empty(getPartenaire()){
             $output .= <<<EOD
-                <div class="col-lg-4">
-                    <div class="d-flex justify-content-center mb-4">
-                        <img src="{$partner['photo']}" alt="{$partner['nom']}" class="img-thumbnail" style="width: 200px;">
-                    </div>
-                    <div class="text-center">
-                        <h5>{$partner['nom']}</h5>
-                        <p>{$partner['description']}</p>
-                    </div>
-                </div>
-            EOD;
-        }
-    
-        // Fermeture des balises de la section
-        $output .= <<<EOD
+            <section>
+            <div class="container">
+                <h2 class="fw-bold text-center text-uppercase">Nos indispensables partenaires</h2><br><br><br>
             </div>
-        </div>
-        </section>
-        EOD;
-    
-        echo $output;
+            <div class="container">
+                <div class="row">
+            EOD;
+        
+            foreach ($partners as $partner) {
+                $output .= <<<EOD
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="{$partner['photo']}" alt="{$partner['nom']}" class="img-thumbnail" style="width: 200px;">
+                        </div>
+                        <div class="text-center">
+                            <h5>{$partner['nom']}</h5>
+                            <p>{$partner['description']}</p>
+                        </div>
+                    </div>
+                EOD;
+            }
+        
+            // Fermeture des balises de la section
+            $output .= <<<EOD
+                </div>
+            </div>
+            </section>
+            EOD;
+        
+            echo $output;
+        }
     }
     
 ?>
