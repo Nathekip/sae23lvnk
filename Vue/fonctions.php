@@ -592,7 +592,7 @@ function showFiles(){
   $files = getFiles();
   echo '
               <div class="container">
-               <form method="post" action="../fichier08.php">
+               <form method="post" action="../Controleur/fichier08.php">
                 <table class="table table-dark table-striped">
                   <thead>
                     <tr>
