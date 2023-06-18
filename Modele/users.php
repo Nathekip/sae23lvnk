@@ -69,6 +69,16 @@ function changePwd($usr, $mdp){
   fclose($fp);  
 }
 
+function getEmail($usr=''){
+  $users = readUser();
+  foreach($users as $user){
+    if ($user['user']==$usr){
+      return $user['mail'];
+    }
+  }
+  return '';
+}
+
 function getNom($usr=''){
   $users = readUser();
   foreach($users as $user){
