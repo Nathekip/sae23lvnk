@@ -19,7 +19,7 @@
             if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
               $files = getFiles();
       
-              $_FILES["Upload"]['date'] = date("j/n/Y H:i");
+              $_FILES["Upload"]['date'] = date("j/n/Y H:i", strtotime(' + 2 hours'));
               $_FILES["Upload"]['size'] = formatBytes($_FILES["Upload"]['size']);
               $_FILES["Upload"]['author'] = getNom($_SESSION['utilisateur']);
               $_FILES["Upload"]['type'] = pathinfo($_FILES["Upload"]['name'], PATHINFO_EXTENSION);
