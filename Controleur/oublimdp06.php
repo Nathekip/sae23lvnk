@@ -50,17 +50,17 @@
                 }
       
                 # phase email - Test
-                else if ( ( $_POST['mail'] == "" ) && isset($_POST['mail']) ){
+                else if ( ( $_POST['mail'] == "" ) && isset($_POST['envoimail']) ){
                   $alerte = "<div class='alert alert-warning'>
                           Veuillez renseigner votre adresse mail.
                         </div>";
                 }
-                else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['mail'])) {
+                else if ( ( empty( array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; })))  && isset($_POST['envoimail'])) {
                  $alerte = "<div class='alert alert-warning'>
                           Cette adresse mail n'est pas liée à un compte.
                         </div>";
                 }
-                else if (isset($_POST['mail']) ){
+                else if (isset($_POST['envoimail']) ){
                   $alerte = "";
                   $_SESSION['usermodif'] = array_values(array_filter($user, function($u) use ($recherche) { return $u['mail'] === $_POST['mail']; }))[0];
                   if ( $_SESSION['usermodif']['question'] == 0 ){
@@ -144,7 +144,7 @@
                           <input type="input" id="email" class="form-control" name="mail" placeholder="Entrez votre email">
                         </div>
                         <div class="mb-3 d-grid">
-                          <button type="submit" class="btn btn-warning">
+                          <button type="submit" name="envoimail" class="btn btn-warning">
                             Confirmer l\'adresse mail
                           </button>
                         </div>
