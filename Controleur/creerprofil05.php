@@ -335,7 +335,6 @@
           </div>
         </div>
     <?php
-        pr();
         pagefooter();
     ?>
     </body>
