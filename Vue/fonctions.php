@@ -326,6 +326,7 @@ function showusers($users) {
       if (isset($_POST['delbtn']) && isset($_POST['user'])) {
         $usr = $_POST['user'];
         deleteUser($usr);
+        header('Location: ../Controleur/gestionuser04.php');
     }
   }
 
