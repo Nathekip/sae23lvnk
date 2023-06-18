@@ -255,7 +255,7 @@ function fondateurs(){
         $output = '';
     
         // Section "Nos indispensables partenaires"
-        if (!empty(getPartenaire()){
+        if (!empty(getPartenaire())){
             $output .= <<<EOD
             <section>
             <div class="container">
