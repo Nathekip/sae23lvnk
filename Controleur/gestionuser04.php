@@ -5,7 +5,7 @@
         include('../Vue/fonctions.php');
         setup();
         if ($_SESSION['role'] !==  "admin") { 
-            header('Location: ../Controleur/accueil01.php');
+        header('Location: ../Controleur/accueil01.php');
         }
     ?>
   <meta charset="UTF-8">
