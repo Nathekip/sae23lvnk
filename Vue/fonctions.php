@@ -382,24 +382,23 @@ function trierParPrixCroissant($a, $b) {
 function trierParPrixDecroissant($a, $b) {
   return $b['prix'] - $a['prix'];
 }
-function afficherVoitures($voitures, $etat, $couleur, $prix_min, $prix_max, $modele1)
+function afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $modele1)
 {
   foreach($voitures as $index => $voiture)
   {
-    if(($etat == "tous" || $voiture['etat'] == $etat) && ($couleur == "toutes" || $voiture['couleur'] == $couleur))
-    {
+    if (($etat == "tous" || $voiture['etat'] == $etat) && ($couleur1 == "toutes" || $couleur1 == "toutes" || $couleur1 == $voiture['couleur'])) {
+      
       $prix = $voiture['prix'];
-      if(($prix_min == "" || $prix >= $prix_min) && ($prix_max == "" || $prix <= $prix_max) && (empty($modele1) || stristr($voiture['modele'], $modele1)))
+      if(($prix_min == "" || $prix >= $prix_min) && ($prix_max == "" || $prix <= $prix_max) && (empty($modele1) || stristr($voiture['modele'], $modele1) || stristr($voiture['marque'], $modele1)))
       {
         $modele = $voiture['modele'];
         $marque = $voiture['marque'];
         $prix = $voiture['prix'];
-        $couleur= $voiture['couleur'];
         $description = $voiture['description'];
         $image = $voiture['image'];
         $annee = $voiture['annee'];
         $couleur = $voiture['couleur'];
-	$newkilometre = "";
+	      $newkilometre = "";
         if ($voiture['kilometrage'] === null) {
         $newkilometre = "0 km";
 	}
