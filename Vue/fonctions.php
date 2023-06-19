@@ -282,50 +282,50 @@ function showusers($users) {
       $selectedEmploye = ($user['role'] == 'employe') ? 'selected' : '';
 
 
-      $rep .= <<<EOT
-        <tr>
-            <th scope="row">{$user['user']}</th>
-            <td>
-            <form action="" method="post">
-                <input type="hidden" name="user" value="{$user['user']}">
-                <select class="form-control" name="role">
-                    <option value="visiteur" $selectedVisiteur>Visiteur</option>
-                    <option value="communication" $selectedCommunication>Communication</option>
-                    <option value="admin" $selectedAdmin>Admin</option>
-                    <option value="manager" $selectedManager>Manager</option>
-	            <option value="employe" $selectedEmploye>Employe</option>
-
-                </select>
-        </td>
-        <td>
-            <div class="form-group">
-                <input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
-            </div>
-        </td>
-        <td>
-            <div class="form-group">
-                <input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
-            </div>
-        </td>
-        <td>
-            <button type="submit" class="btn btn-success rounded-pill" name="tcheck">
-                <i class="fa-solid fa-check"></i>
-            </button>
-        </td>
-        </form>
-      
-          </td>
-          <td>
-            <form method="post">
-                <input type="hidden" name="user" value="{$user['user']}">
-                <button type="submit" class="btn btn-danger rounded-pill" name="delbtn">
-                    <i class="fa-regular fa-circle-xmark"></i>
-                </button>
-            </form>
-        </td>
-      
-      </tr>
-      EOT;
+      $rep .= <<<EOD
+			<tr>
+			    <th scope="row">{$user['user']}</th>
+			    <td>
+			    <form action="" method="post">
+				<input type="hidden" name="user" value="{$user['user']}">
+				<select class="form-control" name="role">
+				    <option value="visiteur" $selectedVisiteur>Visiteur</option>
+				    <option value="communication" $selectedCommunication>Communication</option>
+				    <option value="admin" $selectedAdmin>Admin</option>
+				    <option value="manager" $selectedManager>Manager</option>
+				    <option value="employe" $selectedEmploye>Employe</option>
+		
+				</select>
+			</td>
+			<td>
+			    <div class="form-group">
+				<input type="password" class="form-control rounded-pill" id="mdp" placeholder="Mot de passe" name="mdp">
+			    </div>
+			</td>
+			<td>
+			    <div class="form-group">
+				<input type="password" class="form-control rounded-pill" id="cmdp" placeholder="Confirmation" name="cmdp">
+			    </div>
+			</td>
+			<td>
+			    <button type="submit" class="btn btn-success rounded-pill" name="tcheck">
+				<i class="fa-solid fa-check"></i>
+			    </button>
+			</td>
+			</form>
+		      
+			  </td>
+			  <td>
+			    <form method="post">
+				<input type="hidden" name="user" value="{$user['user']}">
+				<button type="submit" class="btn btn-danger rounded-pill" name="delbtn">
+				    <i class="fa-regular fa-circle-xmark"></i>
+				</button>
+			    </form>
+			</td>
+		      
+		      </tr>
+		      EOD;
       if (isset($_POST['delbtn']) && isset($_POST['user'])) {
         $usr = $_POST['user'];
         deleteUser($usr);
