@@ -441,6 +441,12 @@ function afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $mo
               $stars3 .= '<i class="far fa-star"></i>';
             }
         }
+	$btnsuppr = '<div class="pt-3">
+                    <form action="../Controleur/voiture02.php" method="post">
+                      <button class="btn btn-danger" name="suppressionvoiture" value="'.$voiture["marque"].'/'.$voiture["modele"].'/'.$voiture["annee"].'/'.$voiture["prix"].'/'.$voiture["etat"].'/'.$voiture["kilometrage"].'/'.$voiture["couleur"].'/'.$voiture["carburant"].'/'.$voiture["boite"].'" type="submit">Supprimer la voiture</button>
+                    </form>
+                  </div>
+                  ';
         echo <<<EOD
                    <div class="col-md-3 mb-3">
                      <img src="$image" class="card-img-top" alt="Photo de la voiture">
@@ -474,6 +480,9 @@ function afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $mo
                             	<div class="col-md-6">
                             		<button type="button" class="btn btn-secondary rounded-3" data-bs-toggle="modal" data-bs-target="#myModal$index">Voir plus</button>
                             	</div>
+                          </div>
+			  <div>
+                            $btnsuppr
                           </div>
                        </div>
                      </div>
