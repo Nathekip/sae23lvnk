@@ -275,6 +275,7 @@
         </div>
       </div>
     </div>
+    <br><br><br>
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
