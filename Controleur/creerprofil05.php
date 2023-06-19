@@ -4,19 +4,15 @@
         <?php
             include('../Vue/fonctions.php');
             setup();
+            pr();
             # set var base
             if ( !isset($_SESSION['MdpBool']) ){ $_SESSION['MdpBool'] = False; }
             if ( !isset($_SESSION['CmdpBool']) ){ $_SESSION['CmdpBool'] = False; }
-            if ( !isset($_POST['mdpoeil']) ){ $_POST['mdpoeil'] = ''; }
-            if ( !isset($_POST['cmdpoeil']) ){ $_POST['cmdpoeil'] = ''; }
             if ( !isset($_POST['prenom']) ){ $_POST['prenom'] = ''; }
             if ( !isset($_POST['nom']) ){ $_POST['nom'] = ''; }
             if ( !isset($_POST['rep']) ){ $_POST['rep'] = ''; }
 
             $BoolUtilisateur = ($_POST['nom'] !== '') && ($_POST['prenom'] !== ''); //condition de remplissage de nom et prénom
-            if ($BoolUtilisateur) {
-              $nomuser = strtolower($_POST['prenom'][0].$_POST['nom']); //création nomuser
-            }
         ?>
       <meta charset="UTF-8">
     </head>
@@ -46,12 +42,19 @@
                                               </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-duotone fa-signature fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                              <label class="form-label" for="nom">Nom :</label>
-                                              <input value="phrNom" type="text" placeholder="Votre nom" name="nom" id="nom" class="form-control" />
+                                              <i class="fas fa-duotone fa-signature fa-lg me-3 fa-fw"></i>
+                                              <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="nom">Nom :</label>
+                                                <input value="phrNom" type="text" placeholder="Votre nom" name="nom" id="nom" class="form-control" />
+                                              </div>
                                             </div>
-                                          </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                              <i class="fas fa-duotone fa-file-signature fa-lg me-3 fa-fw"></i>
+                                              <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="nomuser">Nom d\'utilisateur :</label>
+                                                <input value="phrNom" type="text" placeholder="Votre nom d\'utilisateur" name="nomuser" id="nomuser" class="form-control" />
+                                              </div>
+                                            </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                               <div class="form-outline flex-fill mb-0">
@@ -173,7 +176,7 @@
                         # alertes
                         if ( isset($_POST['send']) ) {
                           # alerte Champ vide / in_array("", array_slice($_POST, 0, 4))
-                          if ( (in_array("", array_slice($_POST, 0, 4)) ) && $BoolUtilisateur ){ 
+                          if ( (in_array("", array_slice($_POST, 0, 7)) ) && $BoolUtilisateur ){ 
                           # la fonction array_slice(array, offset, length) permet de récupérer seulement les 4 premiers éléments du tableau
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> Vous n'avez pas rempli tous les champs.
@@ -197,8 +200,8 @@
                               $formulaire = str_replace('phrCmdp', $_POST['cmdp'], $formulaire);
                               $formulaire = str_replace('phrRep', $_POST['rep'], $formulaire);
                           }
-                          # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $nomuser; }  )   )
-                          else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $nomuser; }  )))  ){
+                          # alerte pseudo déjà pris / ( !empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['nomuser']; }  )   )
+                          else if (   (!empty( array_filter(   $user, function($u) use ($recherche)  { return $u['user'] === $_POST['nomuser']; }  )))  ){
                           # la fonction array.filter filtre un array selon une fonction
                               echo "<div class='alert alert-danger'>
                                       <strong>Erreur</strong> Le pseudo n'est pas disponible.
@@ -254,7 +257,7 @@
                           }
                           else if ( $BoolUtilisateur ){
                             $nomcomplet = $_POST['prenom']." ".$_POST['nom'];
-                            addUser($nomuser, $nomcomplet, $_POST['mdp'], $_POST['mail'], $_POST['dep'],"user", $_POST['question'], $_POST['reponse']);
+                            addUser($_POST['nomuser'], $nomcomplet, $_POST['mdp'], $_POST['mail'], $_POST['dep'],"user", $_POST['question'], $_POST['reponse']);
                             echo "<div class='alert alert-success'>
                                       <strong>Succès</strong> Le compte a bien été créé.
                                      </div>";
