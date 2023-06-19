@@ -7,16 +7,13 @@ include('../Modele/partenaire.php');
 <head>
     <?php
     setup();
-    if ( !isset($_SESSION['utilisateur'])){
-    header("Location: ../Controleur/accueil01.php");
-    }
     ?>
     <!--page responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <?php
-    pagenavbar("p09");
+    pagenavbar($page="");
     // Traitement du formulaire d'ajout de partenaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nom = $_POST['nom'];
@@ -70,12 +67,23 @@ include('../Modele/partenaire.php');
             <br/>
 
             <div class="form-group">
-                <label for="photo">Photo :</label>
-                <input type="file" name="photo" id="photo" class="form-control-file" accept="image/png, image/jpeg, image/gif" required>
+                <label for="photo" class="custom-file-upload">
+                    <input type="file" name="photo" id="photo" class="form-control-file" required>
+                    <a class="btn btn-warning"> 
+                        <i class="fa fa-cloud-upload"></i>
+                        Choisir une photo
+                    </a>
+                </label>
             </div>
+            <style>
+            input[type="file"] {
+            display: none;
+            }
+            </style>
+
             <br/>
 
-            <button type="submit" class="btn btn-primary">Ajouter le partenaire</button>
+            <button type="submit" class="btn btn-warning" style="color: white;">Ajouter le partenaire</button>
         </form>
 
         <h2 class="mt-5">Liste des partenaires</h2>
