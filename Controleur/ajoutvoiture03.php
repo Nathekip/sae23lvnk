@@ -206,8 +206,8 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Récupérer les données du formulaire
-      $marque = $_POST["marque"];
-      $modele = $_POST["modele"];
+      $marque = htmlspecialchars($_POST["marque"], ENT_QUOTES, 'UTF-8');
+      $modele = htmlspecialchars($_POST["modele"], ENT_QUOTES, 'UTF-8');
       $annee = intval($_POST["annee"]);
       $prix = floatval($_POST["prix"]);
       $etat = $_POST["etat"];
@@ -215,7 +215,7 @@
       $couleur = $_POST["couleur"];
       $carburant = $_POST["carburant"];
       $boite = $_POST["boite"];
-      $description = $_POST["description"];
+      $description = htmlspecialchars($_POST["description"], ENT_QUOTES, 'UTF-8');
       $puissance = intval($_POST["puissance"]);
       $maniabilite = intval($_POST["maniabilite"]);
       $fiabilite = intval($_POST["fiabilite"]);
