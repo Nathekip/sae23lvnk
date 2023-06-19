@@ -13,7 +13,6 @@ function setup() {
 	        <script src="../Vue/fonction.js"></script>
           <body class="bg-secondary bg-opacity-25"></body>
         ';
-    
     $listetitre = ["Test","Page d'accueil","Trouver une voiture","Ajout de voiture","Gestion de user","Création de Profil","Mot de passe oublié","Mon Profil","Partage de Fichiers","Gestion de Partenaires"];
     $rep = $listetitre[intval(substr(basename($_SERVER["SCRIPT_NAME"], ".php"), -1))];
     if ($rep == NULL){
@@ -480,10 +479,7 @@ function afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $mo
                             	<div class="col-md-6">
                             		<button type="button" class="btn btn-secondary rounded-3" data-bs-toggle="modal" data-bs-target="#myModal$index">Voir plus</button>
                             	</div>
-                          </div>
-			  <div>
-                            $btnsuppr
-                          </div>
+                          </div><div>$btnsuppr</div>
                        </div>
                      </div>
                    </div>
