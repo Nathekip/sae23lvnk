@@ -4,7 +4,6 @@
         <?php
             include('../Vue/fonctions.php');
             setup();
-            pr();
             # set var base
             if ( !isset($_SESSION['MdpBool']) ){ $_SESSION['MdpBool'] = False; }
             if ( !isset($_SESSION['CmdpBool']) ){ $_SESSION['CmdpBool'] = False; }
