@@ -401,7 +401,7 @@ function afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $mo
         $couleur = $voiture['couleur'];
 	      $newkilometre = "";
         if ($voiture['kilometrage'] === null) {
-        $newkilometre = "0 km";
+        $newkilometre = "0";
 	}
 	else{
 	$newkilometre = $voiture['kilometrage'];
