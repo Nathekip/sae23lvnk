@@ -3,6 +3,7 @@
   <body>
     <?php
     include('../Vue/fonctions.php');
+    include('../Modele/voitures.php);
     setup();
     pagenavbar("p02");
     // Lecture du fichier JSON
@@ -101,5 +102,13 @@
         <?php afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $modele1); ?>
       </div>
     </div>
+    <?php
+    // Suppression de voiture
+    if (isset($_POST['suppressionvoiture'])){
+      $caracteristiques = explode("/",$_POST['suppressionvoiture']);
+      deleteVoiture($caracteristiques);
+      header("Location : ../Controleur/voiture02.php");
+    }
+    ?>
   </body>
 </html>

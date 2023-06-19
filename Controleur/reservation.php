@@ -105,17 +105,5 @@ pagenavbar("");
     </div>
   </div>
 
-  <script>
-    function validateForm() {
-      var nom = document.getElementById('nom').value;
-      var prenom = document.getElementById('prenom').value;
-      var nomRegex = /^[a-zA-Z\s]*$/;
-
-      if (!nomRegex.test(nom) || !nomRegex.test(prenom)) {
-        alert('Veuillez entrer uniquement des caractères autorisés pour le nom et le prénom.');
-        return false;
-      }
-    }
-  </script>
 </body>
 </html>
