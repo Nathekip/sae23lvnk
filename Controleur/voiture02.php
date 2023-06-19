@@ -12,11 +12,11 @@
     // Stockage des données de voitures dans un tableau
     $voitures = $data['voitures'];
 
-    $etat = isset($_POST['etat']) ? $_POST['etat'] : "tous";
-    $couleur1 = isset($_POST['couleur']) ? $_POST['couleur'] : "toutes";
-    $prix_min = isset($_POST['prix_min']) ? $_POST['prix_min'] : "";
-    $prix_max = isset($_POST['prix_max']) ? $_POST['prix_max'] : "";
-    $modele1 = isset($_POST['modele1']) ? $_POST['modele1'] : "";
+    $etat = isset($_POST['etat']) ? filter_input(INPUT_POST, 'etat', FILTER_SANITIZE_STRING) : "tous";
+    $couleur1 = isset($_POST['couleur']) ? filter_input(INPUT_POST, 'couleur', FILTER_SANITIZE_STRING) : "toutes";
+    $prix_min = isset($_POST['prix_min']) ? filter_input(INPUT_POST, 'prix_min', FILTER_SANITIZE_NUMBER_FLOAT) : "";
+    $prix_max = isset($_POST['prix_max']) ? filter_input(INPUT_POST, 'prix_max', FILTER_SANITIZE_NUMBER_FLOAT) : "";
+    $modele1 = isset($_POST['modele1']) ? filter_input(INPUT_POST, 'modele1', FILTER_SANITIZE_STRING) : "";
 
     if (isset($_POST['tri'])) {
       $tri_option = $_POST['tri'];
@@ -24,20 +24,19 @@
         usort($voitures, 'trierParPrixCroissant');
       } else if ($tri_option == "decroissant") {
         usort($voitures, 'trierParPrixDecroissant');
-      } else {shuffle($voitures);
+      } else {
+        shuffle($voitures);
       }
     }
-
-
     ?>
-    <BR >
+    <BR>
     <div class="container">
       <form method="post" class="bg-light p-4 rounded shadow">
         <div class="row">
           <div class="col-md-4">
             <div class="form-group">
               <label for="modele" class="form-label">Modèle ou marque:</label>
-              <input type="text" class="form-control" id="modele1" name="modele1" placeholder="Entrez le modèle ou la marque de la voiture">
+              <input type="text" class="form-control" id="modele1" name="modele1" placeholder="Entrez le modèle ou la marque de la voiture" value="<?php echo htmlspecialchars($modele1); ?>">
             </div>
           </div>
           <div class="col-md-4">
@@ -65,33 +64,34 @@
               </select>
             </div>
           </div>
-        </div><BR>
-        <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label for="prix_min" class="form-label">Prix minimum :</label>
-              <input type="text" class="form-control" id="prix_min" name="prix_min" placeholder="Entrez le prix minimum">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label for="prix_max" class="form-label">Prix maximum :</label>
-              <input type="text" class="form-control" id="prix_max" name="prix_max" placeholder="Entrez le prix maximum">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label for="tri_prix" class="form-label">Trier par prix :</label>
-              <select class="form-control" id="tri_prix" name="tri">
-                <option value="">Tous</option>
-                <option value="croissant">Croissant</option>
-                <option value="decroissant">Décroissant</option>
-              </select>
-            </div>
-          </div>
         </div>
         <BR>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="prix_min" class="form-label">Prix minimum :</label>
+                <input type="text" class="form-control" id="prix_min" name="prix_min" placeholder="Entrez le prix minimum" value="<?php echo htmlspecialchars($prix_min); ?>">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="prix_max" class="form-label">Prix maximum :</label>
+                <input type="text" class="form-control" id="prix_max" name="prix_max" placeholder="Entrez le prix maximum" value="<?php echo htmlspecialchars($prix_max); ?>">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="tri_prix" class="form-label">Trier par prix :</label>
+                <select class="form-control" id="tri_prix" name="tri">
+                  <option value="">Tous</option>
+                  <option value="croissant">Croissant</option>
+                  <option value="decroissant">Décroissant</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <BR>
         </div>
         <div class="row justify-content-center">
           <button type="submit" class="btn btn-outline-secondary">Filtrer</button>
@@ -101,8 +101,5 @@
         <?php afficherVoitures($voitures, $etat, $couleur1, $prix_min, $prix_max, $modele1); ?>
       </div>
     </div>
-
-
-
   </body>
-</html>    
+</html>
