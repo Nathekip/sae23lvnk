@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('../Vue/fonctions.php');
 include('../Modele/partenaire.php');
 ?>
@@ -16,13 +16,14 @@ include('../Modele/partenaire.php');
     pagenavbar($page="");
     // Traitement du formulaire d'ajout de partenaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $nom = $_POST['nom'];
-        $description = $_POST['description'];
+        $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $photo = $_FILES['photo'];
 
-        if ($photo['error'] === 0) {
+        if ($photo['error'] === 0 && $photo['type'] === 'image/jpeg') {
             $photo_tmp = $photo['tmp_name'];
-            $photo_destination = '../images/partenaire/' . $photo['name'];
+            $photo_name = $photo['name'];
+            $photo_destination = '../images/partenaire/' . $photo_name;
             move_uploaded_file($photo_tmp, $photo_destination);
 
             $json_data = file_get_contents('../data/partenaire.json');
@@ -68,7 +69,7 @@ include('../Modele/partenaire.php');
 
             <div class="form-group">
                 <label for="photo" class="custom-file-upload">
-                    <input type="file" name="photo" id="photo" class="form-control-file" required>
+                    <input type="file" name="photo" id="photo" accept="image/jpeg" class="form-control-file" required>
                     <a class="btn btn-warning"> 
                         <i class="fa fa-cloud-upload"></i>
                         Choisir une photo
@@ -99,12 +100,12 @@ include('../Modele/partenaire.php');
             <tbody>
                 <?php foreach ($partners as $partner): ;?>
                     <tr>
-                        <td><?php echo $partner['nom']; ?></td>
-                        <td><?php echo $partner['description']; ?></td>
-                        <td><img src="<?php echo $partner['photo']; ?>" width="100"></td>
+                        <td><?php echo htmlspecialchars($partner['nom']); ?></td>
+                        <td><?php echo htmlspecialchars($partner['description']); ?></td>
+                        <td><img src="<?php echo htmlspecialchars($partner['photo']); ?>" width="100"></td>
                         <td>
                             <form method="post">
-                                <input type="hidden" name="delete" value="<?php echo $partner['nom']; ?>">
+                                <input type="hidden" name="delete" value="<?php echo htmlspecialchars($partner['nom']); ?>">
                                 <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
