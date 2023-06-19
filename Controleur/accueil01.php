@@ -6,6 +6,11 @@
   include('../Vue/vu_accueil01.php');
   include('../Vue/fonctions.php');
   setup();
+  $sessionoeil = isset($_SESSION['MdpBool']) || isset($_SESSION['CmdpBool']);
+  if ($sessionoeil){
+    unset($_SESSION['MdpBool']);
+    unset($_SESSION['CmdpBool']);
+  }
   pagenavbar();
   ?>
 </head>
