@@ -1,18 +1,20 @@
 <?php
 include('../Vue/fonctions.php');
-setup();
-pagenavbar("");
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Récapitulatif de réservation</title>
+    <?php
+    setup();
+    ?>
+    <!--page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <?php
+    pagenavbar($page="");
+    ?>
   <div class="container my-5">
     <h1 class="mb-4">Récapitulatif de réservation</h1>
     <div class="row">

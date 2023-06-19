@@ -3,7 +3,7 @@
   <body>
     <?php
     include('../Vue/fonctions.php');
-    include('../Modele/voitures.php);
+    include('../Modele/voitures.php');
     setup();
     pagenavbar("p02");
     // Lecture du fichier JSON
