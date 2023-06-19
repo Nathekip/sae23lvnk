@@ -279,6 +279,8 @@ function showusers($users) {
       $selectedCommunication = ($user['role'] == 'communication') ? 'selected' : '';
       $selectedAdmin = ($user['role'] == 'admin') ? 'selected' : '';
       $selectedManager = ($user['role'] == 'manager') ? 'selected' : '';
+      $selectedEmploye = ($user['role'] == 'employe') ? 'selected' : '';
+
 
       $rep .= <<<EOT
         <tr>
@@ -291,6 +293,8 @@ function showusers($users) {
                     <option value="communication" $selectedCommunication>Communication</option>
                     <option value="admin" $selectedAdmin>Admin</option>
                     <option value="manager" $selectedManager>Manager</option>
+	            <option value="employe" $selectedEmploye>Employe</option>
+
                 </select>
         </td>
         <td>
