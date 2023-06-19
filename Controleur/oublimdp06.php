@@ -233,10 +233,12 @@
       </div>
     </div>
     <?php
+      /*
       print_r($_SESSION['usermodif']);
       echo "<br> Role : ";
       echo $_SESSION['usermodif']['role'];
       pr();
+      */
     ?>
   </body>
 </html>
