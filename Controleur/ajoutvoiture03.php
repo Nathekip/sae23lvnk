@@ -255,7 +255,7 @@
         "prix" => $prix,
         "etat" => $etat,
         "kilometrage" => $kilometrage,
-        "couleur" => $couleur,
+        "couleur" => strtolower($couleur),
         "carburant" => $carburant,
         "boite" => $boite,
         "description" => $description,
