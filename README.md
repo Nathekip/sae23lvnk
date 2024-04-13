@@ -3,4 +3,3 @@
 - Louis Courteille
 - Victor Gillet
 - Nathaniel Guitton
-- Konogan Godefroy
